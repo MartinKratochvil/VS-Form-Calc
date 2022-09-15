@@ -19,28 +19,12 @@ namespace WinFormCalc {
             List<List<List<string>>> values = new List<List<List<string>>>{
                 new List<List<string>>{
                     new List<string>{
-                        "1", "list", "list"
+                        "8", "list"
                     }
                 },
                 new List<List<string>>{
                     new List<string>{
-                        "2", "2", "list"
-                    },
-                    new List<string>{
-                        "list", "2"
-                    }
-                },
-                new List<List<string>>{
-                    new List<string>{
-                        "3", "3"
-                    },
-                    new List<string>{
-                        "3", "list"
-                    }
-                },
-                new List<List<string>>{
-                    new List<string>{
-                        "4", "4"
+                        "5", "3"
                     }
                 }
             };
