@@ -6,61 +6,97 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormCalc {
-    public class Number {
-
+    public class Number
+    {
         private bool isList;
 
         private double value;
 
-        private List<Number> values;
+        private bool isNegative;
+
+        private bool isPriorityOperation;
+
+        private bool isMultiply;
+
+        private bool isPow;
+
+        private bool isSqrt;
 
 
-        public Number (double value)
+        public Number (bool isNegative, bool isPriorityOperation, bool isMultiply, bool isPow, bool isSqrt)
+        {
+            this.isList = true;
+            this.isNegative = isNegative;
+            this.isPriorityOperation = isPriorityOperation;
+            this.isMultiply = isMultiply;
+            this.isPow = isPow;
+            this.isSqrt = isSqrt;
+        }
+
+
+        public Number (double value, bool isNegative, bool isPriorityOperation, bool isMultiply, bool isPow, bool isSqrt)
         {
             this.isList = false;
             this.value = value;
+            this.isNegative = isNegative;
+            this.isPriorityOperation = isPriorityOperation;
+            this.isMultiply = isMultiply;
+            this.isPow = isPow;
+            this.isSqrt = isSqrt;
         }
 
 
-        public Number (List<List<List<string>>> values)
+        public bool IsList
         {
-            this.isList = true;
-            this.values = new List<Number>();
-
-            values = new List<List<List<string>>>(values);
-
-            List<string> numbers = new List<string>(values[0][0]);
-            values.Remove(values[0]);
-
-            foreach (string value in numbers)
+            get {
+                return this.isList;
+            }
+            set
             {
-                if (value != "list")
-                {
-                    this.values.Add(new Number(Double.Parse(value)));
-
-                    continue;
-                }
-
-                this.values.Add(new Number(values));
-                values[0].Remove(values[0][0]);
+                this.isList = value;
             }
         }
 
 
-        public double getResult()
+        public double Value
         {
-            if ( ! isList)
+            get
             {
-                return this.value;
-            }
+                double value = this.isPow ? Math.Pow(this.value, 2) : this.value;
 
-            double result = 0;
-            foreach (Number value in values)
+                return this.isSqrt ? Math.Sqrt(value) : value;
+            }
+            set
             {
-                result += value.getResult();
+                this.value = value;
             }
+        }
 
-            return result;
+
+        public bool IsNegative
+        {
+            get
+            {
+                return this.isNegative;
+            }
+        }
+
+
+        public bool IsPriorityOperation
+        {
+            get
+            {
+                return this.isPriorityOperation;
+            }
+        }
+
+
+        public bool IsMultiply
+        {
+            get
+            {
+                return this.isMultiply;
+            }
         }
     }
 }
