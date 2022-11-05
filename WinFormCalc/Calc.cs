@@ -16,10 +16,7 @@ namespace WinFormCalc
 
         public Calc (List<Number> numbers)
         {
-            numbers.ForEach(num =>
-            {
-                this.numbers.Add(num);
-            });
+            this.numbers = numbers;
         }
 
 
@@ -27,16 +24,16 @@ namespace WinFormCalc
         {
             double result = 0;
 
-            foreach(Number number in numbers)
+            foreach (Number number in numbers)
             {
                 if (number.isPriorityOperation)
                 {
-                    result = number.isMultiply ? result *= number.Value : result /= number.Value;
+                    result = number.isMultiply ? result * number.Value : result / number.Value;
 
                     continue;
                 }
 
-                result = number.isNegative ? result -= number.Value : result += number.Value;
+                result += number.Value;
             }
 
             return result;

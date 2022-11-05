@@ -1,11 +1,14 @@
 ﻿namespace WinFormCalc
 {
+
     partial class Form1
     {
+
         /// <summary>
         /// Vyžaduje se proměnná návrháře.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+
 
         /// <summary>
         /// Uvolněte všechny používané prostředky.
@@ -58,8 +61,10 @@
             this.ClientSize = new System.Drawing.Size(800, 471);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
+            this.KeyPreview = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -71,4 +76,3 @@
         private System.Windows.Forms.Label label1;
     }
 }
-
