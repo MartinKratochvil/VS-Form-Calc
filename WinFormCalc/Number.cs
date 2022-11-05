@@ -11,11 +11,11 @@ namespace WinFormCalc {
     public class Number
     {
 
-        public bool isList { get; set; }
+        public bool isList;
 
         private double value;
 
-        public bool isNegative { get; private set; }
+        private bool isNegative;
 
         public bool isPriorityOperation { get; private set; }
 
@@ -29,7 +29,8 @@ namespace WinFormCalc {
         {
             get
             {
-                double value = this.isPow ? Math.Pow(this.value, 2) : this.value;
+                double value = this.isNegative ? this.value * -1 : this.value;
+                value = this.isPow ? Math.Pow(value, 2) : value;
 
                 return this.isSqrt ? Math.Sqrt(value) : value;
             }
