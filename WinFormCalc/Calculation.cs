@@ -5,16 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WinFormCalc
 {
     public class Calculation
     {
 
-        private bool isList;
+        protected bool isList;
 
-        private Number number;
+        protected Number number;
 
-        private List<Calculation> numbers;
+        protected List<Calculation> numbers;
 
 
         public Calculation (Number number)
@@ -37,7 +38,7 @@ namespace WinFormCalc
 
             foreach (Number value in values)
             {
-                if ( ! value.IsList)
+                if ( ! value.isList)
                 {
                     this.numbers.Add(new Calculation(value));
 
@@ -61,10 +62,10 @@ namespace WinFormCalc
             {
                 Number number = calc.Calculate();
 
-                if (number.IsPriorityOperation)
+                if (number.isPriorityOperation)
                 {
                     numbers[numbers.Count() - 1].Value = 
-                        number.IsMultiply ?
+                        number.isMultiply ?
                         numbers[numbers.Count() - 1].Value * calc.GetResult() :
                         numbers[numbers.Count() - 1].Value / calc.GetResult()
                     ;
@@ -78,11 +79,11 @@ namespace WinFormCalc
             double result = 0;
             numbers.ForEach(number =>
             {
-                result = number.IsNegative ? result -= number.Value : result += number.Value;
+                result = number.isNegative ? result -= number.Value : result += number.Value;
             });
 
             this.number.Value = result;
-            this.number.IsList = false;
+            this.number.isList = false;
 
             return this.number;
         }

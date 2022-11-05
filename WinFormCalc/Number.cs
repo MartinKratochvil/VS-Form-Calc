@@ -5,22 +5,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WinFormCalc {
+
     public class Number
     {
-        private bool isList;
+
+        public bool isList { get; set; }
 
         private double value;
 
-        private bool isNegative;
+        public bool isNegative { get; private set; }
 
-        private bool isPriorityOperation;
+        public bool isPriorityOperation { get; private set; }
 
-        private bool isMultiply;
+        public bool isMultiply { get; private set; }
 
         private bool isPow;
 
         private bool isSqrt;
+
+        public double Value
+        {
+            get
+            {
+                double value = this.isPow ? Math.Pow(this.value, 2) : this.value;
+
+                return this.isSqrt ? Math.Sqrt(value) : value;
+            }
+            set
+            {
+                this.value = value;
+            }
+        }
 
 
         public Number (bool isNegative, bool isPriorityOperation, bool isMultiply, bool isPow, bool isSqrt)
@@ -43,60 +60,6 @@ namespace WinFormCalc {
             this.isMultiply = isMultiply;
             this.isPow = isPow;
             this.isSqrt = isSqrt;
-        }
-
-
-        public bool IsList
-        {
-            get {
-                return this.isList;
-            }
-            set
-            {
-                this.isList = value;
-            }
-        }
-
-
-        public double Value
-        {
-            get
-            {
-                double value = this.isPow ? Math.Pow(this.value, 2) : this.value;
-
-                return this.isSqrt ? Math.Sqrt(value) : value;
-            }
-            set
-            {
-                this.value = value;
-            }
-        }
-
-
-        public bool IsNegative
-        {
-            get
-            {
-                return this.isNegative;
-            }
-        }
-
-
-        public bool IsPriorityOperation
-        {
-            get
-            {
-                return this.isPriorityOperation;
-            }
-        }
-
-
-        public bool IsMultiply
-        {
-            get
-            {
-                return this.isMultiply;
-            }
         }
     }
 }
