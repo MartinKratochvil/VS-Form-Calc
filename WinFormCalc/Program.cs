@@ -16,6 +16,7 @@ namespace WinFormCalc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            MathGon.Setup();
             Application.Run(new Form1());
         }
     }
