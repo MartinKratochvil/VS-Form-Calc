@@ -22,7 +22,7 @@ namespace WinFormCalc
 
         private void Grid_Load(object sender, EventArgs e)
         {
-            GraphControl grid = new GraphControl(new Size(500, 500), new Point(100, 100));
+            GraphComponent grid = new GraphComponent(new Size(500, 500), new Point(100, 100));
             grid.Render();
 
             Controls.Add(grid.Panel);

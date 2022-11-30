@@ -26,6 +26,10 @@ namespace WinFormCalc
 
         private readonly GridRender gridRender;
 
+        private readonly LabelsRender labelsRender;
+
+        private readonly GraphControl graphControl;
+
         public PictureBox PictureBox { get; private set; }
 
 
@@ -35,23 +39,30 @@ namespace WinFormCalc
             pressed = false;
 
             PictureBox = new PictureBox();
-
             gridRender = new GridRender();
-            
+            labelsRender = new LabelsRender(parentSize);
+            graphControl = new GraphControl(parentSize);
         }
 
 
         public void Render()
         {
             PictureBox.Size = new Size(_size, _size);
-            PictureBox.Location = new Point( -1 * (_size / 2 - parentSize.Width / 2), -1 * (_size / 2 - parentSize.Height / 2));
+            PictureBox.Location = new Point(
+                -1 * (_size / 2 - parentSize.Width / 2),
+                -1 * (_size / 2 - parentSize.Height / 2)
+            );
             PictureBox.Image = gridRender.Bitmap;
 
-            PictureBox.MouseDown += MouseDown;
-            PictureBox.MouseUp += MouseUp;
-            PictureBox.MouseMove += MouseMove;
+            labelsRender.Render(PictureBox);
 
-            //graphics.DrawEllipse(boldPen, 50, 50, 300, 200);
+            graphControl.Render();
+
+            PictureBox.Controls.Add(graphControl.PictureBox);
+
+            graphControl.PictureBox.MouseDown += MouseDown;
+            graphControl.PictureBox.MouseUp += MouseUp;
+            graphControl.PictureBox.MouseMove += MouseMove;
         }
 
 
@@ -106,44 +117,93 @@ namespace WinFormCalc
         {
             foreach (Control c in PictureBox.Controls)
             {
-                if (! (c is Label))
+                if
+                (
+                    (c.Location.X == _size / 2 - c.Width &&
+                    c.Location.Y == _size / 2) ||
+                    !(c is Label)
+                )
                 {
                     continue;
                 }
 
                 if (c.Location.Y == _size / 2)
                 {
-                    if (c.Location.X + c.Parent.Location.X + c.Width < 0 && startPoint.X - stopPoint.X > 0)
+                    if
+                    (
+                        c.Location.X + c.Parent.Location.X + c.Width < 0 &&
+                        startPoint.X - stopPoint.X > 0
+                    )
                     {
-                        c.Location = new Point(c.Location.X + GridRender._space * PictureBox.Controls.Count / 2, c.Location.Y);
-                        c.Text = (Int32.Parse(c.Text) + 5).ToString();
-                        c.Visible = true;
+                        c.Location = new Point(
+                            c.Location.X + GridRender._space * (PictureBox.Controls.Count - 2) / 2,
+                            c.Location.Y
+                        );
+
+                        SetLabelText((Label)c, Int32.Parse(c.Text) + 5);
                     }
 
-                    if (c.Location.X + c.Parent.Location.X - c.Width > parentSize.Width && startPoint.X - stopPoint.X < 0)
+                    if
+                    (
+                        c.Location.X + c.Parent.Location.X > parentSize.Width &&
+                        startPoint.X - stopPoint.X < 0
+                    )
                     {
-                        c.Location = new Point(c.Location.X - GridRender._space * PictureBox.Controls.Count / 2, c.Location.Y);
-                        c.Text = (Int32.Parse(c.Text) - 5).ToString();
-                        c.Visible = true;
+                        c.Location = new Point(
+                            c.Location.X - GridRender._space * (PictureBox.Controls.Count - 2) / 2,
+                            c.Location.Y
+                        );
+                     
+                        SetLabelText((Label)c, Int32.Parse(c.Text) - 5);
+                    }
+                }
+
+                if (c.Location.X == _size / 2 - c.Width)
+                {
+                    if
+                    (
+                        c.Location.Y + c.Parent.Location.Y + c.Height < 0 &&
+                        startPoint.Y - stopPoint.Y > 0
+                    )
+                    {
+                        c.Location = new Point(
+                            c.Location.X,
+                            c.Location.Y + GridRender._space * (PictureBox.Controls.Count - 2) / 2
+                        );
+
+                        SetLabelText((Label)c, Int32.Parse(c.Text) - 5);
                     }
 
-                    continue;
-                }
+                    if
+                    (
+                        c.Location.Y + c.Parent.Location.Y > parentSize.Height &&
+                        startPoint.Y - stopPoint.Y < 0
+                    )
+                    {
+                        c.Location = new Point(
+                            c.Location.X,
+                            c.Location.Y - GridRender._space * (PictureBox.Controls.Count - 2) / 2
+                        );
 
-                if (c.Location.Y + c.Parent.Location.Y + c.Height < 0 && startPoint.Y - stopPoint.Y > 0)
-                {
-                    c.Location = new Point(c.Location.X, c.Location.Y + GridRender._space * PictureBox.Controls.Count / 2);
-                    c.Text = (Int32.Parse(c.Text) + 5).ToString();
-                    c.Visible = true;
-                }
-
-                if (c.Location.Y + c.Parent.Location.Y - c.Height > parentSize.Height && startPoint.Y - stopPoint.Y < 0)
-                {
-                    c.Location = new Point(c.Location.X, c.Location.Y - GridRender._space * PictureBox.Controls.Count / 2);
-                    c.Text = (Int32.Parse(c.Text) - 5).ToString();
-                    c.Visible = true;
+                        SetLabelText((Label)c, Int32.Parse(c.Text) + 5);
+                    }
                 }
             }
+        }
+
+
+        private void SetLabelText(Label label, int value)
+        {
+            label.Text = value.ToString();
+
+            if (value == 0)
+            {
+                label.Visible = false;
+
+                return;
+            }
+
+            label.Visible = true;
         }
 
 

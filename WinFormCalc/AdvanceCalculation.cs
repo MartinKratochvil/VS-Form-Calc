@@ -51,7 +51,7 @@ namespace WinFormCalc
         }
 
         private AdvanceNumber Calculate()
-        {
+        {   
             if (!isList)
             {
                 return this.number;
@@ -60,7 +60,7 @@ namespace WinFormCalc
             List<AdvanceNumber> numbers = new List<AdvanceNumber>();
             foreach (AdvanceCalculation calc in this.numbers)
             {
-                AdvanceNumber number = calc.Calculate();
+                number = calc.Calculate();
 
                 if (number.primeOper != PrimeOper.None)
                 {
