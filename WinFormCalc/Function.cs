@@ -6,14 +6,17 @@ using System.Threading.Tasks;
 
 namespace WinFormCalc
 {
-    public enum PrimeOper
+    public enum Function
     {
-        None,
-        Multiply,
-        Divide,
         Pow,
+        Cube,
         Sqrt,
+        CubeRoot,
+        Abs,    
+        Floor,
+        Ceil,
+        Fact,
         Log,
-        EulPow
+        Ln  
     }
 }

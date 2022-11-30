@@ -3,36 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-
-namespace WinFormCalc {
-
+namespace WinFormCalc
+{
     public class Number
     {
 
-        public bool isList;
+        protected double value;
 
-        private double value;
+        protected List<Enum> functions;
 
-        private bool isNegative;
+        protected bool isCalculated;
 
-        public bool isPriorityOperation { get; private set; }
-
-        public bool isMultiply { get; private set; }
-
-        private bool isPow;
-
-        private bool isSqrt;
 
         public double Value
         {
             get
             {
-                double value = this.isNegative ? this.value * -1 : this.value;
-                value = this.isPow ? Math.Pow(value, 2) : value;
+                Calculate();
 
-                return this.isSqrt ? Math.Sqrt(value) : value;
+                return value;
             }
             set
             {
@@ -41,26 +31,47 @@ namespace WinFormCalc {
         }
 
 
-        public Number (bool isNegative, bool isPriorityOperation, bool isMultiply, bool isPow, bool isSqrt)
+        public Number(double value, List<Enum> functions)
         {
-            this.isList = true;
-            this.isNegative = isNegative;
-            this.isPriorityOperation = isPriorityOperation;
-            this.isMultiply = isMultiply;
-            this.isPow = isPow;
-            this.isSqrt = isSqrt;
+            this.value = value;
+            this.functions = functions;
+            this.isCalculated = false;
         }
 
 
-        public Number (double value, bool isNegative, bool isPriorityOperation, bool isMultiply, bool isPow, bool isSqrt)
+        public Number(double value)
         {
-            this.isList = false;
             this.value = value;
-            this.isNegative = isNegative;
-            this.isPriorityOperation = isPriorityOperation;
-            this.isMultiply = isMultiply;
-            this.isPow = isPow;
-            this.isSqrt = isSqrt;
+            this.isCalculated = false;
+        }
+
+        public Number()
+        {
+            this.isCalculated = false;
+        }
+
+
+        protected virtual void Calculate()
+        {
+            if (isCalculated || functions == null)
+            {
+                return;
+            }
+
+            functions.ForEach(function =>
+            {
+                if (function is Function)
+                {
+                    value = MathFunc.Activate(value, (Function)function);
+                }
+
+                if (function is GonFunc)
+                {
+                    value = MathGon.Calc(value, (GonFunc)function);
+                }
+            });
+
+            isCalculated = true;
         }
     }
 }

@@ -8,13 +8,13 @@ using System.Windows.Forms;
 
 namespace WinFormCalc
 {
-    public class Calc
+    public class Calculation
     {
 
         private List<Number> numbers;
 
 
-        public Calc (List<Number> numbers)
+        public Calculation (List<Number> numbers)
         {
             this.numbers = numbers;
         }
@@ -26,13 +26,6 @@ namespace WinFormCalc
 
             foreach (Number number in numbers)
             {
-                if (number.isPriorityOperation)
-                {
-                    result = number.isMultiply ? result * number.Value : result / number.Value;
-
-                    continue;
-                }
-
                 result += number.Value;
             }
 

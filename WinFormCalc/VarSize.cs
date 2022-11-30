@@ -6,14 +6,11 @@ using System.Threading.Tasks;
 
 namespace WinFormCalc
 {
-    public enum PrimeOper
+    public enum VarSize
     {
-        None,
-        Multiply,
-        Divide,
-        Pow,
-        Sqrt,
-        Log,
-        EulPow
+        Byte = 8,
+        Short = 16,
+        Int = 32,
+        Long = 64
     }
 }

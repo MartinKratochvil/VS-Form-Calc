@@ -11,7 +11,6 @@ using System.Windows.Forms;
 
 namespace WinFormCalc
 {
-
     public partial class Form1 : Form
     {
 
@@ -24,28 +23,86 @@ namespace WinFormCalc
             /*List<List<List<Number>>> values = new List<List<List<Number>>>{
                 new List<List<Number>>{
                     new List<Number>{
-                        new Number(8, false, false, false, false, false), new Number(32, false, false, false, false, false), new Number(8, false, true, false, true, true), new Number(true, false, false, false, false)
+                        new Number(5, PrimeOper.None, new List<Enum>() {}), new Number(16, PrimeOper.Multiply, new List<Enum>() {Function.Sqrt}), new Number(-8, PrimeOper.None, new List<Enum>() {}), new Number(PrimeOper.None, new List<Enum>() {})
                     }
                 },
                 new List<List<Number>>{
                     new List<Number>{
-                        new Number(4, false, false, false, true, false), new Number(3, true, false, false, true, false)
+                        new Number(4, PrimeOper.None, new List<Enum>() {}), new Number(4, PrimeOper.None, new List<Enum>() {Function.Pow}), new Number(2, PrimeOper.Divide, new List<Enum>() {Function.Pow})
                     }
                 }
             };*/
 
-            //AdvanceCalculation calc = new AdvanceCalculation(values, new Number(false, false, false, false, false));
+            List<List<List<BinNumber>>> binValues = new List<List<List<BinNumber>>>
+            {
+                new List<List<BinNumber>>
+                {
+                    new List<BinNumber>
+                    {
+                        new BinNumber("1011", VarType.Bin, VarSize.Long, BinFunction.None),
+                        new BinNumber(3, VarSize.Long, BinFunction.None),
+                        new BinNumber(1, VarSize.Long, BinFunction.LeftShift),
+                        new BinNumber(-1, VarSize.Long, BinFunction.None),
+                        new BinNumber(BinFunction.Multiply)
+                    }
+                },
+                new List<List<BinNumber>>
+                {
+                    new List<BinNumber>
+                    {
+                        new BinNumber(3, VarSize.Long, BinFunction.None),
+                        new BinNumber(2, VarSize.Long, BinFunction.None)
+                    }
+                }
+            };
 
-            //MessageBox.Show("Result: " + calc.GetResult().ToString());
+            ProgrammerCalculation programmerCalculation = new ProgrammerCalculation(binValues, new BinNumber(BinFunction.None));
 
-            List<Number> values1 = new List<Number>
+            MessageBox.Show("kkt: " + programmerCalculation.GetResult());
+            
+            
+            List<List<List<AdvanceNumber>>> values = new List<List<List<AdvanceNumber>>>
+            {
+                new List<List<AdvanceNumber>>
+                {
+                    new List<AdvanceNumber>
+                    {
+                        new AdvanceNumber(4, PrimeOper.None, new List<Enum> {}),
+                        new AdvanceNumber(32, PrimeOper.None, new List<Enum> {}),
+                        new AdvanceNumber(8, PrimeOper.Divide, new List<Enum> {Function.Pow, Function.Sqrt}),
+                        new AdvanceNumber(-1, PrimeOper.None, new List<Enum> {}),
+                        new AdvanceNumber(PrimeOper.Multiply, new List<Enum> {})
+                    }
+                },
+                new List<List<AdvanceNumber>>
+                {
+                    new List<AdvanceNumber>
+                    {
+                        new AdvanceNumber(4, PrimeOper.None, new List<Enum> {Function.Pow}),
+                        new AdvanceNumber(-1, PrimeOper.None, new List<Enum> {}),
+                        new AdvanceNumber(3, PrimeOper.Multiply, new List<Enum> {Function.Pow})
+                    }
+                }
+            };
+
+            AdvanceCalculation calc = new AdvanceCalculation(values, new AdvanceNumber(PrimeOper.None, new List<Enum>() {}));
+
+            MessageBox.Show("Result: " + calc.GetResult().ToString());
+
+            /*List<Number> values1 = new List<Number>
             {
                 new Number(4, false, false, false, true, false), new Number(5, true, false, false, true, true), new Number(9, false, true, true, false, true)
             };
 
             Calc calc = new Calc(values1);
 
-            MessageBox.Show(calc.GetResult().ToString());
+            MessageBox.Show(calc.GetResult().ToString());*/
+
+            //Action i = MathGon.idk[(int)GonFunc.Sin];
+            //i();
+            /*MessageBox.Show(MathGon.Calc(1, GonFunc.HArctan).ToString());
+            MessageBox.Show(MathGon.Calc(1, GonFunc.Cotan).ToString());
+            MessageBox.Show(MathGon.Calc(1, GonFunc.Sin).ToString());*/
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)

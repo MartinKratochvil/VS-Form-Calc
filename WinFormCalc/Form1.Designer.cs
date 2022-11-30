@@ -1,6 +1,5 @@
 ﻿namespace WinFormCalc
 {
-
     partial class Form1
     {
 

@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace WinFormCalc
 {
-    public enum PrimeOper
+    public enum BinFunction
     {
         None,
         Multiply,
         Divide,
-        Pow,
-        Sqrt,
-        Log,
-        EulPow
+        Modulo,
+        LeftShift,
+        RightShift
     }
 }
