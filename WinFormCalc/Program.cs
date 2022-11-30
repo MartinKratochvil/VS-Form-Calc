@@ -17,7 +17,10 @@ namespace WinFormCalc
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             MathGon.Setup();
-            Application.Run(new Form1());
+            MathFunc.Setup();
+            MathOper.Setup();
+            BinOper.Setup();
+            Application.Run(new Grid());
         }
     }
 }

@@ -20,6 +20,7 @@ namespace WinFormCalc
 
 
         private void button1_Click(object sender, EventArgs e) {
+            
             /*List<List<List<Number>>> values = new List<List<List<Number>>>{
                 new List<List<Number>>{
                     new List<Number>{
@@ -67,7 +68,7 @@ namespace WinFormCalc
                 {
                     new List<AdvanceNumber>
                     {
-                        new AdvanceNumber(4, PrimeOper.None, new List<Enum> {}),
+                        new AdvanceNumber(4, PrimeOper.None, new List<Enum> {GonFunc.Sin}),
                         new AdvanceNumber(32, PrimeOper.None, new List<Enum> {}),
                         new AdvanceNumber(8, PrimeOper.Divide, new List<Enum> {Function.Pow, Function.Sqrt}),
                         new AdvanceNumber(-1, PrimeOper.None, new List<Enum> {}),
