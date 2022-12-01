@@ -28,7 +28,7 @@ namespace WinFormCalc
 
         private readonly LabelsRender labelsRender;
 
-        private readonly GraphControl graphControl;
+        public GraphControl GraphControl { get; private set; }
 
         public PictureBox PictureBox { get; private set; }
 
@@ -41,7 +41,7 @@ namespace WinFormCalc
             PictureBox = new PictureBox();
             gridRender = new GridRender();
             labelsRender = new LabelsRender(parentSize);
-            graphControl = new GraphControl(parentSize);
+            GraphControl = new GraphControl(parentSize);
         }
 
 
@@ -54,15 +54,27 @@ namespace WinFormCalc
             );
             PictureBox.Image = gridRender.Bitmap;
 
-            labelsRender.Render(PictureBox);
+            GraphControl.Render();
 
-            graphControl.Render();
+            PictureBox.Controls.Add(GraphControl.PictureBox);
+            
+            labelsRender.Render(GraphControl.PictureBox);
 
-            PictureBox.Controls.Add(graphControl.PictureBox);
+            GraphControl.PictureBox.MouseDown += MouseDown;
+            GraphControl.PictureBox.MouseUp += MouseUp;
+            GraphControl.PictureBox.MouseMove += MouseMove;
 
-            graphControl.PictureBox.MouseDown += MouseDown;
-            graphControl.PictureBox.MouseUp += MouseUp;
-            graphControl.PictureBox.MouseMove += MouseMove;
+            foreach (Control c in GraphControl.PictureBox.Controls)
+            {
+                if (! (c is Label))
+                {
+                    continue;
+                }
+
+                c.MouseDown += MouseDown;
+                c.MouseUp += MouseUp;
+                c.MouseMove += MouseMove;
+            }
         }
 
 
@@ -115,7 +127,7 @@ namespace WinFormCalc
 
         private void MoveLabels()
         {
-            foreach (Control c in PictureBox.Controls)
+            foreach (Control c in GraphControl.PictureBox.Controls)
             {
                 if
                 (
@@ -131,12 +143,12 @@ namespace WinFormCalc
                 {
                     if
                     (
-                        c.Location.X + c.Parent.Location.X + c.Width < 0 &&
+                        c.Location.X + PictureBox.Location.X + c.Width < 0 &&
                         startPoint.X - stopPoint.X > 0
                     )
                     {
                         c.Location = new Point(
-                            c.Location.X + GridRender._space * (PictureBox.Controls.Count - 2) / 2,
+                            c.Location.X + GridRender._space * (GraphControl.PictureBox.Controls.Count - 1) / 2,
                             c.Location.Y
                         );
 
@@ -145,12 +157,12 @@ namespace WinFormCalc
 
                     if
                     (
-                        c.Location.X + c.Parent.Location.X > parentSize.Width &&
+                        c.Location.X + PictureBox.Location.X > parentSize.Width &&
                         startPoint.X - stopPoint.X < 0
                     )
                     {
                         c.Location = new Point(
-                            c.Location.X - GridRender._space * (PictureBox.Controls.Count - 2) / 2,
+                            c.Location.X - GridRender._space * (GraphControl.PictureBox.Controls.Count - 1) / 2,
                             c.Location.Y
                         );
                      
@@ -162,13 +174,13 @@ namespace WinFormCalc
                 {
                     if
                     (
-                        c.Location.Y + c.Parent.Location.Y + c.Height < 0 &&
+                        c.Location.Y + PictureBox.Location.Y + c.Height < 0 &&
                         startPoint.Y - stopPoint.Y > 0
                     )
                     {
                         c.Location = new Point(
                             c.Location.X,
-                            c.Location.Y + GridRender._space * (PictureBox.Controls.Count - 2) / 2
+                            c.Location.Y + GridRender._space * (GraphControl.PictureBox.Controls.Count - 1) / 2
                         );
 
                         SetLabelText((Label)c, Int32.Parse(c.Text) - 5);
@@ -176,13 +188,13 @@ namespace WinFormCalc
 
                     if
                     (
-                        c.Location.Y + c.Parent.Location.Y > parentSize.Height &&
+                        c.Location.Y + PictureBox.Location.Y > parentSize.Height &&
                         startPoint.Y - stopPoint.Y < 0
                     )
                     {
                         c.Location = new Point(
                             c.Location.X,
-                            c.Location.Y - GridRender._space * (PictureBox.Controls.Count - 2) / 2
+                            c.Location.Y - GridRender._space * (GraphControl.PictureBox.Controls.Count - 1) / 2
                         );
 
                         SetLabelText((Label)c, Int32.Parse(c.Text) + 5);

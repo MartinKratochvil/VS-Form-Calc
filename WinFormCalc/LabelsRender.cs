@@ -83,19 +83,16 @@ namespace WinFormCalc
         }
 
 
-        private Label CreateLabel()
+        private Label CreateLabel() => new Label()
         {
-            return new Label()
-            {
-                Location = new Point(
-                    pictureBox.Location.X * -1,
-                    pictureBox.Location.Y * -1
-                ),
-                Size = new Size(60, 20),
-                AutoSize = false,
-                Font = new Font("Microsoft YaHei", 10, FontStyle.Regular),
-                BackColor = Color.Transparent,
-            };
-        }
+            Location = new Point(
+                pictureBox.Parent.Location.X * -1,
+                pictureBox.Parent.Location.Y * -1
+            ),
+            Size = new Size(60, 20),
+            AutoSize = false,
+            Font = new Font("Microsoft YaHei", 10, FontStyle.Regular),
+            BackColor = Color.Transparent,
+        };
     }
 }

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WinFormCalc
 {
@@ -26,38 +27,36 @@ namespace WinFormCalc
 
             graphics = Graphics.FromImage(Bitmap);
 
-            //Color penColor = Color.FromArgb(255, 192, 192, 192);
-            graphPen = new Pen(Color.Red, 3);
-
-            Render();
-        }
-
-
-        private void Render()
-        {
             graphics.CompositingQuality = CompositingQuality.HighQuality;
             graphics.SmoothingMode = SmoothingMode.HighQuality;
 
-            RenderGraph();
+            //Color penColor = Color.FromArgb(255, 192, 192, 192);
+            graphPen = new Pen(Color.Red, 3);
         }
 
 
-        private void RenderGraph()
+        public void Render(int a, int b, int c)
         {
-            int pointsNum = GridControl._size / GridRender._space * 5;
+            int space = GridRender._space / 5;
+            int pointsNum = GridControl._size / space / 2;
+
             List<Point> points = new List<Point>();
 
-            for (int i = 0; i <= pointsNum; i++)
+            for (int i = pointsNum * -1; i <= pointsNum; i++)
             {
-                if (i * GridRender._space / 5 < 0 || i * GridRender._space / 5> GridControl._size)
+                int x = i;
+                int y = -1 * (a * (int)Math.Pow(x, 2) + b * x + c);
+
+                /*if ((y + pointsNum) * space < 0 || (y + pointsNum) * space > GridControl._size)
                 {
                     continue;
-                }
+                }*/
 
-                points.Add(new Point(i * GridRender._space / 5, i * GridRender._space / 5));
+                //MessageBox.Show(x + " " + y);
+
+                points.Add(new Point((x + pointsNum) * space, (y + pointsNum) * space));
             }
 
-            //Point[] points = { new Point(50, 50), new Point(70, 100), new Point(100, 20), new Point(100, 100), new Point(70, 200) };
             graphics.DrawCurve(graphPen, points.ToArray());
         }
     }

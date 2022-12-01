@@ -25,11 +25,7 @@ namespace WinFormCalc
             this.location = location;
 
             gridControl = new GridControl(size);
-        }
 
-
-        public void Render()
-        {
             Panel = new Panel()
             {
                 Size = size,
@@ -39,6 +35,18 @@ namespace WinFormCalc
             gridControl.Render();
 
             Panel.Controls.Add(gridControl.PictureBox);
+        }
+
+
+        public void Render(int a, int b)
+        {
+            gridControl.GraphControl.GraphRender.Render(0, a, b);
+        }
+
+
+        public void Render(int a, int b, int c)
+        {
+            gridControl.GraphControl.GraphRender.Render(a, b, c);
         }
     }
 }

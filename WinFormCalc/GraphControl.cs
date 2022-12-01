@@ -15,7 +15,7 @@ namespace WinFormCalc
 
         private Size parentSize;
 
-        private GraphRender graphRender;
+        public GraphRender GraphRender { get; private set; }
 
         public PictureBox PictureBox { get; private set; }
 
@@ -25,7 +25,7 @@ namespace WinFormCalc
             this.parentSize = parentSize;
 
             PictureBox = new PictureBox();
-            graphRender = new GraphRender();
+            GraphRender = new GraphRender();
         }
 
         public void Render ()
@@ -33,7 +33,7 @@ namespace WinFormCalc
             PictureBox.Size = new Size(GridControl._size, GridControl._size);
             PictureBox.Location = new Point(0, 0);
             PictureBox.BackColor = Color.Transparent;
-            PictureBox.Image = graphRender.Bitmap;
+            PictureBox.Image = GraphRender.Bitmap;
         }
     }
 }
