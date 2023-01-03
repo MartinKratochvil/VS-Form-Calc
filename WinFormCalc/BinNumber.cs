@@ -29,7 +29,6 @@ namespace WinFormCalc
             {
                 this.value = 0;
             }
-            
         }
 
 
@@ -45,7 +44,7 @@ namespace WinFormCalc
         {
             this.isList = false;
             this.value = value;
-        }
+        }                                                                                                                                                                                                   
 
 
         public BinNumber(BinFunction function)

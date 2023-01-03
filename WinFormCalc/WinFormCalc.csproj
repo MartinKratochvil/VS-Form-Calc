@@ -76,6 +76,12 @@
     <Compile Include="MathOper.cs" />
     <Compile Include="AdvanceNumber.cs" />
     <Compile Include="Number.cs" />
+    <Compile Include="PaperMode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaperMode.Designer.cs">
+      <DependentUpon>PaperMode.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrimeOper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgrammerCalculation.cs" />
@@ -87,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Grid.resx">
       <DependentUpon>Grid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaperMode.resx">
+      <DependentUpon>PaperMode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
