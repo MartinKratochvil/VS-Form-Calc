@@ -24,7 +24,7 @@ namespace WinFormCalc.Components.PaperModeComponent
 
             foreach (char c in example)
             {
-                if (Char.IsDigit(c) || c == '.')
+                if (Char.IsDigit(c) || c == ',')
                 {
                     payload += c;
 
@@ -50,11 +50,9 @@ namespace WinFormCalc.Components.PaperModeComponent
 
                 if (payload != String.Empty)
                 {
-                    MessageBox.Show("payload: " + payload);
-
-                    if (!Double.TryParse(payload, out double num))
+                    if (! Double.TryParse(payload, out double num))
                     {
-                        throw new FormatException("kkte špatné číslo!!");
+                        throw new FormatException("Špatné číslo!!");
                     }
 
                     values[i][values[i].Count - 1].Add(new AdvanceNumber
@@ -72,55 +70,42 @@ namespace WinFormCalc.Components.PaperModeComponent
                 switch (c)
                 {
                     case '+': break;
-
                     case '-':
                     {
                         isNegative = true;
 
                         break;
                     }
-
                     case '*':
                     {
                         primeOper = PrimeOper.Multiply;
 
                         break;
                     }
-
                     case '/':
                     {
                         primeOper = PrimeOper.Divide;
                         
                         break;
                     }
-
-                    /*case '(':
-                    {
-                        values[i][values.Count - 1].Add(new AdvanceNumber(num, PrimeOper.Multiply, new List<Enum>()));
-
-                        break;
-                    }*/
-
                     case ')':
                     {
                         i--;
 
                         break;
                     }
-
                     case '=':
                     {
                         return values;
                     }
-
                     default:
                     {
-                        throw new FormatException("kkte špatný znak!!");
+                        throw new FormatException("Špatný znak!!");
                     }
                 }
             }
 
-            throw new Exception();
+            throw new Exception("No example!!");
         }
 
 

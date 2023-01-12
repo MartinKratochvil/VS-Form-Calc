@@ -30,7 +30,17 @@ namespace WinFormCalc.Components.PaperModeComponent
                     new AdvanceNumber(PrimeOper.None, new List<Enum>())
                 );
 
-                string s = String.Empty;
+                string result = calc.GetResult().ToString();
+                int cursor = SelectionStart;
+
+                //RemoveLine();
+
+                Text = Text.Insert(SelectionStart, Environment.NewLine + "= " + result);
+                SelectionStart += cursor + result.Length + 4;
+
+                //MessageBox.Show("ans: " + calc.GetResult().ToString());
+
+                /*string s = String.Empty;
                 List<List<List<AdvanceNumber>>> values = ExampleConventor.Convert(GetExample());
 
                 foreach (List<List<AdvanceNumber>> idk1 in values)
@@ -52,33 +62,7 @@ namespace WinFormCalc.Components.PaperModeComponent
                     s += "{" + Environment.NewLine;
                 }
 
-                MessageBox.Show(s);
-                MessageBox.Show("ans: " + calc.GetResult().ToString());
-
-                List<List<List<AdvanceNumber>>> values2 = new List<List<List<AdvanceNumber>>>
-                {
-                    new List<List<AdvanceNumber>>
-                    {
-                        new List<AdvanceNumber>
-                        {
-                            new AdvanceNumber(5, PrimeOper.None, new List<Enum> {}),
-                            new AdvanceNumber(-1, PrimeOper.None, new List<Enum> {}),
-                            new AdvanceNumber(PrimeOper.Multiply, new List<Enum> {})
-                        }
-                    },
-                    new List<List<AdvanceNumber>>
-                    {
-                        new List<AdvanceNumber>
-                        {
-                            new AdvanceNumber(3, PrimeOper.None, new List<Enum> {}),
-                            new AdvanceNumber(2, PrimeOper.None, new List<Enum> {})
-                        }
-                    }
-                };
-
-                AdvanceCalculator calc2 = new AdvanceCalculator(values2, new AdvanceNumber(PrimeOper.None, new List<Enum>()));
-
-                MessageBox.Show("answer: " + calc2.GetResult().ToString());
+                MessageBox.Show(s);*/
             }
             catch (Exception e)
             {
@@ -88,11 +72,36 @@ namespace WinFormCalc.Components.PaperModeComponent
             
         }
 
+        /*private void RemoveLine()
+        {
+            if (Text.Length < SelectionStart + 2)
+            {
+                return;
+            }
+
+            if (Text.Substring(SelectionStart + 2, 1) == "=")
+            {
+                MessageBox.Show("ss");
+
+                String text = Text.Substring(SelectionStart + 2);
+
+                for(int i = 0; i < text.Length - 1; i++)
+                {
+                    if (Text.Substring(i, 2) != Environment.NewLine)
+                    {
+                        continue;
+                    }
+
+                    Text = Text.Remove(SelectionStart + 2, SelectionStart + i + 2);
+                }
+            }
+        }*/
+
 
         private string GetExample()
         {
             int start = IndexOfStartLine();
-            string example = this.Text.Substring(start, this.SelectionStart - start);
+            string example = Text.Substring(start, SelectionStart - start);
 
             return new string(example
                 .Where(c => c != ' ')
@@ -103,9 +112,9 @@ namespace WinFormCalc.Components.PaperModeComponent
 
         private int IndexOfStartLine()
         {
-            for (int i = this.SelectionStart - 2; i > 0; i--)
+            for (int i = SelectionStart - 2; i > 0; i--)
             {
-                if (this.Text.Substring(i, 2) == Environment.NewLine)
+                if (Text.Substring(i, 2) == Environment.NewLine)
                 {
                     return i + 2;
                 }
