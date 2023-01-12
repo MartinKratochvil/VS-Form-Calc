@@ -6,26 +6,26 @@ using System.Threading.Tasks;
 
 namespace WinFormCalc
 {
-    public class ProgrammerCalculation
+    public class ProgrammerCalculator
     {
         private bool isList;
 
         private BinNumber number;
 
-        private List<ProgrammerCalculation> numbers;
+        private List<ProgrammerCalculator> numbers;
 
-        public ProgrammerCalculation(BinNumber number)
+        public ProgrammerCalculator(BinNumber number)
         {
             this.isList = false;
             this.number = number;
         }
 
 
-        public ProgrammerCalculation(List<List<List<BinNumber>>> numbers, BinNumber number)
+        public ProgrammerCalculator(List<List<List<BinNumber>>> numbers, BinNumber number)
         {
             this.isList = true;
             this.number = number;
-            this.numbers = new List<ProgrammerCalculation>();
+            this.numbers = new List<ProgrammerCalculator>();
 
             numbers = new List<List<List<BinNumber>>>(numbers);
 
@@ -36,12 +36,12 @@ namespace WinFormCalc
             {
                 if (!value.isList)
                 {
-                    this.numbers.Add(new ProgrammerCalculation(value));
+                    this.numbers.Add(new ProgrammerCalculator(value));
 
                     continue;
                 }
 
-                this.numbers.Add(new ProgrammerCalculation(numbers, value));
+                this.numbers.Add(new ProgrammerCalculator(numbers, value));
                 numbers[0].Remove(numbers[0][0]);
             }
         }
@@ -55,7 +55,7 @@ namespace WinFormCalc
             }
 
             List<BinNumber> numbers = new List<BinNumber>();
-            foreach (ProgrammerCalculation calc in this.numbers)
+            foreach (ProgrammerCalculator calc in this.numbers)
             {
                 BinNumber number = calc.Calculate();
 

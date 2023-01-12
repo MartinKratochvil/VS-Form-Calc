@@ -57,9 +57,9 @@ namespace WinFormCalc
                 }
             };
 
-            ProgrammerCalculation programmerCalculation = new ProgrammerCalculation(binValues, new BinNumber(BinFunction.None));
+            ProgrammerCalculator programmerCalculator = new ProgrammerCalculator(binValues, new BinNumber(BinFunction.None));
 
-            MessageBox.Show("kkt: " + programmerCalculation.GetResult());
+            MessageBox.Show("kkt: " + programmerCalculator.GetResult());
             
             
             List<List<List<AdvanceNumber>>> values = new List<List<List<AdvanceNumber>>>
@@ -86,7 +86,7 @@ namespace WinFormCalc
                 }
             };
 
-            AdvanceCalculation calc = new AdvanceCalculation(values, new AdvanceNumber(PrimeOper.None, new List<Enum>() {}));
+            AdvanceCalculator calc = new AdvanceCalculator(values, new AdvanceNumber(PrimeOper.None, new List<Enum>()));
 
             MessageBox.Show("Result: " + calc.GetResult().ToString());
 

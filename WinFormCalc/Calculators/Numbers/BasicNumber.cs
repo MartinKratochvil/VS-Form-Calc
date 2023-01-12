@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WinFormCalc
 {
-    public class Number
+    public class BasicNumber
     {
 
         protected double value;
@@ -31,7 +31,7 @@ namespace WinFormCalc
         }
 
 
-        public Number(double value, List<Enum> functions)
+        public BasicNumber(double value, List<Enum> functions)
         {
             this.value = value;
             this.functions = functions;
@@ -39,13 +39,13 @@ namespace WinFormCalc
         }
 
 
-        public Number(double value)
+        public BasicNumber(double value)
         {
             this.value = value;
             this.isCalculated = false;
         }
 
-        public Number()
+        public BasicNumber()
         {
             this.isCalculated = false;
         }

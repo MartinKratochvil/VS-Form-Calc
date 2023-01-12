@@ -8,13 +8,13 @@ using System.Windows.Forms;
 
 namespace WinFormCalc
 {
-    public class Calculation
+    public class BasicCalculator
     {
 
-        private List<Number> numbers;
+        private List<BasicNumber> numbers;
 
 
-        public Calculation (List<Number> numbers)
+        public BasicCalculator (List<BasicNumber> numbers)
         {
             this.numbers = numbers;
         }
@@ -24,7 +24,7 @@ namespace WinFormCalc
         {
             double result = 0;
 
-            foreach (Number number in numbers)
+            foreach (BasicNumber number in numbers)
             {
                 result += number.Value;
             }

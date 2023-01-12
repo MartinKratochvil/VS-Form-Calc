@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace WinFormCalc
 {
-    public class BinOper
+    public static class BinOper
     {
         private delegate void BinDel(List<BinNumber> values, BinNumber x);
 

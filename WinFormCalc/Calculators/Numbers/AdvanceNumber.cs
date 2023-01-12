@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace WinFormCalc
 {
-    public class AdvanceNumber : Number
+    public class AdvanceNumber : BasicNumber
     {
 
         public bool isList;

@@ -8,28 +8,28 @@ using System.Windows.Forms;
 
 namespace WinFormCalc
 {
-	public class AdvanceCalculation
+	public class AdvanceCalculator
 	{
 
         private bool isList;
 
         private AdvanceNumber number;
 
-        private List<AdvanceCalculation> numbers;
+        private List<AdvanceCalculator> numbers;
 
 
-        public AdvanceCalculation(AdvanceNumber number)
+        public AdvanceCalculator(AdvanceNumber number)
         {
             this.isList = false;
             this.number = number;
         }
 
 
-        public AdvanceCalculation(List<List<List<AdvanceNumber>>> numbers, AdvanceNumber number)
+        public AdvanceCalculator(List<List<List<AdvanceNumber>>> numbers, AdvanceNumber number)
         {
             this.isList = true;
             this.number = number;
-            this.numbers = new List<AdvanceCalculation>();
+            this.numbers = new List<AdvanceCalculator>();
 
             numbers = new List<List<List<AdvanceNumber>>>(numbers);
 
@@ -40,12 +40,12 @@ namespace WinFormCalc
             {
                 if (!value.isList)
                 {
-                    this.numbers.Add(new AdvanceCalculation(value));
+                    this.numbers.Add(new AdvanceCalculator(value));
 
                     continue;
                 }
 
-                this.numbers.Add(new AdvanceCalculation(numbers, value));
+                this.numbers.Add(new AdvanceCalculator(numbers, value));
                 numbers[0].Remove(numbers[0][0]);
             }
         }
@@ -58,18 +58,18 @@ namespace WinFormCalc
             }
 
             List<AdvanceNumber> numbers = new List<AdvanceNumber>();
-            foreach (AdvanceCalculation calc in this.numbers)
+            foreach (AdvanceCalculator calc in this.numbers)
             {
-                number = calc.Calculate();
+                AdvanceNumber value = calc.Calculate();
 
-                if (number.primeOper != PrimeOper.None)
+                if (value.primeOper != PrimeOper.None)
                 {
-                    MathOper.Activate(numbers, number, number.primeOper);
+                    MathOper.Activate(numbers, value, value.primeOper);
 
                     continue;
                 }
 
-                numbers.Add(number);
+                numbers.Add(value);
             };
 
             double result = 0;

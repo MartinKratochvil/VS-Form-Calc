@@ -7,16 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WinFormCalc.Components.PaperModeComponent;
 
 namespace WinFormCalc
 {
     public partial class PaperMode : Form
     {
 
+        PaperModeComponent paperModeComponent;
+
+
         public PaperMode()
         {
             InitializeComponent();
+
+            paperModeComponent = new PaperModeComponent();
+            paperModeComponent.Location = new Point(12, 12);
+            paperModeComponent.Size = new Size(450, 300);
+            Controls.Add(paperModeComponent);
         }
 
 
@@ -24,8 +32,11 @@ namespace WinFormCalc
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                textBox1.Text
+                paperModeComponent.Calculate();
             }
         }
+
+
+        
     }
 }
