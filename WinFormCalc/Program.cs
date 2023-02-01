@@ -20,7 +20,7 @@ namespace WinFormCalc
             MathFunc.Setup();
             MathOper.Setup();
             BinOper.Setup();
-            Application.Run(new PaperMode());
+            Application.Run(new Form1());
         }
     }
 }

@@ -109,10 +109,10 @@ namespace WinFormCalc.Components.PaperModeComponent
         }
 
 
-        private static void ChangeState(ref bool isNumber, ref string payload)
+        /*private static void ChangeState(ref bool isNumber, ref string payload)
         {
             isNumber = !isNumber;
             payload = String.Empty;
-        }
+        }*/
     }
 }

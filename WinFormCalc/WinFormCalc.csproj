@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,14 @@
     <Compile Include="Components\PaperModeComponent\PaperModeComponent.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Convertors\Area.cs" />
+    <Compile Include="Convertors\AreaEnum.cs" />
+    <Compile Include="Convertors\Time.cs" />
+    <Compile Include="Convertors\TimeEnum.cs" />
+    <Compile Include="Convertors\VolumeEnum.cs" />
+    <Compile Include="Convertors\Length.cs" />
+    <Compile Include="Convertors\LengthEnum.cs" />
+    <Compile Include="Convertors\Volume.cs" />
     <Compile Include="Enums\BinFunction.cs" />
     <Compile Include="Calculators\Numbers\BinNumber.cs" />
     <Compile Include="Functions\BinOper.cs" />
@@ -92,6 +101,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Enums\VarSize.cs" />
     <Compile Include="Enums\VarType.cs" />
+    <Compile Include="Convertors\Data.cs" />
+    <Compile Include="Convertors\DataEnum.cs" />
+    <Compile Include="Convertors\Date.cs" />
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

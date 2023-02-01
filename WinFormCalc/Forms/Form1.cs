@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WinFormCalc.Convertors;
 
 namespace WinFormCalc
 {
@@ -20,7 +20,7 @@ namespace WinFormCalc
 
 
         private void button1_Click(object sender, EventArgs e) {
-            
+
             /*List<List<List<Number>>> values = new List<List<List<Number>>>{
                 new List<List<Number>>{
                     new List<Number>{
@@ -34,7 +34,7 @@ namespace WinFormCalc
                 }
             };*/
 
-            List<List<List<BinNumber>>> binValues = new List<List<List<BinNumber>>>
+            /*List<List<List<BinNumber>>> binValues = new List<List<List<BinNumber>>>
             {
                 new List<List<BinNumber>>
                 {
@@ -88,7 +88,7 @@ namespace WinFormCalc
 
             AdvanceCalculator calc = new AdvanceCalculator(values, new AdvanceNumber(PrimeOper.None, new List<Enum>()));
 
-            MessageBox.Show("Result: " + calc.GetResult().ToString());
+            MessageBox.Show("Result: " + calc.GetResult().ToString());*/
 
             /*List<Number> values1 = new List<Number>
             {
@@ -104,6 +104,28 @@ namespace WinFormCalc
             /*MessageBox.Show(MathGon.Calc(1, GonFunc.HArctan).ToString());
             MessageBox.Show(MathGon.Calc(1, GonFunc.Cotan).ToString());
             MessageBox.Show(MathGon.Calc(1, GonFunc.Sin).ToString());*/
+
+
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+            /*DateTime now = DateTime.Now;
+            DateTime newDate = now.AddDays(2000);
+
+            MessageBox.Show(now.ToString());
+            MessageBox.Show(Date.ConvertTimeSpanToString(Date.CompareDate(newDate, now)));*/
+
+            //MessageBox.Show(Data.Convert(1, DataEnum.YottaByte, DataEnum.Bit).ToString());
+
+            //MessageBox.Show(Length.Convert(1, LengthEnum.Foot, LengthEnum.Inch).ToString());
+
+            //MessageBox.Show(Volume.Convert(1, VolumeEnum.CubicMeter, VolumeEnum.Liter).ToString());
+
+            //MessageBox.Show(Area.Convert(10000, AreaEnum.SquareMeter, AreaEnum.Hectare).ToString());
+
+            MessageBox.Show(Time.Convert(1, TimeEnum.Month, TimeEnum.Day).ToString());
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
