@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormCalc.Convertors;
+using WinFormCalc.Transfers;
 
 namespace WinFormCalc
 {
@@ -125,7 +126,9 @@ namespace WinFormCalc
 
             //MessageBox.Show(Area.Convert(10000, AreaEnum.SquareMeter, AreaEnum.Hectare).ToString());
 
-            MessageBox.Show(Time.Convert(1, TimeEnum.Month, TimeEnum.Day).ToString());
+            //MessageBox.Show(Time.Convert(1, TimeEnum.Month, TimeEnum.Day).ToString());
+
+            //MessageBox.Show(Temperature.Convert(35.6, TemperatureEnum.Fahrenheit, TemperatureEnum.Kelvin).ToString());;;
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)

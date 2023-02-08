@@ -54,6 +54,10 @@
     </Compile>
     <Compile Include="Convertors\Area.cs" />
     <Compile Include="Convertors\AreaEnum.cs" />
+    <Compile Include="Convertors\Speed.cs" />
+    <Compile Include="Convertors\SpeedEnum.cs" />
+    <Compile Include="Convertors\Temperature.cs" />
+    <Compile Include="Convertors\TemperatureEnum.cs" />
     <Compile Include="Convertors\Time.cs" />
     <Compile Include="Convertors\TimeEnum.cs" />
     <Compile Include="Convertors\VolumeEnum.cs" />
