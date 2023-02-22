@@ -1,4 +1,4 @@
-﻿namespace WinFormCalc
+﻿namespace WinFormCalc.Forms
 {
     partial class PaperMode
     {

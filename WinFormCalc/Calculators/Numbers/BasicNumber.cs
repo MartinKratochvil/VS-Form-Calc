@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using WinFormCalc.Calculators.GoniometricFunctions.Enums;
+using WinFormCalc.Calculators.GoniometricFunctions.Functions;
 
-namespace WinFormCalc
+
+namespace WinFormCalc.Calculators.Numbers
 {
     public class BasicNumber
     {

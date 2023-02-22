@@ -10,7 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinFormCalc
+
+namespace WinFormCalc.Forms
 {
     public partial class Grid : Form
     {

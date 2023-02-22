@@ -7,10 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormCalc.Convertors;
-using WinFormCalc.Transfers;
 
-namespace WinFormCalc
+
+namespace WinFormCalc.Forms
 {
     public partial class Form1 : Form
     {
@@ -134,6 +133,11 @@ namespace WinFormCalc
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Escape) Application.Exit();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

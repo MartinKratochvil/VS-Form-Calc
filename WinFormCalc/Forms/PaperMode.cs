@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WinFormCalc.Components.PaperModeComponent;
 
-namespace WinFormCalc
+namespace WinFormCalc.Forms
 {
     public partial class PaperMode : Form
     {
@@ -35,8 +35,5 @@ namespace WinFormCalc
                 paperModeComponent.Calculate();
             }
         }
-
-
-        
     }
 }
