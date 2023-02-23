@@ -4,7 +4,6 @@ using System.Reflection;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 using WinFormCalc.Calculators.Numbers;
 
-
 namespace WinFormCalc.Calculators.GoniometricFunctions.Functions
 {
     public static class BinOper

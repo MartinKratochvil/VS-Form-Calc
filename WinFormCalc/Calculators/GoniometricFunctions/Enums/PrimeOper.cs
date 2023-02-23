@@ -1,5 +1,4 @@
 ﻿
-
 namespace WinFormCalc.Calculators.GoniometricFunctions.Enums
 {
     public enum PrimeOper

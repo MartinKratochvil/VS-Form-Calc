@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 
-
 namespace WinFormCalc.Calculators.Numbers
 {
     public class AdvanceNumber : BasicNumber

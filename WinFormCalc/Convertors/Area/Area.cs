@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace WinFormCalc.Convertors
 {
     public class Area

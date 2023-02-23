@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 using WinFormCalc.Calculators.GoniometricFunctions.Functions;
 
-
 namespace WinFormCalc.Calculators.Numbers
 {
     public class BasicNumber
@@ -31,7 +30,7 @@ namespace WinFormCalc.Calculators.Numbers
         }
 
 
-        public BasicNumber(double value, List<Enum> functions)
+        protected BasicNumber(double value, List<Enum> functions)
         {
             this.value = value;
             this.functions = functions;
@@ -53,20 +52,16 @@ namespace WinFormCalc.Calculators.Numbers
 
         protected virtual void Calculate()
         {
-            if (isCalculated || functions == null)
-            {
+            if (isCalculated || functions == null) {
                 return;
             }
 
-            functions.ForEach(function =>
-            {
-                if (function is Function)
-                {
+            functions.ForEach(function => {
+                if (function is Function) {
                     value = MathFunc.Activate(value, (Function)function);
                 }
-
-                if (function is GonFunc)
-                {
+                
+                if (function is GonFunc) {
                     value = MathGon.Calc(value, (GonFunc)function);
                 }
             });

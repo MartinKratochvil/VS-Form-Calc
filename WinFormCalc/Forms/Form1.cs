@@ -7,15 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WinFormCalc.Components.BasicCalcComponent;
 
 namespace WinFormCalc.Forms
 {
     public partial class Form1 : Form
     {
 
+        BasicCalcPanel panel;
+
+
         public Form1() {
             InitializeComponent();
+
+            panel = new BasicCalcPanel();
+            Controls.Add(panel);
         }
 
 
@@ -127,7 +133,10 @@ namespace WinFormCalc.Forms
 
             //MessageBox.Show(Time.Convert(1, TimeEnum.Month, TimeEnum.Day).ToString());
 
-            //MessageBox.Show(Temperature.Convert(35.6, TemperatureEnum.Fahrenheit, TemperatureEnum.Kelvin).ToString());;;
+            //MessageBox.Show(Temperature.Convert(35.6, TemperatureEnum.Fahrenheit, TemperatureEnum.Kelvin).ToString());
+
+
+            panel.Size = new Size(500, 600);
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)

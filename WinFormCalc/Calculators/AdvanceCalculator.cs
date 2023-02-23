@@ -3,7 +3,6 @@ using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 using WinFormCalc.Calculators.GoniometricFunctions.Functions;
 using WinFormCalc.Calculators.Numbers;
 
-
 namespace WinFormCalc
 {
 	public class AdvanceCalculator

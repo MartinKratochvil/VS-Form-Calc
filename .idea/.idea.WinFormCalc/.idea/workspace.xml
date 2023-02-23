@@ -5,22 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aae75a3-f407-4611-889f-a886b8f7a3aa" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Area.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/AreaEnum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Data.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/DataEnum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Date.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Length.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/LengthEnum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Speed.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/SpeedEnum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Temperature.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/TemperatureEnum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Time.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/TimeEnum.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Volume.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/VolumeEnum.cs" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcComponent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/ExampleConventor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/ExampleConventor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/PaperModeComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/PaperModeComponent.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Properties/AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1677081021270</updated>
-      <workItem from="1677081024103" duration="602000" />
+      <workItem from="1677081024103" duration="2864000" />
     </task>
     <servers />
   </component>

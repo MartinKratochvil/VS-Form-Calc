@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Reflection;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 
-
 namespace WinFormCalc.Calculators.GoniometricFunctions.Functions
 {
     public class MathFunc

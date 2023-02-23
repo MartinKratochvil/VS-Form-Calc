@@ -1,5 +1,4 @@
 ﻿
-
 namespace WinFormCalc.Convertors
 {
     public enum TimeEnum

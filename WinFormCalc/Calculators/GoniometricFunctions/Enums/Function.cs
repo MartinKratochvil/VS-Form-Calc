@@ -1,5 +1,4 @@
 ﻿
-
 namespace WinFormCalc.Calculators.GoniometricFunctions.Enums
 {
     public enum Function
@@ -13,6 +12,6 @@ namespace WinFormCalc.Calculators.GoniometricFunctions.Enums
         Ceil,
         Fact,
         Log,
-        Ln  
+        Ln
     }
 }
