@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 using WinFormCalc.Calculators.GoniometricFunctions.Functions;
 
-namespace WinFormCalc.Calculators.Numbers
+namespace WinFormCalc.Calculators.BasicCalculator
 {
     public class BasicNumber
     {

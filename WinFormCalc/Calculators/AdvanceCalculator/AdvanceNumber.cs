@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using WinFormCalc.Calculators.BasicCalculator;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 
-namespace WinFormCalc.Calculators.Numbers
+namespace WinFormCalc.Calculators.AdvanceCalculator
 {
     public class AdvanceNumber : BasicNumber
     {

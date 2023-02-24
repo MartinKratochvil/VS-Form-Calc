@@ -1,5 +1,5 @@
 ﻿
-namespace WinFormCalc.Convertors
+namespace WinFormCalc.Convertors.Speed
 {
     public enum SpeedEnum
     {

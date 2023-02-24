@@ -1,9 +1,9 @@
 ﻿using System;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 
-namespace WinFormCalc.Calculators.Numbers
+namespace WinFormCalc.Calculators.ProgrammerCalculator
 {
-    public class BinNumber
+    public class ProgrammerNumber
     {
         public long value;
 
@@ -12,7 +12,7 @@ namespace WinFormCalc.Calculators.Numbers
         public bool isList;
 
 
-        public BinNumber(string value, VarType type, VarSize size, BinFunction function)
+        public ProgrammerNumber(string value, VarType type, VarSize size, BinFunction function)
         {
             this.isList = false;
             this.function = function;
@@ -28,7 +28,7 @@ namespace WinFormCalc.Calculators.Numbers
         }
 
 
-        public BinNumber(long value, VarSize size, BinFunction function)
+        public ProgrammerNumber(long value, VarSize size, BinFunction function)
         {
             this.isList = false;
             this.value = value;
@@ -36,14 +36,14 @@ namespace WinFormCalc.Calculators.Numbers
         }
 
 
-        public BinNumber(long value)
+        public ProgrammerNumber(long value)
         {
             this.isList = false;
             this.value = value;
         }                                                                                                                                                                                                   
 
 
-        public BinNumber(BinFunction function)
+        public ProgrammerNumber(BinFunction function)
         {
             this.isList = true;
             this.function = function;

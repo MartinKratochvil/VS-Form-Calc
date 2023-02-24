@@ -6,7 +6,7 @@ namespace WinFormCalc.Components
     public static class TableDataManager
     {
 
-        public static void setAsymmetricalRows(TableLayoutPanel panel, List<Control> rows)
+        public static void SetAsymmetricalRows(TableLayoutPanel panel, List<Control> rows)
         {
             panel.ColumnStyles.Clear();
             panel.RowStyles.Clear();
@@ -30,7 +30,7 @@ namespace WinFormCalc.Components
         }
 
 
-        public static void setSymmetricalData(TableLayoutPanel panel, List<List<Control>> data)
+        public static void SetSymmetricalData(TableLayoutPanel panel, List<List<Control>> data)
         {
             panel.ColumnStyles.Clear();
             panel.RowStyles.Clear();
@@ -61,7 +61,7 @@ namespace WinFormCalc.Components
         //--------------------------------------------
         //---------- for asymmetrical data -----------
         //--------------------------------------------
-        private static int getTotalWidth(List<List<Control>> data)
+        private static int GetTotalWidth(List<List<Control>> data)
         {
             int totalWidth = 0;
 
@@ -81,7 +81,7 @@ namespace WinFormCalc.Components
         }
 
 
-        private static int getTotalHeight(List<List<Control>> data)
+        private static int GetTotalHeight(List<List<Control>> data)
         {
             int totalHeight = 0;
 

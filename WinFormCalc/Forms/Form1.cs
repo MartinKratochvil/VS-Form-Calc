@@ -27,19 +27,6 @@ namespace WinFormCalc.Forms
 
         private void button1_Click(object sender, EventArgs e) {
 
-            /*List<List<List<Number>>> values = new List<List<List<Number>>>{
-                new List<List<Number>>{
-                    new List<Number>{
-                        new Number(5, PrimeOper.None, new List<Enum>() {}), new Number(16, PrimeOper.Multiply, new List<Enum>() {Function.Sqrt}), new Number(-8, PrimeOper.None, new List<Enum>() {}), new Number(PrimeOper.None, new List<Enum>() {})
-                    }
-                },
-                new List<List<Number>>{
-                    new List<Number>{
-                        new Number(4, PrimeOper.None, new List<Enum>() {}), new Number(4, PrimeOper.None, new List<Enum>() {Function.Pow}), new Number(2, PrimeOper.Divide, new List<Enum>() {Function.Pow})
-                    }
-                }
-            };*/
-
             /*List<List<List<BinNumber>>> binValues = new List<List<List<BinNumber>>>
             {
                 new List<List<BinNumber>>
@@ -65,10 +52,10 @@ namespace WinFormCalc.Forms
 
             ProgrammerCalculator programmerCalculator = new ProgrammerCalculator(binValues, new BinNumber(BinFunction.None));
 
-            MessageBox.Show("kkt: " + programmerCalculator.GetResult());
+            MessageBox.Show("kkt: " + programmerCalculator.GetResult());*/
             
             
-            List<List<List<AdvanceNumber>>> values = new List<List<List<AdvanceNumber>>>
+            /*List<List<List<AdvanceNumber>>> values = new List<List<List<AdvanceNumber>>>
             {
                 new List<List<AdvanceNumber>>
                 {
@@ -95,15 +82,6 @@ namespace WinFormCalc.Forms
             AdvanceCalculator calc = new AdvanceCalculator(values, new AdvanceNumber(PrimeOper.None, new List<Enum>()));
 
             MessageBox.Show("Result: " + calc.GetResult().ToString());*/
-
-            /*List<Number> values1 = new List<Number>
-            {
-                new Number(4, false, false, false, true, false), new Number(5, true, false, false, true, true), new Number(9, false, true, true, false, true)
-            };
-
-            Calc calc = new Calc(values1);
-
-            MessageBox.Show(calc.GetResult().ToString());*/
 
             //Action i = MathGon.idk[(int)GonFunc.Sin];
             //i();

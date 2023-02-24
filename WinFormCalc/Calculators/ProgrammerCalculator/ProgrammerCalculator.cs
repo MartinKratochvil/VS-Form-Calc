@@ -1,37 +1,36 @@
 ﻿using System.Collections.Generic;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 using WinFormCalc.Calculators.GoniometricFunctions.Functions;
-using WinFormCalc.Calculators.Numbers;
 
-namespace WinFormCalc
+namespace WinFormCalc.Calculators.ProgrammerCalculator
 {
     public class ProgrammerCalculator
     {
         private bool isList;
 
-        private BinNumber number;
+        private ProgrammerNumber number;
 
         private List<ProgrammerCalculator> numbers;
 
-        public ProgrammerCalculator(BinNumber number)
+        public ProgrammerCalculator(ProgrammerNumber number)
         {
             this.isList = false;
             this.number = number;
         }
 
 
-        public ProgrammerCalculator(List<List<List<BinNumber>>> numbers, BinNumber number)
+        public ProgrammerCalculator(List<List<List<ProgrammerNumber>>> numbers, ProgrammerNumber number)
         {
             this.isList = true;
             this.number = number;
             this.numbers = new List<ProgrammerCalculator>();
 
-            numbers = new List<List<List<BinNumber>>>(numbers);
+            numbers = new List<List<List<ProgrammerNumber>>>(numbers);
 
-            List<BinNumber> values = new List<BinNumber>(numbers[0][0]);
+            List<ProgrammerNumber> values = new List<ProgrammerNumber>(numbers[0][0]);
             numbers.Remove(numbers[0]);
 
-            foreach (BinNumber value in values)
+            foreach (ProgrammerNumber value in values)
             {
                 if (!value.isList)
                 {
@@ -46,17 +45,17 @@ namespace WinFormCalc
         }
 
 
-        private BinNumber Calculate()
+        private ProgrammerNumber Calculate()
         {
             if (!isList)
             {
                 return this.number;
             }
 
-            List<BinNumber> numbers = new List<BinNumber>();
+            List<ProgrammerNumber> numbers = new List<ProgrammerNumber>();
             foreach (ProgrammerCalculator calc in this.numbers)
             {
-                BinNumber number = calc.Calculate();
+                ProgrammerNumber number = calc.Calculate();
 
                 if (number.function != BinFunction.None)
                 {

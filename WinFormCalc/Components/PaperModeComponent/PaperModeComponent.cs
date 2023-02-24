@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using WinFormCalc.Calculators.Numbers;
+using WinFormCalc.Calculators.AdvanceCalculator;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 
 namespace WinFormCalc.Components.PaperModeComponent
@@ -26,7 +26,7 @@ namespace WinFormCalc.Components.PaperModeComponent
             try
             {
                 AdvanceCalculator calc = new AdvanceCalculator(
-                    ExampleConventor.Convert(GetExample()),
+                    ExampleConvertor.Convert(GetExample()),
                     new AdvanceNumber(PrimeOper.None, new List<Enum>())
                 );
 

@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 using WinFormCalc.Calculators.GoniometricFunctions.Functions;
-using WinFormCalc.Calculators.Numbers;
 
-namespace WinFormCalc
+namespace WinFormCalc.Calculators.AdvanceCalculator
 {
 	public class AdvanceCalculator
 	{

@@ -47,14 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculators\AdvanceCalculator.cs" />
+    <Compile Include="Calculators\AdvanceCalculator\AdvanceCalculator.cs" />
     <Compile Include="Components\BasicCalcComponent\BasicCalcKeyboard.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Components\BasicCalcComponent\BasicCalcPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Components\PaperModeComponent\ExampleConventor.cs" />
+    <Compile Include="Components\PaperModeComponent\ExampleConvertor.cs" />
     <Compile Include="Components\PaperModeComponent\PaperModeComponent.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -71,11 +71,7 @@
     <Compile Include="Convertors\Length\Length.cs" />
     <Compile Include="Convertors\Length\LengthEnum.cs" />
     <Compile Include="Convertors\Volume\Volume.cs" />
-    <Compile Include="Calculators\GoniometricFunctions\Enums\BinFunction.cs" />
-    <Compile Include="Calculators\Numbers\BinNumber.cs" />
-    <Compile Include="Calculators\GoniometricFunctions\Functions\BinOper.cs" />
-    <Compile Include="Calculators\GoniometricFunctions\Enums\Function.cs" />
-    <Compile Include="Calculators\GoniometricFunctions\Enums\GonFunc.cs" />
+    <Compile Include="Calculators\ProgrammerCalculator\ProgrammerNumber.cs" />
     <Compile Include="Components\GraphComponent\GraphControl.cs" />
     <Compile Include="Components\GraphComponent\GraphRender.cs" />
     <Compile Include="Forms\Grid.cs">
@@ -88,18 +84,15 @@
     <Compile Include="Components\GraphComponent\GridControl.cs" />
     <Compile Include="Components\GraphComponent\GridRender.cs" />
     <Compile Include="Components\GraphComponent\LabelsRender.cs" />
-    <Compile Include="Calculators\GoniometricFunctions\Functions\MathFunc.cs" />
-    <Compile Include="Calculators\GoniometricFunctions\Functions\MathGon.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calculators\BasicCalculator.cs" />
-    <Compile Include="Calculators\GoniometricFunctions\Functions\MathOper.cs" />
-    <Compile Include="Calculators\Numbers\AdvanceNumber.cs" />
-    <Compile Include="Calculators\Numbers\BasicNumber.cs" />
+    <Compile Include="Calculators\BasicCalculator\BasicCalculator.cs" />
+    <Compile Include="Calculators\AdvanceCalculator\AdvanceNumber.cs" />
+    <Compile Include="Calculators\BasicCalculator\BasicNumber.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,12 +105,19 @@
     <Compile Include="Forms\PaperMode.Designer.cs">
       <DependentUpon>PaperMode.cs</DependentUpon>
     </Compile>
-    <Compile Include="Calculators\GoniometricFunctions\Enums\PrimeOper.cs" />
+    <Compile Include="Operations\Enums\BinFunction.cs" />
+    <Compile Include="Operations\Enums\Function.cs" />
+    <Compile Include="Operations\Enums\GonFunc.cs" />
+    <Compile Include="Operations\Enums\PrimeOper.cs" />
+    <Compile Include="Operations\Enums\VarSize.cs" />
+    <Compile Include="Operations\Enums\VarType.cs" />
+    <Compile Include="Operations\Functions\BinOper.cs" />
+    <Compile Include="Operations\Functions\MathFunc.cs" />
+    <Compile Include="Operations\Functions\MathGon.cs" />
+    <Compile Include="Operations\Functions\MathOper.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Calculators\ProgrammerCalculator.cs" />
+    <Compile Include="Calculators\ProgrammerCalculator\ProgrammerCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Calculators\GoniometricFunctions\Enums\VarSize.cs" />
-    <Compile Include="Calculators\GoniometricFunctions\Enums\VarType.cs" />
     <Compile Include="Convertors\Data\Data.cs" />
     <Compile Include="Convertors\Data\DataEnum.cs" />
     <Compile Include="Convertors\Date\Date.cs" />

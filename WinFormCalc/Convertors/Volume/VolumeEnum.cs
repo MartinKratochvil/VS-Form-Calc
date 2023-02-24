@@ -1,5 +1,5 @@
 ﻿
-namespace WinFormCalc.Convertors
+namespace WinFormCalc.Convertors.Volume
 {
     public enum VolumeEnum
     {

@@ -5,21 +5,74 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aae75a3-f407-4611-889f-a886b8f7a3aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceCalculator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceNumber.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicCalculator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicNumber.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/ProgrammerCalculator/ProgrammerCalculator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/ProgrammerCalculator/ProgrammerNumber.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Enums/BinFunction.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Enums/Function.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Enums/GonFunc.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Enums/PrimeOper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Enums/VarSize.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Enums/VarType.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/BinOper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunc.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathGon.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathOper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcComponent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/ExampleConventor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/ExampleConventor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/GoniometricFunctions/Enums/BinFunction.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/GoniometricFunctions/Enums/Function.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/GoniometricFunctions/Enums/GonFunc.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/GoniometricFunctions/Enums/PrimeOper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/GoniometricFunctions/Enums/VarSize.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/GoniometricFunctions/Enums/VarType.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/GoniometricFunctions/Functions/BinOper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/GoniometricFunctions/Functions/MathFunc.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/GoniometricFunctions/Functions/MathGon.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/GoniometricFunctions/Functions/MathOper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/Numbers/AdvanceNumber.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/Numbers/BasicNumber.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/Numbers/BinNumber.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/ProgrammerCalculator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GraphComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GraphComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GraphControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GraphControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GraphRender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GraphRender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GridControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GridControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GridRender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GridRender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/LabelsRender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/LabelsRender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/ExampleConventor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/ExampleConvertor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/PaperModeComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/PaperModeComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Area/Area.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Area/Area.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Area/AreaEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Area/AreaEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Data/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Data/Data.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Data/DataEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Data/DataEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Date/Date.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Date/Date.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Length/Length.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Length/Length.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Length/LengthEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Length/LengthEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Speed/Speed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Speed/Speed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Speed/SpeedEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Speed/SpeedEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Temperature/Temperature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Temperature/Temperature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Temperature/TemperatureEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Temperature/TemperatureEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Time/Time.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Time/Time.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Time/TimeEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Time/TimeEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Volume/Volume.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Volume/Volume.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Volume/VolumeEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Volume/VolumeEnum.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Properties/AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Properties/AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/Grid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/Grid.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2M6HGbfiuQacQEQmUVg0w2vNtgS" />
   <component name="ProjectViewState">
@@ -31,6 +84,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -70,6 +124,7 @@
       <option name="presentableId" value="Default" />
       <updated>1677081021270</updated>
       <workItem from="1677081024103" duration="2864000" />
+      <workItem from="1677243429606" duration="638000" />
     </task>
     <servers />
   </component>

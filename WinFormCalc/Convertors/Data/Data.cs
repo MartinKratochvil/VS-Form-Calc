@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WinFormCalc.Convertors
+namespace WinFormCalc.Convertors.Data
 {
     public static class Data
     {

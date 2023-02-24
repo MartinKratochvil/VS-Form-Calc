@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using WinFormCalc.Calculators.Numbers;
 
-namespace WinFormCalc
+namespace WinFormCalc.Calculators.BasicCalculator
 {
     public class BasicCalculator
     {

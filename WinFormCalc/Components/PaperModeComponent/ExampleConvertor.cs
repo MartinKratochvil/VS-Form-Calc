@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using WinFormCalc.Calculators.Numbers;
+using WinFormCalc.Calculators.AdvanceCalculator;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 
 namespace WinFormCalc.Components.PaperModeComponent
 {
-    public static class ExampleConventor
+    public static class ExampleConvertor
     {
 
         public static List<List<List<AdvanceNumber>>> Convert(string example)

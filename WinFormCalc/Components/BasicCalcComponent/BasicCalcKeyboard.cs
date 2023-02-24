@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormCalc.Calculators.Numbers;
 
 namespace WinFormCalc.Components.BasicCalcComponent
 {
@@ -25,7 +24,7 @@ namespace WinFormCalc.Components.BasicCalcComponent
             Size = new Size(1280, 700);
             BackColor = Color.DeepPink;
 
-            TableDataManager.setSymmetricalData(this, keyboard);
+            TableDataManager.SetSymmetricalData(this, keyboard);
         }
 
 

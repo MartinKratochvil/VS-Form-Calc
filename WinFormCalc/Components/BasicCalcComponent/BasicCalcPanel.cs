@@ -27,7 +27,7 @@ namespace WinFormCalc.Components.BasicCalcComponent
             BackColor= Color.Pink;
 
             List<Control> rows = new List<Control> { example, number, keyboard };
-            TableDataManager.setAsymmetricalRows(this, rows);
+            TableDataManager.SetAsymmetricalRows(this, rows);
         }
 
 

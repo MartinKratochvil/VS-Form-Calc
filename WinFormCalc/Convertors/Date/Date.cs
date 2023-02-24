@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WinFormCalc.Convertors
+namespace WinFormCalc.Convertors.Date
 {
     public static class Date
     {

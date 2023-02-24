@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormCalc.Components.GraphComponent;
 
 
 namespace WinFormCalc.Forms

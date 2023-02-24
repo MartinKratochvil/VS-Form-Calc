@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using WinFormCalc.Calculators.AdvanceCalculator;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
-using WinFormCalc.Calculators.Numbers;
 
 namespace WinFormCalc.Calculators.GoniometricFunctions.Functions
 {
