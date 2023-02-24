@@ -48,6 +48,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculators\AdvanceCalculator\AdvanceCalculator.cs" />
+    <Compile Include="Calculators\ProgrammerCalculator\VarSize.cs" />
+    <Compile Include="Calculators\ProgrammerCalculator\VarType.cs" />
     <Compile Include="Components\BasicCalcComponent\BasicCalcKeyboard.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -105,16 +107,16 @@
     <Compile Include="Forms\PaperMode.Designer.cs">
       <DependentUpon>PaperMode.cs</DependentUpon>
     </Compile>
-    <Compile Include="Operations\Enums\BinFunction.cs" />
-    <Compile Include="Operations\Enums\Function.cs" />
-    <Compile Include="Operations\Enums\GonFunc.cs" />
-    <Compile Include="Operations\Enums\PrimeOper.cs" />
-    <Compile Include="Operations\Enums\VarSize.cs" />
-    <Compile Include="Operations\Enums\VarType.cs" />
-    <Compile Include="Operations\Functions\BinOper.cs" />
-    <Compile Include="Operations\Functions\MathFunc.cs" />
-    <Compile Include="Operations\Functions\MathGon.cs" />
-    <Compile Include="Operations\Functions\MathOper.cs" />
+    <Compile Include="Operations\Functions\MathFunction\Function.cs" />
+    <Compile Include="Operations\Functions\MathFunction\MathFunc.cs" />
+    <Compile Include="Operations\Functions\MathGonFunction\GonFunc.cs" />
+    <Compile Include="Operations\Functions\MathGonFunction\MathGon.cs" />
+    <Compile Include="Operations\PrimeOperations\AdvacePrimeOper\AdvacePrimeOper.cs" />
+    <Compile Include="Operations\PrimeOperations\AdvacePrimeOper\AdvancePrimeOperHandler.cs" />
+    <Compile Include="Operations\PrimeOperations\BasicPrimeOper\BasicPrimeOper.cs" />
+    <Compile Include="Operations\PrimeOperations\BasicPrimeOper\BasicPrimeOperHandler.cs" />
+    <Compile Include="Operations\PrimeOperations\BinPrimeOper\BinPrimeOper.cs" />
+    <Compile Include="Operations\PrimeOperations\BinPrimeOper\BinPrimeOperHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Calculators\ProgrammerCalculator\ProgrammerCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -155,6 +157,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Operations\Enums" />
+    <Folder Include="Operations\PrimeOperations" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

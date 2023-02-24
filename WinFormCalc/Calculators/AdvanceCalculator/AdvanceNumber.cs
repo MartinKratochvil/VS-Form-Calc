@@ -2,36 +2,31 @@
 using System.Collections.Generic;
 using WinFormCalc.Calculators.BasicCalculator;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
+using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 
 namespace WinFormCalc.Calculators.AdvanceCalculator
 {
     public class AdvanceNumber : BasicNumber
     {
 
-        public bool isList;
-
-        public PrimeOper primeOper { get; }
+        public bool IsList;
 
 
-        public AdvanceNumber(double value, PrimeOper primeOper, List<Enum> functions) : base(value, functions)
+        public AdvanceNumber(double value, AdvancePrimeOper primeOper, List<Enum> functions) : base(value, primeOper, functions)
         {
-            this.isList = false;
-            this.primeOper = primeOper;
+            IsList = false;
         }
 
 
         public AdvanceNumber(double value) : base(value)
         {
-            this.isList = false;
-            this.primeOper = PrimeOper.None;
+            IsList = false;
         }
 
 
-        public AdvanceNumber(PrimeOper primeOper, List<Enum> functions) : base()
+        public AdvanceNumber(AdvancePrimeOper primeOper, List<Enum> functions) : base(primeOper, functions)
         {
-            this.isList = true;
-            this.functions = functions;
-            this.primeOper = primeOper;
+            IsList = true;
         }
     }
 }

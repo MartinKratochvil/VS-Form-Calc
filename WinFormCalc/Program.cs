@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
-using WinFormCalc.Calculators.GoniometricFunctions.Functions;
 using WinFormCalc.Forms;
+using WinFormCalc.Operations.Functions;
+using WinFormCalc.Operations.Functions.MathFunction;
+using WinFormCalc.Operations.Functions.MathGonFunction;
+using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
+using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
+using WinFormCalc.Operations.PrimeOperations.BinPrimeOper;
 
 
 namespace WinFormCalc
@@ -16,11 +21,14 @@ namespace WinFormCalc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
             MathGon.Setup();
             MathFunc.Setup();
-            MathOper.Setup();
-            BinOper.Setup();
-            Application.Run(new MainForm());
+            BasicPrimeOperHandler.Setup();
+            AdvancePrimeOperHandler.Setup();
+            BinPrimeOperHandler.Setup();
+            
+            Application.Run(new Form1());
         }
     }
 }

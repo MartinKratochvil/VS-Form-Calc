@@ -5,7 +5,7 @@ namespace WinFormCalc.Calculators.BasicCalculator
     public class BasicCalculator
     {
 
-        private List<BasicNumber> numbers;
+        private readonly List<BasicNumber> numbers;
 
 
         public BasicCalculator (List<BasicNumber> numbers)
@@ -18,8 +18,7 @@ namespace WinFormCalc.Calculators.BasicCalculator
         {
             double result = 0;
 
-            foreach (BasicNumber number in numbers)
-            {
+            foreach (BasicNumber number in numbers) {
                 result += number.Value;
             }
 

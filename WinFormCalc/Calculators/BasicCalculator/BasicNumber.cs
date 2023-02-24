@@ -1,68 +1,74 @@
 ﻿using System;
 using System.Collections.Generic;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
-using WinFormCalc.Calculators.GoniometricFunctions.Functions;
+using WinFormCalc.Operations.Functions;
+using WinFormCalc.Operations.Functions.MathFunction;
+using WinFormCalc.Operations.Functions.MathGonFunction;
+using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 
 namespace WinFormCalc.Calculators.BasicCalculator
 {
     public class BasicNumber
     {
+        private double value;
 
-        protected double value;
+        private bool isCalculated;
 
-        protected List<Enum> functions;
+        protected List<Enum> Functions;
+        
+        public AdvancePrimeOper PrimeOper { get; }
 
-        protected bool isCalculated;
-
-
-        public double Value
+        
+        public virtual double Value
         {
-            get
-            {
+            get {
                 Calculate();
 
                 return value;
             }
-            set
-            {
-                this.value = value;
-            }
+            set => this.value = value;
         }
 
 
-        protected BasicNumber(double value, List<Enum> functions)
+        public BasicNumber(double value, AdvancePrimeOper primeOper, List<Enum> functions)
         {
             this.value = value;
-            this.functions = functions;
-            this.isCalculated = false;
+            PrimeOper = primeOper;
+            Functions = functions;
+            isCalculated = false;
         }
 
 
+        public BasicNumber(AdvancePrimeOper primeOper, List<Enum> functions)
+        {
+            PrimeOper = primeOper;
+            Functions = functions;
+            isCalculated = false;
+        }
+
+        
         public BasicNumber(double value)
         {
             this.value = value;
-            this.isCalculated = false;
-        }
-
-        public BasicNumber()
-        {
-            this.isCalculated = false;
+            PrimeOper = AdvancePrimeOper.None;
+            Functions = new List<Enum>();
+            isCalculated = false;
         }
 
 
-        protected virtual void Calculate()
+        private void Calculate()
         {
-            if (isCalculated || functions == null) {
+            if (isCalculated || Functions == null) {
                 return;
             }
 
-            functions.ForEach(function => {
-                if (function is Function) {
-                    value = MathFunc.Activate(value, (Function)function);
+            Functions.ForEach(function => {
+                if (function is Function mathFunction) {
+                    value = MathFunc.Activate(value, mathFunction);
                 }
                 
-                if (function is GonFunc) {
-                    value = MathGon.Calc(value, (GonFunc)function);
+                if (function is GonFunc gonFunc) {
+                    value = MathGon.Calc(value, gonFunc);
                 }
             });
 

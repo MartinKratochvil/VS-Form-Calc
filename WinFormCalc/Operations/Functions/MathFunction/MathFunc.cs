@@ -1,27 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 
-namespace WinFormCalc.Calculators.GoniometricFunctions.Functions
+namespace WinFormCalc.Operations.Functions.MathFunction
 {
     public class MathFunc
     {
 
         private delegate double FuncDel(double x);
 
-        private static Dictionary<Function, Delegate> func = new Dictionary<Function, Delegate>();
+        private static readonly Dictionary<Function, Delegate> Operations = new Dictionary<Function, Delegate>();
 
 
         public static void Setup()
         {
             for (int i = 0; i < Enum.GetNames(typeof(Function)).Length; i++)
             {
-                MethodInfo method = typeof(MathFunc).GetMethod(Enum.GetName(typeof(Function), i));
+                MethodInfo method = typeof(MathFunc).GetMethod(Enum.GetName(typeof(Function), i) ?? string.Empty);
 
                 if (method != null)
                 {
-                    func.Add((Function)i, (FuncDel)Delegate.CreateDelegate(typeof(FuncDel), method));
+                    Operations.Add((Function)i, (FuncDel)Delegate.CreateDelegate(typeof(FuncDel), method));
                 }
             }
         }
@@ -29,7 +28,7 @@ namespace WinFormCalc.Calculators.GoniometricFunctions.Functions
 
         public static double Activate(double x, Function gonFunc)
         {
-            return (double)func[gonFunc].DynamicInvoke(x);
+            return (double)Operations[gonFunc].DynamicInvoke(x);
         }
 
 

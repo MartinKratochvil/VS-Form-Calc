@@ -1,37 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 using WinFormCalc.Calculators.ProgrammerCalculator;
 
-namespace WinFormCalc.Calculators.GoniometricFunctions.Functions
+namespace WinFormCalc.Operations.PrimeOperations.BinPrimeOper
 {
-    public static class BinOper
+    public static class BinPrimeOperHandler
     {
-        private delegate void BinDel(List<ProgrammerNumber> values, ProgrammerNumber x);
+        private delegate void PrimeOperDel(List<ProgrammerNumber> values, ProgrammerNumber x);
 
-        private readonly static Dictionary<BinFunction, Delegate> func = new Dictionary<BinFunction, Delegate>();
+        private static readonly Dictionary<PrimeOperations.BinPrimeOper.BinPrimeOper, PrimeOperDel> Operations = new Dictionary<PrimeOperations.BinPrimeOper.BinPrimeOper, PrimeOperDel>();
 
 
         public static void Setup()
         {
-            for (int i = 0; i < Enum.GetNames(typeof(BinFunction)).Length; i++)
-            {
-                MethodInfo method = typeof(BinOper).GetMethod(Enum.GetName(typeof(BinFunction), i));
+            for (int i = 0; i < Enum.GetNames(typeof(PrimeOperations.BinPrimeOper.BinPrimeOper)).Length; i++) {
+                MethodInfo method = typeof(BinPrimeOperHandler).GetMethod(Enum.GetName(typeof(PrimeOperations.BinPrimeOper.BinPrimeOper), i) ?? string.Empty);
 
-                if (method != null)
-                {
-                    func.Add((BinFunction)i, (BinDel)Delegate.CreateDelegate(typeof(BinDel), method));
+                if (method != null) {
+                    Operations.Add((PrimeOperations.BinPrimeOper.BinPrimeOper)i, (PrimeOperDel)Delegate.CreateDelegate(typeof(PrimeOperDel), method));
                 }
             }
         }
 
 
-        public static void Activate(List<ProgrammerNumber> values, ProgrammerNumber x, BinFunction binFunction)
+        public static void Handle(List<ProgrammerNumber> values, ProgrammerNumber x, PrimeOperations.BinPrimeOper.BinPrimeOper primeOper)
         {
-            if (binFunction != BinFunction.None)
-            {
-                func[binFunction].DynamicInvoke(values, x);
+            if (primeOper != PrimeOperations.BinPrimeOper.BinPrimeOper.None) {
+                Operations[primeOper].DynamicInvoke(values, x);
             }
         }
 

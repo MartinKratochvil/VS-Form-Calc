@@ -1,5 +1,5 @@
 ﻿
-namespace WinFormCalc.Calculators.GoniometricFunctions.Enums
+namespace WinFormCalc.Operations.Functions.MathFunction
 {
     public enum Function
     {

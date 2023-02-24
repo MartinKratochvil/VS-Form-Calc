@@ -1,29 +1,29 @@
 ﻿using System.Collections.Generic;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
-using WinFormCalc.Calculators.GoniometricFunctions.Functions;
+using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 
 namespace WinFormCalc.Calculators.AdvanceCalculator
 {
 	public class AdvanceCalculator
 	{
 
-        private bool isList;
+        private readonly bool isList;
 
-        private AdvanceNumber number;
+        private readonly AdvanceNumber number;
 
-        private List<AdvanceCalculator> numbers;
+        private readonly List<AdvanceCalculator> numbers;
 
 
-        public AdvanceCalculator(AdvanceNumber number)
+        private AdvanceCalculator(AdvanceNumber number)
         {
-            this.isList = false;
+            isList = false;
             this.number = number;
         }
 
 
         public AdvanceCalculator(List<List<List<AdvanceNumber>>> numbers, AdvanceNumber number)
         {
-            this.isList = true;
+            isList = true;
             this.number = number;
             this.numbers = new List<AdvanceCalculator>();
 
@@ -32,12 +32,9 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
             List<AdvanceNumber> values = new List<AdvanceNumber>(numbers[0][0]);
             numbers.Remove(numbers[0]);
 
-            foreach (AdvanceNumber value in values)
-            {
-                if (!value.isList)
-                {
+            foreach (AdvanceNumber value in values) {
+                if (!value.IsList) {
                     this.numbers.Add(new AdvanceCalculator(value));
-
                     continue;
                 }
 
@@ -46,22 +43,19 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
             }
         }
 
+
         private AdvanceNumber Calculate()
         {   
-            if (!isList)
-            {
-                return this.number;
+            if (!isList) {
+                return number;
             }
 
             List<AdvanceNumber> numbers = new List<AdvanceNumber>();
-            foreach (AdvanceCalculator calc in this.numbers)
-            {
+            foreach (AdvanceCalculator calc in this.numbers) {
                 AdvanceNumber value = calc.Calculate();
 
-                if (value.primeOper != PrimeOper.None)
-                {
-                    MathOper.Activate(numbers, value, value.primeOper);
-
+                if (value.PrimeOper != AdvancePrimeOper.None) {
+                    AdvancePrimeOperHandler.Handle(numbers, value, value.PrimeOper);
                     continue;
                 }
 
@@ -69,15 +63,15 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
             };
 
             double result = 0;
-            numbers.ForEach(number =>
-            {
+            numbers.ForEach(number => {
                 result += number.Value;
             });
 
             this.number.Value = result;
-            this.number.isList = false;
+            this.number.IsList = false;
             return this.number;
         }
+
 
         public double GetResult()
         {

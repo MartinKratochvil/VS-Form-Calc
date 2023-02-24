@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 
-namespace WinFormCalc.Calculators.GoniometricFunctions.Functions
+namespace WinFormCalc.Operations.Functions.MathGonFunction
 {
     public class MathGon
     {

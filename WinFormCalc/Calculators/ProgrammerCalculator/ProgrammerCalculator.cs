@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
-using WinFormCalc.Calculators.GoniometricFunctions.Functions;
+using WinFormCalc.Operations.PrimeOperations.BinPrimeOper;
 
 namespace WinFormCalc.Calculators.ProgrammerCalculator
 {
@@ -57,9 +57,9 @@ namespace WinFormCalc.Calculators.ProgrammerCalculator
             {
                 ProgrammerNumber number = calc.Calculate();
 
-                if (number.function != BinFunction.None)
+                if (number.function != BinPrimeOper.None)
                 {
-                    BinOper.Activate(numbers, number, number.function);
+                    BinPrimeOperHandler.Handle(numbers, number, number.function);
 
                     continue;
                 }

@@ -1,11 +1,12 @@
 ﻿
-namespace WinFormCalc.Calculators.GoniometricFunctions.Enums
+namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper
 {
-    public enum PrimeOper
+    public enum AdvancePrimeOper
     {
         None,
         Multiply,
         Divide,
+        Modulo,
         Pow,
         Sqrt,
         Log,

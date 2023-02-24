@@ -1,7 +1,7 @@
 ﻿
-namespace WinFormCalc.Calculators.GoniometricFunctions.Enums
+namespace WinFormCalc.Operations.PrimeOperations.BinPrimeOper
 {
-    public enum BinFunction
+    public enum BinPrimeOper
     {
         None,
         Multiply,

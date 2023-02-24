@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using WinFormCalc.Calculators.AdvanceCalculator;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
+using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 
 namespace WinFormCalc.Components.PaperModeComponent
 {
@@ -15,7 +16,7 @@ namespace WinFormCalc.Components.PaperModeComponent
             values[0].Add(new List<AdvanceNumber>());
 
             string payload = String.Empty;
-            PrimeOper primeOper = PrimeOper.None;
+            AdvancePrimeOper advancePrimeOper = AdvancePrimeOper.None;
             bool isNegative = false;
             
             int i = 0; 
@@ -31,7 +32,7 @@ namespace WinFormCalc.Components.PaperModeComponent
 
                 if (c == '(' && payload == String.Empty)
                 {
-                    values[i][values[i].Count - 1].Add(new AdvanceNumber(primeOper, new List<Enum>()));
+                    values[i][values[i].Count - 1].Add(new AdvanceNumber(advancePrimeOper, new List<Enum>()));
 
                     i++;
 
@@ -41,7 +42,7 @@ namespace WinFormCalc.Components.PaperModeComponent
                     }
 
                     values[i].Add(new List<AdvanceNumber>());
-                    primeOper = PrimeOper.None;
+                    advancePrimeOper = AdvancePrimeOper.None;
 
                     continue;
                 }
@@ -56,13 +57,13 @@ namespace WinFormCalc.Components.PaperModeComponent
                     values[i][values[i].Count - 1].Add(new AdvanceNumber
                     (
                         isNegative ? (num * -1) : num,
-                        primeOper,
+                        advancePrimeOper,
                         new List<Enum>()
                     ));
                 }
 
                 payload = String.Empty;
-                primeOper = PrimeOper.None;
+                advancePrimeOper = AdvancePrimeOper.None;
                 isNegative = false;
 
                 switch (c)
@@ -76,13 +77,13 @@ namespace WinFormCalc.Components.PaperModeComponent
                     }
                     case '*':
                     {
-                        primeOper = PrimeOper.Multiply;
+                        advancePrimeOper = AdvancePrimeOper.Multiply;
 
                         break;
                     }
                     case '/':
                     {
-                        primeOper = PrimeOper.Divide;
+                        advancePrimeOper = AdvancePrimeOper.Divide;
                         
                         break;
                     }

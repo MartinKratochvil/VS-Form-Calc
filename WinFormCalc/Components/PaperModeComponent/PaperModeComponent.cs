@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using WinFormCalc.Calculators.AdvanceCalculator;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
+using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 
 namespace WinFormCalc.Components.PaperModeComponent
 {
@@ -27,7 +28,7 @@ namespace WinFormCalc.Components.PaperModeComponent
             {
                 AdvanceCalculator calc = new AdvanceCalculator(
                     ExampleConvertor.Convert(GetExample()),
-                    new AdvanceNumber(PrimeOper.None, new List<Enum>())
+                    new AdvanceNumber(AdvancePrimeOper.None, new List<Enum>())
                 );
 
                 string result = calc.GetResult().ToString();

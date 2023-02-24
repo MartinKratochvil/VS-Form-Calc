@@ -2,37 +2,34 @@
 using System.Collections.Generic;
 using System.Reflection;
 using WinFormCalc.Calculators.AdvanceCalculator;
-using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 
-namespace WinFormCalc.Calculators.GoniometricFunctions.Functions
+namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper
 {
-    public class MathOper
+    public class AdvancePrimeOperHandler
     {
 
-        private delegate void OperDel(List<AdvanceNumber> values, AdvanceNumber x);
+        private delegate void PrimeOperDel(List<AdvanceNumber> values, AdvanceNumber x);
 
-        private readonly static Dictionary<PrimeOper, Delegate> func = new Dictionary<PrimeOper, Delegate>();
+        private static readonly Dictionary<AdvancePrimeOper, PrimeOperDel> Operations = new Dictionary<AdvancePrimeOper, PrimeOperDel>();
 
 
         public static void Setup()
         {
-            for (int i = 0; i < Enum.GetNames(typeof(PrimeOper)).Length; i++)
-            {
-                MethodInfo method = typeof(MathOper).GetMethod(Enum.GetName(typeof(PrimeOper), i));
+            for (int i = 0; i < Enum.GetNames(typeof(AdvancePrimeOper)).Length; i++) {
+                MethodInfo method = typeof(AdvancePrimeOperHandler).GetMethod(Enum.GetName(typeof(AdvancePrimeOper), i) ?? string.Empty);
 
-                if (method != null)
-                {
-                    func.Add((PrimeOper)i, (OperDel)Delegate.CreateDelegate(typeof(OperDel), method));
+                if (method != null) {
+                    Operations.Add((AdvancePrimeOper)i, (PrimeOperDel)Delegate.CreateDelegate(typeof(PrimeOperDel), method));
                 }
             }
         }
 
 
-        public static void Activate(List<AdvanceNumber> values, AdvanceNumber x, PrimeOper primeOper)
+        public static void Handle(List<AdvanceNumber> values, AdvanceNumber x, AdvancePrimeOper primeOper)
         {
-            if (primeOper != PrimeOper.None)
+            if (primeOper != AdvancePrimeOper.None)
             {
-                func[primeOper].DynamicInvoke(values, x);
+                Operations[primeOper].DynamicInvoke(values, x);
             }
         }
 
@@ -46,6 +43,12 @@ namespace WinFormCalc.Calculators.GoniometricFunctions.Functions
         public static void Divide(List<AdvanceNumber> values, AdvanceNumber x)
         {
             values[values.Count - 1] = new AdvanceNumber(values[values.Count - 1].Value / x.Value);
+        }
+        
+        
+        public static void Modulo(List<AdvanceNumber> values, AdvanceNumber x)
+        {
+            values[values.Count - 1] = new AdvanceNumber(values[values.Count - 1].Value % x.Value);
         }
 
 
