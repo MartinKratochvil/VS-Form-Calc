@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace WinFormCalc
+namespace WinFormCalc.Operations.Functions.MathGonFunction
 {
     public class MathGon
     {
 
-        public delegate double GonDel(double x);
+        private delegate double GonDel(double x);
 
-        public static Dictionary<GonFunc, Delegate> func = new Dictionary<GonFunc, Delegate>();
+        private static Dictionary<GonFunc, Delegate> func = new Dictionary<GonFunc, Delegate>();
 
 
         public static void Setup()
@@ -25,9 +20,6 @@ namespace WinFormCalc
                 
                 if (method != null)
                 {
-                    Func<Type[], Type> getType = Expression.GetActionType;
-                    IEnumerable<Type> types = method.GetParameters().Select(p => p.ParameterType);
-
                     func.Add((GonFunc)i, (GonDel)Delegate.CreateDelegate(typeof(GonDel), method));
                 }
             }
@@ -54,7 +46,7 @@ namespace WinFormCalc
 
         public static double Calc(double x, GonFunc gonFunc)
         {
-            return (double)MathGon.func[gonFunc].DynamicInvoke(x);
+            return (double)func[gonFunc].DynamicInvoke(x);
         } 
 
 
@@ -198,7 +190,7 @@ namespace WinFormCalc
 
 
         public static double HArccotan(double x)
-        {
+        {   
             return Math.Log((x + 1) / (x - 1)) / 2;
         }
 
