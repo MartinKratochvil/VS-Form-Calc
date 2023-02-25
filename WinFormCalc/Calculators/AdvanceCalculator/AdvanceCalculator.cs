@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 
 namespace WinFormCalc.Calculators.AdvanceCalculator

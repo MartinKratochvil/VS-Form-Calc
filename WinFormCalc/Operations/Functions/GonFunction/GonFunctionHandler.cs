@@ -2,58 +2,37 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace WinFormCalc.Operations.Functions.MathGonFunction
+namespace WinFormCalc.Operations.Functions.GonFunction
 {
-    public class MathGon
+    public class GonFunctionHandler
     {
 
-        private delegate double GonDel(double x);
+        private delegate double GonFunctionDel(double x);
 
-        private static Dictionary<GonFunc, Delegate> func = new Dictionary<GonFunc, Delegate>();
+        private static readonly Dictionary<GonFunction, GonFunctionDel> Operations = new Dictionary<GonFunction, GonFunctionDel>();
 
 
         public static void Setup()
         {
-            for(int i = 0; i < Enum.GetNames(typeof(GonFunc)).Length; i++)
-            {
-                MethodInfo method = typeof(MathGon).GetMethod(Enum.GetName(typeof(GonFunc), i));
+            for(int i = 0; i < Enum.GetNames(typeof(GonFunction)).Length; i++) {
+                MethodInfo method = typeof(GonFunctionHandler).GetMethod(Enum.GetName(typeof(GonFunction), i) ?? string.Empty);
                 
-                if (method != null)
-                {
-                    func.Add((GonFunc)i, (GonDel)Delegate.CreateDelegate(typeof(GonDel), method));
+                if (method != null) {
+                    Operations.Add((GonFunction)i, (GonFunctionDel)Delegate.CreateDelegate(typeof(GonFunctionDel), method));
                 }
             }
-
-            /*List<String> methods = (List<String>)typeof(MathGon).GetMethods
-                (
-                    BindingFlags.Public |
-                    BindingFlags.Static
-                )
-            .Select(idk => idk.Name).Distinct();
-            
-            foreach (string methodName in methods)
-            {
-                MethodInfo method = typeof(MathGon).GetMethod(methodName);
-
-                Func<Type[], Type> getType = Expression.GetActionType;
-                List<Type> types = (List<Type>)method.GetParameters().Select(p => p.ParameterType);
-
-                func.Add(GonFunc.Sin, (GonDel)Delegate.CreateDelegate(typeof(GonDel), method));
-                //MessageBox.Show(method + ": " + typeof(MathGon).GetMethod(method).Invoke(method, new Object[1] { 1 }).ToString());
-            }*/
         }
 
 
-        public static double Calc(double x, GonFunc gonFunc)
+        public static double Handle(double x, GonFunction gonFunction)
         {
-            return (double)func[gonFunc].DynamicInvoke(x);
+            return (double)Operations[gonFunction].DynamicInvoke(x);
         } 
 
 
         public static double Sin(double x)
         {
             return Math.Sin(x);
-
         }
 
 

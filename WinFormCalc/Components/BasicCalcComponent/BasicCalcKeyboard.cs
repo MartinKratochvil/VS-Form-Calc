@@ -8,14 +8,10 @@ using System.Windows.Forms;
 
 namespace WinFormCalc.Components.BasicCalcComponent
 {
-    public class BasicCalcKeyboard : TableLayoutPanel
+    public sealed class BasicCalcKeyboard : TableLayoutPanel
     {
 
         List<List<Control>> keyboard;
-
-        public delegate void ButtonClick();
-
-        public event ButtonClick OnPlusButtonClick;
 
 
         public BasicCalcKeyboard() {
@@ -32,22 +28,24 @@ namespace WinFormCalc.Components.BasicCalcComponent
         {
             keyboard = new List<List<Control>>();
 
-            for(int i = 0; i < 4; i++) {
-                List<Control> row = new List<Control>();
+            BasicCalcKeyboardEvents.KeyboardClickEvents.ForEach(eventRow => {
+                List<Control> buttonRow = new List<Control>();
                 
-                for(int j = 0; j < 6; j++) {
+                foreach (var keyValuePair in eventRow) {
                     Button button = new Button() {
                         Size = new Size(320, 120),
-                        Text = "s"
+                        Text = keyValuePair.Key
                     };
 
-                    button.Click += (object sender, EventArgs e) => OnPlusButtonClick.Invoke();
-
-                    row.Add(button);
+                    button.Click +=
+                        (sender, e) =>
+                        keyValuePair.Value.Invoke(keyValuePair.Key)
+                    ;
+                    
+                    buttonRow.Add(button);
                 }
-
-                keyboard.Add(row);
-            }
+                keyboard.Add(buttonRow);
+            });
         }
     }
 }

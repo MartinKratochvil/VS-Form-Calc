@@ -1,7 +1,7 @@
 ﻿
 namespace WinFormCalc.Operations.Functions.MathFunction
 {
-    public enum Function
+    public enum MathFunction
     {
         Pow,
         Cube,

@@ -50,6 +50,7 @@
     <Compile Include="Calculators\AdvanceCalculator\AdvanceCalculator.cs" />
     <Compile Include="Calculators\ProgrammerCalculator\VarSize.cs" />
     <Compile Include="Calculators\ProgrammerCalculator\VarType.cs" />
+    <Compile Include="Components\BasicCalcComponent\BasicCalcKeyboardEvents.cs" />
     <Compile Include="Components\BasicCalcComponent\BasicCalcKeyboard.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -107,10 +108,10 @@
     <Compile Include="Forms\PaperMode.Designer.cs">
       <DependentUpon>PaperMode.cs</DependentUpon>
     </Compile>
-    <Compile Include="Operations\Functions\MathFunction\Function.cs" />
-    <Compile Include="Operations\Functions\MathFunction\MathFunc.cs" />
-    <Compile Include="Operations\Functions\MathGonFunction\GonFunc.cs" />
-    <Compile Include="Operations\Functions\MathGonFunction\MathGon.cs" />
+    <Compile Include="Operations\Functions\MathFunction\MathFunction.cs" />
+    <Compile Include="Operations\Functions\MathFunction\MathFunctionHandler.cs" />
+    <Compile Include="Operations\Functions\GonFunction\GonFunction.cs" />
+    <Compile Include="Operations\Functions\GonFunction\GonFunctionHandler.cs" />
     <Compile Include="Operations\PrimeOperations\AdvacePrimeOper\AdvacePrimeOper.cs" />
     <Compile Include="Operations\PrimeOperations\AdvacePrimeOper\AdvancePrimeOperHandler.cs" />
     <Compile Include="Operations\PrimeOperations\BasicPrimeOper\BasicPrimeOper.cs" />
@@ -158,8 +159,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Operations\Enums" />
-    <Folder Include="Operations\PrimeOperations" />
+    <Folder Include="Operations\Enums\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

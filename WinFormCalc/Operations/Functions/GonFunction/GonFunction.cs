@@ -1,7 +1,7 @@
 ﻿
-namespace WinFormCalc.Operations.Functions.MathGonFunction
+namespace WinFormCalc.Operations.Functions.GonFunction
 {
-    public enum GonFunc
+    public enum GonFunction
     {
         Sin,
         Cosin,

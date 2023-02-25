@@ -4,29 +4,29 @@ using System.Reflection;
 
 namespace WinFormCalc.Operations.Functions.MathFunction
 {
-    public class MathFunc
+    public class MathFunctionHandler
     {
 
         private delegate double FuncDel(double x);
 
-        private static readonly Dictionary<Function, Delegate> Operations = new Dictionary<Function, Delegate>();
+        private static readonly Dictionary<MathFunction, Delegate> Operations = new Dictionary<MathFunction, Delegate>();
 
 
         public static void Setup()
         {
-            for (int i = 0; i < Enum.GetNames(typeof(Function)).Length; i++)
+            for (int i = 0; i < Enum.GetNames(typeof(MathFunction)).Length; i++)
             {
-                MethodInfo method = typeof(MathFunc).GetMethod(Enum.GetName(typeof(Function), i) ?? string.Empty);
+                MethodInfo method = typeof(MathFunctionHandler).GetMethod(Enum.GetName(typeof(MathFunction), i) ?? string.Empty);
 
                 if (method != null)
                 {
-                    Operations.Add((Function)i, (FuncDel)Delegate.CreateDelegate(typeof(FuncDel), method));
+                    Operations.Add((MathFunction)i, (FuncDel)Delegate.CreateDelegate(typeof(FuncDel), method));
                 }
             }
         }
 
 
-        public static double Activate(double x, Function gonFunc)
+        public static double Handle(double x, MathFunction gonFunc)
         {
             return (double)Operations[gonFunc].DynamicInvoke(x);
         }

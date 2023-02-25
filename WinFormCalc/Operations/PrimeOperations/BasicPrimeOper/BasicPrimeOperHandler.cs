@@ -9,24 +9,24 @@ namespace WinFormCalc.Operations.PrimeOperations.BasicPrimeOper
         
         private delegate double PrimeOperDel(double origin, double operate);
 
-        private static readonly Dictionary<PrimeOperations.BasicPrimeOper.BasicPrimeOper, PrimeOperDel> Operations = new Dictionary<PrimeOperations.BasicPrimeOper.BasicPrimeOper, PrimeOperDel>();
+        private static readonly Dictionary<BasicPrimeOper, PrimeOperDel> Operations = new Dictionary<BasicPrimeOper, PrimeOperDel>();
 
 
         public static void Setup()
         {
-            for (int i = 0; i < Enum.GetNames(typeof(PrimeOperations.BasicPrimeOper.BasicPrimeOper)).Length; i++) {
-                MethodInfo method = typeof(BasicPrimeOperHandler).GetMethod(Enum.GetName(typeof(PrimeOperations.BasicPrimeOper.BasicPrimeOper), i) ?? String.Empty);
+            for (int i = 0; i < Enum.GetNames(typeof(BasicPrimeOper)).Length; i++) {
+                MethodInfo method = typeof(BasicPrimeOperHandler).GetMethod(Enum.GetName(typeof(BasicPrimeOper), i) ?? String.Empty);
 
                 if (method != null) {
-                    Operations.Add((PrimeOperations.BasicPrimeOper.BasicPrimeOper)i, (PrimeOperDel)Delegate.CreateDelegate(typeof(PrimeOperDel), method));
+                    Operations.Add((BasicPrimeOper)i, (PrimeOperDel)Delegate.CreateDelegate(typeof(PrimeOperDel), method));
                 }
             }
         }
 
 
-        public static double Handle(double origin, double operate, PrimeOperations.BasicPrimeOper.BasicPrimeOper primeOper)
+        public static double Handle(double origin, double operate, BasicPrimeOper primeOper)
         {
-            if (primeOper == PrimeOperations.BasicPrimeOper.BasicPrimeOper.None) {
+            if (primeOper == BasicPrimeOper.None) {
                 return origin + operate;
             }
             
