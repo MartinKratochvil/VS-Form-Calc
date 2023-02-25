@@ -54,6 +54,7 @@
     <Compile Include="Components\BasicCalcComponent\BasicCalcKeyboard.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Components\BasicCalcComponent\BasicCalcManager.cs" />
     <Compile Include="Components\BasicCalcComponent\BasicCalcPanel.cs">
       <SubType>Component</SubType>
     </Compile>

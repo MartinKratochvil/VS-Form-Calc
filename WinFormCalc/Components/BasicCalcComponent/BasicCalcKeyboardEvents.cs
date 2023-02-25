@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace WinFormCalc.Components.BasicCalcComponent
 {
-    public class BasicCalcKeyboardEvents
+    public static class BasicCalcKeyboardEvents
     {
 
         public delegate void ButtonClick(string placeholder);
@@ -17,13 +19,15 @@ namespace WinFormCalc.Components.BasicCalcComponent
 
         public static event ButtonClick OnDivideButtonClick;
 
+        public static event ButtonClick OnModuloButtonClick;
+
+        public static event ButtonClick OnFactorialButtonClick;
+
+        public static event ButtonClick OnAbsButtonClick;
+
         public static event ButtonClick OnPowButtonClick;
 
         public static event ButtonClick OnSqrtButtonClick;
-
-        public static event ButtonClick OnModuloButtonClick;
-
-        public static event ButtonClick OnEqualsButtonClick;
 
         public static event ButtonClick OnCommaButtonClick;
 
@@ -31,44 +35,42 @@ namespace WinFormCalc.Components.BasicCalcComponent
 
         public static event ButtonClick OnClearEntryButtonClick;
 
-        public static event ButtonClick OnFactorialButtonClick;
-        
-        public static event ButtonClick OnAbsButtonClick;
-        
         public static event ButtonClick OnBackButtonClick;
 
-        public static readonly List<Dictionary<string, ButtonClick>> KeyboardClickEvents = new List<Dictionary<string, ButtonClick>> {
-            new Dictionary<string, ButtonClick> {
-                { "%", OnModuloButtonClick },
-                { "n!", OnFactorialButtonClick },
-                { "7", OnNumpadButtonClick },
-                { "4", OnNumpadButtonClick },
-                { "1", OnNumpadButtonClick },
-                { "|n|", OnAbsButtonClick }
+        public static event ButtonClick OnEqualsButtonClick;
+
+        public static readonly List<Dictionary<string, Action<string>>> KeyboardClickEvents = new List<Dictionary<string, Action<string>>> {
+            new Dictionary<string, Action<string>> {
+                { "%", delegate(string placeholder) { OnModuloButtonClick?.Invoke(placeholder); } },
+                { "n!", delegate(string placeholder) { OnFactorialButtonClick?.Invoke(placeholder); } },
+                { "7", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "4", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "1", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "|n|", delegate(string placeholder) { OnAbsButtonClick?.Invoke(placeholder); } }
             },
-            new Dictionary<string, ButtonClick> {
-                { "CE", OnClearEntryButtonClick },
-                { "pow", OnPowButtonClick },
-                { "8", OnNumpadButtonClick },
-                { "5", OnNumpadButtonClick },
-                { "2", OnNumpadButtonClick },
-                { "0", OnNumpadButtonClick }
+            new Dictionary<string, Action<string>> {
+                { "CE", delegate(string placeholder) { OnClearEntryButtonClick?.Invoke(placeholder); } },
+                { "pow", delegate(string placeholder) { OnPowButtonClick?.Invoke(placeholder); } },
+                { "8", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "5", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "2", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "0", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } }
             },
-            new Dictionary<string, ButtonClick> {
-                { "C", OnClearButtonClick },
-                { "sqrt", OnSqrtButtonClick },
-                { "9", OnNumpadButtonClick },
-                { "6", OnNumpadButtonClick },
-                { "3", OnNumpadButtonClick },
-                { ",", OnCommaButtonClick }
+            new Dictionary<string, Action<string>> {
+                { "C", delegate(string placeholder) { OnClearButtonClick?.Invoke(placeholder); } },
+                { "sqrt", delegate(string placeholder) { OnSqrtButtonClick?.Invoke(placeholder); } },
+                { "9", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "6", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "3", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { ",", delegate(string placeholder) { OnCommaButtonClick?.Invoke(placeholder); } }
             },
-            new Dictionary<string, ButtonClick> {
-                { "Back", OnBackButtonClick },
-                { "/", OnDivideButtonClick },
-                { "*", OnMultiplyButtonClick },
-                { "-", OnMinusButtonClick },
-                { "+", OnPlusButtonClick },
-                { "=", OnEqualsButtonClick }
+            new Dictionary<string,Action<string>> {
+                { "Back", delegate(string placeholder) { OnBackButtonClick?.Invoke(placeholder); } },
+                { "/", delegate(string placeholder) { OnDivideButtonClick?.Invoke(placeholder); } },
+                { "*", delegate(string placeholder) { OnMultiplyButtonClick?.Invoke(placeholder); } },
+                { "-", delegate(string placeholder) { OnMinusButtonClick?.Invoke(placeholder); } },
+                { "+", delegate(string placeholder) { OnPlusButtonClick?.Invoke(placeholder); } },
+                { "=", delegate(string placeholder) { OnEqualsButtonClick?.Invoke(placeholder); } }
             }
         };
     }

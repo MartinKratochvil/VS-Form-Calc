@@ -13,9 +13,11 @@ namespace WinFormCalc.Components.BasicCalcComponent
 
         private BasicCalcKeyboard keyboard;
 
-        private Label example;
+        private Label exampleLabel;
 
-        private Label number;
+        private Label numberLabel;
+
+        private BasicCalcManager basicCalcManager;
 
 
         public BasicCalcPanel()
@@ -26,56 +28,57 @@ namespace WinFormCalc.Components.BasicCalcComponent
             MaximumSize = new Size(1280, 890);
             BackColor= Color.Pink;
 
-            List<Control> rows = new List<Control> { example, number, keyboard };
+            basicCalcManager = new BasicCalcManager();
+            basicCalcManager.OnExampleLabelUpdate += ExampleLabelUpdate;
+            basicCalcManager.OnNumberLabelUpdate += NumberLabelUpdate;
+
+            List<Control> rows = new List<Control> { exampleLabel, numberLabel, keyboard };
             TableDataManager.SetAsymmetricalRows(this, rows);
         }
 
 
         private void InitializeComponent()
         {
-            example = new Label() {
+            exampleLabel = new Label() {
                 Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
                 ForeColor = Color.Gray,
                 Size = new Size(1280, 60),
                 TextAlign = ContentAlignment.MiddleRight,
-                Text = "example",
                 BackColor = Color.DeepPink
             };
 
-            number = new Label() {
+            numberLabel = new Label() {
                 Size = new Size(1280, 130),
                 Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, 238),
                 ForeColor = Color.Black,
                 TextAlign = ContentAlignment.MiddleRight,
-                Text = "number",
+                Text = "0",
                 BackColor = Color.HotPink
             };
 
             keyboard = new BasicCalcKeyboard();
+        }
 
-            /*numpad = new TableLayoutPanel {
-                Size = new Size(3200, 3500),
-                MinimumSize = new Size(320, 350),
-                BackColor = Color.DeepPink
-            };*/
 
-            /*for (int i = 0; i < numpad.ColumnCount; i++) {
-                numpad.ColumnStyles.Add(new ColumnStyle(
-                    SizeType.Percent,
-                    100f / numpad.ColumnCount
-                ));
+        private void ExampleLabelUpdate(string message)
+        {
+            exampleLabel.Text = message;
+        }
+        
+        
+        private void NumberLabelUpdate(string message)
+        {
+            if (message == string.Empty) {
+                numberLabel.Text = "0";
+                return;
             }
 
-            for (int i = 0; i < numpad.RowCount; i++) {
-                numpad.RowStyles.Add(new RowStyle(
-                    SizeType.Percent,
-                    100f / numpad.RowCount
-                ));
-            }*/
+            if (message[message.Length - 1] == '.') {
+                numberLabel.Text = message + '0';
+                return;                
+            }
 
-            //tableLayoutPanel.TabIndex = 3;
-            //this.tableLayoutPanel.Controls.Add(this.button22, 0, 5);
-            //tableLayoutPanel.Location = new System.Drawing.Point(601, 131);
+            numberLabel.Text = message;
         }
     }
 }

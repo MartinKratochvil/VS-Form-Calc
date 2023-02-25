@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aae75a3-f407-4611-889f-a886b8f7a3aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboardEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceCalculator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceNumber.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicCalculator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicNumber.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/Function.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunc.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathGonFunction/GonFunc.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathGonFunction/MathGon.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/BasicPrimeOper/BasicPrimeOperHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/BasicPrimeOper/BasicPrimeOperHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboardEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" afterDir="false" />
     </list>
@@ -25,6 +18,14 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/dc/f81d9931/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Components/BasicCalcComponent/BasicCalcManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -52,7 +53,7 @@
     ]
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.WinFormCalc">
     <configuration name="WinFormCalc" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -71,6 +72,27 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="WinFormCalc.Components.BasicCalcComponent.BasicCalcKeyboardEvents.InvokeEvent" type="DotNetStaticMethod" factoryName=".NET Static Method" temporary="true">
+      <option name="EXE_PATH" value="C:\Program Files\JetBrains\JetBrains Rider 2022.3.2\lib\ReSharperHost\JetLauncherILc.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.7.2" />
+      <option name="CLASS_NAME" value="WinFormCalc.Components.BasicCalcComponent.BasicCalcKeyboardEvents" />
+      <option name="METHOD_NAME" value="InvokeEvent" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue=".NET Static Method.WinFormCalc.Components.BasicCalcComponent.BasicCalcKeyboardEvents.InvokeEvent" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -83,7 +105,8 @@
       <workItem from="1677081024103" duration="2864000" />
       <workItem from="1677243429606" duration="1571000" />
       <workItem from="1677264851611" duration="10517000" />
-      <workItem from="1677286405542" duration="1900000" />
+      <workItem from="1677286405542" duration="2010000" />
+      <workItem from="1677289936736" duration="12461000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1677269992178</created>

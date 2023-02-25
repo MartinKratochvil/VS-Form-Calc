@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
 using WinFormCalc.Forms;
-using WinFormCalc.Operations.Functions;
 using WinFormCalc.Operations.Functions.GonFunction;
 using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
@@ -28,7 +27,7 @@ namespace WinFormCalc
             AdvancePrimeOperHandler.Setup();
             BinPrimeOperHandler.Setup();
             
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }

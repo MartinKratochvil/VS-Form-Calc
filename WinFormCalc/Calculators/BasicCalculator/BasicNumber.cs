@@ -13,11 +13,11 @@ namespace WinFormCalc.Calculators.BasicCalculator
     {
         private double value;
 
-        private List<MathFunction> functions;
-        
         public BasicPrimeOper PrimeOper { get; }
 
-        
+        private List<MathFunction> functions;
+
+
         public double Value
         {
             get {

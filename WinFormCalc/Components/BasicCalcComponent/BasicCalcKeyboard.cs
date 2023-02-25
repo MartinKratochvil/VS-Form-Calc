@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WinFormCalc.Components.BasicCalcComponent
@@ -28,18 +24,17 @@ namespace WinFormCalc.Components.BasicCalcComponent
         {
             keyboard = new List<List<Control>>();
 
-            BasicCalcKeyboardEvents.KeyboardClickEvents.ForEach(eventRow => {
+            BasicCalcKeyboardEvents.KeyboardClickEvents.ForEach(buttonRowClickEvents => {
                 List<Control> buttonRow = new List<Control>();
                 
-                foreach (var keyValuePair in eventRow) {
+                foreach (var buttonClickEvent in buttonRowClickEvents) {
                     Button button = new Button() {
                         Size = new Size(320, 120),
-                        Text = keyValuePair.Key
+                        Text = buttonClickEvent.Key
                     };
 
-                    button.Click +=
-                        (sender, e) =>
-                        keyValuePair.Value.Invoke(keyValuePair.Key)
+                    button.Click += (sender, e) =>
+                        buttonClickEvent.Value(buttonClickEvent.Key)
                     ;
                     
                     buttonRow.Add(button);
