@@ -3,7 +3,7 @@ namespace WinFormCalc.Operations.Functions.MathFunction
 {
     public enum MathFunction
     {
-        Pow,
+        Sqr,
         Cube,
         Sqrt,
         CubeRoot,
@@ -12,6 +12,7 @@ namespace WinFormCalc.Operations.Functions.MathFunction
         Ceil,
         Fact,
         Log,
-        Ln
+        Ln,
+        EulPow
     }
 }

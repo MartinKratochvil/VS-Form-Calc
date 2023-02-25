@@ -58,21 +58,9 @@ namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper
         }
 
 
-        public static void Sqrt(List<AdvanceNumber> values, AdvanceNumber x)
+        public static void YRoot(List<AdvanceNumber> values, AdvanceNumber x)
         {
             values[values.Count - 1] = new AdvanceNumber(Math.Pow(values[values.Count - 1].Value, 1f / x.Value));
-        }
-
-
-        public static void Log(List<AdvanceNumber> values, AdvanceNumber x)
-        {
-            values[values.Count - 1] = new AdvanceNumber(Math.Log(values[values.Count - 1].Value, x.Value));
-        }
-
-
-        public static void EulPow(List<AdvanceNumber> values, AdvanceNumber x)
-        {
-            values[values.Count - 1] = new AdvanceNumber(Math.Pow(values[values.Count - 1].Value, x.Value));
         }
     }
 }

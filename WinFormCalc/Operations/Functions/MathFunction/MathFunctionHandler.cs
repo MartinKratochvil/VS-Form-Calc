@@ -14,12 +14,10 @@ namespace WinFormCalc.Operations.Functions.MathFunction
 
         public static void Setup()
         {
-            for (int i = 0; i < Enum.GetNames(typeof(MathFunction)).Length; i++)
-            {
+            for (int i = 0; i < Enum.GetNames(typeof(MathFunction)).Length; i++) {
                 MethodInfo method = typeof(MathFunctionHandler).GetMethod(Enum.GetName(typeof(MathFunction), i) ?? string.Empty);
 
-                if (method != null)
-                {
+                if (method != null) {
                     Operations.Add((MathFunction)i, (FuncDel)Delegate.CreateDelegate(typeof(FuncDel), method));
                 }
             }
@@ -32,7 +30,7 @@ namespace WinFormCalc.Operations.Functions.MathFunction
         }
 
 
-        public static double Pow(double x)
+        public static double Sqr(double x)
         {
             return Math.Pow(x, 2);
         }
@@ -96,6 +94,12 @@ namespace WinFormCalc.Operations.Functions.MathFunction
         public static double Ln(double x)
         {
             return Math.Log(x);
+        }
+        
+        
+        public static double EulPow(double x)
+        {
+            return Math.Pow(Math.E, x);
         }
     }
 }

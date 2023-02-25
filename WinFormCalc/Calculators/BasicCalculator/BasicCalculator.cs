@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
 
@@ -16,7 +17,7 @@ namespace WinFormCalc.Calculators.BasicCalculator
         }
 
 
-        public double GetResult()
+        public string GetResult()
         {
             double result = 0;
 
@@ -24,7 +25,7 @@ namespace WinFormCalc.Calculators.BasicCalculator
                 result = BasicPrimeOperHandler.Handle(result, number.Value, number.PrimeOper);
             }
 
-            return result;
+            return result.ToString(CultureInfo.CurrentCulture);
         }
     }
 }

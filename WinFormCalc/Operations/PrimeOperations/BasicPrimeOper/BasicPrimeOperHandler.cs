@@ -26,11 +26,19 @@ namespace WinFormCalc.Operations.PrimeOperations.BasicPrimeOper
 
         public static double Handle(double origin, double operate, BasicPrimeOper primeOper)
         {
-            if (primeOper == BasicPrimeOper.None) {
-                return origin + operate;
-            }
-            
             return (double)Operations[primeOper].DynamicInvoke(origin, operate);
+        }
+
+
+        public static double Plus(double origin, double operate)
+        {
+            return origin + operate;
+        }
+
+
+        public static double Minus(double origin, double operate)
+        {
+            return origin - operate;
         }
 
 

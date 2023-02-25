@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 using WinFormCalc.Calculators.BasicCalculator;
+using WinFormCalc.Components.BasicCalcComponent;
 using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
 
-namespace WinFormCalc.Components.BasicCalcComponent
+namespace WinFormCalc.Components.AdvanceCalcComponent
 {
-    public class BasicCalcManager
+    public class AdvanceCalcManager
     {
 
         private List<BasicNumber> numbers;
@@ -32,15 +31,15 @@ namespace WinFormCalc.Components.BasicCalcComponent
         public event NumberLabelUpdate OnNumberLabelUpdate;
 
         private static List<string> operations = new List<string> {
-            "+",
-            "-",
             "*",
             "/",
-            "%"
+            "%",
+            "^",
+            "√"
         };
         
         
-        public BasicCalcManager()
+        public AdvanceCalcManager()
         {
             ClearExample();
 
@@ -258,6 +257,29 @@ namespace WinFormCalc.Components.BasicCalcComponent
             return true;
         }
 
+
+        /*private bool IsNumberNegative()
+        {
+            return number[0] == '-';
+        }*/
+
+
+        /*private void SetNumberPositive()
+        {
+            if (IsNumberNegative()) {
+                number = number.Remove(0, 1);
+                UpdateNumberLabel();
+            }
+        }*/
+
+
+        /*private void SetNumberNegative()
+        {
+            if ( ! IsNumberNegative()) {
+                number = '-' + number;
+                UpdateNumberLabel();
+            }
+        }*/
 
         private string GetCloseBrackets()
         {

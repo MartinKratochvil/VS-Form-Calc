@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
 
 namespace WinFormCalc.Components.BasicCalcComponent
 {
@@ -50,7 +49,7 @@ namespace WinFormCalc.Components.BasicCalcComponent
             },
             new Dictionary<string, Action<string>> {
                 { "CE", delegate(string placeholder) { OnClearEntryButtonClick?.Invoke(placeholder); } },
-                { "pow", delegate(string placeholder) { OnPowButtonClick?.Invoke(placeholder); } },
+                { "x²", delegate(string placeholder) { OnPowButtonClick?.Invoke(placeholder); } },
                 { "8", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
                 { "5", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
                 { "2", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
@@ -58,7 +57,7 @@ namespace WinFormCalc.Components.BasicCalcComponent
             },
             new Dictionary<string, Action<string>> {
                 { "C", delegate(string placeholder) { OnClearButtonClick?.Invoke(placeholder); } },
-                { "sqrt", delegate(string placeholder) { OnSqrtButtonClick?.Invoke(placeholder); } },
+                { "√x", delegate(string placeholder) { OnSqrtButtonClick?.Invoke(placeholder); } },
                 { "9", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
                 { "6", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
                 { "3", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },

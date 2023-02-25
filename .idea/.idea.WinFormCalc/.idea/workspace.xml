@@ -5,13 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aae75a3-f407-4611-889f-a886b8f7a3aa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboardEvents.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicNumber.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicCalculator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboardEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunctionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunctionHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvacePrimeOper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvacePrimeOper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvancePrimeOperHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvancePrimeOperHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/BasicPrimeOper/BasicPrimeOper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/BasicPrimeOper/BasicPrimeOper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/BasicPrimeOper/BasicPrimeOperHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/BasicPrimeOper/BasicPrimeOperHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +36,9 @@
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34ec56fc58ec4b3597ef877c03bd11d117ab30/1a/15a6aa57/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/92/8e2cfdbc/CultureInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/cf/0cc26fc9/Math.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/dc/f81d9931/String.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Components/BasicCalcComponent/BasicCalcManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -106,7 +122,7 @@
       <workItem from="1677243429606" duration="1571000" />
       <workItem from="1677264851611" duration="10517000" />
       <workItem from="1677286405542" duration="2010000" />
-      <workItem from="1677289936736" duration="12461000" />
+      <workItem from="1677289936736" duration="33888000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1677269992178</created>
