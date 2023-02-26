@@ -7,7 +7,7 @@ namespace WinFormCalc.Operations.PrimeOperations.BasicPrimeOper
     public class BasicPrimeOperHandler
     {
         
-        private delegate double PrimeOperDel(double origin, double operate);
+        private delegate double PrimeOperDel(double origin, double operand);
 
         private static readonly Dictionary<BasicPrimeOper, PrimeOperDel> Operations = new Dictionary<BasicPrimeOper, PrimeOperDel>();
 
@@ -24,38 +24,38 @@ namespace WinFormCalc.Operations.PrimeOperations.BasicPrimeOper
         }
 
 
-        public static double Handle(double origin, double operate, BasicPrimeOper primeOper)
+        public static double Handle(double origin, double operand, BasicPrimeOper primeOper)
         {
-            return (double)Operations[primeOper].DynamicInvoke(origin, operate);
+            return (double)Operations[primeOper].DynamicInvoke(origin, operand);
         }
 
 
-        public static double Plus(double origin, double operate)
+        public static double Plus(double origin, double operand)
         {
-            return origin + operate;
+            return origin + operand;
         }
 
 
-        public static double Minus(double origin, double operate)
+        public static double Minus(double origin, double operand)
         {
-            return origin - operate;
+            return origin - operand;
         }
 
-        public static double Multiply(double origin, double operate)
+        public static double Multiply(double origin, double operand)
         {
-            return origin * operate;
-        }
-
-
-        public static double Divide(double origin, double operate)
-        {
-            return origin / operate;
+            return origin * operand;
         }
 
 
-        public static double Modulo(double origin, double operate)
+        public static double Divide(double origin, double operand)
         {
-            return origin % operate;
+            return origin / operand;
+        }
+
+
+        public static double Modulo(double origin, double operand)
+        {
+            return origin % operand;
         }
     }
 }

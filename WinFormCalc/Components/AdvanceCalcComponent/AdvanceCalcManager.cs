@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using System.Windows.Forms;
 using WinFormCalc.Calculators.AdvanceCalculator;
 using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
@@ -21,13 +22,13 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
 
         private string number;
 
-        private bool isNegative;
-
         private AdvancePrimeOper primeOper;
 
         private List<Enum> functions;
 
         private bool isCalculated;
+
+        private bool isBracketClose;
 
         public delegate void ExampleLabelUpdate(string message);
 
@@ -43,6 +44,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
             
             ClearExample();
             isCalculated = false;
+            isBracketClose = false;
         }
 
 
@@ -78,6 +80,8 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
 
 
         private static List<string> operations = new List<string> {
+            "+",
+            "-",
             "*",
             "/",
             "%",
@@ -118,14 +122,13 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
 
         private void PlusButtonClick(string placeholder)
         {
-            AddNextNumber(AdvancePrimeOper.None);
+            AddNextNumber(AdvancePrimeOper.Plus);
         }
 
 
         private void MinusButtonClick(string placeholder)
         {
-            isNegative = true;
-            AddNextNumber(AdvancePrimeOper.None);
+            AddNextNumber(AdvancePrimeOper.Minus);
         }
 
 
@@ -229,24 +232,14 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
 
         private void OpenBracketButtonClick(string placeholder)
         {
-            if (primeOper != AdvancePrimeOper.None || ! isNegative) {
-                numbers[depth][bracket].Add(new AdvanceNumber(primeOper, functions));
+            numbers[depth][bracket].Add(new AdvanceNumber(primeOper, functions));
+            AddDepth();
 
-                example += "(";
-                UpdateExampleLabel();
-
-                AddDepth();
-
-                return;
-            }
-
-            numbers[depth][bracket].Add(new AdvanceNumber(-1, primeOper, new List<Enum>()));
-            numbers[depth][bracket].Add(new AdvanceNumber(AdvancePrimeOper.Multiply, functions));
-
-            example += "1 * (";
+            example += "(";
             UpdateExampleLabel();
 
-            AddDepth();
+            primeOper = AdvancePrimeOper.Plus;
+            functions = new List<Enum>();
         }
 
 
@@ -257,7 +250,16 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
             }
 
             depth--;
-            bracket = numbers[depth].Count;
+            bracket = numbers[depth].Count - 1;
+            isBracketClose = true;
+
+            example += ")";
+            UpdateExampleLabel();
+
+            ClearNumber();
+
+            primeOper = AdvancePrimeOper.Plus;
+            functions = new List<Enum>();
         }
 
 
@@ -300,6 +302,8 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
                 return;
             }
 
+            showData();
+
             AdvanceCalculator calculator = new AdvanceCalculator(numbers, new AdvanceNumber());
 
             example += " = ";
@@ -310,7 +314,13 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
             UpdateNumberLabel();
             number = "0";
 
-            primeOper = AdvancePrimeOper.None;
+            numbers = new List<List<List<AdvanceNumber>>> {
+                new List<List<AdvanceNumber>> {
+                    new List<AdvanceNumber>()
+                }
+            };
+
+            primeOper = AdvancePrimeOper.Plus;
             isCalculated = true;
         }
 
@@ -318,8 +328,6 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
         {
             number = "0";
             UpdateNumberLabel();
-
-            isNegative = false;
         }
 
 
@@ -336,7 +344,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
             
             ClearNumber();
 
-            primeOper = AdvancePrimeOper.None;
+            primeOper = AdvancePrimeOper.Plus;
             functions = new List<Enum>();
             depth = 0;
             bracket = 0;
@@ -353,40 +361,34 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
 
         private void AddNextNumber(AdvancePrimeOper nextPrimeOper)
         {
-            if (nextPrimeOper == AdvancePrimeOper.None) {
-                SetNumberSign();
-                UpdateExampleLabel();
-            }
-
             if ( ! AddNumber()) {
                 return;
             }
 
             primeOper = nextPrimeOper;
 
-            ClearNumber();
-
-            if (nextPrimeOper == AdvancePrimeOper.None)
-            {
-                example += " " + (isNegative ? "-" : "+") + " ";
-                UpdateExampleLabel();
-
-                return;
-            }
-
             example += " " + operations[(int)nextPrimeOper] + " ";
             UpdateExampleLabel();
+
+            ClearNumber();
         }
 
 
         private bool AddNumber()
         {
+            if (isBracketClose) {
+                isBracketClose = false;
+                return true;
+            }
+            
             if ( ! double.TryParse(number, out double value)) {
                 ClearNumber();
                 return false;
             }
 
-            numbers[depth][bracket].Add(new AdvanceNumber(value, primeOper, functions));
+            numbers[depth][bracket].Add(
+                new AdvanceNumber(value, primeOper, functions)
+            );
 
             example += number + GetCloseBrackets(functions.Count);
             functions = new List<Enum>();
@@ -399,9 +401,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
         {
             depth++;
             if (depth == numbers.Count) {
-                numbers.Add(new List<List<AdvanceNumber>> {
-                    new List<AdvanceNumber>()
-                });
+                numbers.Add(new List<List<AdvanceNumber>>());
             }
 
             bracket = numbers[depth].Count;
@@ -409,47 +409,40 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
         }
 
 
-        private void SetNumberSign()
-        {
-            if (isNegative) {
-                SetNumberNegative();
-                return;
-            }
-
-            SetNumberPositive();
-        }
-
-
-        private void SetNumberPositive()
-        {
-            if (IsNumberNegative()) {
-                number = number.Remove(0, 1);
-                UpdateNumberLabel();
-            }
-        }
-
-
-        private void SetNumberNegative()
-        {
-            if ( ! IsNumberNegative()) {
-                number = '-' + number;
-                UpdateNumberLabel();
-            }
-        }
-
-
-        private bool IsNumberNegative()
-        {
-            return number[0] == '-';
-        }
-
-
         private string GetCloseBrackets(int count)
         {
-            return functions.Count > 0
-                ? Enumerable.Repeat(')', count).Aggregate(string.Empty, (total, next) => total + next)
-                : string.Empty
-            ;
+            if (count == 0) {
+                return string.Empty;
+            }
+            
+            return Enumerable.Repeat(')', count).Aggregate(
+                string.Empty,
+                (total, next) => total + next
+            );
+        }
+
+        private void showData()
+        {
+            string data = "{\n";
+            numbers.ForEach(list => {
+                data += "    [\n";
+                list.ForEach(list2 => {
+                    data += "        (\n";
+                    list2.ForEach(num => {
+                        if (num.IsList) {
+                            data += "            " + num.PrimeOper + " list\n";
+                        }
+                        else {
+                            data += "            " + num.PrimeOper + " " + num.Value + ",\n";
+                        }
+                    });
+                    data += "        ),\n";
+                });
+                data += "    ],\n";
+            });
+            data += "}";
+
+            MessageBox.Show(data);
         }
     }
 }

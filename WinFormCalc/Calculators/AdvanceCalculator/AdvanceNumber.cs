@@ -53,7 +53,7 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
         public AdvanceNumber(double value)
         {
             this.value = value;
-            PrimeOper = AdvancePrimeOper.None;
+            PrimeOper = AdvancePrimeOper.Plus;
             functions = new List<Enum>();
             isCalculated = false;
             IsList = false;
@@ -62,7 +62,7 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
 
         public AdvanceNumber()
         {
-            PrimeOper = AdvancePrimeOper.None;
+            PrimeOper = AdvancePrimeOper.Plus;
             functions = new List<Enum>();
             isCalculated = false;
             IsList = true;

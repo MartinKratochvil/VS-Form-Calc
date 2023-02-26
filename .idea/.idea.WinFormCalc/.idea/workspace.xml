@@ -8,18 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceCalculator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceNumber.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboardEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboardEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/ExampleConvertor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/ExampleConvertor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/PaperModeComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/PaperModeComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunctionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunctionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvacePrimeOper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvacePrimeOper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvancePrimeOperHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvancePrimeOperHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/BasicPrimeOper/BasicPrimeOperHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/BasicPrimeOper/BasicPrimeOperHandler.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +22,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -35,9 +35,28 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/a3/49be7ac2/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/cf/0cc26fc9/Math.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/dc/f81d9931/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Calculation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Calculation.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceCalculator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceNumber.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Components/BasicCalcComponent/BasicCalcManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Form1.Designer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Form1.Designer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Form1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Form1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Forms/Form1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Number.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Number.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvacePrimeOper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvacePrimeOper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvancePrimeOperHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/PrimeOper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/PrimeOper.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/WinFormCalc/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />

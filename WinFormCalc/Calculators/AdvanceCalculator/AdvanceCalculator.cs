@@ -54,8 +54,7 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
             foreach (AdvanceCalculator calc in this.numbers) {
                 AdvanceNumber value = calc.Calculate();
 
-                if (value.PrimeOper != AdvancePrimeOper.None) {
-                    AdvancePrimeOperHandler.Handle(numbers, value, value.PrimeOper);
+                if (AdvancePrimeOperHandler.Handle(numbers, value)) {
                     continue;
                 }
 
@@ -63,9 +62,15 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
             };
 
             double result = 0;
-            numbers.ForEach(number => {
+            foreach (AdvanceNumber number in numbers)
+            {
+                if (number.PrimeOper == AdvancePrimeOper.Minus) {
+                    result -= number.Value;
+                    continue;
+                }
+
                 result += number.Value;
-            });
+            }
 
             this.number.Value = result;
             this.number.IsList = false;

@@ -28,7 +28,7 @@ namespace WinFormCalc.Components.PaperModeComponent
             {
                 AdvanceCalculator calc = new AdvanceCalculator(
                     ExampleConvertor.Convert(GetExample()),
-                    new AdvanceNumber(AdvancePrimeOper.None, new List<Enum>())
+                    new AdvanceNumber(AdvancePrimeOper.Plus, new List<Enum>())
                 );
 
                 string result = calc.GetResult();

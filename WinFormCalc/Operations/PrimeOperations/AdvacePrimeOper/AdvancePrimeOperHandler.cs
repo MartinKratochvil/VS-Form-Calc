@@ -8,7 +8,7 @@ namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper
     public class AdvancePrimeOperHandler
     {
 
-        private delegate void PrimeOperDel(List<AdvanceNumber> values, AdvanceNumber x);
+        private delegate double PrimeOperDel(double origin, double operand);
 
         private static readonly Dictionary<AdvancePrimeOper, PrimeOperDel> Operations = new Dictionary<AdvancePrimeOper, PrimeOperDel>();
 
@@ -25,43 +25,61 @@ namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper
         }
 
 
-        public static void Handle(List<AdvanceNumber> values, AdvanceNumber x, AdvancePrimeOper primeOper)
+        public static bool Handle(List<AdvanceNumber> values, AdvanceNumber operand)
         {
-            if (primeOper != AdvancePrimeOper.None)
-            {
-                Operations[primeOper].DynamicInvoke(values, x);
+            if (operand.PrimeOper != AdvancePrimeOper.Plus && operand.PrimeOper != AdvancePrimeOper.Minus) {
+                double value = (double)Operations[operand.PrimeOper].DynamicInvoke(
+                    SetNumberSign(values).Value,
+                    operand.Value
+                );
+
+                values[values.Count - 1] = new AdvanceNumber(value);
+
+                return true;
             }
+
+            return false;
         }
 
 
-        public static void Multiply(List<AdvanceNumber> values, AdvanceNumber x)
+        private static AdvanceNumber SetNumberSign(List<AdvanceNumber> values) {
+            AdvanceNumber origin = values[values.Count - 1];
+
+            if (origin.PrimeOper == AdvancePrimeOper.Minus) {
+                origin.Value *= -1;
+            }
+
+            return origin;
+        }
+
+
+        public static double Multiply(double origin, double operand)
         {
-            values[values.Count - 1] = new AdvanceNumber(values[values.Count - 1].Value * x.Value);
+            return origin * operand;
         }
 
 
-        public static void Divide(List<AdvanceNumber> values, AdvanceNumber x)
+        public static double Divide(double origin, double operand)
         {
-            values[values.Count - 1] = new AdvanceNumber(values[values.Count - 1].Value / x.Value);
+            return origin / operand;
         }
-        
-        
-        public static void Modulo(List<AdvanceNumber> values, AdvanceNumber x)
+
+
+        public static double Modulo(double origin, double operand)
         {
-            values[values.Count - 1] = new AdvanceNumber(values[values.Count - 1].Value % x.Value);
+            return origin % operand;
         }
 
 
-        public static void Pow(List<AdvanceNumber> values, AdvanceNumber x)
+        public static double Pow(double origin, double operand)
         {
-            values[values.Count - 1] = new AdvanceNumber(Math.Pow(values[values.Count - 1].Value, x.Value));
+            return Math.Pow(origin, operand);
         }
 
 
-        public static void YRoot(List<AdvanceNumber> values, AdvanceNumber x)
+        public static double YRoot(double origin, double operand)
         {
-            values[values.Count - 1] = new AdvanceNumber(Math.Pow(values[values.Count - 1].Value, 1f / x.Value));
+            return Math.Pow(origin, 1f / operand);
         }
-
     }
 }

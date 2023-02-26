@@ -16,7 +16,7 @@ namespace WinFormCalc.Components.PaperModeComponent
             values[0].Add(new List<AdvanceNumber>());
 
             string payload = String.Empty;
-            AdvancePrimeOper advancePrimeOper = AdvancePrimeOper.None;
+            AdvancePrimeOper advancePrimeOper = AdvancePrimeOper.Plus;
             bool isNegative = false;
             
             int i = 0; 
@@ -42,7 +42,7 @@ namespace WinFormCalc.Components.PaperModeComponent
                     }
 
                     values[i].Add(new List<AdvanceNumber>());
-                    advancePrimeOper = AdvancePrimeOper.None;
+                    advancePrimeOper = AdvancePrimeOper.Plus;
 
                     continue;
                 }
@@ -63,7 +63,7 @@ namespace WinFormCalc.Components.PaperModeComponent
                 }
 
                 payload = String.Empty;
-                advancePrimeOper = AdvancePrimeOper.None;
+                advancePrimeOper = AdvancePrimeOper.Plus;
                 isNegative = false;
 
                 switch (c)

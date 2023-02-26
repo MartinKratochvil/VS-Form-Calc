@@ -53,7 +53,8 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
                 Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, 238),
                 ForeColor = Color.Black,
                 TextAlign = ContentAlignment.MiddleRight,
-                BackColor = Color.DeepPink
+                BackColor = Color.DeepPink,
+                Text = "0"
             };
 
             trigonometryButton = new Button {
