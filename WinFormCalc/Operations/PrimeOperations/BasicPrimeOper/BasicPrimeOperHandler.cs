@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 
@@ -40,7 +40,6 @@ namespace WinFormCalc.Operations.PrimeOperations.BasicPrimeOper
         {
             return origin - operate;
         }
-
 
         public static double Multiply(double origin, double operate)
         {

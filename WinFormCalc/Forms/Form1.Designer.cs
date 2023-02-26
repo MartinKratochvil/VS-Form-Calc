@@ -1,4 +1,4 @@
-﻿namespace WinFormCalc.Forms
+namespace WinFormCalc.Forms
 {
     partial class Form1
     {
@@ -370,7 +370,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

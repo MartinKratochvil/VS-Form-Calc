@@ -1,4 +1,4 @@
-﻿namespace WinFormCalc.Forms
+namespace WinFormCalc.Forms
 {
     partial class MainForm
     {

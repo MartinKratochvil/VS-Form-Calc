@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using WinFormCalc.Calculators.AdvanceCalculator;
@@ -62,5 +62,6 @@ namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper
         {
             values[values.Count - 1] = new AdvanceNumber(Math.Pow(values[values.Count - 1].Value, 1f / x.Value));
         }
+
     }
 }

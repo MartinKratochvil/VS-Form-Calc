@@ -1,4 +1,4 @@
-﻿
+
 namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper
 {
     public enum AdvancePrimeOper
