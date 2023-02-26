@@ -58,7 +58,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
 
             trigonometryButton = new Button {
                 Size = new Size(1280, 90),
-                Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238),
+                Font = new Font("Segoe UI Semibold",  14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
                 ForeColor = Color.Black,
                 BackColor = Color.HotPink,
                 Text = "Trigonometrie"
@@ -70,8 +70,8 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
 
         private void PanelResize(object sender, EventArgs args)
         {
-            calcManager.UpdateExampleLabel();
-            calcManager.UpdateNumberLabel();
+            //calcManager.UpdateExampleLabel();
+            //calcManager.UpdateNumberLabel();
         }
 
 

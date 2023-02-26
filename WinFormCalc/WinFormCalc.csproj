@@ -50,10 +50,14 @@
     <Compile Include="Calculators\AdvanceCalculator\AdvanceCalculator.cs" />
     <Compile Include="Calculators\ProgrammerCalculator\VarSize.cs" />
     <Compile Include="Calculators\ProgrammerCalculator\VarType.cs" />
-    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcKeyboard.cs" />
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcKeyboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcKeyboardEvents.cs" />
     <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcManager.cs" />
-    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcPanel.cs" />
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\BasicCalcComponent\BasicCalcKeyboardEvents.cs" />
     <Compile Include="Components\BasicCalcComponent\BasicCalcKeyboard.cs">
       <SubType>Component</SubType>

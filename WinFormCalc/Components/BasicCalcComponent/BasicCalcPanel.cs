@@ -51,7 +51,8 @@ namespace WinFormCalc.Components.BasicCalcComponent
                 Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, 238),
                 ForeColor = Color.Black,
                 TextAlign = ContentAlignment.MiddleRight,
-                BackColor = Color.HotPink
+                BackColor = Color.HotPink,
+                Text = "0"
             };
 
             keyboard = new BasicCalcKeyboard();

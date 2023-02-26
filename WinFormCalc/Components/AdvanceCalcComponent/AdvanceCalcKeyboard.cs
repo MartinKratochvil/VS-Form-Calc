@@ -30,7 +30,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
                 foreach (var buttonClickEvent in buttonRowClickEvents) {
                     Button button = new Button {
                         Size = new Size(260, 90),
-                        Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238),
+                        Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
                         ForeColor = Color.Black,
                         Text = buttonClickEvent.Key
                     };

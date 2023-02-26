@@ -13,10 +13,11 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
 
         private bool isCalculated;
 
-        protected List<Enum> Functions;
-        
         public AdvancePrimeOper PrimeOper { get; }
-        
+
+        private readonly List<Enum> functions;
+
+
         public bool IsList;
 
 
@@ -34,15 +35,8 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
         {
             this.value = value;
             PrimeOper = primeOper;
-            Functions = functions;
+            this.functions = functions;
             isCalculated = false;
-            IsList = false;
-        }
-
-
-        public AdvanceNumber(double value)
-        {
-            this.value = value;
             IsList = false;
         }
 
@@ -50,7 +44,26 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
         public AdvanceNumber(AdvancePrimeOper primeOper, List<Enum> functions)
         {
             PrimeOper = primeOper;
-            Functions = functions;
+            this.functions = functions;
+            isCalculated = false;
+            IsList = true;
+        }
+
+
+        public AdvanceNumber(double value)
+        {
+            this.value = value;
+            PrimeOper = AdvancePrimeOper.None;
+            functions = new List<Enum>();
+            isCalculated = false;
+            IsList = false;
+        }
+
+
+        public AdvanceNumber()
+        {
+            PrimeOper = AdvancePrimeOper.None;
+            functions = new List<Enum>();
             isCalculated = false;
             IsList = true;
         }
@@ -58,11 +71,11 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
 
         private void Calculate()
         {
-            if (isCalculated || Functions == null) {
+            if (isCalculated || functions == null) {
                 return;
             }
 
-            Functions.ForEach(function => {
+            functions.ForEach(function => {
                 if (function is MathFunction mathFunction) {
                     value = MathFunctionHandler.Handle(value, mathFunction);
                 }

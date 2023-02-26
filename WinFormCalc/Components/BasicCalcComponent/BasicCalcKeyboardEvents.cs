@@ -20,7 +20,7 @@ namespace WinFormCalc.Components.BasicCalcComponent
 
         public static event ButtonClick OnModuloButtonClick;
 
-        public static event ButtonClick OnFactorialButtonClick;
+        public static event ButtonClick OnFactButtonClick;
 
         public static event ButtonClick OnAbsButtonClick;
 
@@ -41,7 +41,7 @@ namespace WinFormCalc.Components.BasicCalcComponent
         public static readonly List<Dictionary<string, Action<string>>> KeyboardClickEvents = new List<Dictionary<string, Action<string>>> {
             new Dictionary<string, Action<string>> {
                 { "%", delegate(string placeholder) { OnModuloButtonClick?.Invoke(placeholder); } },
-                { "n!", delegate(string placeholder) { OnFactorialButtonClick?.Invoke(placeholder); } },
+                { "n!", delegate(string placeholder) { OnFactButtonClick?.Invoke(placeholder); } },
                 { "7", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
                 { "4", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
                 { "1", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },

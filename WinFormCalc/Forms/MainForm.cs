@@ -38,10 +38,12 @@ namespace WinFormCalc.Forms
 
         private void MainForm_Resize(object sender, EventArgs e)
         {
-            contentPanel.Width = Width - formSize.Width;
+            contentPanel.Width += Width - formSize.Width;
             contentPanel.Height += Height - formSize.Height;
 
             basicCalcPanel.Size = contentPanel.Size;
+            advanceCalcPanel.Size = contentPanel.Size;
+
             formSize = Size;
         }
     }

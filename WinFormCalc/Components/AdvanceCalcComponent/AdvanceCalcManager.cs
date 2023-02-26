@@ -1,34 +1,81 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using WinFormCalc.Calculators.BasicCalculator;
-using WinFormCalc.Components.BasicCalcComponent;
+using WinFormCalc.Calculators.AdvanceCalculator;
 using WinFormCalc.Operations.Functions.MathFunction;
-using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
+using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 
 namespace WinFormCalc.Components.AdvanceCalcComponent
 {
     public class AdvanceCalcManager
     {
 
-        private List<BasicNumber> numbers;
+        private List<List<List<AdvanceNumber>>> numbers;
+
+        private int depth;
+
+        private int bracket;
 
         private string example;
 
         private string number;
 
-        private BasicPrimeOper primeOper;
+        private bool isNegative;
 
-        private List<MathFunction> functions;
+        private AdvancePrimeOper primeOper;
+
+        private List<Enum> functions;
 
         private bool isCalculated;
 
         public delegate void ExampleLabelUpdate(string message);
-        
+
         public event ExampleLabelUpdate OnExampleLabelUpdate;
 
         public delegate void NumberLabelUpdate(string message);
 
         public event NumberLabelUpdate OnNumberLabelUpdate;
+
+        public AdvanceCalcManager()
+        {
+            Init();
+            
+            ClearExample();
+            isCalculated = false;
+        }
+
+
+        private void Init()
+        {
+            AdvanceCalcKeyboardEvents.OnNumpadButtonClick += NumpadButtonClick;
+            AdvanceCalcKeyboardEvents.OnPlusButtonClick += PlusButtonClick;
+            AdvanceCalcKeyboardEvents.OnMinusButtonClick += MinusButtonClick;
+            AdvanceCalcKeyboardEvents.OnMultiplyButtonClick += MultiplyButtonClick;
+            AdvanceCalcKeyboardEvents.OnDivideButtonClick += DivideButtonClick;
+            AdvanceCalcKeyboardEvents.OnModuloButtonClick += ModuloButtonClick;
+            AdvanceCalcKeyboardEvents.OnPowButtonClick += PowButtonClick;
+            AdvanceCalcKeyboardEvents.OnYRootButtonClick += YRootButtonClick;
+            AdvanceCalcKeyboardEvents.OnSqrButtonClick += SqrButtonClick;
+            AdvanceCalcKeyboardEvents.OnSqrtButtonClick += SqrtButtonClick;
+            AdvanceCalcKeyboardEvents.OnCubeButtonClick += CubeButtonClick;
+            AdvanceCalcKeyboardEvents.OnCubeRootButtonClick += CubeRootButtonClick;
+            AdvanceCalcKeyboardEvents.OnAbsButtonClick += AbsButtonClick;
+            AdvanceCalcKeyboardEvents.OnFactButtonClick += FactButtonClick;
+            AdvanceCalcKeyboardEvents.OnLogButtonClick += LogButtonClick;
+            AdvanceCalcKeyboardEvents.OnLnButtonClick += LnButtonClick;
+            AdvanceCalcKeyboardEvents.OnEulPowButtonClick += EulPowButtonClick;
+            AdvanceCalcKeyboardEvents.OnPiButtonClick += PiButtonClick;
+            AdvanceCalcKeyboardEvents.OnEulButtonClick += EulButtonClick;
+            AdvanceCalcKeyboardEvents.OnOpenBracketButtonClick += OpenBracketButtonClick;
+            AdvanceCalcKeyboardEvents.OnCloseBracketButtonClick += CloseBracketButtonClick;
+            AdvanceCalcKeyboardEvents.OnCommaButtonClick += CommaButtonClick;
+            AdvanceCalcKeyboardEvents.OnClearButtonClick += ClearButtonClick;
+            AdvanceCalcKeyboardEvents.OnClearEntryButtonClick += ClearEntryButtonClick;
+            AdvanceCalcKeyboardEvents.OnBackButtonClick += BackButtonClick;
+            AdvanceCalcKeyboardEvents.OnEqualsButtonClick += EqualsButtonClick;
+        }
+
 
         private static List<string> operations = new List<string> {
             "*",
@@ -37,30 +84,6 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
             "^",
             "√"
         };
-        
-        
-        public AdvanceCalcManager()
-        {
-            ClearExample();
-
-            isCalculated = false;
-
-            BasicCalcKeyboardEvents.OnNumpadButtonClick += NumpadButtonClick;
-            BasicCalcKeyboardEvents.OnPlusButtonClick += PlusButtonClick;
-            BasicCalcKeyboardEvents.OnMinusButtonClick += MinusButtonClick;
-            BasicCalcKeyboardEvents.OnMultiplyButtonClick += MultiplyButtonClick;
-            BasicCalcKeyboardEvents.OnDivideButtonClick += DivideButtonClick;
-            BasicCalcKeyboardEvents.OnModuloButtonClick += ModuloButtonClick;
-            BasicCalcKeyboardEvents.OnFactorialButtonClick += FactorialButtonClick;
-            BasicCalcKeyboardEvents.OnAbsButtonClick += AbsButtonClick;
-            BasicCalcKeyboardEvents.OnPowButtonClick += PowButtonClick;
-            BasicCalcKeyboardEvents.OnSqrtButtonClick += SqrtButtonClick;
-            BasicCalcKeyboardEvents.OnCommaButtonClick += CommaButtonClick;
-            BasicCalcKeyboardEvents.OnClearButtonClick += ClearButtonClick;
-            BasicCalcKeyboardEvents.OnClearEntryButtonClick += ClearEntryButtonClick;
-            BasicCalcKeyboardEvents.OnBackButtonClick += BackButtonClick;
-            BasicCalcKeyboardEvents.OnEqualsButtonClick += EqualsButtonClick;
-        }
 
 
         public void UpdateNumberLabel()
@@ -81,69 +104,160 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
                 UpdateExampleLabel();
                 isCalculated = false;
             }
-            
+
             if (number == "0") {
                 number = placeholder;
             }
             else {
                 number += placeholder;
             }
-            
+
             UpdateNumberLabel();
         }
 
 
         private void PlusButtonClick(string placeholder)
         {
-            AddNextNumber(BasicPrimeOper.Plus);
+            AddNextNumber(AdvancePrimeOper.None);
         }
 
 
         private void MinusButtonClick(string placeholder)
         {
-            AddNextNumber(BasicPrimeOper.Minus);
+            isNegative = true;
+            AddNextNumber(AdvancePrimeOper.None);
         }
 
 
         private void MultiplyButtonClick(string placeholder)
         {
-            AddNextNumber(BasicPrimeOper.Multiply);
+            AddNextNumber(AdvancePrimeOper.Multiply);
         }
 
 
         private void DivideButtonClick(string placeholder)
         {
-            AddNextNumber(BasicPrimeOper.Divide);
+            AddNextNumber(AdvancePrimeOper.Divide);
         }
 
         
         private void ModuloButtonClick(string placeholder)
         {
-            AddNextNumber(BasicPrimeOper.Modulo);
-        }
-
-
-        private void FactorialButtonClick(string placeholder)
-        {
-            AddMathFunction(MathFunction.Fact);
-        }
-
-
-        private void AbsButtonClick(string placeholder)
-        {
-            AddMathFunction(MathFunction.Abs);
+            AddNextNumber(AdvancePrimeOper.Modulo);
         }
 
 
         private void PowButtonClick(string placeholder)
         {
-            AddMathFunction(MathFunction.Sqr);
+            AddNextNumber(AdvancePrimeOper.Pow);
+        }
+
+
+        private void YRootButtonClick(string placeholder)
+        {
+            AddNextNumber(AdvancePrimeOper.YRoot);
+        }
+
+
+        private void SqrButtonClick(string placeholder)
+        {
+            AddFunction(MathFunction.Sqr);
         }
 
 
         private void SqrtButtonClick(string placeholder)
         {
-            AddMathFunction(MathFunction.Sqrt);
+            AddFunction(MathFunction.Sqrt);
+        }
+
+
+        private void CubeButtonClick(string placeholder)
+        {
+            AddFunction(MathFunction.Cube);
+        }
+
+
+        private void CubeRootButtonClick(string placeholder)
+        {
+            AddFunction(MathFunction.CubeRoot);
+        }
+
+
+        private void AbsButtonClick(string placeholder)
+        {
+            AddFunction(MathFunction.Abs);
+        }
+
+
+        private void FactButtonClick(string placeholder)
+        {
+            AddFunction(MathFunction.Fact);
+        }
+
+
+        private void LogButtonClick(string placeholder)
+        {
+            AddFunction(MathFunction.Log);
+        }
+
+
+        private void LnButtonClick(string placeholder)
+        {
+            AddFunction(MathFunction.Ln);
+        }
+
+
+        private void EulPowButtonClick(string placeholder)
+        {
+            AddFunction(MathFunction.EulPow);
+        }
+
+
+        private void PiButtonClick(string placeholder)
+        {
+            number = Math.PI.ToString(CultureInfo.CurrentCulture);
+            UpdateNumberLabel();
+        }
+
+
+        private void EulButtonClick(string placeholder)
+        {
+            number = Math.E.ToString(CultureInfo.CurrentCulture);
+            UpdateNumberLabel();
+        }
+
+
+        private void OpenBracketButtonClick(string placeholder)
+        {
+            if (primeOper != AdvancePrimeOper.None || ! isNegative) {
+                numbers[depth][bracket].Add(new AdvanceNumber(primeOper, functions));
+
+                example += "(";
+                UpdateExampleLabel();
+
+                AddDepth();
+
+                return;
+            }
+
+            numbers[depth][bracket].Add(new AdvanceNumber(-1, primeOper, new List<Enum>()));
+            numbers[depth][bracket].Add(new AdvanceNumber(AdvancePrimeOper.Multiply, functions));
+
+            example += "1 * (";
+            UpdateExampleLabel();
+
+            AddDepth();
+        }
+
+
+        private void CloseBracketButtonClick(string placeholder)
+        {
+            if ( ! AddNumber() || depth - 1 < 0) {
+                return;
+            }
+
+            depth--;
+            bracket = numbers[depth].Count;
         }
 
 
@@ -186,7 +300,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
                 return;
             }
 
-            BasicCalculator calculator = new BasicCalculator(numbers);
+            AdvanceCalculator calculator = new AdvanceCalculator(numbers, new AdvanceNumber());
 
             example += " = ";
             UpdateExampleLabel();
@@ -196,7 +310,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
             UpdateNumberLabel();
             number = "0";
 
-            primeOper = BasicPrimeOper.Plus;
+            primeOper = AdvancePrimeOper.None;
             isCalculated = true;
         }
 
@@ -204,41 +318,64 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
         {
             number = "0";
             UpdateNumberLabel();
+
+            isNegative = false;
         }
 
 
         private void ClearExample()
         {
-            numbers = new List<BasicNumber>();
+            numbers = new List<List<List<AdvanceNumber>>> {
+                new List<List<AdvanceNumber>> {
+                    new List<AdvanceNumber>()
+                }
+            };
+
             example = string.Empty;
-            primeOper = BasicPrimeOper.Plus;
-            functions = new List<MathFunction>();
+            UpdateExampleLabel();
             
             ClearNumber();
+
+            primeOper = AdvancePrimeOper.None;
+            functions = new List<Enum>();
+            depth = 0;
+            bracket = 0;
+        }
+
+
+        private void AddFunction(Enum function)
+        {
+            functions.Add(function);
+            example += function.ToString().ToLower() + "(";
             UpdateExampleLabel();
         }
 
 
-        private void AddMathFunction(MathFunction mathFunction)
+        private void AddNextNumber(AdvancePrimeOper nextPrimeOper)
         {
-            functions.Add(mathFunction);
-            example += mathFunction.ToString().ToLower() + "(";
-            UpdateExampleLabel();
-        }
+            if (nextPrimeOper == AdvancePrimeOper.None) {
+                SetNumberSign();
+                UpdateExampleLabel();
+            }
 
-
-        private void AddNextNumber(BasicPrimeOper nextPrimeOper)
-        {
             if ( ! AddNumber()) {
                 return;
             }
 
             primeOper = nextPrimeOper;
-            example += " " + operations[(int)nextPrimeOper] + " ";
-            UpdateExampleLabel();
 
             ClearNumber();
-            UpdateNumberLabel();
+
+            if (nextPrimeOper == AdvancePrimeOper.None)
+            {
+                example += " " + (isNegative ? "-" : "+") + " ";
+                UpdateExampleLabel();
+
+                return;
+            }
+
+            example += " " + operations[(int)nextPrimeOper] + " ";
+            UpdateExampleLabel();
         }
 
 
@@ -249,42 +386,68 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
                 return false;
             }
 
-            numbers.Add(new BasicNumber(value, primeOper, functions));
+            numbers[depth][bracket].Add(new AdvanceNumber(value, primeOper, functions));
 
-            example += number + GetCloseBrackets();
-            functions = new List<MathFunction>();
+            example += number + GetCloseBrackets(functions.Count);
+            functions = new List<Enum>();
 
             return true;
         }
 
 
-        /*private bool IsNumberNegative()
+        private void AddDepth()
         {
-            return number[0] == '-';
-        }*/
+            depth++;
+            if (depth == numbers.Count) {
+                numbers.Add(new List<List<AdvanceNumber>> {
+                    new List<AdvanceNumber>()
+                });
+            }
+
+            bracket = numbers[depth].Count;
+            numbers[depth].Add(new List<AdvanceNumber>());
+        }
 
 
-        /*private void SetNumberPositive()
+        private void SetNumberSign()
+        {
+            if (isNegative) {
+                SetNumberNegative();
+                return;
+            }
+
+            SetNumberPositive();
+        }
+
+
+        private void SetNumberPositive()
         {
             if (IsNumberNegative()) {
                 number = number.Remove(0, 1);
                 UpdateNumberLabel();
             }
-        }*/
+        }
 
 
-        /*private void SetNumberNegative()
+        private void SetNumberNegative()
         {
             if ( ! IsNumberNegative()) {
                 number = '-' + number;
                 UpdateNumberLabel();
             }
-        }*/
+        }
 
-        private string GetCloseBrackets()
+
+        private bool IsNumberNegative()
+        {
+            return number[0] == '-';
+        }
+
+
+        private string GetCloseBrackets(int count)
         {
             return functions.Count > 0
-                ? Enumerable.Repeat(')', functions.Count).Aggregate(string.Empty, (total, next) => total + next)
+                ? Enumerable.Repeat(')', count).Aggregate(string.Empty, (total, next) => total + next)
                 : string.Empty
             ;
         }

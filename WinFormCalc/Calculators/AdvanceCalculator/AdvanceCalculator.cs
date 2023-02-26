@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Globalization;
 using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 
 namespace WinFormCalc.Calculators.AdvanceCalculator
@@ -72,9 +73,9 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
         }
 
 
-        public double GetResult()
+        public string GetResult()
         {
-            return Calculate().Value;
+            return Calculate().Value.ToString(CultureInfo.CurrentCulture);
         }
     }
 }

@@ -42,17 +42,22 @@ namespace WinFormCalc.Components.BasicCalcComponent
         
         public BasicCalcManager()
         {
+            Init();
+
             ClearExample();
-
             isCalculated = false;
+        }
 
+
+        private void Init()
+        {
             BasicCalcKeyboardEvents.OnNumpadButtonClick += NumpadButtonClick;
             BasicCalcKeyboardEvents.OnPlusButtonClick += PlusButtonClick;
             BasicCalcKeyboardEvents.OnMinusButtonClick += MinusButtonClick;
             BasicCalcKeyboardEvents.OnMultiplyButtonClick += MultiplyButtonClick;
             BasicCalcKeyboardEvents.OnDivideButtonClick += DivideButtonClick;
             BasicCalcKeyboardEvents.OnModuloButtonClick += ModuloButtonClick;
-            BasicCalcKeyboardEvents.OnFactorialButtonClick += FactorialButtonClick;
+            BasicCalcKeyboardEvents.OnFactButtonClick += FactButtonClick;
             BasicCalcKeyboardEvents.OnAbsButtonClick += AbsButtonClick;
             BasicCalcKeyboardEvents.OnPowButtonClick += PowButtonClick;
             BasicCalcKeyboardEvents.OnSqrtButtonClick += SqrtButtonClick;
@@ -82,14 +87,14 @@ namespace WinFormCalc.Components.BasicCalcComponent
                 UpdateExampleLabel();
                 isCalculated = false;
             }
-            
+
             if (number == "0") {
                 number = placeholder;
             }
             else {
                 number += placeholder;
             }
-            
+
             UpdateNumberLabel();
         }
 
@@ -124,27 +129,27 @@ namespace WinFormCalc.Components.BasicCalcComponent
         }
 
 
-        private void FactorialButtonClick(string placeholder)
+        private void FactButtonClick(string placeholder)
         {
-            AddMathFunction(MathFunction.Fact);
+            AddFunction(MathFunction.Fact);
         }
 
 
         private void AbsButtonClick(string placeholder)
         {
-            AddMathFunction(MathFunction.Abs);
+            AddFunction(MathFunction.Abs);
         }
 
 
         private void PowButtonClick(string placeholder)
         {
-            AddMathFunction(MathFunction.Sqr);
+            AddFunction(MathFunction.Sqr);
         }
 
 
         private void SqrtButtonClick(string placeholder)
         {
-            AddMathFunction(MathFunction.Sqrt);
+            AddFunction(MathFunction.Sqrt);
         }
 
 
@@ -197,6 +202,7 @@ namespace WinFormCalc.Components.BasicCalcComponent
             UpdateNumberLabel();
             number = "0";
 
+            numbers.Clear();
             primeOper = BasicPrimeOper.Plus;
             isCalculated = true;
         }
@@ -214,13 +220,13 @@ namespace WinFormCalc.Components.BasicCalcComponent
             example = string.Empty;
             primeOper = BasicPrimeOper.Plus;
             functions = new List<MathFunction>();
-            
-            ClearNumber();
+
             UpdateExampleLabel();
+            ClearNumber();
         }
 
 
-        private void AddMathFunction(MathFunction mathFunction)
+        private void AddFunction(MathFunction mathFunction)
         {
             functions.Add(mathFunction);
             example += mathFunction.ToString().ToLower() + "(";

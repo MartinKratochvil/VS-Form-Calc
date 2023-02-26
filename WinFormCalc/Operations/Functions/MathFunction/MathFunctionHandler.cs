@@ -60,6 +60,12 @@ namespace WinFormCalc.Operations.Functions.MathFunction
         }
 
 
+        public static double Round(double x)
+        {
+            return Math.Round(x);
+        }
+
+
         public static double Floor(double x)
         {
             return Math.Floor(x);
