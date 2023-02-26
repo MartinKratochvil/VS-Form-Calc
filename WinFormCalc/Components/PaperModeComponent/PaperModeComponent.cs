@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -31,7 +31,7 @@ namespace WinFormCalc.Components.PaperModeComponent
                     new AdvanceNumber(AdvancePrimeOper.None, new List<Enum>())
                 );
 
-                string result = calc.GetResult().ToString();
+                string result = calc.GetResult();
                 int cursor = SelectionStart;
 
                 //RemoveLine();

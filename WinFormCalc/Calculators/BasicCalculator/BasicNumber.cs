@@ -1,10 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 using WinFormCalc.Operations.Functions;
+using WinFormCalc.Operations.Functions.GonFunction;
 using WinFormCalc.Operations.Functions.MathFunction;
-using WinFormCalc.Operations.Functions.MathGonFunction;
 using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
+using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
 
 namespace WinFormCalc.Calculators.BasicCalculator
 {
@@ -12,67 +13,33 @@ namespace WinFormCalc.Calculators.BasicCalculator
     {
         private double value;
 
-        private bool isCalculated;
+        public BasicPrimeOper PrimeOper { get; }
 
-        protected List<Enum> Functions;
-        
-        public AdvancePrimeOper PrimeOper { get; }
+        private List<MathFunction> functions;
 
-        
-        public virtual double Value
+
+        public double Value
         {
             get {
                 Calculate();
-
                 return value;
             }
-            set => this.value = value;
         }
 
 
-        public BasicNumber(double value, AdvancePrimeOper primeOper, List<Enum> functions)
+        public BasicNumber(double value, BasicPrimeOper primeOper, List<MathFunction> functions)
         {
             this.value = value;
             PrimeOper = primeOper;
-            Functions = functions;
-            isCalculated = false;
-        }
-
-
-        public BasicNumber(AdvancePrimeOper primeOper, List<Enum> functions)
-        {
-            PrimeOper = primeOper;
-            Functions = functions;
-            isCalculated = false;
-        }
-
-        
-        public BasicNumber(double value)
-        {
-            this.value = value;
-            PrimeOper = AdvancePrimeOper.None;
-            Functions = new List<Enum>();
-            isCalculated = false;
+            this.functions = functions;
         }
 
 
         private void Calculate()
         {
-            if (isCalculated || Functions == null) {
-                return;
-            }
-
-            Functions.ForEach(function => {
-                if (function is Function mathFunction) {
-                    value = MathFunc.Activate(value, mathFunction);
-                }
-                
-                if (function is GonFunc gonFunc) {
-                    value = MathGon.Calc(value, gonFunc);
-                }
+            functions.ForEach(function => {
+                value = MathFunctionHandler.Handle(value, function);
             });
-
-            isCalculated = true;
         }
     }
 }

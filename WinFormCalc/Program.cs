@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using WinFormCalc.Forms;
-using WinFormCalc.Operations.Functions;
+using WinFormCalc.Operations.Functions.GonFunction;
 using WinFormCalc.Operations.Functions.MathFunction;
-using WinFormCalc.Operations.Functions.MathGonFunction;
 using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
 using WinFormCalc.Operations.PrimeOperations.BinPrimeOper;
@@ -22,13 +21,13 @@ namespace WinFormCalc
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            MathGon.Setup();
-            MathFunc.Setup();
+            GonFunctionHandler.Setup();
+            MathFunctionHandler.Setup();
             BasicPrimeOperHandler.Setup();
             AdvancePrimeOperHandler.Setup();
             BinPrimeOperHandler.Setup();
             
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }

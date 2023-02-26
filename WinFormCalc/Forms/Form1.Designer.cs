@@ -1,4 +1,4 @@
-﻿namespace WinFormCalc.Forms
+namespace WinFormCalc.Forms
 {
     partial class Form1
     {
@@ -343,11 +343,13 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(218, 90);
+            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label3.Location = new System.Drawing.Point(689, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(160, 13);
+            this.label3.Size = new System.Drawing.Size(255, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "sin(4) + 32 / √8^2 - (4^2 - 3^2) =";
+            this.label3.Text = "sin(4) + 32 / √8^2 - sssssssssssssssssss(4^2 - 3^2) =";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Form1
             // 

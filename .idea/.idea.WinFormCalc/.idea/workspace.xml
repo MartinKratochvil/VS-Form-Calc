@@ -4,26 +4,40 @@
     <projectFile>WinFormCalc/WinFormCalc.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6aae75a3-f407-4611-889f-a886b8f7a3aa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/WinFormCalc/Operations/BasicPrimeOper/BasicPrimeOper.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WinFormCalc/Operations/BasicPrimeOper/BasicPrimeOperHandler.cs" afterDir="false" />
+    <list default="true" id="6aae75a3-f407-4611-889f-a886b8f7a3aa" name="Changes" comment="up">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceCalculator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceNumber.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicCalculator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicNumber.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/ExampleConvertor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/ExampleConvertor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboardEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboardEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/PaperModeComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/PaperModeComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Enums/PrimeOper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/AdvacePrimeOper/AdvacePrimeOper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathOper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/AdvacePrimeOper/AdvancePrimeOperHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunctionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunctionHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34ec56fc58ec4b3597ef877c03bd11d117ab30/1a/15a6aa57/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/92/8e2cfdbc/CultureInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/a3/49be7ac2/List`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/cf/0cc26fc9/Math.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/dc/f81d9931/String.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Components/BasicCalcComponent/BasicCalcManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvacePrimeOper.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -51,7 +65,7 @@
     ]
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected=".NET Project.WinFormCalc">
     <configuration name="WinFormCalc" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -70,6 +84,27 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="WinFormCalc.Components.BasicCalcComponent.BasicCalcKeyboardEvents.InvokeEvent" type="DotNetStaticMethod" factoryName=".NET Static Method" temporary="true">
+      <option name="EXE_PATH" value="C:\Program Files\JetBrains\JetBrains Rider 2022.3.2\lib\ReSharperHost\JetLauncherILc.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.7.2" />
+      <option name="CLASS_NAME" value="WinFormCalc.Components.BasicCalcComponent.BasicCalcKeyboardEvents" />
+      <option name="METHOD_NAME" value="InvokeEvent" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue=".NET Static Method.WinFormCalc.Components.BasicCalcComponent.BasicCalcKeyboardEvents.InvokeEvent" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -81,8 +116,25 @@
       <updated>1677081021270</updated>
       <workItem from="1677081024103" duration="2864000" />
       <workItem from="1677243429606" duration="1571000" />
-      <workItem from="1677264851611" duration="4010000" />
+      <workItem from="1677264851611" duration="10517000" />
+      <workItem from="1677286405542" duration="2010000" />
+      <workItem from="1677289936736" duration="49266000" />
     </task>
+    <task id="LOCAL-00001" summary="up">
+      <created>1677269992178</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677269992178</updated>
+    </task>
+    <task id="LOCAL-00002" summary="up">
+      <created>1677353322264</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677353322264</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -92,5 +144,7 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="up" />
+    <option name="LAST_COMMIT_MESSAGE" value="up" />
   </component>
 </project>

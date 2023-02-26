@@ -1,13 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormCalc.Calculators.BasicCalculator;
 using WinFormCalc.Components.BasicCalcComponent;
+using WinFormCalc.Operations.Functions.MathFunction;
+using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
 
 namespace WinFormCalc.Forms
 {
@@ -25,8 +22,8 @@ namespace WinFormCalc.Forms
         }
 
 
-        private void button1_Click(object sender, EventArgs e) {
-
+        private void button1_Click(object sender, EventArgs e)
+        {
             /*List<List<List<BinNumber>>> binValues = new List<List<List<BinNumber>>>
             {
                 new List<List<BinNumber>>
@@ -113,8 +110,17 @@ namespace WinFormCalc.Forms
 
             //MessageBox.Show(Temperature.Convert(35.6, TemperatureEnum.Fahrenheit, TemperatureEnum.Kelvin).ToString());
 
+            //panel.Size = new Size(500, 600);
 
-            panel.Size = new Size(500, 600);
+            List<BasicNumber> numbers = new List<BasicNumber> {
+                new BasicNumber(5, BasicPrimeOper.Plus, new List<MathFunction>{}),
+                new BasicNumber(5, BasicPrimeOper.Multiply, new List<MathFunction>{}),
+                new BasicNumber(2, BasicPrimeOper.Multiply, new List<MathFunction>{ MathFunction.Sqr, MathFunction.Sqr })
+            };
+
+            BasicCalculator calc = new BasicCalculator(numbers);
+
+            MessageBox.Show(calc.GetResult());
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)

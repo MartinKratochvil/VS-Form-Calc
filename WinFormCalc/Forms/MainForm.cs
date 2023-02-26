@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormCalc.Components.AdvanceCalcComponent;
 using WinFormCalc.Components.BasicCalcComponent;
 
 namespace WinFormCalc.Forms
@@ -14,7 +9,11 @@ namespace WinFormCalc.Forms
     public partial class MainForm : Form
     {
 
-        BasicCalcPanel basicCalcPanel;
+        private BasicCalcPanel basicCalcPanel;
+
+        private AdvanceCalcPanel advanceCalcPanel;
+
+        private Size formSize;
 
 
         public MainForm()
@@ -24,13 +23,28 @@ namespace WinFormCalc.Forms
             basicCalcPanel = new BasicCalcPanel();
             basicCalcPanel.Size = contentPanel.Size;
 
-            contentPanel.Controls.Add(basicCalcPanel);
+            advanceCalcPanel = new AdvanceCalcPanel();
+            advanceCalcPanel.Size = contentPanel.Size;
+            
+            contentPanel.Controls.Add(advanceCalcPanel);
+
+            formSize = Size;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            basicCalcPanel.Size = new Size(1280, 890);
-            contentPanel.Size = new Size(1280, 890);
+            MessageBox.Show("Swag");
+        }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            contentPanel.Width += Width - formSize.Width;
+            contentPanel.Height += Height - formSize.Height;
+
+            basicCalcPanel.Size = contentPanel.Size;
+            advanceCalcPanel.Size = contentPanel.Size;
+
+            formSize = Size;
         }
     }
 }

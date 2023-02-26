@@ -1,4 +1,4 @@
-﻿namespace WinFormCalc.Forms
+namespace WinFormCalc.Forms
 {
     partial class MainForm
     {
@@ -73,6 +73,7 @@
             this.MinimumSize = new System.Drawing.Size(336, 534);
             this.Name = "MainForm";
             this.Text = "Main";
+            this.Resize += new System.EventHandler(this.MainForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
