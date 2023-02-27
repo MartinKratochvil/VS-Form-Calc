@@ -1,16 +1,12 @@
-using System;
 using System.Collections.Generic;
-using WinFormCalc.Calculators.GoniometricFunctions.Enums;
-using WinFormCalc.Operations.Functions;
-using WinFormCalc.Operations.Functions.GonFunction;
 using WinFormCalc.Operations.Functions.MathFunction;
-using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
 
 namespace WinFormCalc.Calculators.BasicCalculator
 {
     public class BasicNumber
     {
+
         private double value;
 
         public BasicPrimeOper PrimeOper { get; }

@@ -31,7 +31,7 @@ namespace WinFormCalc.Components.BasicCalcComponent
 
         public event NumberLabelUpdate OnNumberLabelUpdate;
 
-        private static List<string> operations = new List<string> {
+        private static List<string> operators = new List<string> {
             "+",
             "-",
             "*",
@@ -241,7 +241,7 @@ namespace WinFormCalc.Components.BasicCalcComponent
             }
 
             primeOper = nextPrimeOper;
-            example += " " + operations[(int)nextPrimeOper] + " ";
+            example += " " + operators[(int)nextPrimeOper] + " ";
             UpdateExampleLabel();
 
             ClearNumber();

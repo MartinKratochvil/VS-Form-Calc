@@ -1,53 +1,63 @@
 ﻿using System;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
-using WinFormCalc.Operations.PrimeOperations.BinPrimeOper;
+using WinFormCalc.Operations.PrimeOperations.ProgrammerPrimeOper;
 
 namespace WinFormCalc.Calculators.ProgrammerCalculator
 {
     public class ProgrammerNumber
     {
-        public long value;
 
-        public BinPrimeOper function;
+        public long Value;
 
-        public bool isList;
+        public ProgrammerPrimeOper PrimeOper { get; }
+
+        public VarType Type { get; }
+
+        public bool IsList;
 
 
-        public ProgrammerNumber(string value, VarType type, VarSize size, BinPrimeOper function)
+        public ProgrammerNumber(string value, VarType type, ProgrammerPrimeOper primeOper)
         {
-            this.isList = false;
-            this.function = function;
+            try {
+                Value = Convert.ToInt64(value, (int)type);
+            }
+            catch {
+                Value = 0;
+            }
 
-            try
-            {
-                this.value = Convert.ToInt64(value, (int)type);
-            }
-            catch
-            {
-                this.value = 0;
-            }
+            PrimeOper = primeOper;
+            IsList = false;
         }
 
 
-        public ProgrammerNumber(long value, VarSize size, BinPrimeOper function)
+        public ProgrammerNumber(long value, ProgrammerPrimeOper primeOper)
         {
-            this.isList = false;
-            this.value = value;
-            this.function = function;
+            Value = value;
+            PrimeOper = primeOper;
+            IsList = false;
         }
 
 
         public ProgrammerNumber(long value)
         {
-            this.isList = false;
-            this.value = value;
+            Value = value;
+            PrimeOper = ProgrammerPrimeOper.Plus;
+            IsList = false;
         }                                                                                                                                                                                                   
 
 
-        public ProgrammerNumber(BinPrimeOper function)
+        public ProgrammerNumber(ProgrammerPrimeOper primeOper)
         {
-            this.isList = true;
-            this.function = function;
+            PrimeOper = primeOper;
+            IsList = true;
+        }
+
+
+        public ProgrammerNumber(VarType type)
+        {
+            PrimeOper = ProgrammerPrimeOper.Plus;
+            Type = type;
+            IsList = true;
         }
     }
 }

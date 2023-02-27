@@ -27,18 +27,18 @@ namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper
 
         public static bool Handle(List<AdvanceNumber> values, AdvanceNumber operand)
         {
-            if (operand.PrimeOper != AdvancePrimeOper.Plus && operand.PrimeOper != AdvancePrimeOper.Minus) {
-                double value = (double)Operations[operand.PrimeOper].DynamicInvoke(
-                    SetNumberSign(values).Value,
-                    operand.Value
-                );
-
-                values[values.Count - 1] = new AdvanceNumber(value);
-
-                return true;
+            if (operand.PrimeOper == AdvancePrimeOper.Plus || operand.PrimeOper == AdvancePrimeOper.Minus) {
+                return false;
             }
 
-            return false;
+            double value = (double)Operations[operand.PrimeOper].DynamicInvoke(
+                SetNumberSign(values).Value,
+                operand.Value
+            );
+
+            values[values.Count - 1] = new AdvanceNumber(value);
+
+            return true;
         }
 
 

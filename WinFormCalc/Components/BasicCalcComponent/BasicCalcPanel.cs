@@ -83,7 +83,8 @@ namespace WinFormCalc.Components.BasicCalcComponent
         }
 
 
-        private string TrimTextToSize(string text, int maxSize) {
+        private string TrimTextToSize(string text, int maxSize)
+        {
             if (text.Length <= maxSize) {
                 return text;
             }

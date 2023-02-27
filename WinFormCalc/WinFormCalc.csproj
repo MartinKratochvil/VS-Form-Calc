@@ -70,6 +70,16 @@
     <Compile Include="Components\PaperModeComponent\PaperModeComponent.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Components\ProgrammerCalcComponent\ProgrammerCalcFunctionPanel.cs" />
+    <Compile Include="Components\ProgrammerCalcComponent\ProgrammerCalcFunctionPanelEvents.cs" />
+    <Compile Include="Components\ProgrammerCalcComponent\ProgrammerCalcKeyboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ProgrammerCalcComponent\ProgrammerCalcKeyboardEvents.cs" />
+    <Compile Include="Components\ProgrammerCalcComponent\ProgrammerCalcManager.cs" />
+    <Compile Include="Components\ProgrammerCalcComponent\ProgrammerCalcPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\TableDataManager.cs" />
     <Compile Include="Convertors\Area\Area.cs" />
     <Compile Include="Convertors\Area\AreaEnum.cs" />
@@ -125,8 +135,8 @@
     <Compile Include="Operations\PrimeOperations\AdvacePrimeOper\AdvancePrimeOperHandler.cs" />
     <Compile Include="Operations\PrimeOperations\BasicPrimeOper\BasicPrimeOper.cs" />
     <Compile Include="Operations\PrimeOperations\BasicPrimeOper\BasicPrimeOperHandler.cs" />
-    <Compile Include="Operations\PrimeOperations\BinPrimeOper\BinPrimeOper.cs" />
-    <Compile Include="Operations\PrimeOperations\BinPrimeOper\BinPrimeOperHandler.cs" />
+    <Compile Include="Operations\PrimeOperations\ProgrammerPrimeOper\ProgrammerPrimeOper.cs" />
+    <Compile Include="Operations\PrimeOperations\ProgrammerPrimeOper\ProgrammerPrimeOperHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Calculators\ProgrammerCalculator\ProgrammerCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

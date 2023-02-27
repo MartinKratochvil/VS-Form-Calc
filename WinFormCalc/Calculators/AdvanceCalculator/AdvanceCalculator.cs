@@ -16,16 +16,16 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
 
         private AdvanceCalculator(AdvanceNumber number)
         {
-            isList = false;
             this.number = number;
+            isList = false;
         }
 
 
         public AdvanceCalculator(List<List<List<AdvanceNumber>>> numbers, AdvanceNumber number)
         {
-            isList = true;
-            this.number = number;
             this.numbers = new List<AdvanceCalculator>();
+            this.number = number;
+            isList = true;
 
             numbers = new List<List<List<AdvanceNumber>>>(numbers);
 
@@ -62,8 +62,7 @@ namespace WinFormCalc.Calculators.AdvanceCalculator
             };
 
             double result = 0;
-            foreach (AdvanceNumber number in numbers)
-            {
+            foreach (AdvanceNumber number in numbers) {
                 if (number.PrimeOper == AdvancePrimeOper.Minus) {
                     result -= number.Value;
                     continue;

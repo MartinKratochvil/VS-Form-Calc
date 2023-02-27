@@ -3,32 +3,35 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using WinFormCalc.Calculators.AdvanceCalculator;
+using WinFormCalc.Calculators.GoniometricFunctions.Enums;
+using WinFormCalc.Calculators.ProgrammerCalculator;
 using WinFormCalc.Operations.Functions.MathFunction;
-using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
+using WinFormCalc.Operations.PrimeOperations.ProgrammerPrimeOper;
 
-namespace WinFormCalc.Components.AdvanceCalcComponent
+namespace WinFormCalc.Components.ProgrammerCalcComponent
 {
-    public class AdvanceCalcManager
+    public class ProgrammerCalcManager
     {
 
-        private List<List<List<AdvanceNumber>>> numbers;
+        private List<List<List<ProgrammerNumber>>> numbers;
 
         private int depth;
 
         private int bracket;
 
+        private VarType numberType;
+        
         private string example;
 
         private string number;
 
-        private AdvancePrimeOper primeOper;
-
-        private List<Enum> functions;
+        private ProgrammerPrimeOper primeOper;
 
         private bool isCalculated;
 
         private bool isBracketClose;
+
+        private List<int> numberTypeNames;
 
         public delegate void ExampleLabelUpdate(string message);
 
@@ -38,45 +41,48 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
 
         public event NumberLabelUpdate OnNumberLabelUpdate;
 
+        public delegate void NumberTypeButtonUpdate(string message);
 
-        public AdvanceCalcManager()
+        public event NumberTypeButtonUpdate OnNumberTypeButtonUpdate;
+
+
+        public ProgrammerCalcManager()
         {
             Init();
             
             ClearExample();
+            ClearNumber();
+
+            numberType = VarType.Dec;
+            ChangeNumberType();
+
             isCalculated = false;
             isBracketClose = false;
+
+            numberTypeNames = new List<int>((int[])Enum.GetValues(typeof(VarType)));
         }
 
 
         private void Init()
         {
-            AdvanceCalcKeyboardEvents.OnNumpadButtonClick += NumpadButtonClick;
-            AdvanceCalcKeyboardEvents.OnPlusButtonClick += PlusButtonClick;
-            AdvanceCalcKeyboardEvents.OnMinusButtonClick += MinusButtonClick;
-            AdvanceCalcKeyboardEvents.OnMultiplyButtonClick += MultiplyButtonClick;
-            AdvanceCalcKeyboardEvents.OnDivideButtonClick += DivideButtonClick;
-            AdvanceCalcKeyboardEvents.OnModuloButtonClick += ModuloButtonClick;
-            AdvanceCalcKeyboardEvents.OnPowButtonClick += PowButtonClick;
-            AdvanceCalcKeyboardEvents.OnYRootButtonClick += YRootButtonClick;
-            AdvanceCalcKeyboardEvents.OnSqrButtonClick += SqrButtonClick;
-            AdvanceCalcKeyboardEvents.OnSqrtButtonClick += SqrtButtonClick;
-            AdvanceCalcKeyboardEvents.OnCubeButtonClick += CubeButtonClick;
-            AdvanceCalcKeyboardEvents.OnCubeRootButtonClick += CubeRootButtonClick;
-            AdvanceCalcKeyboardEvents.OnAbsButtonClick += AbsButtonClick;
-            AdvanceCalcKeyboardEvents.OnFactButtonClick += FactButtonClick;
-            AdvanceCalcKeyboardEvents.OnLogButtonClick += LogButtonClick;
-            AdvanceCalcKeyboardEvents.OnLnButtonClick += LnButtonClick;
-            AdvanceCalcKeyboardEvents.OnEulPowButtonClick += EulPowButtonClick;
-            AdvanceCalcKeyboardEvents.OnPiButtonClick += PiButtonClick;
-            AdvanceCalcKeyboardEvents.OnEulButtonClick += EulButtonClick;
-            AdvanceCalcKeyboardEvents.OnOpenBracketButtonClick += OpenBracketButtonClick;
-            AdvanceCalcKeyboardEvents.OnCloseBracketButtonClick += CloseBracketButtonClick;
-            AdvanceCalcKeyboardEvents.OnCommaButtonClick += CommaButtonClick;
-            AdvanceCalcKeyboardEvents.OnClearButtonClick += ClearButtonClick;
-            AdvanceCalcKeyboardEvents.OnClearEntryButtonClick += ClearEntryButtonClick;
-            AdvanceCalcKeyboardEvents.OnBackButtonClick += BackButtonClick;
-            AdvanceCalcKeyboardEvents.OnEqualsButtonClick += EqualsButtonClick;
+            ProgrammerCalcKeyboardEvents.OnNumpadButtonClick += NumpadButtonClick;
+            ProgrammerCalcKeyboardEvents.OnPlusButtonClick += PlusButtonClick;
+            ProgrammerCalcKeyboardEvents.OnMinusButtonClick += MinusButtonClick;
+            ProgrammerCalcKeyboardEvents.OnMultiplyButtonClick += MultiplyButtonClick;
+            ProgrammerCalcKeyboardEvents.OnDivideButtonClick += DivideButtonClick;
+            ProgrammerCalcKeyboardEvents.OnModuloButtonClick += ModuloButtonClick;
+            ProgrammerCalcKeyboardEvents.OnLeftShiftButtonClick += LeftShiftButtonClick;
+            ProgrammerCalcKeyboardEvents.OnRightShiftButtonClick += RightShiftButtonClick;
+            ProgrammerCalcKeyboardEvents.OnOpenBracketButtonClick += OpenBracketButtonClick;
+            ProgrammerCalcKeyboardEvents.OnCloseBracketButtonClick += CloseBracketButtonClick;
+            ProgrammerCalcKeyboardEvents.OnCommaButtonClick += CommaButtonClick;
+            ProgrammerCalcKeyboardEvents.OnClearButtonClick += ClearButtonClick;
+            ProgrammerCalcKeyboardEvents.OnClearEntryButtonClick += ClearEntryButtonClick;
+            ProgrammerCalcKeyboardEvents.OnBackButtonClick += BackButtonClick;
+            ProgrammerCalcKeyboardEvents.OnEqualsButtonClick += EqualsButtonClick;
+
+            ProgrammerCalcFunctionPanelEvents.OnLogicalFunctionButtonClick += LogicalFunctionButtonClick;
+            ProgrammerCalcFunctionPanelEvents.OnNumberTypeButtonClick += NumberTypeButtonClick;
         }
 
 
@@ -86,8 +92,14 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
             "*",
             "/",
             "%",
-            "^",
-            "√"
+            "<<",
+            ">>",
+            "AND",
+            "OR",
+            "NAND",
+            "NOR",
+            "XOR",
+            "XNOR"
         };
 
 
@@ -123,124 +135,55 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
 
         private void PlusButtonClick(string placeholder)
         {
-            AddNextNumber(AdvancePrimeOper.Plus);
+            AddNextNumber(ProgrammerPrimeOper.Plus);
         }
 
 
         private void MinusButtonClick(string placeholder)
         {
-            AddNextNumber(AdvancePrimeOper.Minus);
+            AddNextNumber(ProgrammerPrimeOper.Minus);
         }
 
 
         private void MultiplyButtonClick(string placeholder)
         {
-            AddNextNumber(AdvancePrimeOper.Multiply);
+            AddNextNumber(ProgrammerPrimeOper.Multiply);
         }
 
 
         private void DivideButtonClick(string placeholder)
         {
-            AddNextNumber(AdvancePrimeOper.Divide);
+            AddNextNumber(ProgrammerPrimeOper.Divide);
         }
 
         
         private void ModuloButtonClick(string placeholder)
         {
-            AddNextNumber(AdvancePrimeOper.Modulo);
+            AddNextNumber(ProgrammerPrimeOper.Modulo);
         }
 
 
-        private void PowButtonClick(string placeholder)
+        private void LeftShiftButtonClick(string placeholder)
         {
-            AddNextNumber(AdvancePrimeOper.Pow);
+            AddNextNumber(ProgrammerPrimeOper.LeftShift);
         }
 
 
-        private void YRootButtonClick(string placeholder)
+        private void RightShiftButtonClick(string placeholder)
         {
-            AddNextNumber(AdvancePrimeOper.YRoot);
-        }
-
-
-        private void SqrButtonClick(string placeholder)
-        {
-            AddFunction(MathFunction.Sqr);
-        }
-
-
-        private void SqrtButtonClick(string placeholder)
-        {
-            AddFunction(MathFunction.Sqrt);
-        }
-
-
-        private void CubeButtonClick(string placeholder)
-        {
-            AddFunction(MathFunction.Cube);
-        }
-
-
-        private void CubeRootButtonClick(string placeholder)
-        {
-            AddFunction(MathFunction.CubeRoot);
-        }
-
-
-        private void AbsButtonClick(string placeholder)
-        {
-            AddFunction(MathFunction.Abs);
-        }
-
-
-        private void FactButtonClick(string placeholder)
-        {
-            AddFunction(MathFunction.Fact);
-        }
-
-
-        private void LogButtonClick(string placeholder)
-        {
-            AddFunction(MathFunction.Log);
-        }
-
-
-        private void LnButtonClick(string placeholder)
-        {
-            AddFunction(MathFunction.Ln);
-        }
-
-
-        private void EulPowButtonClick(string placeholder)
-        {
-            AddFunction(MathFunction.EulPow);
-        }
-
-
-        private void PiButtonClick(string placeholder)
-        {
-            number = Math.PI.ToString(CultureInfo.CurrentCulture);
-            UpdateNumberLabel();
-        }
-
-
-        private void EulButtonClick(string placeholder)
-        {
-            number = Math.E.ToString(CultureInfo.CurrentCulture);
-            UpdateNumberLabel();
+            AddNextNumber(ProgrammerPrimeOper.RightShift);
         }
 
 
         private void OpenBracketButtonClick(string placeholder)
         {
-            numbers[depth][bracket].Add(new AdvanceNumber(primeOper, functions));
+            numbers[depth][bracket].Add(new ProgrammerNumber(primeOper));
             AddDepth();
 
             example += "(";
             UpdateExampleLabel();
 
-            primeOper = AdvancePrimeOper.Plus;
-            functions = new List<Enum>();
+            primeOper = ProgrammerPrimeOper.Plus;
         }
 
 
@@ -259,8 +202,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
 
             ClearNumber();
 
-            primeOper = AdvancePrimeOper.Plus;
-            functions = new List<Enum>();
+            primeOper = ProgrammerPrimeOper.Plus;
         }
 
 
@@ -274,6 +216,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
         private void ClearButtonClick(string placeholder)
         {
             ClearExample();
+            ClearNumber();
         }
 
 
@@ -303,9 +246,9 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
                 return;
             }
 
-            showData();
+            ShowData();
 
-            AdvanceCalculator calculator = new AdvanceCalculator(numbers, new AdvanceNumber());
+            ProgrammerCalculator calculator = new ProgrammerCalculator(numbers, new ProgrammerNumber(VarType.Bin));
 
             example += " = ";
             UpdateExampleLabel();
@@ -315,15 +258,36 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
             UpdateNumberLabel();
             number = "0";
 
-            numbers = new List<List<List<AdvanceNumber>>> {
-                new List<List<AdvanceNumber>> {
-                    new List<AdvanceNumber>()
+            numbers = new List<List<List<ProgrammerNumber>>> {
+                new List<List<ProgrammerNumber>> {
+                    new List<ProgrammerNumber>()
                 }
             };
 
-            primeOper = AdvancePrimeOper.Plus;
+            primeOper = ProgrammerPrimeOper.Plus;
             isCalculated = true;
         }
+
+
+        private void LogicalFunctionButtonClick(string placeholder)
+        {
+            
+        }
+
+
+        private void NumberTypeButtonClick(string placeholder)
+        {
+            ChangeNumberType();
+            ClearExample();
+
+            long value = Convert.ToInt64(number, (int)numberType);
+            NextNumberType();
+            number = Convert.ToString(value, (int)numberType);
+
+            UpdateNumberLabel();
+            OnNumberTypeButtonUpdate?.Invoke(numberType.ToString());
+        }
+
 
         private void ClearNumber()
         {
@@ -334,33 +298,22 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
 
         private void ClearExample()
         {
-            numbers = new List<List<List<AdvanceNumber>>> {
-                new List<List<AdvanceNumber>> {
-                    new List<AdvanceNumber>()
+            numbers = new List<List<List<ProgrammerNumber>>> {
+                new List<List<ProgrammerNumber>> {
+                    new List<ProgrammerNumber>()
                 }
             };
 
             example = string.Empty;
             UpdateExampleLabel();
             
-            ClearNumber();
-
-            primeOper = AdvancePrimeOper.Plus;
-            functions = new List<Enum>();
+            primeOper = ProgrammerPrimeOper.Plus;
             depth = 0;
             bracket = 0;
         }
 
 
-        private void AddFunction(Enum function)
-        {
-            functions.Add(function);
-            example += function.ToString().ToLower() + "(";
-            UpdateExampleLabel();
-        }
-
-
-        private void AddNextNumber(AdvancePrimeOper nextPrimeOper)
+        private void AddNextNumber(ProgrammerPrimeOper nextPrimeOper)
         {
             if ( ! AddNumber()) {
                 return;
@@ -382,17 +335,15 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
                 return true;
             }
             
-            if ( ! double.TryParse(number, out double value)) {
+            if ( ! long.TryParse(number, out long value)) {
                 ClearNumber();
                 return false;
             }
 
             numbers[depth][bracket].Add(
-                new AdvanceNumber(value, primeOper, functions)
+                new ProgrammerNumber(value, primeOper)
             );
-
-            example += number + GetCloseBrackets(functions.Count);
-            functions = new List<Enum>();
+            example += number;
 
             return true;
         }
@@ -402,11 +353,11 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
         {
             depth++;
             if (depth == numbers.Count) {
-                numbers.Add(new List<List<AdvanceNumber>>());
+                numbers.Add(new List<List<ProgrammerNumber>>());
             }
 
             bracket = numbers[depth].Count;
-            numbers[depth].Add(new List<AdvanceNumber>());
+            numbers[depth].Add(new List<ProgrammerNumber>());
         }
 
 
@@ -422,7 +373,27 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
             );
         }
 
-        private void showData()
+
+        private void ChangeNumberType()
+        {
+
+        }
+
+
+        private void NextNumberType()
+        {
+            int index = numberTypeNames.IndexOf((int)numberType);
+
+            if (index == numberTypeNames.Count - 1) {
+                numberType = (VarType)numberTypeNames[0];
+                return;
+            }
+            
+            numberType = (VarType)numberTypeNames[index + 1];
+        }
+
+
+        private void ShowData()
         {
             string data = "{\n";
             numbers.ForEach(list => {
@@ -444,6 +415,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
             data += "}";
 
             MessageBox.Show(data);
+            MessageBox.Show(((int[])Enum.GetValues(typeof(VarType))).Aggregate("", (s, num) => s += " " + num));
         }
     }
 }

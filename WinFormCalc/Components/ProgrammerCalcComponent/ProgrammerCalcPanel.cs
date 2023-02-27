@@ -3,23 +3,23 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WinFormCalc.Components.AdvanceCalcComponent
+namespace WinFormCalc.Components.ProgrammerCalcComponent
 {
-    public sealed class AdvanceCalcPanel : TableLayoutPanel
+    public sealed class ProgrammerCalcPanel : TableLayoutPanel
     {
  
         private Label exampleLabel;
 
         private Label numberLabel;
 
-        private Button trigonometryButton;
+        private ProgrammerCalcFunctionPanel functionPanel;
 
-        private AdvanceCalcKeyboard keyboard;
+        private ProgrammerCalcKeyboard keyboard;
 
-        private readonly AdvanceCalcManager calcManager;
+        private readonly ProgrammerCalcManager manager;
 
 
-        public AdvanceCalcPanel()
+        public ProgrammerCalcPanel()
         {
             InitializeComponent();
 
@@ -28,11 +28,12 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
             BackColor= Color.Pink;
             Resize += PanelResize;
 
-            calcManager = new AdvanceCalcManager();
-            calcManager.OnExampleLabelUpdate += ExampleLabelUpdate;
-            calcManager.OnNumberLabelUpdate += NumberLabelUpdate;
+            manager = new ProgrammerCalcManager();
+            manager.OnExampleLabelUpdate += ExampleLabelUpdate;
+            manager.OnNumberLabelUpdate += NumberLabelUpdate;
+            manager.OnNumberTypeButtonUpdate += functionPanel.NumberTypeButtonUpdate;
 
-            List<Control> rows = new List<Control> { exampleLabel, numberLabel, trigonometryButton, keyboard };
+            List<Control> rows = new List<Control> { exampleLabel, numberLabel, functionPanel, keyboard };
             TableDataManager.SetAsymmetricalRows(this, rows);
         }
 
@@ -42,7 +43,6 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
             exampleLabel = new Label{
                 Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
                 ForeColor = Color.Gray,
-                MaximumSize = new Size(1280,60),
                 Size = new Size(1280, 60),
                 TextAlign = ContentAlignment.MiddleRight,
                 BackColor = Color.HotPink,
@@ -57,22 +57,15 @@ namespace WinFormCalc.Components.AdvanceCalcComponent
                 Text = "0"
             };
 
-            trigonometryButton = new Button {
-                Size = new Size(1280, 90),
-                Font = new Font("Segoe UI Semibold",  14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
-                ForeColor = Color.Black,
-                BackColor = Color.HotPink,
-                Text = "Trigonometrie"
-            };
-
-            keyboard = new AdvanceCalcKeyboard();
+            functionPanel = new ProgrammerCalcFunctionPanel();            
+            keyboard = new ProgrammerCalcKeyboard();
         }
 
 
         private void PanelResize(object sender, EventArgs args)
         {
-            calcManager.UpdateExampleLabel();
-            calcManager.UpdateNumberLabel();
+            manager.UpdateExampleLabel();
+            manager.UpdateNumberLabel();
         }
 
 

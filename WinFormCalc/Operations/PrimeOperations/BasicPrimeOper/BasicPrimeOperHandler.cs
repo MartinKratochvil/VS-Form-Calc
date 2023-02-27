@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using WinFormCalc.Calculators.BasicCalculator;
 
 namespace WinFormCalc.Operations.PrimeOperations.BasicPrimeOper
 {
@@ -24,9 +25,9 @@ namespace WinFormCalc.Operations.PrimeOperations.BasicPrimeOper
         }
 
 
-        public static double Handle(double origin, double operand, BasicPrimeOper primeOper)
+        public static double Handle(double origin, BasicNumber operand)
         {
-            return (double)Operations[primeOper].DynamicInvoke(origin, operand);
+            return (double)Operations[operand.PrimeOper].DynamicInvoke(origin, operand.Value);
         }
 
 

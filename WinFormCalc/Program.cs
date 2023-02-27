@@ -5,7 +5,7 @@ using WinFormCalc.Operations.Functions.GonFunction;
 using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
-using WinFormCalc.Operations.PrimeOperations.BinPrimeOper;
+using WinFormCalc.Operations.PrimeOperations.ProgrammerPrimeOper;
 
 
 namespace WinFormCalc
@@ -25,7 +25,7 @@ namespace WinFormCalc
             MathFunctionHandler.Setup();
             BasicPrimeOperHandler.Setup();
             AdvancePrimeOperHandler.Setup();
-            BinPrimeOperHandler.Setup();
+            ProgrammerPrimeOperHandler.Setup();
             
             Application.Run(new MainForm());
         }
