@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace WinFormCalc.Components.ProgrammerCalcComponent
+namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcFunctionPanel
 {
-    public static class ProgrammerCalcFunctionPanelEvents
+    public static class PrgCalcFunctionPanelEvents
     {
 
         public delegate void ButtonClick(string placeholder);

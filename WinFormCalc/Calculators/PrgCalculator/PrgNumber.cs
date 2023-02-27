@@ -1,22 +1,22 @@
 ﻿using System;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
-using WinFormCalc.Operations.PrimeOperations.ProgrammerPrimeOper;
+using WinFormCalc.Operations.PrimeOperations.PrgPrimeOper;
 
-namespace WinFormCalc.Calculators.ProgrammerCalculator
+namespace WinFormCalc.Calculators.PrgCalculator
 {
-    public class ProgrammerNumber
+    public class PrgNumber
     {
 
         public long Value;
 
-        public ProgrammerPrimeOper PrimeOper { get; }
+        public PrgPrimeOper PrimeOper { get; }
 
         public VarType Type { get; }
 
         public bool IsList;
 
 
-        public ProgrammerNumber(string value, VarType type, ProgrammerPrimeOper primeOper)
+        public PrgNumber(string value, VarType type, PrgPrimeOper primeOper)
         {
             try {
                 Value = Convert.ToInt64(value, (int)type);
@@ -30,7 +30,7 @@ namespace WinFormCalc.Calculators.ProgrammerCalculator
         }
 
 
-        public ProgrammerNumber(long value, ProgrammerPrimeOper primeOper)
+        public PrgNumber(long value, PrgPrimeOper primeOper)
         {
             Value = value;
             PrimeOper = primeOper;
@@ -38,24 +38,24 @@ namespace WinFormCalc.Calculators.ProgrammerCalculator
         }
 
 
-        public ProgrammerNumber(long value)
+        public PrgNumber(long value)
         {
             Value = value;
-            PrimeOper = ProgrammerPrimeOper.Plus;
+            PrimeOper = PrgPrimeOper.Plus;
             IsList = false;
         }                                                                                                                                                                                                   
 
 
-        public ProgrammerNumber(ProgrammerPrimeOper primeOper)
+        public PrgNumber(PrgPrimeOper primeOper)
         {
             PrimeOper = primeOper;
             IsList = true;
         }
 
 
-        public ProgrammerNumber(VarType type)
+        public PrgNumber(VarType type)
         {
-            PrimeOper = ProgrammerPrimeOper.Plus;
+            PrimeOper = PrgPrimeOper.Plus;
             Type = type;
             IsList = true;
         }

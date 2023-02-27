@@ -2,18 +2,18 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WinFormCalc.Components.ProgrammerCalcComponent
+namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcKeyboard
 {
-    public sealed class ProgrammerCalcKeyboard : TableLayoutPanel
+    public sealed class AdvanceCalcKeyboard : TableLayoutPanel
     {
 
         List<List<Control>> keyboard;
 
 
-        public ProgrammerCalcKeyboard() {
+        public AdvanceCalcKeyboard() {
             InitializeComponent();
 
-            Size = new Size(1280, 590);
+            Size = new Size(1280, 600);
             BackColor = Color.DeepPink;
 
             TableDataManager.SetSymmetricalData(this, keyboard);
@@ -24,12 +24,12 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
         {
             keyboard = new List<List<Control>>();
 
-            ProgrammerCalcKeyboardEvents.KeyboardClickEvents.ForEach(buttonRowClickEvents => {
+            AdvanceCalcKeyboardEvents.KeyboardClickEvents.ForEach(buttonRowClickEvents => {
                 List<Control> buttonRow = new List<Control>();
 
                 foreach (var buttonClickEvent in buttonRowClickEvents) {
                     Button button = new Button {
-                        Size = new Size(260, 100),
+                        Size = new Size(260, 90),
                         Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
                         ForeColor = Color.Black,
                         Text = buttonClickEvent.Key

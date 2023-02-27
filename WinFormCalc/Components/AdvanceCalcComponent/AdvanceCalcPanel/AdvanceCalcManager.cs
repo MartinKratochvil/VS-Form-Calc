@@ -4,10 +4,11 @@ using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using WinFormCalc.Calculators.AdvanceCalculator;
+using WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcKeyboard;
 using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 
-namespace WinFormCalc.Components.AdvanceCalcComponent
+namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
 {
     public class AdvanceCalcManager
     {

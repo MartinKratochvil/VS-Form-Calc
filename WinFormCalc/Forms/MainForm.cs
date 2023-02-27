@@ -1,9 +1,9 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
-using WinFormCalc.Components.AdvanceCalcComponent;
-using WinFormCalc.Components.BasicCalcComponent;
-using WinFormCalc.Components.ProgrammerCalcComponent;
+using WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel;
+using WinFormCalc.Components.BasicCalcComponent.BasicCalcPanel;
+using WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel;
 
 namespace WinFormCalc.Forms
 {
@@ -14,7 +14,7 @@ namespace WinFormCalc.Forms
 
         private readonly AdvanceCalcPanel advanceCalcPanel;
 
-        private readonly ProgrammerCalcPanel programmerCalcPanel;
+        private readonly PrgCalcPanel prgCalcPanel;
 
         private Size formSize;
 
@@ -29,10 +29,10 @@ namespace WinFormCalc.Forms
             advanceCalcPanel = new AdvanceCalcPanel();
             advanceCalcPanel.Size = contentPanel.Size;
 
-            programmerCalcPanel = new ProgrammerCalcPanel();
-            programmerCalcPanel.Size = contentPanel.Size;
+            prgCalcPanel = new PrgCalcPanel();
+            prgCalcPanel.Size = contentPanel.Size;
             
-            contentPanel.Controls.Add(programmerCalcPanel);
+            contentPanel.Controls.Add(prgCalcPanel);
 
             formSize = Size;
         }
@@ -49,7 +49,7 @@ namespace WinFormCalc.Forms
 
             basicCalcPanel.Size = contentPanel.Size;
             advanceCalcPanel.Size = contentPanel.Size;
-            programmerCalcPanel.Size = contentPanel.Size;
+            prgCalcPanel.Size = contentPanel.Size;
 
             formSize = Size;
         }

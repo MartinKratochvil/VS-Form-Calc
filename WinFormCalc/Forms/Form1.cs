@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using WinFormCalc.Calculators.BasicCalculator;
 using WinFormCalc.Components.BasicCalcComponent;
+using WinFormCalc.Components.BasicCalcComponent.BasicCalcPanel;
 using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
 

@@ -5,7 +5,7 @@ using WinFormCalc.Operations.Functions.GonFunction;
 using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
-using WinFormCalc.Operations.PrimeOperations.ProgrammerPrimeOper;
+using WinFormCalc.Operations.PrimeOperations.PrgPrimeOper;
 
 
 namespace WinFormCalc

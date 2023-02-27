@@ -2,9 +2,9 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WinFormCalc.Components.ProgrammerCalcComponent
+namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcFunctionPanel
 {
-    public class ProgrammerCalcFunctionPanel : TableLayoutPanel
+    public class PrgCalcFunctionPanel : TableLayoutPanel
     {
 
         private Button logicalFunctionButton;
@@ -12,7 +12,7 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
         private Button numberTypeButton;
         
 
-        public ProgrammerCalcFunctionPanel()
+        public PrgCalcFunctionPanel()
         {
             InitializeComponent();
 
@@ -32,7 +32,7 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
                 BackColor = Color.HotPink,
                 Text = @"Logické funkce"
             };
-            logicalFunctionButton.Click += ProgrammerCalcFunctionPanelEvents.LogicalFunctionButtonClick;
+            logicalFunctionButton.Click += PrgCalcFunctionPanelEvents.LogicalFunctionButtonClick;
 
             numberTypeButton = new Button {
                 Size = new Size(640, 110),
@@ -41,7 +41,7 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
                 BackColor = Color.HotPink,
                 Text = @"Dec"
             };
-            numberTypeButton.Click += ProgrammerCalcFunctionPanelEvents.NumberTypeButtonClick;
+            numberTypeButton.Click += PrgCalcFunctionPanelEvents.NumberTypeButtonClick;
         }
 
 

@@ -1,7 +1,7 @@
 ﻿
-namespace WinFormCalc.Operations.PrimeOperations.ProgrammerPrimeOper
+namespace WinFormCalc.Operations.PrimeOperations.PrgPrimeOper
 {
-    public enum ProgrammerPrimeOper
+    public enum PrgPrimeOper
     {
         Plus,
         Minus,

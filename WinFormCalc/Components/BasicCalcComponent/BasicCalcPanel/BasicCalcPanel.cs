@@ -1,25 +1,23 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WinFormCalc.Components.ProgrammerCalcComponent
+namespace WinFormCalc.Components.BasicCalcComponent.BasicCalcPanel
 {
-    public sealed class ProgrammerCalcPanel : TableLayoutPanel
+    public sealed class BasicCalcPanel : TableLayoutPanel
     {
- 
+
         private Label exampleLabel;
 
         private Label numberLabel;
 
-        private ProgrammerCalcFunctionPanel functionPanel;
+        private BasicCalcKeyboard.BasicCalcKeyboard keyboard;
 
-        private ProgrammerCalcKeyboard keyboard;
-
-        private readonly ProgrammerCalcManager manager;
+        private readonly BasicCalcManager calcManager;
 
 
-        public ProgrammerCalcPanel()
+        public BasicCalcPanel()
         {
             InitializeComponent();
 
@@ -28,44 +26,43 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
             BackColor= Color.Pink;
             Resize += PanelResize;
 
-            manager = new ProgrammerCalcManager();
-            manager.OnExampleLabelUpdate += ExampleLabelUpdate;
-            manager.OnNumberLabelUpdate += NumberLabelUpdate;
-            manager.OnNumberTypeButtonUpdate += functionPanel.NumberTypeButtonUpdate;
+            calcManager = new BasicCalcManager();
+            calcManager.OnExampleLabelUpdate += ExampleLabelUpdate;
+            calcManager.OnNumberLabelUpdate += NumberLabelUpdate;
 
-            List<Control> rows = new List<Control> { exampleLabel, numberLabel, functionPanel, keyboard };
+            List<Control> rows = new List<Control> { exampleLabel, numberLabel, keyboard };
             TableDataManager.SetAsymmetricalRows(this, rows);
         }
 
 
         private void InitializeComponent()
         {
-            exampleLabel = new Label{
+            exampleLabel = new Label() {
                 Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
                 ForeColor = Color.Gray,
+                MaximumSize = new Size(1280,60),
                 Size = new Size(1280, 60),
                 TextAlign = ContentAlignment.MiddleRight,
-                BackColor = Color.HotPink,
+                BackColor = Color.DeepPink,
             };
 
-            numberLabel = new Label {
+            numberLabel = new Label() {
                 Size = new Size(1280, 130),
                 Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, 238),
                 ForeColor = Color.Black,
                 TextAlign = ContentAlignment.MiddleRight,
-                BackColor = Color.DeepPink,
+                BackColor = Color.HotPink,
                 Text = "0"
             };
 
-            functionPanel = new ProgrammerCalcFunctionPanel();            
-            keyboard = new ProgrammerCalcKeyboard();
+            keyboard = new BasicCalcKeyboard.BasicCalcKeyboard();
         }
 
 
         private void PanelResize(object sender, EventArgs args)
         {
-            manager.UpdateExampleLabel();
-            manager.UpdateNumberLabel();
+            calcManager.UpdateExampleLabel();
+            calcManager.UpdateNumberLabel();
         }
 
 

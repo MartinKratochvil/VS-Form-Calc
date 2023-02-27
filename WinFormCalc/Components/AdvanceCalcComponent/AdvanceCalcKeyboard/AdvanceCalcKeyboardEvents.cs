@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WinFormCalc.Components.AdvanceCalcComponent
+namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcKeyboard
 {
     public static class AdvanceCalcKeyboardEvents
     {

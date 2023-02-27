@@ -1,33 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using WinFormCalc.Calculators.ProgrammerCalculator;
+using WinFormCalc.Calculators.PrgCalculator;
 
-namespace WinFormCalc.Operations.PrimeOperations.ProgrammerPrimeOper
+namespace WinFormCalc.Operations.PrimeOperations.PrgPrimeOper
 {
     public static class ProgrammerPrimeOperHandler
     {
 
         private delegate long PrimeOperDel(long origin, long operand);
 
-        private static readonly Dictionary<ProgrammerPrimeOper, PrimeOperDel> Operations = new Dictionary<ProgrammerPrimeOper, PrimeOperDel>();
+        private static readonly Dictionary<PrgPrimeOper, PrimeOperDel> Operations = new Dictionary<PrgPrimeOper, PrimeOperDel>();
 
 
         public static void Setup()
         {
-            for (int i = 0; i < Enum.GetNames(typeof(ProgrammerPrimeOper)).Length; i++) {
-                MethodInfo method = typeof(ProgrammerPrimeOperHandler).GetMethod(Enum.GetName(typeof(ProgrammerPrimeOper), i) ?? string.Empty);
+            for (int i = 0; i < Enum.GetNames(typeof(PrgPrimeOper)).Length; i++) {
+                MethodInfo method = typeof(ProgrammerPrimeOperHandler).GetMethod(Enum.GetName(typeof(PrgPrimeOper), i) ?? string.Empty);
 
                 if (method != null) {
-                    Operations.Add((ProgrammerPrimeOper)i, (PrimeOperDel)Delegate.CreateDelegate(typeof(PrimeOperDel), method));
+                    Operations.Add((PrgPrimeOper)i, (PrimeOperDel)Delegate.CreateDelegate(typeof(PrimeOperDel), method));
                 }
             }
         }
 
 
-        public static bool Handle(List<ProgrammerNumber> values, ProgrammerNumber operand)
+        public static bool Handle(List<PrgNumber> values, PrgNumber operand)
         {
-            if (operand.PrimeOper == ProgrammerPrimeOper.Plus || operand.PrimeOper == ProgrammerPrimeOper.Minus) {
+            if (operand.PrimeOper == PrgPrimeOper.Plus || operand.PrimeOper == PrgPrimeOper.Minus) {
                 return false;
             }
 
@@ -36,16 +36,16 @@ namespace WinFormCalc.Operations.PrimeOperations.ProgrammerPrimeOper
                 operand.Value
             );
 
-            values[values.Count - 1] = new ProgrammerNumber(value);
+            values[values.Count - 1] = new PrgNumber(value);
 
             return true;
         }
 
 
-        private static ProgrammerNumber SetNumberSign(List<ProgrammerNumber> values) {
-            ProgrammerNumber origin = values[values.Count - 1];
+        private static PrgNumber SetNumberSign(List<PrgNumber> values) {
+            PrgNumber origin = values[values.Count - 1];
 
-            if (origin.PrimeOper == PrimeOperations.ProgrammerPrimeOper.ProgrammerPrimeOper.Minus) {
+            if (origin.PrimeOper == PrgPrimeOper.Minus) {
                 origin.Value *= -1;
             }
 

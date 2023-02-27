@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 using WinFormCalc.Calculators.BasicCalculator;
+using WinFormCalc.Components.BasicCalcComponent.BasicCalcKeyboard;
 using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
 
-namespace WinFormCalc.Components.BasicCalcComponent
+namespace WinFormCalc.Components.BasicCalcComponent.BasicCalcPanel
 {
     public class BasicCalcManager
     {

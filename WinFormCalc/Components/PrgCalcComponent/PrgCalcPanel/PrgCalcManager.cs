@@ -1,19 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
-using WinFormCalc.Calculators.ProgrammerCalculator;
-using WinFormCalc.Operations.Functions.MathFunction;
-using WinFormCalc.Operations.PrimeOperations.ProgrammerPrimeOper;
+using WinFormCalc.Calculators.PrgCalculator;
+using WinFormCalc.Components.PrgCalcComponent.PrgCalcFunctionPanel;
+using WinFormCalc.Components.PrgCalcComponent.PrgCalcKeyboard;
+using WinFormCalc.Operations.PrimeOperations.PrgPrimeOper;
 
-namespace WinFormCalc.Components.ProgrammerCalcComponent
+namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel
 {
-    public class ProgrammerCalcManager
+    public class PrgCalcManager
     {
 
-        private List<List<List<ProgrammerNumber>>> numbers;
+        private List<List<List<PrgNumber>>> numbers;
 
         private int depth;
 
@@ -25,7 +25,7 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
 
         private string number;
 
-        private ProgrammerPrimeOper primeOper;
+        private PrgPrimeOper primeOper;
 
         private bool isCalculated;
 
@@ -46,7 +46,7 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
         public event NumberTypeButtonUpdate OnNumberTypeButtonUpdate;
 
 
-        public ProgrammerCalcManager()
+        public PrgCalcManager()
         {
             Init();
             
@@ -65,24 +65,24 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
 
         private void Init()
         {
-            ProgrammerCalcKeyboardEvents.OnNumpadButtonClick += NumpadButtonClick;
-            ProgrammerCalcKeyboardEvents.OnPlusButtonClick += PlusButtonClick;
-            ProgrammerCalcKeyboardEvents.OnMinusButtonClick += MinusButtonClick;
-            ProgrammerCalcKeyboardEvents.OnMultiplyButtonClick += MultiplyButtonClick;
-            ProgrammerCalcKeyboardEvents.OnDivideButtonClick += DivideButtonClick;
-            ProgrammerCalcKeyboardEvents.OnModuloButtonClick += ModuloButtonClick;
-            ProgrammerCalcKeyboardEvents.OnLeftShiftButtonClick += LeftShiftButtonClick;
-            ProgrammerCalcKeyboardEvents.OnRightShiftButtonClick += RightShiftButtonClick;
-            ProgrammerCalcKeyboardEvents.OnOpenBracketButtonClick += OpenBracketButtonClick;
-            ProgrammerCalcKeyboardEvents.OnCloseBracketButtonClick += CloseBracketButtonClick;
-            ProgrammerCalcKeyboardEvents.OnCommaButtonClick += CommaButtonClick;
-            ProgrammerCalcKeyboardEvents.OnClearButtonClick += ClearButtonClick;
-            ProgrammerCalcKeyboardEvents.OnClearEntryButtonClick += ClearEntryButtonClick;
-            ProgrammerCalcKeyboardEvents.OnBackButtonClick += BackButtonClick;
-            ProgrammerCalcKeyboardEvents.OnEqualsButtonClick += EqualsButtonClick;
+            PrgCalcKeyboardEvents.OnNumpadButtonClick += NumpadButtonClick;
+            PrgCalcKeyboardEvents.OnPlusButtonClick += PlusButtonClick;
+            PrgCalcKeyboardEvents.OnMinusButtonClick += MinusButtonClick;
+            PrgCalcKeyboardEvents.OnMultiplyButtonClick += MultiplyButtonClick;
+            PrgCalcKeyboardEvents.OnDivideButtonClick += DivideButtonClick;
+            PrgCalcKeyboardEvents.OnModuloButtonClick += ModuloButtonClick;
+            PrgCalcKeyboardEvents.OnLeftShiftButtonClick += LeftShiftButtonClick;
+            PrgCalcKeyboardEvents.OnRightShiftButtonClick += RightShiftButtonClick;
+            PrgCalcKeyboardEvents.OnOpenBracketButtonClick += OpenBracketButtonClick;
+            PrgCalcKeyboardEvents.OnCloseBracketButtonClick += CloseBracketButtonClick;
+            PrgCalcKeyboardEvents.OnCommaButtonClick += CommaButtonClick;
+            PrgCalcKeyboardEvents.OnClearButtonClick += ClearButtonClick;
+            PrgCalcKeyboardEvents.OnClearEntryButtonClick += ClearEntryButtonClick;
+            PrgCalcKeyboardEvents.OnBackButtonClick += BackButtonClick;
+            PrgCalcKeyboardEvents.OnEqualsButtonClick += EqualsButtonClick;
 
-            ProgrammerCalcFunctionPanelEvents.OnLogicalFunctionButtonClick += LogicalFunctionButtonClick;
-            ProgrammerCalcFunctionPanelEvents.OnNumberTypeButtonClick += NumberTypeButtonClick;
+            PrgCalcFunctionPanelEvents.OnLogicalFunctionButtonClick += LogicalFunctionButtonClick;
+            PrgCalcFunctionPanelEvents.OnNumberTypeButtonClick += NumberTypeButtonClick;
         }
 
 
@@ -135,55 +135,55 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
 
         private void PlusButtonClick(string placeholder)
         {
-            AddNextNumber(ProgrammerPrimeOper.Plus);
+            AddNextNumber(PrgPrimeOper.Plus);
         }
 
 
         private void MinusButtonClick(string placeholder)
         {
-            AddNextNumber(ProgrammerPrimeOper.Minus);
+            AddNextNumber(PrgPrimeOper.Minus);
         }
 
 
         private void MultiplyButtonClick(string placeholder)
         {
-            AddNextNumber(ProgrammerPrimeOper.Multiply);
+            AddNextNumber(PrgPrimeOper.Multiply);
         }
 
 
         private void DivideButtonClick(string placeholder)
         {
-            AddNextNumber(ProgrammerPrimeOper.Divide);
+            AddNextNumber(PrgPrimeOper.Divide);
         }
 
         
         private void ModuloButtonClick(string placeholder)
         {
-            AddNextNumber(ProgrammerPrimeOper.Modulo);
+            AddNextNumber(PrgPrimeOper.Modulo);
         }
 
 
         private void LeftShiftButtonClick(string placeholder)
         {
-            AddNextNumber(ProgrammerPrimeOper.LeftShift);
+            AddNextNumber(PrgPrimeOper.LeftShift);
         }
 
 
         private void RightShiftButtonClick(string placeholder)
         {
-            AddNextNumber(ProgrammerPrimeOper.RightShift);
+            AddNextNumber(PrgPrimeOper.RightShift);
         }
 
 
         private void OpenBracketButtonClick(string placeholder)
         {
-            numbers[depth][bracket].Add(new ProgrammerNumber(primeOper));
+            numbers[depth][bracket].Add(new PrgNumber(primeOper));
             AddDepth();
 
             example += "(";
             UpdateExampleLabel();
 
-            primeOper = ProgrammerPrimeOper.Plus;
+            primeOper = PrgPrimeOper.Plus;
         }
 
 
@@ -202,7 +202,7 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
 
             ClearNumber();
 
-            primeOper = ProgrammerPrimeOper.Plus;
+            primeOper = PrgPrimeOper.Plus;
         }
 
 
@@ -248,7 +248,7 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
 
             ShowData();
 
-            ProgrammerCalculator calculator = new ProgrammerCalculator(numbers, new ProgrammerNumber(VarType.Bin));
+            PrgCalculator calculator = new PrgCalculator(numbers, new PrgNumber(VarType.Bin));
 
             example += " = ";
             UpdateExampleLabel();
@@ -258,13 +258,13 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
             UpdateNumberLabel();
             number = "0";
 
-            numbers = new List<List<List<ProgrammerNumber>>> {
-                new List<List<ProgrammerNumber>> {
-                    new List<ProgrammerNumber>()
+            numbers = new List<List<List<PrgNumber>>> {
+                new List<List<PrgNumber>> {
+                    new List<PrgNumber>()
                 }
             };
 
-            primeOper = ProgrammerPrimeOper.Plus;
+            primeOper = PrgPrimeOper.Plus;
             isCalculated = true;
         }
 
@@ -298,22 +298,22 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
 
         private void ClearExample()
         {
-            numbers = new List<List<List<ProgrammerNumber>>> {
-                new List<List<ProgrammerNumber>> {
-                    new List<ProgrammerNumber>()
+            numbers = new List<List<List<PrgNumber>>> {
+                new List<List<PrgNumber>> {
+                    new List<PrgNumber>()
                 }
             };
 
             example = string.Empty;
             UpdateExampleLabel();
             
-            primeOper = ProgrammerPrimeOper.Plus;
+            primeOper = PrgPrimeOper.Plus;
             depth = 0;
             bracket = 0;
         }
 
 
-        private void AddNextNumber(ProgrammerPrimeOper nextPrimeOper)
+        private void AddNextNumber(PrgPrimeOper nextPrimeOper)
         {
             if ( ! AddNumber()) {
                 return;
@@ -341,7 +341,7 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
             }
 
             numbers[depth][bracket].Add(
-                new ProgrammerNumber(value, primeOper)
+                new PrgNumber(value, primeOper)
             );
             example += number;
 
@@ -353,11 +353,11 @@ namespace WinFormCalc.Components.ProgrammerCalcComponent
         {
             depth++;
             if (depth == numbers.Count) {
-                numbers.Add(new List<List<ProgrammerNumber>>());
+                numbers.Add(new List<List<PrgNumber>>());
             }
 
             bracket = numbers[depth].Count;
-            numbers[depth].Add(new List<ProgrammerNumber>());
+            numbers[depth].Add(new List<PrgNumber>());
         }
 
 
