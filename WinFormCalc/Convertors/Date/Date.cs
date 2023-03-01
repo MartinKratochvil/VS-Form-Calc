@@ -21,8 +21,7 @@ namespace WinFormCalc.Convertors.Date
 
         public static TimeSpan CompareDate(DateTime origin, DateTime compare)
         {
-            if (compare > origin)
-            {
+            if (compare > origin) {
                 throw new ArgumentException("Compare DateTime mustn't be greater than origin DateTime");
             }
 

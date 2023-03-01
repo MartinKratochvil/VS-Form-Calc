@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using WinFormCalc.Calculators.AdvanceCalculator;
-using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 
 namespace WinFormCalc.Components.PaperModeComponent
@@ -21,23 +20,19 @@ namespace WinFormCalc.Components.PaperModeComponent
             
             int i = 0; 
 
-            foreach (char c in example)
-            {
-                if (Char.IsDigit(c) || c == ',')
-                {
+            foreach (char c in example) {
+                if (Char.IsDigit(c) || c == ',') {
                     payload += c;
 
                     continue;
                 }
 
-                if (c == '(' && payload == String.Empty)
-                {
+                if (c == '(' && payload == String.Empty) {
                     values[i][values[i].Count - 1].Add(new AdvanceNumber(advancePrimeOper, new List<Enum>()));
 
                     i++;
 
-                    if (i >= values.Count)
-                    {
+                    if (i >= values.Count) {
                         values.Add(new List<List<AdvanceNumber>>());
                     }
 
@@ -47,15 +42,12 @@ namespace WinFormCalc.Components.PaperModeComponent
                     continue;
                 }
 
-                if (payload != String.Empty)
-                {
-                    if (! Double.TryParse(payload, out double num))
-                    {
+                if (payload != String.Empty) {
+                    if (! Double.TryParse(payload, out double num)) {
                         throw new FormatException("Špatné číslo!!");
                     }
 
-                    values[i][values[i].Count - 1].Add(new AdvanceNumber
-                    (
+                    values[i][values[i].Count - 1].Add(new AdvanceNumber(
                         isNegative ? (num * -1) : num,
                         advancePrimeOper,
                         new List<Enum>()
@@ -66,39 +58,32 @@ namespace WinFormCalc.Components.PaperModeComponent
                 advancePrimeOper = AdvancePrimeOper.Plus;
                 isNegative = false;
 
-                switch (c)
-                {
+                switch (c) {
                     case '+': break;
-                    case '-':
-                    {
+                    case '-': {
                         isNegative = true;
 
                         break;
                     }
-                    case '*':
-                    {
+                    case '*': {
                         advancePrimeOper = AdvancePrimeOper.Multiply;
 
                         break;
                     }
-                    case '/':
-                    {
+                    case '/': {
                         advancePrimeOper = AdvancePrimeOper.Divide;
                         
                         break;
                     }
-                    case ')':
-                    {
+                    case ')': {
                         i--;
 
                         break;
                     }
-                    case '=':
-                    {
+                    case '=': {
                         return values;
                     }
-                    default:
-                    {
+                    default: {
                         throw new FormatException("Špatný znak!!");
                     }
                 }

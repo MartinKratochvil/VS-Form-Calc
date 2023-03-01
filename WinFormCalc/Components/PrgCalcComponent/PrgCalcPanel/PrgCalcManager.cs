@@ -31,7 +31,7 @@ namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel
 
         private bool isBracketClose;
 
-        private List<int> numberTypeNames;
+        private readonly List<int> numberTypeNames;
 
         public delegate void ExampleLabelUpdate(string message);
 
@@ -86,7 +86,7 @@ namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel
         }
 
 
-        private static List<string> operators = new List<string> {
+        private static readonly List<string> Operators = new List<string> {
             "+",
             "-",
             "*",
@@ -246,26 +246,35 @@ namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel
                 return;
             }
 
-            ShowData();
+            try {
+                PrgCalculator calculator = new PrgCalculator(numbers, new PrgNumber(numberType));
 
-            PrgCalculator calculator = new PrgCalculator(numbers, new PrgNumber(VarType.Bin));
+                number = calculator.GetResult();
+                UpdateNumberLabel();
+                number = "0";
 
-            example += " = ";
-            UpdateExampleLabel();
-            example = string.Empty;
+                example += " = ";
+                UpdateExampleLabel();
+                example = string.Empty;
 
-            number = calculator.GetResult();
-            UpdateNumberLabel();
-            number = "0";
+                numbers = new List<List<List<PrgNumber>>> {
+                    new List<List<PrgNumber>> {
+                        new List<PrgNumber>()
+                    }
+                };
 
-            numbers = new List<List<List<PrgNumber>>> {
-                new List<List<PrgNumber>> {
-                    new List<PrgNumber>()
-                }
-            };
+                primeOper = PrgPrimeOper.Plus;
+                depth = 0;
+                bracket = 0;
+                isCalculated = true;
+            }
+            catch(Exception) {
+                ClearExample();
 
-            primeOper = PrgPrimeOper.Plus;
-            isCalculated = true;
+                number = "Error";
+                UpdateNumberLabel();
+                number = "0";
+            }
         }
 
 
@@ -277,15 +286,20 @@ namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel
 
         private void NumberTypeButtonClick(string placeholder)
         {
-            ChangeNumberType();
             ClearExample();
 
-            long value = Convert.ToInt64(number, (int)numberType);
-            NextNumberType();
-            number = Convert.ToString(value, (int)numberType);
+            try {
+                long value = Convert.ToInt64(number, (int)numberType);
+                NextNumberType();
+                number = Convert.ToString(value, (int)numberType);
 
-            UpdateNumberLabel();
-            OnNumberTypeButtonUpdate?.Invoke(numberType.ToString());
+                UpdateNumberLabel();
+                OnNumberTypeButtonUpdate?.Invoke(numberType.ToString());
+                ChangeNumberType();
+            }
+            catch (Exception) {
+                ClearNumber();
+            }
         }
 
 
@@ -321,7 +335,7 @@ namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel
 
             primeOper = nextPrimeOper;
 
-            example += " " + operators[(int)nextPrimeOper] + " ";
+            example += " " + Operators[(int)nextPrimeOper] + " ";
             UpdateExampleLabel();
 
             ClearNumber();
@@ -334,18 +348,20 @@ namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel
                 isBracketClose = false;
                 return true;
             }
-            
-            if ( ! long.TryParse(number, out long value)) {
+
+            try {
+                long value = Convert.ToInt64(number, (int)numberType);
+                numbers[depth][bracket].Add(
+                    new PrgNumber(value, primeOper)
+                );
+                example += number;
+
+                return true;
+            }
+            catch (Exception) {
                 ClearNumber();
                 return false;
             }
-
-            numbers[depth][bracket].Add(
-                new PrgNumber(value, primeOper)
-            );
-            example += number;
-
-            return true;
         }
 
 
@@ -376,7 +392,7 @@ namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel
 
         private void ChangeNumberType()
         {
-
+            //TODO:disable numpad buttons
         }
 
 
@@ -415,7 +431,7 @@ namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel
             data += "}";
 
             MessageBox.Show(data);
-            MessageBox.Show(((int[])Enum.GetValues(typeof(VarType))).Aggregate("", (s, num) => s += " " + num));
+            MessageBox.Show(((int[])Enum.GetValues(typeof(VarType))).Aggregate(string.Empty, (s, num) => s + " " + num).ToString());
         }
     }
 }

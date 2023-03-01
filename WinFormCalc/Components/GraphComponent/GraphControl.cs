@@ -8,9 +8,9 @@ namespace WinFormCalc.Components.GraphComponent
 
         private Size parentSize;
 
-        public GraphRender GraphRender { get; private set; }
+        public GraphRender GraphRender { get; }
 
-        public PictureBox PictureBox { get; private set; }
+        public PictureBox PictureBox { get; }
 
 
         public GraphControl(Size parentSize)

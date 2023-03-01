@@ -14,7 +14,7 @@ namespace WinFormCalc.Components.BasicCalcComponent.BasicCalcPanel
 
         private BasicCalcKeyboard.BasicCalcKeyboard keyboard;
 
-        private readonly BasicCalcManager calcManager;
+        private readonly BasicCalcManager manager;
 
 
         public BasicCalcPanel()
@@ -26,9 +26,9 @@ namespace WinFormCalc.Components.BasicCalcComponent.BasicCalcPanel
             BackColor= Color.Pink;
             Resize += PanelResize;
 
-            calcManager = new BasicCalcManager();
-            calcManager.OnExampleLabelUpdate += ExampleLabelUpdate;
-            calcManager.OnNumberLabelUpdate += NumberLabelUpdate;
+            manager = new BasicCalcManager();
+            manager.OnExampleLabelUpdate += ExampleLabelUpdate;
+            manager.OnNumberLabelUpdate += NumberLabelUpdate;
 
             List<Control> rows = new List<Control> { exampleLabel, numberLabel, keyboard };
             TableDataManager.SetAsymmetricalRows(this, rows);
@@ -61,8 +61,8 @@ namespace WinFormCalc.Components.BasicCalcComponent.BasicCalcPanel
 
         private void PanelResize(object sender, EventArgs args)
         {
-            calcManager.UpdateExampleLabel();
-            calcManager.UpdateNumberLabel();
+            manager.UpdateExampleLabel();
+            manager.UpdateNumberLabel();
         }
 
 

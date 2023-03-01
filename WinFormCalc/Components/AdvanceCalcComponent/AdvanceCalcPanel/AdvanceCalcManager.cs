@@ -304,26 +304,33 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
                 return;
             }
 
-            showData();
+            try {
+                AdvanceCalculator calculator = new AdvanceCalculator(numbers, new AdvanceNumber());
 
-            AdvanceCalculator calculator = new AdvanceCalculator(numbers, new AdvanceNumber());
+                example += " = ";
+                UpdateExampleLabel();
+                example = string.Empty;
 
-            example += " = ";
-            UpdateExampleLabel();
-            example = string.Empty;
+                number = calculator.GetResult();
+                UpdateNumberLabel();
+                number = "0";
 
-            number = calculator.GetResult();
-            UpdateNumberLabel();
-            number = "0";
+                numbers = new List<List<List<AdvanceNumber>>> {
+                    new List<List<AdvanceNumber>> {
+                        new List<AdvanceNumber>()
+                    }
+                };
 
-            numbers = new List<List<List<AdvanceNumber>>> {
-                new List<List<AdvanceNumber>> {
-                    new List<AdvanceNumber>()
-                }
-            };
+                primeOper = AdvancePrimeOper.Plus;
+                isCalculated = true;
+            }
+            catch(Exception) {
+                ClearExample();
 
-            primeOper = AdvancePrimeOper.Plus;
-            isCalculated = true;
+                number = "Error";
+                UpdateNumberLabel();
+                number = "0";
+            }
         }
 
         private void ClearNumber()

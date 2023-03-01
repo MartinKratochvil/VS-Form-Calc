@@ -16,7 +16,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
 
         private AdvanceCalcKeyboard.AdvanceCalcKeyboard keyboard;
 
-        private readonly AdvanceCalcManager calcManager;
+        private readonly AdvanceCalcManager manager;
 
 
         public AdvanceCalcPanel()
@@ -28,9 +28,9 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
             BackColor= Color.Pink;
             Resize += PanelResize;
 
-            calcManager = new AdvanceCalcManager();
-            calcManager.OnExampleLabelUpdate += ExampleLabelUpdate;
-            calcManager.OnNumberLabelUpdate += NumberLabelUpdate;
+            manager = new AdvanceCalcManager();
+            manager.OnExampleLabelUpdate += ExampleLabelUpdate;
+            manager.OnNumberLabelUpdate += NumberLabelUpdate;
 
             List<Control> rows = new List<Control> { exampleLabel, numberLabel, trigonometryButton, keyboard };
             TableDataManager.SetAsymmetricalRows(this, rows);
@@ -71,8 +71,8 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
 
         private void PanelResize(object sender, EventArgs args)
         {
-            calcManager.UpdateExampleLabel();
-            calcManager.UpdateNumberLabel();
+            manager.UpdateExampleLabel();
+            manager.UpdateNumberLabel();
         }
 
 

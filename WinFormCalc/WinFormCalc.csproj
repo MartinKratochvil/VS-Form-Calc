@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -66,11 +66,21 @@
     <Compile Include="Components\BasicCalcComponent\BasicCalcPanel\BasicCalcPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Components\ConvertorComponent\ConvertorKeyboard\ConvertorKeyboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ConvertorComponent\ConvertorKeyboard\ConvertorKeyboardEvents.cs" />
+    <Compile Include="Components\ConvertorComponent\ConvertorPanel\ConvertorManager.cs" />
+    <Compile Include="Components\ConvertorComponent\ConvertorPanel\ConvertorPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\PaperModeComponent\ExampleConvertor.cs" />
     <Compile Include="Components\PaperModeComponent\PaperModeComponent.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Components\PrgCalcComponent\PrgCalcFunctionPanel\PrgCalcFunctionPanel.cs" />
+    <Compile Include="Components\PrgCalcComponent\PrgCalcFunctionPanel\PrgCalcFunctionPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\PrgCalcComponent\PrgCalcFunctionPanel\PrgCalcFunctionPanelEvents.cs" />
     <Compile Include="Components\PrgCalcComponent\PrgCalcKeyboard\PrgCalcKeyboard.cs">
       <SubType>Component</SubType>
@@ -102,8 +112,12 @@
     <Compile Include="Forms\Grid.Designer.cs">
       <DependentUpon>Grid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\GraphComponent\GraphComponent.cs" />
-    <Compile Include="Components\GraphComponent\GridControl.cs" />
+    <Compile Include="Components\GraphComponent\GraphComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\GraphComponent\GridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\GraphComponent\GridRender.cs" />
     <Compile Include="Components\GraphComponent\LabelsRender.cs" />
     <Compile Include="Forms\Form1.cs">

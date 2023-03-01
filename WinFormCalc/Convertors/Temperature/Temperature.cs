@@ -12,13 +12,11 @@ namespace WinFormCalc.Convertors.Temperature
 
         private static double ConvertToCelsius(double value, TemperatureEnum type)
         {
-            if (type.ToString() == "Kelvin")
-            {
+            if (type.ToString() == "Kelvin") {
                 return value + ((int)type / 100f);
             }
 
-            if (type.ToString() == "Fahrenheit")
-            {
+            if (type.ToString() == "Fahrenheit") {
                 return (value - 32) / ((int)type / 10f);
             }
 
@@ -28,13 +26,11 @@ namespace WinFormCalc.Convertors.Temperature
 
         private static double ConvertFromCelsius(double value, TemperatureEnum type)
         {
-            if (type.ToString() == "Kelvin")
-            {
+            if (type.ToString() == "Kelvin") {
                 return value - ((int)type / 100f);
             }
 
-            if (type.ToString() == "Fahrenheit")
-            {
+            if (type.ToString() == "Fahrenheit") {
                 return value * ((int)type / 10f) + 32;
             }
 

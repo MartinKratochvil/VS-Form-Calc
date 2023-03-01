@@ -13,7 +13,7 @@ namespace WinFormCalc.Components.GraphComponent
 
         private Pen graphPen;
 
-        public Bitmap Bitmap { get; private set; }
+        public Bitmap Bitmap { get; }
 
 
         public GraphRender()
@@ -33,13 +33,12 @@ namespace WinFormCalc.Components.GraphComponent
 
         public void Render(int a, int b, int c)
         {
-            int space = GridRender._space / 5;
+            int space = GridRender.Space / 5;
             int pointsNum = GridControl._size / space / 2;
 
             List<Point> points = new List<Point>();
 
-            for (int i = pointsNum * -1; i <= pointsNum; i++)
-            {
+            for (int i = pointsNum * -1; i <= pointsNum; i++) {
                 int x = i;
                 int y = -1 * (a * (int)Math.Pow(x, 2) + b * x + c);
 

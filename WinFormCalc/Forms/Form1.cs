@@ -51,8 +51,8 @@ namespace WinFormCalc.Forms
             ProgrammerCalculator programmerCalculator = new ProgrammerCalculator(binValues, new BinNumber(BinFunction.None));
 
             MessageBox.Show("kkt: " + programmerCalculator.GetResult());*/
-            
-            
+
+
             /*List<List<List<AdvanceNumber>>> values = new List<List<List<AdvanceNumber>>>
             {
                 new List<List<AdvanceNumber>>
@@ -113,7 +113,7 @@ namespace WinFormCalc.Forms
 
             //panel.Size = new Size(500, 600);
 
-            List<BasicNumber> numbers = new List<BasicNumber> {
+            /*List<BasicNumber> numbers = new List<BasicNumber> {
                 new BasicNumber(5, BasicPrimeOper.Plus, new List<MathFunction>{}),
                 new BasicNumber(5, BasicPrimeOper.Multiply, new List<MathFunction>{}),
                 new BasicNumber(2, BasicPrimeOper.Multiply, new List<MathFunction>{ MathFunction.Sqr, MathFunction.Sqr })
@@ -121,7 +121,10 @@ namespace WinFormCalc.Forms
 
             BasicCalculator calc = new BasicCalculator(numbers);
 
-            MessageBox.Show(calc.GetResult());
+            MessageBox.Show(calc.GetResult());*/
+
+            MessageBox.Show(comboBox1.SelectedItem.ToString());
+
         }
 
         private void Form1_KeyPress(object sender, KeyPressEventArgs e)

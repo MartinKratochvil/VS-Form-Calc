@@ -1,3 +1,5 @@
+using System.Windows.Forms;
+
 namespace WinFormCalc.Forms
 {
     partial class Form1
@@ -58,6 +60,7 @@ namespace WinFormCalc.Forms
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -351,11 +354,26 @@ namespace WinFormCalc.Forms
             this.label3.Text = "sin(4) + 32 / √8^2 - sssssssssssssssssss(4^2 - 3^2) =";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.comboBox1.ItemHeight = 73;
+            this.comboBox1.Items.AddRange(new object[] {
+            "s",
+            "ss",
+            "sss"});
+            this.comboBox1.Location = new System.Drawing.Point(208, 120);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 81);
+            this.comboBox1.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 951);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
@@ -370,6 +388,7 @@ namespace WinFormCalc.Forms
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion
@@ -401,5 +420,6 @@ namespace WinFormCalc.Forms
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

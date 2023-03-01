@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace WinFormCalc.Components.GraphComponent
 {
-    public class GridControl
+    public class GridControl : PictureBox
     {
 
         public const int _size = 2500;
@@ -21,9 +21,7 @@ namespace WinFormCalc.Components.GraphComponent
 
         private readonly LabelsRender labelsRender;
 
-        public GraphControl GraphControl { get; private set; }
-
-        public PictureBox PictureBox { get; private set; }
+        public GraphControl GraphControl { get; }
 
 
         public GridControl(Size parentSize)
@@ -31,7 +29,6 @@ namespace WinFormCalc.Components.GraphComponent
             this.parentSize = parentSize;
             pressed = false;
 
-            PictureBox = new PictureBox();
             gridRender = new GridRender();
             labelsRender = new LabelsRender(parentSize);
             GraphControl = new GraphControl(parentSize);
@@ -40,16 +37,16 @@ namespace WinFormCalc.Components.GraphComponent
 
         public void Render()
         {
-            PictureBox.Size = new Size(_size, _size);
-            PictureBox.Location = new Point(
+            Size = new Size(_size, _size);
+            Location = new Point(
                 -1 * (_size / 2 - parentSize.Width / 2),
                 -1 * (_size / 2 - parentSize.Height / 2)
             );
-            PictureBox.Image = gridRender.Bitmap;
+            Image = gridRender.Bitmap;
 
             GraphControl.Render();
 
-            PictureBox.Controls.Add(GraphControl.PictureBox);
+            Controls.Add(GraphControl.PictureBox);
             
             labelsRender.Render(GraphControl.PictureBox);
 
@@ -57,10 +54,8 @@ namespace WinFormCalc.Components.GraphComponent
             GraphControl.PictureBox.MouseUp += MouseUp;
             GraphControl.PictureBox.MouseMove += MouseMove;
 
-            foreach (Control c in GraphControl.PictureBox.Controls)
-            {
-                if (! (c is Label))
-                {
+            foreach (Control c in GraphControl.PictureBox.Controls) {
+                if (! (c is Label)) {
                     continue;
                 }
 
@@ -71,41 +66,40 @@ namespace WinFormCalc.Components.GraphComponent
         }
 
 
-        private void MouseDown(object sender, MouseEventArgs e)
+        private new void MouseDown(object sender, MouseEventArgs e)
         {
             pressed = true;
 
-            startPoint = PictureBox.PointToClient(Cursor.Position);
+            startPoint = PointToClient(Cursor.Position);
         }
 
 
-        private void MouseUp(object sender, MouseEventArgs e)
+        private new void MouseUp(object sender, MouseEventArgs e)
         {
             pressed = false;
         }
 
 
-        private void MouseMove(object sender, MouseEventArgs e)
+        private new void MouseMove(object sender, MouseEventArgs e)
         {
-            if (! pressed)
-            {
+            if (! pressed) {
                 return;
             }
 
-            stopPoint = PictureBox.PointToClient(Cursor.Position);
+            stopPoint = PointToClient(Cursor.Position);
 
-            PictureBox.Location = Move();
+            Location = Move();
             MoveLabels();
 
-            startPoint = PictureBox.PointToClient(Cursor.Position);
+            startPoint = PointToClient(Cursor.Position);
         }
 
 
         private Point Move()
         {
             Point location = new Point(
-                PictureBox.Location.X + (stopPoint.X - startPoint.X),
-                PictureBox.Location.Y + (stopPoint.Y - startPoint.Y)
+                Location.X + (stopPoint.X - startPoint.X),
+                Location.Y + (stopPoint.Y - startPoint.Y)
             );
 
             int minHorizontal = -1 * (_size - parentSize.Width);
@@ -120,42 +114,35 @@ namespace WinFormCalc.Components.GraphComponent
 
         private void MoveLabels()
         {
-            foreach (Control c in GraphControl.PictureBox.Controls)
-            {
-                if
-                (
+            foreach (Control c in GraphControl.PictureBox.Controls) {
+                if (
                     (c.Location.X == _size / 2 - c.Width &&
                     c.Location.Y == _size / 2) ||
                     !(c is Label)
-                )
-                {
+                ) {
                     continue;
                 }
 
                 if (c.Location.Y == _size / 2)
                 {
-                    if
-                    (
-                        c.Location.X + PictureBox.Location.X + c.Width < 0 &&
+                    if (
+                        c.Location.X + Location.X + c.Width < 0 &&
                         startPoint.X - stopPoint.X > 0
-                    )
-                    {
+                    ) {
                         c.Location = new Point(
-                            c.Location.X + GridRender._space * (GraphControl.PictureBox.Controls.Count - 1) / 2,
+                            c.Location.X + GridRender.Space * (GraphControl.PictureBox.Controls.Count - 1) / 2,
                             c.Location.Y
                         );
 
                         SetLabelText((Label)c, Int32.Parse(c.Text) + 5);
                     }
 
-                    if
-                    (
-                        c.Location.X + PictureBox.Location.X > parentSize.Width &&
+                    if (
+                        c.Location.X + Location.X > parentSize.Width &&
                         startPoint.X - stopPoint.X < 0
-                    )
-                    {
+                    ) {
                         c.Location = new Point(
-                            c.Location.X - GridRender._space * (GraphControl.PictureBox.Controls.Count - 1) / 2,
+                            c.Location.X - GridRender.Space * (GraphControl.PictureBox.Controls.Count - 1) / 2,
                             c.Location.Y
                         );
                      
@@ -163,31 +150,26 @@ namespace WinFormCalc.Components.GraphComponent
                     }
                 }
 
-                if (c.Location.X == _size / 2 - c.Width)
-                {
-                    if
-                    (
-                        c.Location.Y + PictureBox.Location.Y + c.Height < 0 &&
+                if (c.Location.X == _size / 2 - c.Width) {
+                    if (
+                        c.Location.Y + Location.Y + c.Height < 0 &&
                         startPoint.Y - stopPoint.Y > 0
-                    )
-                    {
+                    ) {
                         c.Location = new Point(
                             c.Location.X,
-                            c.Location.Y + GridRender._space * (GraphControl.PictureBox.Controls.Count - 1) / 2
+                            c.Location.Y + GridRender.Space * (GraphControl.PictureBox.Controls.Count - 1) / 2
                         );
 
                         SetLabelText((Label)c, Int32.Parse(c.Text) - 5);
                     }
 
-                    if
-                    (
-                        c.Location.Y + PictureBox.Location.Y > parentSize.Height &&
+                    if (
+                        c.Location.Y + Location.Y > parentSize.Height &&
                         startPoint.Y - stopPoint.Y < 0
-                    )
-                    {
+                    ) {
                         c.Location = new Point(
                             c.Location.X,
-                            c.Location.Y - GridRender._space * (GraphControl.PictureBox.Controls.Count - 1) / 2
+                            c.Location.Y - GridRender.Space * (GraphControl.PictureBox.Controls.Count - 1) / 2
                         );
 
                         SetLabelText((Label)c, Int32.Parse(c.Text) + 5);
@@ -201,10 +183,8 @@ namespace WinFormCalc.Components.GraphComponent
         {
             label.Text = value.ToString();
 
-            if (value == 0)
-            {
+            if (value == 0) {
                 label.Visible = false;
-
                 return;
             }
 

@@ -9,12 +9,11 @@ namespace WinFormCalc.Convertors.Volume
             int fromType = (int)from;
             int toType = (int)to < 100 ? (int)to : 0;
 
-            if ((int)fromType < (int)toType)
-            {
-                return value / Math.Pow(1000, (int)toType - (int)fromType);
+            if (fromType < toType) {
+                return value / Math.Pow(1000, toType - fromType);
             }
 
-            return value * Math.Pow(1000, (int)fromType - (int)toType);
+            return value * Math.Pow(1000, fromType - toType);
         }
     }
 }

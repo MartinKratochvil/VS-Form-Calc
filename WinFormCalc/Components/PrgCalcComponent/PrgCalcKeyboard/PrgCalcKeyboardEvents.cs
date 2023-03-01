@@ -41,11 +41,11 @@ namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcKeyboard
         public static readonly List<Dictionary<string, Action<string>>> KeyboardClickEvents = new List<Dictionary<string, Action<string>>> {
             new Dictionary<string, Action<string>> {
                 { "<<", delegate(string placeholder) { OnLeftShiftButtonClick?.Invoke(placeholder); } },
-                { "a", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
-                { "b", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
-                { "c", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
-                { "d", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
-                { "e", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "A", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "B", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "C", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "D", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
+                { "E", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
             },
             new Dictionary<string, Action<string>> {
                 { ">>", delegate(string placeholder) { OnRightShiftButtonClick?.Invoke(placeholder); } },
@@ -53,7 +53,7 @@ namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcKeyboard
                 { "7", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
                 { "4", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
                 { "1", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
-                { "f", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } }
+                { "F", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } }
             },
             new Dictionary<string, Action<string>> {
                 { "CE", delegate(string placeholder) { OnClearEntryButtonClick?.Invoke(placeholder); } },

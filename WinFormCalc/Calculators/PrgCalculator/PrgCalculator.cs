@@ -78,7 +78,7 @@ namespace WinFormCalc.Calculators.PrgCalculator
         public string GetResult()
         {
             PrgNumber answer = Calculate();
-            return Convert.ToString(answer.Value, (int)answer.Type);
+            return Convert.ToString(answer.Value, (int)answer.Type).ToUpper();
         }
     }
 }
