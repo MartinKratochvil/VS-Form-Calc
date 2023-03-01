@@ -70,6 +70,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Components\ConvertorComponent\ConvertorKeyboard\ConvertorKeyboardEvents.cs" />
+    <Compile Include="Components\ConvertorComponent\ConvertorPanel\ConvertorDataHandler.cs" />
     <Compile Include="Components\ConvertorComponent\ConvertorPanel\ConvertorManager.cs" />
     <Compile Include="Components\ConvertorComponent\ConvertorPanel\ConvertorPanel.cs">
       <SubType>Component</SubType>
@@ -93,6 +94,7 @@
     <Compile Include="Components\TableDataManager.cs" />
     <Compile Include="Convertors\Area\Area.cs" />
     <Compile Include="Convertors\Area\AreaEnum.cs" />
+    <Compile Include="Convertors\Convertor.cs" />
     <Compile Include="Convertors\Speed\Speed.cs" />
     <Compile Include="Convertors\Speed\SpeedEnum.cs" />
     <Compile Include="Convertors\Temperature\Temperature.cs" />

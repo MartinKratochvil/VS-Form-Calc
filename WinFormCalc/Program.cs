@@ -1,5 +1,6 @@
 using System;
 using System.Windows.Forms;
+using WinFormCalc.Components.ConvertorComponent.ConvertorPanel;
 using WinFormCalc.Forms;
 using WinFormCalc.Operations.Functions.GonFunction;
 using WinFormCalc.Operations.Functions.MathFunction;
@@ -23,6 +24,8 @@ namespace WinFormCalc
             
             GonFunctionHandler.Setup();
             MathFunctionHandler.Setup();
+            ConvertorDataHandler.Setup();
+
             BasicPrimeOperHandler.Setup();
             AdvancePrimeOperHandler.Setup();
             ProgrammerPrimeOperHandler.Setup();
