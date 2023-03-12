@@ -7,6 +7,8 @@ using WinFormCalc.Components.ConvertorComponent.ConvertorPanel;
 using WinFormCalc.Components.GraphComponent;
 using WinFormCalc.Components.PaperModeComponent;
 using WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel;
+using WinFormCalc.Convertors;
+using WinFormCalc.Convertors.Area;
 
 namespace WinFormCalc.Forms
 {
@@ -23,7 +25,7 @@ namespace WinFormCalc.Forms
 
         private readonly GraphComponent graphComponent;
 
-        private readonly ConvertorPanel convertorPanel;
+        private readonly ConvertorPanel<AreaEnum> convertorPanel;
 
         private Size formSize;
 
@@ -47,12 +49,12 @@ namespace WinFormCalc.Forms
             paperModeComponent.Size = contentPanel.Size;
             
             graphComponent = new GraphComponent(new Size(500, 500));
+            graphComponent.Render(3, 2, 5);
 
-            convertorPanel = new ConvertorPanel();
+            convertorPanel = new ConvertorPanel<AreaEnum>();
             convertorPanel.Size = contentPanel.Size;
 
             contentPanel.Controls.Add(convertorPanel);
-            graphComponent.Render(3, 2, 5);
 
             formSize = Size;
             isMenuShow= false;

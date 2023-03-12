@@ -31,7 +31,7 @@ namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper
                 return false;
             }
 
-            double value = (double)Operations[operand.PrimeOper].DynamicInvoke(
+            double value = Operations[operand.PrimeOper].Invoke(
                 SetNumberSign(values).Value,
                 operand.Value
             );

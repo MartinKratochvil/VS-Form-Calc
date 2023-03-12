@@ -24,7 +24,6 @@ namespace WinFormCalc
             
             GonFunctionHandler.Setup();
             MathFunctionHandler.Setup();
-            ConvertorDataHandler.Setup();
 
             BasicPrimeOperHandler.Setup();
             AdvancePrimeOperHandler.Setup();

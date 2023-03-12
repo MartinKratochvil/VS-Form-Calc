@@ -38,8 +38,8 @@ namespace WinFormCalc.Components.BasicCalcComponent.BasicCalcKeyboard
 
         public static event ButtonClick OnEqualsButtonClick;
 
-        public static readonly List<Dictionary<string, Action<string>>> KeyboardClickEvents = new List<Dictionary<string, Action<string>>> {
-            new Dictionary<string, Action<string>> {
+        public static readonly List<Dictionary<string, Action<string>>> KeyboardClickEvents = new() {
+            new() {
                 { "%", delegate(string placeholder) { OnModuloButtonClick?.Invoke(placeholder); } },
                 { "n!", delegate(string placeholder) { OnFactButtonClick?.Invoke(placeholder); } },
                 { "7", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
@@ -47,7 +47,7 @@ namespace WinFormCalc.Components.BasicCalcComponent.BasicCalcKeyboard
                 { "1", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
                 { "|n|", delegate(string placeholder) { OnAbsButtonClick?.Invoke(placeholder); } }
             },
-            new Dictionary<string, Action<string>> {
+            new() {
                 { "CE", delegate(string placeholder) { OnClearEntryButtonClick?.Invoke(placeholder); } },
                 { "x²", delegate(string placeholder) { OnPowButtonClick?.Invoke(placeholder); } },
                 { "8", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
@@ -55,7 +55,7 @@ namespace WinFormCalc.Components.BasicCalcComponent.BasicCalcKeyboard
                 { "2", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
                 { "0", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } }
             },
-            new Dictionary<string, Action<string>> {
+            new() {
                 { "C", delegate(string placeholder) { OnClearButtonClick?.Invoke(placeholder); } },
                 { "√x", delegate(string placeholder) { OnSqrtButtonClick?.Invoke(placeholder); } },
                 { "9", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
@@ -63,7 +63,7 @@ namespace WinFormCalc.Components.BasicCalcComponent.BasicCalcKeyboard
                 { "3", delegate(string placeholder) { OnNumpadButtonClick?.Invoke(placeholder); } },
                 { ",", delegate(string placeholder) { OnCommaButtonClick?.Invoke(placeholder); } }
             },
-            new Dictionary<string,Action<string>> {
+            new() {
                 { "Back", delegate(string placeholder) { OnBackButtonClick?.Invoke(placeholder); } },
                 { "/", delegate(string placeholder) { OnDivideButtonClick?.Invoke(placeholder); } },
                 { "*", delegate(string placeholder) { OnMultiplyButtonClick?.Invoke(placeholder); } },

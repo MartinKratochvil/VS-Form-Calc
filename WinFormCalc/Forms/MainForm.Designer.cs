@@ -33,21 +33,13 @@ namespace WinFormCalc.Forms
             this.labelPlaceholer = new System.Windows.Forms.Label();
             this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
             this.panelMenuContent = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonBasicCalc = new System.Windows.Forms.Button();
             this.buttonAdvanceCalc = new System.Windows.Forms.Button();
             this.buttonPrgCalc = new System.Windows.Forms.Button();
             this.buttonPaperMode = new System.Windows.Forms.Button();
             this.buttonGrid = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.timerMenuPanel = new System.Windows.Forms.Timer(this.components);
+            this.buttonBasicCalc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).BeginInit();
             this.panelMenuContent.SuspendLayout();
             this.panelMenu.SuspendLayout();
@@ -90,30 +82,10 @@ namespace WinFormCalc.Forms
             this.panelMenuContent.Controls.Add(this.buttonPrgCalc);
             this.panelMenuContent.Controls.Add(this.buttonPaperMode);
             this.panelMenuContent.Controls.Add(this.buttonGrid);
-            this.panelMenuContent.Controls.Add(this.button3);
-            this.panelMenuContent.Controls.Add(this.button4);
-            this.panelMenuContent.Controls.Add(this.button5);
-            this.panelMenuContent.Controls.Add(this.button6);
-            this.panelMenuContent.Controls.Add(this.button7);
-            this.panelMenuContent.Controls.Add(this.button8);
-            this.panelMenuContent.Controls.Add(this.button9);
-            this.panelMenuContent.Controls.Add(this.button10);
             this.panelMenuContent.Location = new System.Drawing.Point(0, 47);
             this.panelMenuContent.Name = "panelMenuContent";
             this.panelMenuContent.Size = new System.Drawing.Size(217, 445);
             this.panelMenuContent.TabIndex = 1;
-            // 
-            // buttonBasicCalc
-            // 
-            this.buttonBasicCalc.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonBasicCalc.Location = new System.Drawing.Point(3, 3);
-            this.buttonBasicCalc.Name = "buttonBasicCalc";
-            this.buttonBasicCalc.Size = new System.Drawing.Size(194, 37);
-            this.buttonBasicCalc.TabIndex = 0;
-            this.buttonBasicCalc.Text = "Základní";
-            this.buttonBasicCalc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBasicCalc.UseVisualStyleBackColor = true;
-            this.buttonBasicCalc.Click += new System.EventHandler(this.buttonBasicCalc_Click);
             // 
             // buttonAdvanceCalc
             // 
@@ -163,94 +135,6 @@ namespace WinFormCalc.Forms
             this.buttonGrid.UseVisualStyleBackColor = true;
             this.buttonGrid.Click += new System.EventHandler(this.buttonGrid_Click);
             // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button3.Location = new System.Drawing.Point(3, 218);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(194, 37);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Programátrorská";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button4.Location = new System.Drawing.Point(3, 261);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(194, 37);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Programátrorská";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button5.Location = new System.Drawing.Point(3, 304);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(194, 37);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "Programátrorská";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button6.Location = new System.Drawing.Point(3, 347);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(194, 37);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Programátrorská";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button7.Location = new System.Drawing.Point(3, 390);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(194, 37);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Programátrorská";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            this.button8.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button8.Location = new System.Drawing.Point(3, 433);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(194, 37);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "Programátrorská";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button9
-            // 
-            this.button9.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button9.Location = new System.Drawing.Point(3, 476);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(194, 37);
-            this.button9.TabIndex = 11;
-            this.button9.Text = "Programátrorská";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button10.Location = new System.Drawing.Point(3, 519);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(194, 37);
-            this.button10.TabIndex = 12;
-            this.button10.Text = "Programátrorská";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button10.UseVisualStyleBackColor = true;
-            // 
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
@@ -259,13 +143,25 @@ namespace WinFormCalc.Forms
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.MaximumSize = new System.Drawing.Size(217, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(10, 495);
+            this.panelMenu.Size = new System.Drawing.Size(0, 495);
             this.panelMenu.TabIndex = 3;
             // 
             // timerMenuPanel
             // 
             this.timerMenuPanel.Interval = 5;
             this.timerMenuPanel.Tick += new System.EventHandler(this.timerMenuPanel_Tick);
+            // 
+            // buttonBasicCalc
+            // 
+            this.buttonBasicCalc.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonBasicCalc.Location = new System.Drawing.Point(3, 3);
+            this.buttonBasicCalc.Name = "buttonBasicCalc";
+            this.buttonBasicCalc.Size = new System.Drawing.Size(194, 37);
+            this.buttonBasicCalc.TabIndex = 0;
+            this.buttonBasicCalc.Text = "Základní";
+            this.buttonBasicCalc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBasicCalc.UseVisualStyleBackColor = true;
+            this.buttonBasicCalc.Click += new System.EventHandler(this.buttonBasicCalc_Click);
             // 
             // MainForm
             // 
@@ -295,20 +191,12 @@ namespace WinFormCalc.Forms
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.FlowLayoutPanel panelMenuContent;
         private System.Windows.Forms.PictureBox pictureBoxMenu;
-        private System.Windows.Forms.Button buttonBasicCalc;
         private System.Windows.Forms.Button buttonAdvanceCalc;
         private System.Windows.Forms.Button buttonPrgCalc;
         private System.Windows.Forms.Button buttonPaperMode;
         private System.Windows.Forms.Button buttonGrid;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Timer timerMenuPanel;
+        private System.Windows.Forms.Button buttonBasicCalc;
     }
 }

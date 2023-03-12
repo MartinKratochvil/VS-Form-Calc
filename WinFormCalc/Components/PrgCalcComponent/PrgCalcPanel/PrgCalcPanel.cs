@@ -77,7 +77,7 @@ namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel
         
         private void NumberLabelUpdate(string message)
         {
-            if (message[message.Length - 1] == '.') {
+            if (message[message.Length - 1] == ',') {
                 numberLabel.Text = TrimTextToSize(message + '0', Width / 30);
                 return;
             }

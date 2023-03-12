@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
 {
-    public sealed class ConvertorPanel : TableLayoutPanel
+    public sealed class ConvertorPanel<T> : TableLayoutPanel where T : Enum
     {
 
         private Label inputLabel;
@@ -21,28 +22,28 @@ namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
 
         private ConvertorKeyboard.ConvertorKeyboard keyboard;
 
-        private readonly ConvertorManager manager;
+        private readonly ConvertorManager<T> manager;
 
 
         public ConvertorPanel()
         {
             InitializeComponent();
 
-            MinimumSize = new Size(320, 445);
-            MaximumSize = new Size(1280, 890);
-            BackColor= Color.Pink;
-
-            manager = new ConvertorManager();
-            //manager.OnExampleLabelUpdate += ExampleLabelUpdate;
-            //manager.OnNumberLabelUpdate += NumberLabelUpdate;
-
-            List<Control> rows = new List<Control> { inputLabel, inputTypePanel, outputLabel, outputTypePanel, keyboard };
-            TableDataManager.SetAsymmetricalRows(this, rows);
+            manager = new ConvertorManager<T>();
+            manager.OnInputLabelUpdate += InputLabelUpdate;
+            manager.OnOutputLabelUpdate += OutputLabelUpdate;
+            
+            SetData(ConvertorDataHandler.Handle<T>());
         }
 
 
         private void InitializeComponent()
         {
+            MinimumSize = new Size(320, 445);
+            MaximumSize = new Size(1280, 890);
+            BackColor= Color.Pink;
+            Resize += PanelResize;
+
             inputLabel = new Label {
                 Size = new Size(1280, 115),
                 Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 238),
@@ -75,6 +76,7 @@ namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
                 DropDownStyle = ComboBoxStyle.DropDownList,
                 BackColor = Color.HotPink
             };
+            inputTypeComboBox.SelectedValueChanged += InputTypeChanged;
             inputTypePanel.Controls.Add(inputTypeComboBox);
 
             outputTypeComboBox = new ComboBox {
@@ -83,9 +85,70 @@ namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
                 DropDownStyle = ComboBoxStyle.DropDownList,
                 BackColor = Color.HotPink
             };
+            outputTypeComboBox.SelectedValueChanged += OutputTypeChanged;
             outputTypePanel.Controls.Add(outputTypeComboBox);
 
             keyboard = new ConvertorKeyboard.ConvertorKeyboard();
+            
+            List<Control> rows = new List<Control> { inputLabel, inputTypePanel, outputLabel, outputTypePanel, keyboard };
+            TableDataManager.SetAsymmetricalRows(this, rows);
+        }
+
+
+        private void SetData(List<Enum> data)
+        {
+            if (data == null) {
+                return;
+            }
+
+            inputTypeComboBox.DataSource = data;
+            outputTypeComboBox.DataSource = data;
+        }
+        
+        private void PanelResize(object sender, EventArgs args)
+        {
+            manager.UpdateInputLabel();
+        }
+
+
+        private void InputTypeChanged(object sender, EventArgs args)
+        {
+            T type = (T)inputTypeComboBox.SelectedValue;
+            manager.ChangeInputType(type);
+        }
+        
+        
+        private void OutputTypeChanged(object sender, EventArgs args)
+        {
+            T type = (T)outputTypeComboBox.SelectedValue;
+            manager.ChangeOutputType(type);
+        }
+
+
+        private void InputLabelUpdate(string message)
+        {
+            inputLabel.Text = TrimTextToSize(message, Width / 11);
+        }
+
+
+        private void OutputLabelUpdate(string message)
+        {
+            if (message[message.Length - 1] == ',') {
+                outputLabel.Text = TrimTextToSize(message + '0', Width / 11);
+                return;
+            }
+
+            outputLabel.Text = TrimTextToSize(message, Width / 11);
+        }
+
+
+        private string TrimTextToSize(string text, int maxSize)
+        {
+            if (text.Length <= maxSize) {
+                return text;
+            }
+
+            return text.Substring(text.Length - maxSize);
         }
     }
 }
