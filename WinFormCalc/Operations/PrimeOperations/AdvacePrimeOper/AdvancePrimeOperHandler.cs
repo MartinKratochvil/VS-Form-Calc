@@ -10,7 +10,7 @@ namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper
 
         private delegate double PrimeOperDel(double origin, double operand);
 
-        private static readonly Dictionary<AdvancePrimeOper, PrimeOperDel> Operations = new Dictionary<AdvancePrimeOper, PrimeOperDel>();
+        private static readonly Dictionary<AdvancePrimeOper, PrimeOperDel> Operations = new();
 
 
         public static void Setup()

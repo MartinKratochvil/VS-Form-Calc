@@ -6,25 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6aae75a3-f407-4611-889f-a886b8f7a3aa" name="Changes" comment="up">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard/AdvanceCalcKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard/AdvanceCalcKeyboardEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel/AdvanceCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel/AdvanceCalcPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard/BasicCalcKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard/BasicCalcKeyboardEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel/BasicCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel/BasicCalcPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorKeyboard/ConvertorKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorKeyboard/ConvertorKeyboardEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorDataHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcKeyboard/PrgCalcKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcKeyboard/PrgCalcKeyboardEvents.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcPanel/PrgCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcPanel/PrgCalcPanel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Convertor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Convertor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Data/DataEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Data/DataEnum.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Time/Time.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Time/Time.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunctionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunctionHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvancePrimeOperHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvancePrimeOperHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +33,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/85a420b2bf614d95a7a4ca460c46dcd35a5d48/d8/d9d83255/TableLayoutRowStyleCollection.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/1e/0a14b887/ValueType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/6f/f8377fc7/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/88/e4030d6c/Action.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/92/8e2cfdbc/CultureInfo.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/93/b522849e/Enum.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/a3/49be7ac2/List`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -54,6 +42,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/ef/4b7cacff/Type.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceCalculator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceNumber.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard/AdvanceCalcKeyboardEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Forms/MainForm.Designer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvacePrimeOper.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvancePrimeOperHandler.cs" root0="FORCE_HIGHLIGHTING" />
@@ -145,7 +134,7 @@
       <workItem from="1677664801228" duration="3327000" />
       <workItem from="1678096859138" duration="10000" />
       <workItem from="1678359646120" duration="2926000" />
-      <workItem from="1678642260253" duration="19973000" />
+      <workItem from="1678642260253" duration="27250000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1677269992178</created>
@@ -189,7 +178,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677637690858</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="up">
+      <created>1678664787191</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678664787191</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

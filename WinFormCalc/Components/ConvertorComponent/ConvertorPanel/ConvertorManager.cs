@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Windows.Forms;
+using System.Globalization;
 using WinFormCalc.Components.ConvertorComponent.ConvertorKeyboard;
 using WinFormCalc.Convertors;
-using WinFormCalc.Convertors.Area;
 
 namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
 {
@@ -46,7 +45,12 @@ namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
         public void UpdateInputLabel()
         {
             OnInputLabelUpdate?.Invoke(inputNumber);
-            Convert();
+        }
+
+
+        public void UpdateOutputLabel()
+        {
+            OnOutputLabelUpdate?.Invoke(outputNumber);
         }
 
 
@@ -66,12 +70,14 @@ namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
         }
 
 
-        private void Clear()
+        public void Clear()
         {
             inputNumber = "0";
             outputNumber = "0";
             isConverted = true;
+
             UpdateInputLabel();
+            UpdateOutputLabel();
         }
 
 
@@ -86,6 +92,7 @@ namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
 
             isConverted = false;
             UpdateInputLabel();
+            Convert();
         }
 
 
@@ -105,7 +112,7 @@ namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
         private void Convert()
         {
             if (isConverted) {
-                OnOutputLabelUpdate?.Invoke(outputNumber);
+                UpdateOutputLabel();
                 return;
             }
 
@@ -113,10 +120,17 @@ namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
                 Clear();
             }
 
-            MessageBox.Show(inputType + " : " + outputType);
-            //outputNumber = Convertor.Convert(num, Enum.ToObject().GetType()inputType, outputType);
+            try {
+                outputNumber = Convertor.Convert(num, inputType, outputType).ToString(CultureInfo.CurrentCulture);
+            }
+            catch (Exception) {
+                Clear();
+                OnOutputLabelUpdate?.Invoke("Error");
 
-            OnOutputLabelUpdate?.Invoke(outputNumber);
+                return;
+            }
+            
+            UpdateOutputLabel();
             isConverted = true;
         }
     }

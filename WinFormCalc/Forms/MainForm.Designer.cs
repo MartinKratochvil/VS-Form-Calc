@@ -30,19 +30,26 @@ namespace WinFormCalc.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.labelPlaceholer = new System.Windows.Forms.Label();
-            this.pictureBoxMenu = new System.Windows.Forms.PictureBox();
-            this.panelMenuContent = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonAdvanceCalc = new System.Windows.Forms.Button();
-            this.buttonPrgCalc = new System.Windows.Forms.Button();
-            this.buttonPaperMode = new System.Windows.Forms.Button();
-            this.buttonGrid = new System.Windows.Forms.Button();
-            this.panelMenu = new System.Windows.Forms.Panel();
+            this.placeholerLabel = new System.Windows.Forms.Label();
+            this.menuIcon = new System.Windows.Forms.PictureBox();
+            this.menuContentPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.basicCalcButton = new System.Windows.Forms.Button();
+            this.advanceCalcButton = new System.Windows.Forms.Button();
+            this.prgCalcButton = new System.Windows.Forms.Button();
+            this.paperModeButton = new System.Windows.Forms.Button();
+            this.gridButton = new System.Windows.Forms.Button();
+            this.areaConvertorButton = new System.Windows.Forms.Button();
+            this.dataConvertorButton = new System.Windows.Forms.Button();
+            this.lengthConvertorButton = new System.Windows.Forms.Button();
+            this.speedConvertorButton = new System.Windows.Forms.Button();
+            this.temperatureConvertorButton = new System.Windows.Forms.Button();
+            this.timeConvertorButton = new System.Windows.Forms.Button();
+            this.volumeConvertorButton = new System.Windows.Forms.Button();
+            this.menuPanel = new System.Windows.Forms.Panel();
             this.timerMenuPanel = new System.Windows.Forms.Timer(this.components);
-            this.buttonBasicCalc = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).BeginInit();
-            this.panelMenuContent.SuspendLayout();
-            this.panelMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuIcon)).BeginInit();
+            this.menuContentPanel.SuspendLayout();
+            this.menuPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // contentPanel
@@ -53,133 +60,224 @@ namespace WinFormCalc.Forms
             this.contentPanel.Size = new System.Drawing.Size(320, 445);
             this.contentPanel.TabIndex = 2;
             // 
-            // labelPlaceholer
+            // placeholerLabel
             // 
-            this.labelPlaceholer.AutoSize = true;
-            this.labelPlaceholer.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelPlaceholer.Location = new System.Drawing.Point(55, 9);
-            this.labelPlaceholer.Name = "labelPlaceholer";
-            this.labelPlaceholer.Size = new System.Drawing.Size(107, 32);
-            this.labelPlaceholer.TabIndex = 0;
-            this.labelPlaceholer.Text = "Základní";
-            this.labelPlaceholer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.placeholerLabel.AutoSize = true;
+            this.placeholerLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.placeholerLabel.Location = new System.Drawing.Point(55, 9);
+            this.placeholerLabel.Name = "placeholerLabel";
+            this.placeholerLabel.Size = new System.Drawing.Size(107, 32);
+            this.placeholerLabel.TabIndex = 0;
+            this.placeholerLabel.Text = "Základní";
+            this.placeholerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pictureBoxMenu
+            // menuIcon
             // 
-            this.pictureBoxMenu.BackColor = System.Drawing.Color.Fuchsia;
-            this.pictureBoxMenu.Location = new System.Drawing.Point(3, 3);
-            this.pictureBoxMenu.Name = "pictureBoxMenu";
-            this.pictureBoxMenu.Size = new System.Drawing.Size(44, 44);
-            this.pictureBoxMenu.TabIndex = 0;
-            this.pictureBoxMenu.TabStop = false;
-            this.pictureBoxMenu.Click += new System.EventHandler(this.pictureBoxMenu_Click);
+            this.menuIcon.BackColor = System.Drawing.Color.Fuchsia;
+            this.menuIcon.Location = new System.Drawing.Point(3, 3);
+            this.menuIcon.Name = "menuIcon";
+            this.menuIcon.Size = new System.Drawing.Size(44, 44);
+            this.menuIcon.TabIndex = 0;
+            this.menuIcon.TabStop = false;
+            this.menuIcon.Click += new System.EventHandler(this.MenuIconClick);
             // 
-            // panelMenuContent
+            // menuContentPanel
             // 
-            this.panelMenuContent.AutoScroll = true;
-            this.panelMenuContent.Controls.Add(this.buttonBasicCalc);
-            this.panelMenuContent.Controls.Add(this.buttonAdvanceCalc);
-            this.panelMenuContent.Controls.Add(this.buttonPrgCalc);
-            this.panelMenuContent.Controls.Add(this.buttonPaperMode);
-            this.panelMenuContent.Controls.Add(this.buttonGrid);
-            this.panelMenuContent.Location = new System.Drawing.Point(0, 47);
-            this.panelMenuContent.Name = "panelMenuContent";
-            this.panelMenuContent.Size = new System.Drawing.Size(217, 445);
-            this.panelMenuContent.TabIndex = 1;
+            this.menuContentPanel.AutoScroll = true;
+            this.menuContentPanel.Controls.Add(this.basicCalcButton);
+            this.menuContentPanel.Controls.Add(this.advanceCalcButton);
+            this.menuContentPanel.Controls.Add(this.prgCalcButton);
+            this.menuContentPanel.Controls.Add(this.paperModeButton);
+            this.menuContentPanel.Controls.Add(this.gridButton);
+            this.menuContentPanel.Controls.Add(this.areaConvertorButton);
+            this.menuContentPanel.Controls.Add(this.dataConvertorButton);
+            this.menuContentPanel.Controls.Add(this.lengthConvertorButton);
+            this.menuContentPanel.Controls.Add(this.speedConvertorButton);
+            this.menuContentPanel.Controls.Add(this.temperatureConvertorButton);
+            this.menuContentPanel.Controls.Add(this.timeConvertorButton);
+            this.menuContentPanel.Controls.Add(this.volumeConvertorButton);
+            this.menuContentPanel.Location = new System.Drawing.Point(0, 47);
+            this.menuContentPanel.Name = "menuContentPanel";
+            this.menuContentPanel.Size = new System.Drawing.Size(217, 445);
+            this.menuContentPanel.TabIndex = 1;
             // 
-            // buttonAdvanceCalc
+            // basicCalcButton
             // 
-            this.buttonAdvanceCalc.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonAdvanceCalc.Location = new System.Drawing.Point(3, 46);
-            this.buttonAdvanceCalc.Name = "buttonAdvanceCalc";
-            this.buttonAdvanceCalc.Size = new System.Drawing.Size(194, 37);
-            this.buttonAdvanceCalc.TabIndex = 1;
-            this.buttonAdvanceCalc.Text = "Pokročilá";
-            this.buttonAdvanceCalc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAdvanceCalc.UseVisualStyleBackColor = true;
-            this.buttonAdvanceCalc.Click += new System.EventHandler(this.buttonAdvanceCalc_Click);
+            this.basicCalcButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.basicCalcButton.Location = new System.Drawing.Point(3, 3);
+            this.basicCalcButton.Name = "basicCalcButton";
+            this.basicCalcButton.Size = new System.Drawing.Size(194, 37);
+            this.basicCalcButton.TabIndex = 0;
+            this.basicCalcButton.Text = "Základní";
+            this.basicCalcButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.basicCalcButton.UseVisualStyleBackColor = true;
+            this.basicCalcButton.Click += new System.EventHandler(this.BasicCalcButtonClick);
             // 
-            // buttonPrgCalc
+            // advanceCalcButton
             // 
-            this.buttonPrgCalc.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPrgCalc.Location = new System.Drawing.Point(3, 89);
-            this.buttonPrgCalc.Name = "buttonPrgCalc";
-            this.buttonPrgCalc.Size = new System.Drawing.Size(194, 37);
-            this.buttonPrgCalc.TabIndex = 2;
-            this.buttonPrgCalc.Text = "Programátrorská";
-            this.buttonPrgCalc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPrgCalc.UseVisualStyleBackColor = true;
-            this.buttonPrgCalc.Click += new System.EventHandler(this.buttonPrgCalc_Click);
+            this.advanceCalcButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.advanceCalcButton.Location = new System.Drawing.Point(3, 46);
+            this.advanceCalcButton.Name = "advanceCalcButton";
+            this.advanceCalcButton.Size = new System.Drawing.Size(194, 37);
+            this.advanceCalcButton.TabIndex = 1;
+            this.advanceCalcButton.Text = "Pokročilá";
+            this.advanceCalcButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.advanceCalcButton.UseVisualStyleBackColor = true;
+            this.advanceCalcButton.Click += new System.EventHandler(this.AdvanceCalcButtonClick);
             // 
-            // buttonPaperMode
+            // prgCalcButton
             // 
-            this.buttonPaperMode.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonPaperMode.Location = new System.Drawing.Point(3, 132);
-            this.buttonPaperMode.Name = "buttonPaperMode";
-            this.buttonPaperMode.Size = new System.Drawing.Size(194, 37);
-            this.buttonPaperMode.TabIndex = 3;
-            this.buttonPaperMode.Text = "Paper Mode";
-            this.buttonPaperMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonPaperMode.UseVisualStyleBackColor = true;
-            this.buttonPaperMode.Click += new System.EventHandler(this.buttonPaperMode_Click);
+            this.prgCalcButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.prgCalcButton.Location = new System.Drawing.Point(3, 89);
+            this.prgCalcButton.Name = "prgCalcButton";
+            this.prgCalcButton.Size = new System.Drawing.Size(194, 37);
+            this.prgCalcButton.TabIndex = 2;
+            this.prgCalcButton.Text = "Programátrorská";
+            this.prgCalcButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.prgCalcButton.UseVisualStyleBackColor = true;
+            this.prgCalcButton.Click += new System.EventHandler(this.PrgCalcButtonClick);
             // 
-            // buttonGrid
+            // paperModeButton
             // 
-            this.buttonGrid.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonGrid.Location = new System.Drawing.Point(3, 175);
-            this.buttonGrid.Name = "buttonGrid";
-            this.buttonGrid.Size = new System.Drawing.Size(194, 37);
-            this.buttonGrid.TabIndex = 4;
-            this.buttonGrid.Text = "Vytváření Grafů";
-            this.buttonGrid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonGrid.UseVisualStyleBackColor = true;
-            this.buttonGrid.Click += new System.EventHandler(this.buttonGrid_Click);
+            this.paperModeButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.paperModeButton.Location = new System.Drawing.Point(3, 132);
+            this.paperModeButton.Name = "paperModeButton";
+            this.paperModeButton.Size = new System.Drawing.Size(194, 37);
+            this.paperModeButton.TabIndex = 3;
+            this.paperModeButton.Text = "Paper Mode";
+            this.paperModeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.paperModeButton.UseVisualStyleBackColor = true;
+            this.paperModeButton.Click += new System.EventHandler(this.PaperModeButtonClick);
             // 
-            // panelMenu
+            // gridButton
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.panelMenu.Controls.Add(this.panelMenuContent);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.MaximumSize = new System.Drawing.Size(217, 0);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(0, 495);
-            this.panelMenu.TabIndex = 3;
+            this.gridButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.gridButton.Location = new System.Drawing.Point(3, 175);
+            this.gridButton.Name = "gridButton";
+            this.gridButton.Size = new System.Drawing.Size(194, 37);
+            this.gridButton.TabIndex = 4;
+            this.gridButton.Text = "Vytváření Grafů";
+            this.gridButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.gridButton.UseVisualStyleBackColor = true;
+            this.gridButton.Click += new System.EventHandler(this.GridButtonClick);
+            // 
+            // areaConvertorButton
+            // 
+            this.areaConvertorButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.areaConvertorButton.Location = new System.Drawing.Point(3, 218);
+            this.areaConvertorButton.Name = "areaConvertorButton";
+            this.areaConvertorButton.Size = new System.Drawing.Size(194, 37);
+            this.areaConvertorButton.TabIndex = 5;
+            this.areaConvertorButton.Text = "Plocha";
+            this.areaConvertorButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.areaConvertorButton.UseVisualStyleBackColor = true;
+            this.areaConvertorButton.Click += new System.EventHandler(this.AreaConvertorButtonClick);
+            // 
+            // dataConvertorButton
+            // 
+            this.dataConvertorButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dataConvertorButton.Location = new System.Drawing.Point(3, 261);
+            this.dataConvertorButton.Name = "dataConvertorButton";
+            this.dataConvertorButton.Size = new System.Drawing.Size(194, 37);
+            this.dataConvertorButton.TabIndex = 6;
+            this.dataConvertorButton.Text = "Data";
+            this.dataConvertorButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dataConvertorButton.UseVisualStyleBackColor = true;
+            this.dataConvertorButton.Click += new System.EventHandler(this.DataConvertorButtonClick);
+            // 
+            // lengthConvertorButton
+            // 
+            this.lengthConvertorButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lengthConvertorButton.Location = new System.Drawing.Point(3, 304);
+            this.lengthConvertorButton.Name = "lengthConvertorButton";
+            this.lengthConvertorButton.Size = new System.Drawing.Size(194, 37);
+            this.lengthConvertorButton.TabIndex = 7;
+            this.lengthConvertorButton.Text = "Délka";
+            this.lengthConvertorButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lengthConvertorButton.UseVisualStyleBackColor = true;
+            this.lengthConvertorButton.Click += new System.EventHandler(this.LengthConvertorButtonClick);
+            // 
+            // speedConvertorButton
+            // 
+            this.speedConvertorButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.speedConvertorButton.Location = new System.Drawing.Point(3, 347);
+            this.speedConvertorButton.Name = "speedConvertorButton";
+            this.speedConvertorButton.Size = new System.Drawing.Size(194, 37);
+            this.speedConvertorButton.TabIndex = 8;
+            this.speedConvertorButton.Text = "Rychlost";
+            this.speedConvertorButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.speedConvertorButton.UseVisualStyleBackColor = true;
+            this.speedConvertorButton.Click += new System.EventHandler(this.SpeedConvertorButtonClick);
+            // 
+            // temperatureConvertorButton
+            // 
+            this.temperatureConvertorButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.temperatureConvertorButton.Location = new System.Drawing.Point(3, 390);
+            this.temperatureConvertorButton.Name = "temperatureConvertorButton";
+            this.temperatureConvertorButton.Size = new System.Drawing.Size(194, 37);
+            this.temperatureConvertorButton.TabIndex = 9;
+            this.temperatureConvertorButton.Text = "Teplota";
+            this.temperatureConvertorButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.temperatureConvertorButton.UseVisualStyleBackColor = true;
+            this.temperatureConvertorButton.Click += new System.EventHandler(this.TemperatureConvertorButtonClick);
+            // 
+            // timeConvertorButton
+            // 
+            this.timeConvertorButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.timeConvertorButton.Location = new System.Drawing.Point(3, 433);
+            this.timeConvertorButton.Name = "timeConvertorButton";
+            this.timeConvertorButton.Size = new System.Drawing.Size(194, 37);
+            this.timeConvertorButton.TabIndex = 10;
+            this.timeConvertorButton.Text = "Čas";
+            this.timeConvertorButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.timeConvertorButton.UseVisualStyleBackColor = true;
+            this.timeConvertorButton.Click += new System.EventHandler(this.TimeConvertorButtonClick);
+            // 
+            // volumeConvertorButton
+            // 
+            this.volumeConvertorButton.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.volumeConvertorButton.Location = new System.Drawing.Point(3, 476);
+            this.volumeConvertorButton.Name = "volumeConvertorButton";
+            this.volumeConvertorButton.Size = new System.Drawing.Size(194, 37);
+            this.volumeConvertorButton.TabIndex = 11;
+            this.volumeConvertorButton.Text = "Objem";
+            this.volumeConvertorButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.volumeConvertorButton.UseVisualStyleBackColor = true;
+            this.volumeConvertorButton.Click += new System.EventHandler(this.VolumeConvertorButtonClick);
+            // 
+            // menuPanel
+            // 
+            this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.menuPanel.Controls.Add(this.menuContentPanel);
+            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuPanel.Location = new System.Drawing.Point(0, 0);
+            this.menuPanel.MaximumSize = new System.Drawing.Size(217, 0);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(0, 495);
+            this.menuPanel.TabIndex = 3;
             // 
             // timerMenuPanel
             // 
             this.timerMenuPanel.Interval = 5;
-            this.timerMenuPanel.Tick += new System.EventHandler(this.timerMenuPanel_Tick);
-            // 
-            // buttonBasicCalc
-            // 
-            this.buttonBasicCalc.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonBasicCalc.Location = new System.Drawing.Point(3, 3);
-            this.buttonBasicCalc.Name = "buttonBasicCalc";
-            this.buttonBasicCalc.Size = new System.Drawing.Size(194, 37);
-            this.buttonBasicCalc.TabIndex = 0;
-            this.buttonBasicCalc.Text = "Základní";
-            this.buttonBasicCalc.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBasicCalc.UseVisualStyleBackColor = true;
-            this.buttonBasicCalc.Click += new System.EventHandler(this.buttonBasicCalc_Click);
+            this.timerMenuPanel.Tick += new System.EventHandler(this.MenuPanelTimerTick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 495);
-            this.Controls.Add(this.pictureBoxMenu);
-            this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.labelPlaceholer);
+            this.Controls.Add(this.menuIcon);
+            this.Controls.Add(this.menuPanel);
+            this.Controls.Add(this.placeholerLabel);
             this.Controls.Add(this.contentPanel);
             this.MaximumSize = new System.Drawing.Size(1296, 979);
             this.MinimumSize = new System.Drawing.Size(336, 534);
             this.Name = "MainForm";
             this.Text = "Main";
             this.Resize += new System.EventHandler(this.MainForm_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenu)).EndInit();
-            this.panelMenuContent.ResumeLayout(false);
-            this.panelMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.menuIcon)).EndInit();
+            this.menuContentPanel.ResumeLayout(false);
+            this.menuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,16 +285,23 @@ namespace WinFormCalc.Forms
 
         #endregion
 
-        private System.Windows.Forms.Label labelPlaceholer;
+        private System.Windows.Forms.Label placeholerLabel;
         private System.Windows.Forms.Panel contentPanel;
-        private System.Windows.Forms.FlowLayoutPanel panelMenuContent;
-        private System.Windows.Forms.PictureBox pictureBoxMenu;
-        private System.Windows.Forms.Button buttonAdvanceCalc;
-        private System.Windows.Forms.Button buttonPrgCalc;
-        private System.Windows.Forms.Button buttonPaperMode;
-        private System.Windows.Forms.Button buttonGrid;
-        private System.Windows.Forms.Panel panelMenu;
+        private System.Windows.Forms.FlowLayoutPanel menuContentPanel;
+        private System.Windows.Forms.PictureBox menuIcon;
+        private System.Windows.Forms.Button advanceCalcButton;
+        private System.Windows.Forms.Button prgCalcButton;
+        private System.Windows.Forms.Button paperModeButton;
+        private System.Windows.Forms.Button gridButton;
+        private System.Windows.Forms.Panel menuPanel;
         private System.Windows.Forms.Timer timerMenuPanel;
-        private System.Windows.Forms.Button buttonBasicCalc;
+        private System.Windows.Forms.Button basicCalcButton;
+        private System.Windows.Forms.Button areaConvertorButton;
+        private System.Windows.Forms.Button dataConvertorButton;
+        private System.Windows.Forms.Button lengthConvertorButton;
+        private System.Windows.Forms.Button speedConvertorButton;
+        private System.Windows.Forms.Button temperatureConvertorButton;
+        private System.Windows.Forms.Button timeConvertorButton;
+        private System.Windows.Forms.Button volumeConvertorButton;
     }
 }

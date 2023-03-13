@@ -94,6 +94,11 @@ namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
             TableDataManager.SetAsymmetricalRows(this, rows);
         }
 
+        public void Clear()
+        {
+            manager.Clear();
+        }
+
 
         private void SetData(List<Enum> data)
         {
@@ -101,8 +106,8 @@ namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
                 return;
             }
 
-            inputTypeComboBox.DataSource = data;
-            outputTypeComboBox.DataSource = data;
+            inputTypeComboBox.DataSource = data.ToArray();
+            outputTypeComboBox.DataSource = data.ToArray();
         }
         
         private void PanelResize(object sender, EventArgs args)
@@ -127,18 +132,18 @@ namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
 
         private void InputLabelUpdate(string message)
         {
-            inputLabel.Text = TrimTextToSize(message, Width / 11);
+            if (message[message.Length - 1] == ',') {
+                inputLabel.Text = TrimTextToSize(message + '0', Width / 18);
+                return;
+            }
+
+            inputLabel.Text = TrimTextToSize(message, Width / 18);
         }
 
 
         private void OutputLabelUpdate(string message)
         {
-            if (message[message.Length - 1] == ',') {
-                outputLabel.Text = TrimTextToSize(message + '0', Width / 11);
-                return;
-            }
-
-            outputLabel.Text = TrimTextToSize(message, Width / 11);
+            outputLabel.Text = TrimTextToSize(message, Width / 18);
         }
 
 
