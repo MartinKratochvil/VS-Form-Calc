@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 using WinFormCalc.Calculators.BasicCalculator;
+using WinFormCalc.Components.BasicCalcComponent.BasicCalcKeyboard;
 using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
 
-namespace WinFormCalc.Components.BasicCalcComponent
+namespace WinFormCalc.Components.BasicCalcComponent.BasicCalcPanel
 {
     public class BasicCalcManager
     {
@@ -31,7 +31,7 @@ namespace WinFormCalc.Components.BasicCalcComponent
 
         public event NumberLabelUpdate OnNumberLabelUpdate;
 
-        private static List<string> operations = new List<string> {
+        private static List<string> operators = new List<string> {
             "+",
             "-",
             "*",
@@ -192,19 +192,28 @@ namespace WinFormCalc.Components.BasicCalcComponent
                 return;
             }
 
-            BasicCalculator calculator = new BasicCalculator(numbers);
+            try {
+                BasicCalculator calculator = new BasicCalculator(numbers);
 
-            example += " = ";
-            UpdateExampleLabel();
-            example = string.Empty;
+                example += " = ";
+                UpdateExampleLabel();
+                example = string.Empty;
 
-            number = calculator.GetResult();
-            UpdateNumberLabel();
-            number = "0";
+                number = calculator.GetResult();
+                UpdateNumberLabel();
+                number = "0";
 
-            numbers.Clear();
-            primeOper = BasicPrimeOper.Plus;
-            isCalculated = true;
+                numbers.Clear();
+                primeOper = BasicPrimeOper.Plus;
+                isCalculated = true;
+            }
+            catch(Exception) {
+                ClearExample();
+
+                number = "Error";
+                UpdateNumberLabel();
+                number = "0";
+            }
         }
 
         private void ClearNumber()
@@ -241,7 +250,7 @@ namespace WinFormCalc.Components.BasicCalcComponent
             }
 
             primeOper = nextPrimeOper;
-            example += " " + operations[(int)nextPrimeOper] + " ";
+            example += " " + operators[(int)nextPrimeOper] + " ";
             UpdateExampleLabel();
 
             ClearNumber();

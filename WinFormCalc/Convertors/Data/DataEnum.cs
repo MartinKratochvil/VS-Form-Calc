@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace WinFormCalc.Convertors.Data
 {
     public enum DataEnum

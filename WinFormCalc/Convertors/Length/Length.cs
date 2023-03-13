@@ -9,24 +9,20 @@ namespace WinFormCalc.Convertors.Length
             int fromType = (int)from;
             int toType = (int)to < 100 ? (int)to : 0;
 
-            if ((int)from >= 100)
-            {
+            if ((int)from >= 100) {
                 fromType = 0;
                 value = ConvertUSToSi(value, (int)from);
             }
 
-            if ((int)fromType < (int)toType)
-            {
-                return ConvertSiToUS
-                (
-                    value / Math.Pow(10, (int)toType - (int)fromType),
+            if (fromType < toType) {
+                return ConvertSiToUS(
+                    value / Math.Pow(10, toType - fromType),
                     (int)to
                 );
             }
 
-            return ConvertSiToUS
-            (
-                value * Math.Pow(10, (int)fromType - (int)toType),
+            return ConvertSiToUS(
+                value * Math.Pow(10, fromType - toType),
                 (int)to
             );
         }
@@ -40,8 +36,7 @@ namespace WinFormCalc.Convertors.Length
 
         private static double ConvertSiToUS(double value, int size)
         {
-            if (size < 100)
-            {
+            if (size < 100) {
                 return value;
             }
 

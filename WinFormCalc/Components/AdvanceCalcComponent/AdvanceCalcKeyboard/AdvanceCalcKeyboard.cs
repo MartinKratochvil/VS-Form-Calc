@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WinFormCalc.Components.AdvanceCalcComponent
+namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcKeyboard
 {
     public sealed class AdvanceCalcKeyboard : TableLayoutPanel
     {

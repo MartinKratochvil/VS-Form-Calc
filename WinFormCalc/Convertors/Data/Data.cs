@@ -11,19 +11,16 @@ namespace WinFormCalc.Convertors.Data
 
             value = BitByteConvertor(value, (int)from > 0, true);
 
-            if ((int)fromType < (int)toType)
-            {
-                return BitByteConvertor
-                (
-                    value / Math.Pow(1024, (int)toType - (int)fromType),
+            if (fromType < toType) {
+                return BitByteConvertor(
+                    value / Math.Pow(1024, toType - fromType),
                     true,
                     (int)to > 0
                 );
             }
 
-            return BitByteConvertor
-            (
-                value * Math.Pow(1024, (int)fromType - (int)toType),
+            return BitByteConvertor(
+                value * Math.Pow(1024, fromType - toType),
                 true,
                 (int)to > 0
             );
@@ -31,13 +28,11 @@ namespace WinFormCalc.Convertors.Data
 
         private static double BitByteConvertor(double value, bool isFromByte, bool isToByte)
         {
-            if (!isFromByte && isToByte)
-            {
+            if (!isFromByte && isToByte) {
                 return value / 8;
             }
 
-            if (isFromByte && ! isToByte)
-            {
+            if (isFromByte && ! isToByte) {
                 return value * 8;
             }
 

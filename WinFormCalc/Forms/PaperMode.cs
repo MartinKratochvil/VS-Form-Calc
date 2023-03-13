@@ -26,14 +26,5 @@ namespace WinFormCalc.Forms
             paperModeComponent.Size = new Size(450, 300);
             Controls.Add(paperModeComponent);
         }
-
-
-        private void PaperMode_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                paperModeComponent.Calculate();
-            }
-        }
     }
 }

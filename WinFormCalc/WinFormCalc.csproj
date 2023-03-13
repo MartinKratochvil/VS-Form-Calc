@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,31 +49,53 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculators\AdvanceCalculator\AdvanceCalculator.cs" />
-    <Compile Include="Calculators\ProgrammerCalculator\VarSize.cs" />
-    <Compile Include="Calculators\ProgrammerCalculator\VarType.cs" />
-    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcKeyboard.cs">
+    <Compile Include="Calculators\PrgCalculator\VarSize.cs" />
+    <Compile Include="Calculators\PrgCalculator\VarType.cs" />
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcKeyboard\AdvanceCalcKeyboard.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcKeyboardEvents.cs" />
-    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcManager.cs" />
-    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcPanel.cs">
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcKeyboard\AdvanceCalcKeyboardEvents.cs" />
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcPanel\AdvanceCalcManager.cs" />
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcPanel\AdvanceCalcPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Components\BasicCalcComponent\BasicCalcKeyboardEvents.cs" />
-    <Compile Include="Components\BasicCalcComponent\BasicCalcKeyboard.cs">
+    <Compile Include="Components\BasicCalcComponent\BasicCalcKeyboard\BasicCalcKeyboard.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Components\BasicCalcComponent\BasicCalcManager.cs" />
-    <Compile Include="Components\BasicCalcComponent\BasicCalcPanel.cs">
+    <Compile Include="Components\BasicCalcComponent\BasicCalcKeyboard\BasicCalcKeyboardEvents.cs" />
+    <Compile Include="Components\BasicCalcComponent\BasicCalcPanel\BasicCalcManager.cs" />
+    <Compile Include="Components\BasicCalcComponent\BasicCalcPanel\BasicCalcPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ConvertorComponent\ConvertorKeyboard\ConvertorKeyboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\ConvertorComponent\ConvertorKeyboard\ConvertorKeyboardEvents.cs" />
+    <Compile Include="Components\ConvertorComponent\ConvertorPanel\ConvertorDataHandler.cs" />
+    <Compile Include="Components\ConvertorComponent\ConvertorPanel\ConvertorManager.cs" />
+    <Compile Include="Components\ConvertorComponent\ConvertorPanel\ConvertorPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Components\PaperModeComponent\ExampleConvertor.cs" />
     <Compile Include="Components\PaperModeComponent\PaperModeComponent.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Components\PrgCalcComponent\PrgCalcFunctionPanel\PrgCalcFunctionPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\PrgCalcComponent\PrgCalcFunctionPanel\PrgCalcFunctionPanelEvents.cs" />
+    <Compile Include="Components\PrgCalcComponent\PrgCalcKeyboard\PrgCalcKeyboard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\PrgCalcComponent\PrgCalcKeyboard\PrgCalcKeyboardEvents.cs" />
+    <Compile Include="Components\PrgCalcComponent\PrgCalcPanel\PrgCalcManager.cs" />
+    <Compile Include="Components\PrgCalcComponent\PrgCalcPanel\PrgCalcPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\TableDataManager.cs" />
     <Compile Include="Convertors\Area\Area.cs" />
     <Compile Include="Convertors\Area\AreaEnum.cs" />
+    <Compile Include="Convertors\Convertor.cs" />
     <Compile Include="Convertors\Speed\Speed.cs" />
     <Compile Include="Convertors\Speed\SpeedEnum.cs" />
     <Compile Include="Convertors\Temperature\Temperature.cs" />
@@ -83,7 +106,7 @@
     <Compile Include="Convertors\Length\Length.cs" />
     <Compile Include="Convertors\Length\LengthEnum.cs" />
     <Compile Include="Convertors\Volume\Volume.cs" />
-    <Compile Include="Calculators\ProgrammerCalculator\ProgrammerNumber.cs" />
+    <Compile Include="Calculators\PrgCalculator\PrgNumber.cs" />
     <Compile Include="Components\GraphComponent\GraphControl.cs" />
     <Compile Include="Components\GraphComponent\GraphRender.cs" />
     <Compile Include="Forms\Grid.cs">
@@ -92,8 +115,12 @@
     <Compile Include="Forms\Grid.Designer.cs">
       <DependentUpon>Grid.cs</DependentUpon>
     </Compile>
-    <Compile Include="Components\GraphComponent\GraphComponent.cs" />
-    <Compile Include="Components\GraphComponent\GridControl.cs" />
+    <Compile Include="Components\GraphComponent\GraphComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\GraphComponent\GridControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\GraphComponent\GridRender.cs" />
     <Compile Include="Components\GraphComponent\LabelsRender.cs" />
     <Compile Include="Forms\Form1.cs">
@@ -125,10 +152,10 @@
     <Compile Include="Operations\PrimeOperations\AdvacePrimeOper\AdvancePrimeOperHandler.cs" />
     <Compile Include="Operations\PrimeOperations\BasicPrimeOper\BasicPrimeOper.cs" />
     <Compile Include="Operations\PrimeOperations\BasicPrimeOper\BasicPrimeOperHandler.cs" />
-    <Compile Include="Operations\PrimeOperations\BinPrimeOper\BinPrimeOper.cs" />
-    <Compile Include="Operations\PrimeOperations\BinPrimeOper\BinPrimeOperHandler.cs" />
+    <Compile Include="Operations\PrimeOperations\PrgPrimeOper\PrgPrimeOper.cs" />
+    <Compile Include="Operations\PrimeOperations\PrgPrimeOper\ProgrammerPrimeOperHandler.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="Calculators\ProgrammerCalculator\ProgrammerCalculator.cs" />
+    <Compile Include="Calculators\PrgCalculator\PrgCalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Convertors\Data\Data.cs" />
     <Compile Include="Convertors\Data\DataEnum.cs" />

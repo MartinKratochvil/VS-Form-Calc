@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Globalization;
-using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
 
 namespace WinFormCalc.Calculators.BasicCalculator
@@ -22,7 +21,7 @@ namespace WinFormCalc.Calculators.BasicCalculator
             double result = 0;
 
             foreach (BasicNumber number in numbers) {
-                result = BasicPrimeOperHandler.Handle(result, number.Value, number.PrimeOper);
+                result = BasicPrimeOperHandler.Handle(result, number);
             }
 
             return result.ToString(CultureInfo.CurrentCulture);

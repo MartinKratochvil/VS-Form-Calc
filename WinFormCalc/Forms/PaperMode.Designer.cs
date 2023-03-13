@@ -38,7 +38,6 @@
             this.KeyPreview = true;
             this.Name = "PaperMode";
             this.Text = "PaperMode";
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PaperMode_KeyPress);
             this.ResumeLayout(false);
 
         }

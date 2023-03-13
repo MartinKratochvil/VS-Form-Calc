@@ -3,34 +3,20 @@ using System.Windows.Forms;
 
 namespace WinFormCalc.Components.GraphComponent
 {
-    public class GraphComponent
+    public class GraphComponent : Panel
     {
-
-        private readonly Size size;
-        
-        private readonly Point location;
 
         private readonly GridControl gridControl;
 
-        public Panel Panel { get; private set; }
 
-
-        public GraphComponent(Size size, Point location)
+        public GraphComponent(Size size)
         {
-            this.size = size;
-            this.location = location;
+            Size = size;
 
             gridControl = new GridControl(size);
-
-            Panel = new Panel()
-            {
-                Size = size,
-                Location = location
-            };
-
             gridControl.Render();
 
-            Panel.Controls.Add(gridControl.PictureBox);
+            Controls.Add(gridControl);
         }
 
 

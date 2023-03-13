@@ -24,11 +24,11 @@ namespace WinFormCalc.Forms
 
         private void Grid_Load(object sender, EventArgs e)
         {
-            GraphComponent grid = new GraphComponent(new Size(500, 500), new Point(100, 100));
+            GraphComponent grid = new GraphComponent(new Size(500, 500));
             grid.Render(1, 2, -1);
             grid.Render(-1, 2);
 
-            Controls.Add(grid.Panel);
+            Controls.Add(grid);
         }
     }
 }

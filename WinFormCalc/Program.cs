@@ -1,11 +1,12 @@
 using System;
 using System.Windows.Forms;
+using WinFormCalc.Components.ConvertorComponent.ConvertorPanel;
 using WinFormCalc.Forms;
 using WinFormCalc.Operations.Functions.GonFunction;
 using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 using WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
-using WinFormCalc.Operations.PrimeOperations.BinPrimeOper;
+using WinFormCalc.Operations.PrimeOperations.PrgPrimeOper;
 
 
 namespace WinFormCalc
@@ -23,9 +24,10 @@ namespace WinFormCalc
             
             GonFunctionHandler.Setup();
             MathFunctionHandler.Setup();
+
             BasicPrimeOperHandler.Setup();
             AdvancePrimeOperHandler.Setup();
-            BinPrimeOperHandler.Setup();
+            ProgrammerPrimeOperHandler.Setup();
             
             Application.Run(new MainForm());
         }

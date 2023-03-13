@@ -9,7 +9,7 @@ namespace WinFormCalc.Operations.Functions.MathFunction
 
         private delegate double FuncDel(double x);
 
-        private static readonly Dictionary<MathFunction, Delegate> Operations = new Dictionary<MathFunction, Delegate>();
+        private static readonly Dictionary<MathFunction, FuncDel>Operations = new Dictionary<MathFunction, FuncDel>();
 
 
         public static void Setup()

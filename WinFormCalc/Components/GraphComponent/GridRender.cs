@@ -7,7 +7,7 @@ namespace WinFormCalc.Components.GraphComponent
     public class GridRender
     {
 
-        public const int _space = 125;
+        public const int Space = 125;
 
         private readonly Pen linePen;
 
@@ -56,35 +56,30 @@ namespace WinFormCalc.Components.GraphComponent
 
         private void DrawGrid()
         {
-            for (int i = 0; i < 2; i++)
-            {
+            for (int i = 0; i < 2; i++) {
                 bool column = i % 2 == 0;
 
-                for (int j = 0; j < GridControl._size / _space; j++)
-                {
+                for (int j = 0; j < GridControl._size / Space; j++) {
                     Point start = column ?
-                        new Point(_space * j - 1, 0) :
-                        new Point(0, _space * j - 1)
+                        new Point(Space * j - 1, 0) :
+                        new Point(0, Space * j - 1)
                     ;
 
                     Point end = column ?
-                        new Point(_space * j - 1, GridControl._size - 1) :
-                        new Point(GridControl._size - 1, _space * j - 1)
+                        new Point(Space * j - 1, GridControl._size - 1) :
+                        new Point(GridControl._size - 1, Space * j - 1)
                     ;
 
                     graphics.DrawLine(linePen, start, end);
 
-                    for (int k = 0; k < 4; k++)
-                    {
-                        if (column)
-                        {
-                            start.X += _space / 5;
-                            end.X += _space / 5;
+                    for (int k = 0; k < 4; k++) {
+                        if (column) {
+                            start.X += Space / 5;
+                            end.X += Space / 5;
                         }
-                        else
-                        {
-                            start.Y += _space / 5;
-                            end.Y += _space / 5;
+                        else {
+                            start.Y += Space / 5;
+                            end.Y += Space / 5;
                         }
 
                         graphics.DrawLine(subLinePen, start, end);
@@ -96,14 +91,13 @@ namespace WinFormCalc.Components.GraphComponent
 
         private void DrawAxes()
         {
-            for (int i = 0; i < 2; i++)
-            {
+            for (int i = 0; i < 2; i++) {
                 bool column = i % 2 == 0;
 
                 Point start = column ?
-                new Point(GridControl._size / 2, 0) :
-                new Point(0, GridControl._size / 2)
-            ;
+                    new Point(GridControl._size / 2, 0) :
+                    new Point(0, GridControl._size / 2)
+                ;
 
                 Point end = column ?
                     new Point(GridControl._size / 2, GridControl._size - 1) :
