@@ -1,11 +1,10 @@
 ﻿
-namespace WinFormCalc.Calculators.GoniometricFunctions.Enums
+namespace WinFormCalc.Calculators.GoniometricFunctions.Enums;
+
+public enum VarType
 {
-    public enum VarType
-    {
-        Hex = 16,
-        Dec = 10,
-        Oct = 8,
-        Bin = 2
-    }
+    Hex = 16,
+    Dec = 10,
+    Oct = 8,
+    Bin = 2
 }

@@ -23,22 +23,19 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
         {
             InitializeComponent();
 
-            MinimumSize = new Size(320, 445);
-            MaximumSize = new Size(1280, 890);
-            BackColor= Color.Pink;
-            Resize += PanelResize;
-
             manager = new AdvanceCalcManager();
             manager.OnExampleLabelUpdate += ExampleLabelUpdate;
             manager.OnNumberLabelUpdate += NumberLabelUpdate;
-
-            List<Control> rows = new List<Control> { exampleLabel, numberLabel, trigonometryButton, keyboard };
-            TableDataManager.SetAsymmetricalRows(this, rows);
         }
 
 
         private void InitializeComponent()
         {
+            MinimumSize = new Size(320, 445);
+            MaximumSize = new Size(1280, 890);
+            BackColor= Color.Pink;
+            Resize += PanelResize;
+
             exampleLabel = new Label{
                 Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
                 ForeColor = Color.Gray,
@@ -66,6 +63,9 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
             };
 
             keyboard = new AdvanceCalcKeyboard.AdvanceCalcKeyboard();
+
+            List<Control> rows = new() { exampleLabel, numberLabel, trigonometryButton, keyboard };
+            TableDataManager.SetAsymmetricalRows(this, rows);
         }
 
 

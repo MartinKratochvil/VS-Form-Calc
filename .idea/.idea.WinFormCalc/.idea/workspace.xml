@@ -5,13 +5,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aae75a3-f407-4611-889f-a886b8f7a3aa" name="Changes" comment="up">
+      <change afterPath="$PROJECT_DIR$/WinFormCalc/Components/ComponentKeyPressHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceNumber.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/BasicCalculator/BasicNumber.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/PrgCalculator/PrgCalculator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/PrgCalculator/PrgCalculator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/PrgCalculator/PrgNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/PrgCalculator/PrgNumber.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/PrgCalculator/VarSize.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/PrgCalculator/VarSize.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Calculators/PrgCalculator/VarType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Calculators/PrgCalculator/VarType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard/AdvanceCalcKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard/AdvanceCalcKeyboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard/AdvanceCalcKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard/AdvanceCalcKeyboardEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel/AdvanceCalcManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel/AdvanceCalcManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel/AdvanceCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel/AdvanceCalcPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard/BasicCalcKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard/BasicCalcKeyboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard/BasicCalcKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard/BasicCalcKeyboardEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel/BasicCalcManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel/BasicCalcManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel/BasicCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcPanel/BasicCalcPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorKeyboard/ConvertorKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorKeyboard/ConvertorKeyboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorKeyboard/ConvertorKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorKeyboard/ConvertorKeyboardEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorDataHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorDataHandler.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GraphComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GraphComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GraphControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GraphControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GraphRender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GraphRender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GridControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GridControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GridRender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/GridRender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/LabelsRender.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/GraphComponent/LabelsRender.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/ExampleConvertor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/ExampleConvertor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/PaperModeComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PaperModeComponent/PaperModeComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcFunctionPanel/PrgCalcFunctionPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcFunctionPanel/PrgCalcFunctionPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcFunctionPanel/PrgCalcFunctionPanelEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcFunctionPanel/PrgCalcFunctionPanelEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcKeyboard/PrgCalcKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcKeyboard/PrgCalcKeyboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcKeyboard/PrgCalcKeyboardEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcKeyboard/PrgCalcKeyboardEvents.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcPanel/PrgCalcManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcPanel/PrgCalcManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcPanel/PrgCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcPanel/PrgCalcPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/TableDataManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/TableDataManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Area/Area.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Area/Area.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Area/AreaEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Area/AreaEnum.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Convertor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Convertor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Data/Data.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Data/Data.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Data/DataEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Data/DataEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Date/Date.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Date/Date.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Length/Length.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Length/Length.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Length/LengthEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Length/LengthEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Speed/Speed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Speed/Speed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Speed/SpeedEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Speed/SpeedEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Temperature/Temperature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Temperature/Temperature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Temperature/TemperatureEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Temperature/TemperatureEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Time/Time.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Time/Time.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Time/TimeEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Time/TimeEnum.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Volume/Volume.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Volume/Volume.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Convertors/Volume/VolumeEnum.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Convertors/Volume/VolumeEnum.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/GonFunction/GonFunction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/GonFunction/GonFunction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/GonFunction/GonFunctionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/GonFunction/GonFunctionHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunctionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/MathFunction/MathFunctionHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvacePrimeOper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvacePrimeOper.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvancePrimeOperHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvancePrimeOperHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/BasicPrimeOper/BasicPrimeOper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/BasicPrimeOper/BasicPrimeOper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/BasicPrimeOper/BasicPrimeOperHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/BasicPrimeOper/BasicPrimeOperHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/PrgPrimeOper/PrgPrimeOper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/PrgPrimeOper/PrgPrimeOper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/PrgPrimeOper/ProgrammerPrimeOperHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/PrgPrimeOper/ProgrammerPrimeOperHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +88,18 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/34ec56fc58ec4b3597ef877c03bd11d117ab30/1a/15a6aa57/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5980a88ae5314d4b9811fcde1734d236568bc0/32/3b4e6b43/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5980a88ae5314d4b9811fcde1734d236568bc0/90/ca609240/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/85a420b2bf614d95a7a4ca460c46dcd35a5d48/26/12c370a1/PreviewKeyDownEventArgs.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/85a420b2bf614d95a7a4ca460c46dcd35a5d48/2f/89eeffbd/Binding.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/85a420b2bf614d95a7a4ca460c46dcd35a5d48/3c/d3f56a6c/ConvertEventHandler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/85a420b2bf614d95a7a4ca460c46dcd35a5d48/7a/3fbc43b9/Timer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/85a420b2bf614d95a7a4ca460c46dcd35a5d48/d8/15366393/ListControl.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/85a420b2bf614d95a7a4ca460c46dcd35a5d48/d8/d9d83255/TableLayoutRowStyleCollection.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/85a420b2bf614d95a7a4ca460c46dcd35a5d48/de/8d27fa2a/Keys.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/1e/0a14b887/ValueType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/58/9be0ab1d/KeyValuePair`2.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/58/e0857ba2/Action`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/6f/f8377fc7/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/88/e4030d6c/Action.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/92/8e2cfdbc/CultureInfo.cs" root0="SKIP_HIGHLIGHTING" />
@@ -42,11 +110,9 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/cab4cd4941104705846e3433671ecd5052e590/ef/4b7cacff/Type.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceCalculator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinFormCalc/Calculators/AdvanceCalculator/AdvanceNumber.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard/AdvanceCalcKeyboardEvents.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Forms/MainForm.Designer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvacePrimeOper.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvacePrimeOper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinFormCalc/Operations/PrimeOperations/AdvacePrimeOper/AdvancePrimeOperHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Nitram293/Desktop/VS-Form-Calc/WinFormCalc/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WinFormCalc/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -134,7 +200,10 @@
       <workItem from="1677664801228" duration="3327000" />
       <workItem from="1678096859138" duration="10000" />
       <workItem from="1678359646120" duration="2926000" />
-      <workItem from="1678642260253" duration="27250000" />
+      <workItem from="1678642260253" duration="31440000" />
+      <workItem from="1678733241834" duration="11862000" />
+      <workItem from="1678787370389" duration="11250000" />
+      <workItem from="1678821755302" duration="2485000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1677269992178</created>
@@ -185,7 +254,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678664787191</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="up">
+      <created>1678672374645</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678672374645</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

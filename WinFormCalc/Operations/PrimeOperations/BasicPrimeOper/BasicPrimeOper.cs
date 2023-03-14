@@ -1,12 +1,11 @@
 
-namespace WinFormCalc.Operations.PrimeOperations.BasicPrimeOper
+namespace WinFormCalc.Operations.PrimeOperations.BasicPrimeOper;
+
+public enum BasicPrimeOper
 {
-    public enum BasicPrimeOper
-    {
-        Plus,
-        Minus,
-        Multiply,
-        Divide,
-        Modulo,
-    }
+    Plus,
+    Minus,
+    Multiply,
+    Divide,
+    Modulo,
 }

@@ -67,6 +67,7 @@
     <Compile Include="Components\BasicCalcComponent\BasicCalcPanel\BasicCalcPanel.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Components\ComponentKeyPressHandler.cs" />
     <Compile Include="Components\ConvertorComponent\ConvertorKeyboard\ConvertorKeyboard.cs">
       <SubType>Component</SubType>
     </Compile>

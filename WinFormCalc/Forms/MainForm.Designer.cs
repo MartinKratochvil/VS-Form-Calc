@@ -30,7 +30,7 @@ namespace WinFormCalc.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.contentPanel = new System.Windows.Forms.Panel();
-            this.placeholerLabel = new System.Windows.Forms.Label();
+            this.placeholderLabel = new System.Windows.Forms.Label();
             this.menuIcon = new System.Windows.Forms.PictureBox();
             this.menuContentPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.basicCalcButton = new System.Windows.Forms.Button();
@@ -60,16 +60,16 @@ namespace WinFormCalc.Forms
             this.contentPanel.Size = new System.Drawing.Size(320, 445);
             this.contentPanel.TabIndex = 2;
             // 
-            // placeholerLabel
+            // placeholderLabel
             // 
-            this.placeholerLabel.AutoSize = true;
-            this.placeholerLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.placeholerLabel.Location = new System.Drawing.Point(55, 9);
-            this.placeholerLabel.Name = "placeholerLabel";
-            this.placeholerLabel.Size = new System.Drawing.Size(107, 32);
-            this.placeholerLabel.TabIndex = 0;
-            this.placeholerLabel.Text = "Základní";
-            this.placeholerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.placeholderLabel.AutoSize = true;
+            this.placeholderLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.placeholderLabel.Location = new System.Drawing.Point(55, 9);
+            this.placeholderLabel.Name = "placeholderLabel";
+            this.placeholderLabel.Size = new System.Drawing.Size(108, 32);
+            this.placeholderLabel.TabIndex = 0;
+            this.placeholderLabel.Text = "Základní";
+            this.placeholderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // menuIcon
             // 
@@ -159,7 +159,7 @@ namespace WinFormCalc.Forms
             this.gridButton.Text = "Vytváření Grafů";
             this.gridButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.gridButton.UseVisualStyleBackColor = true;
-            this.gridButton.Click += new System.EventHandler(this.GridButtonClick);
+            this.gridButton.Click += new System.EventHandler(this.GraphButtonClick);
             // 
             // areaConvertorButton
             // 
@@ -253,7 +253,7 @@ namespace WinFormCalc.Forms
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.MaximumSize = new System.Drawing.Size(217, 0);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(0, 495);
+            this.menuPanel.Size = new System.Drawing.Size(200, 495);
             this.menuPanel.TabIndex = 3;
             // 
             // timerMenuPanel
@@ -268,24 +268,25 @@ namespace WinFormCalc.Forms
             this.ClientSize = new System.Drawing.Size(320, 495);
             this.Controls.Add(this.menuIcon);
             this.Controls.Add(this.menuPanel);
-            this.Controls.Add(this.placeholerLabel);
+            this.Controls.Add(this.placeholderLabel);
             this.Controls.Add(this.contentPanel);
+            this.KeyPreview = true;
             this.MaximumSize = new System.Drawing.Size(1296, 979);
             this.MinimumSize = new System.Drawing.Size(336, 534);
             this.Name = "MainForm";
             this.Text = "Main";
-            this.Resize += new System.EventHandler(this.MainForm_Resize);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainFormKeyPress);
+            this.Resize += new System.EventHandler(this.MainFormResize);
             ((System.ComponentModel.ISupportInitialize)(this.menuIcon)).EndInit();
             this.menuContentPanel.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
 
-        private System.Windows.Forms.Label placeholerLabel;
+        private System.Windows.Forms.Label placeholderLabel;
         private System.Windows.Forms.Panel contentPanel;
         private System.Windows.Forms.FlowLayoutPanel menuContentPanel;
         private System.Windows.Forms.PictureBox menuIcon;
