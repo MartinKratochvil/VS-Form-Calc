@@ -62,7 +62,11 @@ public partial class MainForm : Form
         basicCalcPanel = new BasicCalcPanel();
         basicCalcPanel.Size = contentPanel.Size;
 
-        advanceCalcPanel = new AdvanceCalcPanel();
+        advanceCalcPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor= Color.Pink
+        };
         advanceCalcPanel.Size = contentPanel.Size;
 
         prgCalcPanel = new PrgCalcPanel();

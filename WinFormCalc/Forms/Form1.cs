@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using WinFormCalc.Calculators.BasicCalculator;
+using WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcModal;
 using WinFormCalc.Components.BasicCalcComponent;
 using WinFormCalc.Components.BasicCalcComponent.BasicCalcPanel;
 using WinFormCalc.Operations.Functions.MathFunction;
@@ -12,14 +13,15 @@ namespace WinFormCalc.Forms
     public partial class Form1 : Form
     {
 
-        BasicCalcPanel panel;
+        AdvanceCalcModal modal;
 
 
         public Form1() {
             InitializeComponent();
 
-            panel = new BasicCalcPanel();
-            Controls.Add(panel);
+            modal = new();
+            
+            Controls.Add(modal);
         }
 
 

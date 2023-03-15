@@ -15,16 +15,13 @@ public class PrgCalcFunctionPanel : TableLayoutPanel
     public PrgCalcFunctionPanel()
     {
         InitializeComponent();
-
-        Size = new Size(1280, 110);
-
-        List<Control> columns = new() { logicalFunctionButton, numberTypeButton };
-        TableDataManager.SetAsymmetricalColumns(this, columns);
     }
 
 
     private void InitializeComponent()
     {
+        Size = new Size(1280, 110);
+
         logicalFunctionButton = new Button {
             Size = new Size(640, 110),
             Font = new Font("Segoe UI Semibold",  14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
@@ -42,6 +39,9 @@ public class PrgCalcFunctionPanel : TableLayoutPanel
             Text = @"Dec"
         };
         numberTypeButton.Click += PrgCalcFunctionPanelEvents.NumberTypeButtonClick;
+
+        List<Control> columns = new() { logicalFunctionButton, numberTypeButton };
+        TableDataManager.SetAsymmetricalColumns(this, columns);
     }
 
 

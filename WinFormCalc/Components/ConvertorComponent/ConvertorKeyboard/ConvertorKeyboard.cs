@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -7,13 +8,11 @@ namespace WinFormCalc.Components.ConvertorComponent.ConvertorKeyboard;
 public class ConvertorKeyboard : TableLayoutPanel
 {
 
-    List<List<Control>> keyboard;
+    private List<List<Control>> keyboard;
 
 
     public ConvertorKeyboard() {
         InitializeComponent();
-
-        TableDataManager.SetSymmetricalData(this, keyboard);
     }
 
 
@@ -27,7 +26,7 @@ public class ConvertorKeyboard : TableLayoutPanel
         ConvertorKeyboardEvents.KeyboardClickEvents.ForEach(buttonRowClickEvents => {
             List<Control> buttonRow = new List<Control>();
 
-            foreach (var buttonClickEvent in buttonRowClickEvents) {
+            foreach (KeyValuePair<string, Action<string>> buttonClickEvent in buttonRowClickEvents) {
                 Button button = new Button {
                     Size = new Size(430, 100),
                     Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
@@ -43,5 +42,7 @@ public class ConvertorKeyboard : TableLayoutPanel
             }
             keyboard.Add(buttonRow);
         });
+
+        TableDataManager.SetSymmetricalData(this, keyboard);
     }
 }

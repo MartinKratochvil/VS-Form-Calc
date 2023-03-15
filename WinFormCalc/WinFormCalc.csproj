@@ -55,6 +55,10 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcKeyboard\AdvanceCalcKeyboardEvents.cs" />
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcModal\AdvanceCalcModal.cs" />
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcModal\AdvanceCalcModalEvents.cs" />
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcModal\AdvanceCalcModalFunc.cs" />
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcModal\AdvanceCalcModalLayer.cs" />
     <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcPanel\AdvanceCalcManager.cs" />
     <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcPanel\AdvanceCalcPanel.cs">
       <SubType>Component</SubType>

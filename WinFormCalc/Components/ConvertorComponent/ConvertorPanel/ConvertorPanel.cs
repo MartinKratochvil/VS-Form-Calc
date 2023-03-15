@@ -32,8 +32,6 @@ public sealed class ConvertorPanel<T> : TableLayoutPanel where T : Enum
         manager = new ConvertorManager<T>();
         manager.OnInputLabelUpdate += InputLabelUpdate;
         manager.OnOutputLabelUpdate += OutputLabelUpdate;
-            
-        SetData(ConvertorDataHandler.Handle<T>());
     }
 
 
@@ -92,6 +90,8 @@ public sealed class ConvertorPanel<T> : TableLayoutPanel where T : Enum
             
         List<Control> rows = new() { inputLabel, inputTypePanel, outputLabel, outputTypePanel, keyboard };
         TableDataManager.SetAsymmetricalRows(this, rows);
+        
+        SetData(ConvertorDataHandler.Handle<T>());
     }
 
     public void Clear()
