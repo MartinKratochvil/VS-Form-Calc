@@ -5,22 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6aae75a3-f407-4611-889f-a886b8f7a3aa" name="Changes" comment="up">
-      <change afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcModal/AdvanceCalcModal.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcModal/AdvanceCalcModalEvents.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcModal/AdvanceCalcModalFunc.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcModal/AdvanceCalcModalLayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinFormCalc/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard/AdvanceCalcKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcKeyboard/AdvanceCalcKeyboard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel/AdvanceCalcManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel/AdvanceCalcManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel/AdvanceCalcPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/AdvanceCalcComponent/AdvanceCalcPanel/AdvanceCalcPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard/BasicCalcKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/BasicCalcComponent/BasicCalcKeyboard/BasicCalcKeyboard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorKeyboard/ConvertorKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorKeyboard/ConvertorKeyboard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/ConvertorComponent/ConvertorPanel/ConvertorPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcFunctionPanel/PrgCalcFunctionPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcFunctionPanel/PrgCalcFunctionPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcKeyboard/PrgCalcKeyboard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Components/PrgCalcComponent/PrgCalcKeyboard/PrgCalcKeyboard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/Form1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Forms/MainForm.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/GonFunction/GonFunction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/Operations/Functions/GonFunction/GonFunction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinFormCalc/WinFormCalc.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +140,8 @@
       <workItem from="1678733241834" duration="11862000" />
       <workItem from="1678787370389" duration="11250000" />
       <workItem from="1678821755302" duration="2485000" />
-      <workItem from="1678865111009" duration="4405000" />
+      <workItem from="1678865111009" duration="5550000" />
+      <workItem from="1678874981623" duration="4360000" />
     </task>
     <task id="LOCAL-00001" summary="up">
       <created>1677269992178</created>
@@ -218,7 +206,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678824574938</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="up">
+      <created>1678873385891</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1678873385891</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

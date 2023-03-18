@@ -4,6 +4,8 @@ using System.Globalization;
 using System.Linq;
 using WinFormCalc.Calculators.AdvanceCalculator;
 using WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcKeyboard;
+using WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcModal;
+using WinFormCalc.Operations.Functions.GonFunction;
 using WinFormCalc.Operations.Functions.MathFunction;
 using WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
 
@@ -77,6 +79,31 @@ public class AdvanceCalcManager
         AdvanceCalcKeyboardEvents.OnClearEntryButtonClick += ClearEntryButtonClick;
         AdvanceCalcKeyboardEvents.OnBackButtonClick += BackButtonClick;
         AdvanceCalcKeyboardEvents.OnEqualsButtonClick += EqualsButtonClick;
+
+        AdvanceCalcModalEvents.OnSinButtonClick += SinButtonClick;
+        AdvanceCalcModalEvents.OnCosinButtonClick += CosinButtonClick;
+        AdvanceCalcModalEvents.OnTanButtonClick += TanButtonClick;
+        AdvanceCalcModalEvents.OnSecButtonClick += SecButtonClick;
+        AdvanceCalcModalEvents.OnCosecButtonClick += CosecButtonClick;
+        AdvanceCalcModalEvents.OnCotanButtonClick += CotanButtonClick;
+        AdvanceCalcModalEvents.OnArcsinButtonClick += ArcsinButtonClick;
+        AdvanceCalcModalEvents.OnArccosinButtonClick += ArccosinButtonClick;
+        AdvanceCalcModalEvents.OnArctanButtonClick += ArctanButtonClick;
+        AdvanceCalcModalEvents.OnArcsecButtonClick += ArcsecButtonClick;
+        AdvanceCalcModalEvents.OnArccosecButtonClick += ArccosecButtonClick;
+        AdvanceCalcModalEvents.OnArccosinButtonClick += ArccosinButtonClick;
+        AdvanceCalcModalEvents.OnHSinButtonClick += HSinButtonClick;
+        AdvanceCalcModalEvents.OnHCosinButtonClick += HCosinButtonClick;
+        AdvanceCalcModalEvents.OnHTanButtonClick += HTanButtonClick;
+        AdvanceCalcModalEvents.OnHSecButtonClick += HSecButtonClick;
+        AdvanceCalcModalEvents.OnHCosecButtonClick += HCosecButtonClick;
+        AdvanceCalcModalEvents.OnHCotanButtonClick += HCotanButtonClick;
+        AdvanceCalcModalEvents.OnHArcsinButtonClick += HArcsinButtonClick;
+        AdvanceCalcModalEvents.OnHArccosinButtonClick += HArccosinButtonClick;
+        AdvanceCalcModalEvents.OnHArctanButtonClick += HArctanButtonClick;
+        AdvanceCalcModalEvents.OnHArcsecButtonClick += HArcsecButtonClick;
+        AdvanceCalcModalEvents.OnHArccosecButtonClick += HArccosecButtonClick;
+        AdvanceCalcModalEvents.OnHArccosinButtonClick += HArccosinButtonClick;
     }
 
 
@@ -331,6 +358,151 @@ public class AdvanceCalcManager
             number = "0";
         }
     }
+
+
+    private void SinButtonClick()
+    {
+        AddFunction(GonFunction.Sin);
+    }
+
+
+    private void CosinButtonClick()
+    {
+        AddFunction(GonFunction.Cosin);
+    }
+
+
+    private void TanButtonClick()
+    {
+        AddFunction(GonFunction.Tan);
+    }
+
+
+    private void SecButtonClick()
+    {
+        AddFunction(GonFunction.Sec);
+    }
+
+
+    private void CosecButtonClick()
+    {
+        AddFunction(GonFunction.Cosec);
+    }
+
+
+    private void CotanButtonClick()
+    {
+        AddFunction(GonFunction.Cotan);
+    }
+
+
+    private void ArcsinButtonClick()
+    {
+        AddFunction(GonFunction.Arcsin);
+    }
+
+
+    private void ArccosinButtonClick()
+    {
+        AddFunction(GonFunction.Arccosin);
+    }
+
+
+    private void ArctanButtonClick()
+    {
+        AddFunction(GonFunction.Arctan);
+    }
+
+
+    private void ArcsecButtonClick()
+    {
+        AddFunction(GonFunction.Arcsec);
+    }
+
+
+    private void ArccosecButtonClick()
+    {
+        AddFunction(GonFunction.Arccosec);
+    }
+
+
+    private void ArccotanButtonClick()
+    {
+        AddFunction(GonFunction.Arccotan);
+    }
+
+
+    private void HSinButtonClick()
+    {
+        AddFunction(GonFunction.HSin);
+    }
+
+
+    private void HCosinButtonClick()
+    {
+        AddFunction(GonFunction.HCosin);
+    }
+
+
+    private void HTanButtonClick()
+    {
+        AddFunction(GonFunction.HTan);
+    }
+
+
+    private void HSecButtonClick()
+    {
+        AddFunction(GonFunction.HSec);
+    }
+
+
+    private void HCosecButtonClick()
+    {
+        AddFunction(GonFunction.HCosec);
+    }
+
+
+    private void HCotanButtonClick()
+    {
+        AddFunction(GonFunction.HCotan);
+    }
+
+
+    private void HArcsinButtonClick()
+    {
+        AddFunction(GonFunction.HArcsin);
+    }
+
+
+    private void HArccosinButtonClick()
+    {
+        AddFunction(GonFunction.HArccosin);
+    }
+
+
+    private void HArctanButtonClick()
+    {
+        AddFunction(GonFunction.HArctan);
+    }
+
+
+    private void HArcsecButtonClick()
+    {
+        AddFunction(GonFunction.HArcsec);
+    }
+
+
+    private void HArccosecButtonClick()
+    {
+        AddFunction(GonFunction.HArccosec);
+    }
+
+
+    private void HArccotanButtonClick()
+    {
+        AddFunction(GonFunction.HArccotan);
+    }
+
 
     private void ClearNumber()
     {

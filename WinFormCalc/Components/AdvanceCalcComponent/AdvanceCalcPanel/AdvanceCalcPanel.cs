@@ -9,6 +9,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
     {
 
         private TableLayoutPanel contentPanel;
+
         private Label exampleLabel;
 
         private Label numberLabel;
@@ -41,7 +42,8 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
             trigonometryModal = new() {
                 MinimumSize = new Size(300, 100),
                 MaximumSize = new Size(1200, 200),
-                BackColor = Color.HotPink
+                BackColor = Color.HotPink,
+                Visible = false
             };
             Controls.Add(trigonometryModal);
 
@@ -76,6 +78,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
                 BackColor = Color.HotPink,
                 Text = "Trigonometrie"
             };
+            trigonometryButton.Click += (_, _) => trigonometryModal.Visible = !trigonometryModal.Visible;
 
             keyboard = new() {
                 Size = new Size(1280, 600),

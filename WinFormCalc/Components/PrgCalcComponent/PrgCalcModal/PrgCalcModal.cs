@@ -3,31 +3,25 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcModal;
+namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcModal;
 
-public class AdvanceCalcModalLayer : TableLayoutPanel
+public class PrgCalcModal : TableLayoutPanel
 {
 
-    private List<List<Control>> layer;
-
-    private List<Dictionary<string, Action>> clickEvents;
+    private List<List<Control>> buttons;
 
 
-    public AdvanceCalcModalLayer(List<Dictionary<string, Action>> clickEvents)
+    public PrgCalcModal()
     {
-        this.clickEvents = clickEvents;
-        
         InitializeComponent();
-
-        TableDataManager.SetSymmetricalData(this, layer);
     }
 
 
     private void InitializeComponent()
     {
-        layer = new();
-
-        clickEvents.ForEach(buttonRowClickEvents => {
+        buttons = new();
+        
+        PrgCalcModalEvents.ModalFuncClickEvents.ForEach(buttonRowClickEvents => {
             List<Control> buttonColumns = new();
 
             foreach (KeyValuePair<string, Action> buttonEvent in buttonRowClickEvents) {
@@ -44,7 +38,6 @@ public class AdvanceCalcModalLayer : TableLayoutPanel
 
                 buttonColumns.Add(button);
             }
-            layer.Add(buttonColumns);
         });
     }
 }

@@ -93,6 +93,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Components\PrgCalcComponent\PrgCalcKeyboard\PrgCalcKeyboardEvents.cs" />
+    <Compile Include="Components\PrgCalcComponent\PrgCalcModal\PrgCalcModal.cs" />
+    <Compile Include="Components\PrgCalcComponent\PrgCalcModal\PrgCalcModalEvents.cs" />
     <Compile Include="Components\PrgCalcComponent\PrgCalcPanel\PrgCalcManager.cs" />
     <Compile Include="Components\PrgCalcComponent\PrgCalcPanel\PrgCalcPanel.cs">
       <SubType>Component</SubType>
