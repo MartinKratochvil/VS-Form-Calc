@@ -17,7 +17,7 @@ public class PrgCalcModalEvents
     public static readonly List<Dictionary<string, Action>> ModalFuncClickEvents = new() {
         new() {
             { "And", () => OnAndButtonClick?.Invoke() },
-            { "Or⁻¹", () => OnOrButtonClick?.Invoke() }
+            { "Or", () => OnOrButtonClick?.Invoke() }
         },
         new() {
             { "Nand", () => OnNandButtonClick?.Invoke() },

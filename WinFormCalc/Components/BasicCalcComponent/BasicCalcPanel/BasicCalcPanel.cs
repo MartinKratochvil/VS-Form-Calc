@@ -29,30 +29,31 @@ public sealed class BasicCalcPanel : TableLayoutPanel
 
     private void InitializeComponent()
     {
-        MinimumSize = new Size(320, 445);
-        MaximumSize = new Size(1280, 890);
-        BackColor= Color.Pink;
+        
         Resize += PanelResize;
 
-        exampleLabel = new Label() {
-            Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
-            ForeColor = Color.Gray,
+        exampleLabel = new() {
             MaximumSize = new Size(1280,60),
             Size = new Size(1280, 60),
+            Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
             TextAlign = ContentAlignment.MiddleRight,
-            BackColor = Color.DeepPink,
+            ForeColor = Color.FromArgb(37, 37, 38),
+            BackColor = Color.FromArgb(2, 132, 234)
         };
 
-        numberLabel = new Label() {
+        numberLabel = new() {
             Size = new Size(1280, 130),
             Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, 238),
-            ForeColor = Color.Black,
             TextAlign = ContentAlignment.MiddleRight,
-            BackColor = Color.HotPink,
+            ForeColor = Color.FromArgb(45, 45, 48),
+            BackColor = Color.FromArgb(10, 157, 255),
             Text = "0"
         };
 
-        keyboard = new BasicCalcKeyboard.BasicCalcKeyboard();
+        keyboard = new() {
+            Size = new Size(1280, 700),
+            BackColor = Color.FromArgb(37, 37, 38)
+        };
 
         List<Control> rows = new() { exampleLabel, numberLabel, keyboard };
         TableDataManager.SetAsymmetricalRows(this, rows);

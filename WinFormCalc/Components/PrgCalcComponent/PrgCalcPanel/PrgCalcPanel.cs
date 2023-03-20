@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using WinFormCalc.Components.PrgCalcComponent.PrgCalcFunctionPanel;
 
 namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel;
 
-public sealed class PrgCalcPanel : TableLayoutPanel
+public sealed class PrgCalcPanel : Panel
 {
  
+    private TableLayoutPanel contentPanel;
+
     private Label exampleLabel;
 
     private Label numberLabel;
 
     private PrgCalcFunctionPanel.PrgCalcFunctionPanel functionPanel;
+
+    private PrgCalcModal.PrgCalcModal functionModal;
 
     private PrgCalcKeyboard.PrgCalcKeyboard keyboard;
 
@@ -27,29 +32,42 @@ public sealed class PrgCalcPanel : TableLayoutPanel
         manager.OnExampleLabelUpdate += ExampleLabelUpdate;
         manager.OnNumberLabelUpdate += NumberLabelUpdate;
         manager.OnNumberTypeButtonUpdate += functionPanel.NumberTypeButtonUpdate;
+
+        PrgCalcFunctionPanelEvents.OnLogicalFunctionButtonClick += _ => functionModal.Visible = !functionModal.Visible;
     }
 
 
     private void InitializeComponent()
     {
-        MinimumSize = new Size(320, 445);
-        MaximumSize = new Size(1280, 890);
-        BackColor= Color.Pink;
         Resize += PanelResize;
 
-        exampleLabel = new Label{
-            Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
-            ForeColor = Color.Gray,
+        functionModal = new() {
+            MinimumSize = new Size(225, 100),
+            MaximumSize = new Size(900, 200),
+            BackColor = Color.HotPink,
+            Visible = false
+        };
+        Controls.Add(functionModal);
+        
+        contentPanel = new() {
+            Size = new Size(320, 445),
+            BackColor= Color.Pink
+        };
+        Controls.Add(contentPanel);
+
+        exampleLabel = new Label {
             Size = new Size(1280, 60),
+            Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
             TextAlign = ContentAlignment.MiddleRight,
+            ForeColor = Color.Gray,
             BackColor = Color.HotPink,
         };
 
         numberLabel = new Label {
             Size = new Size(1280, 130),
             Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, 238),
-            ForeColor = Color.Black,
             TextAlign = ContentAlignment.MiddleRight,
+            ForeColor = Color.Black,
             BackColor = Color.DeepPink,
             Text = "0"
         };
@@ -58,12 +76,15 @@ public sealed class PrgCalcPanel : TableLayoutPanel
         keyboard = new PrgCalcKeyboard.PrgCalcKeyboard();
 
         List<Control> rows = new() { exampleLabel, numberLabel, functionPanel, keyboard };
-        TableDataManager.SetAsymmetricalRows(this, rows);
+        TableDataManager.SetAsymmetricalRows(contentPanel, rows);
     }
 
 
     private void PanelResize(object sender, EventArgs args)
     {
+        contentPanel.Size = Size;
+        functionModal.Location = keyboard.Location with { X = 0 };
+        
         manager.UpdateExampleLabel();
         manager.UpdateNumberLabel();
     }

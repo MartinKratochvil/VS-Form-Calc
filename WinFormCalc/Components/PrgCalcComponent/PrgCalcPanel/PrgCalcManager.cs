@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
 using WinFormCalc.Calculators.GoniometricFunctions.Enums;
 using WinFormCalc.Calculators.PrgCalculator;
 using WinFormCalc.Components.PrgCalcComponent.PrgCalcFunctionPanel;
 using WinFormCalc.Components.PrgCalcComponent.PrgCalcKeyboard;
+using WinFormCalc.Components.PrgCalcComponent.PrgCalcModal;
 using WinFormCalc.Operations.PrimeOperations.PrgPrimeOper;
 
 namespace WinFormCalc.Components.PrgCalcComponent.PrgCalcPanel;
@@ -81,8 +81,13 @@ public class PrgCalcManager
         PrgCalcKeyboardEvents.OnBackButtonClick += BackButtonClick;
         PrgCalcKeyboardEvents.OnEqualsButtonClick += EqualsButtonClick;
 
-        PrgCalcFunctionPanelEvents.OnLogicalFunctionButtonClick += LogicalFunctionButtonClick;
         PrgCalcFunctionPanelEvents.OnNumberTypeButtonClick += NumberTypeButtonClick;
+        PrgCalcModalEvents.OnAndButtonClick += AndButtonClick;
+        PrgCalcModalEvents.OnOrButtonClick += OrButtonClick;
+        PrgCalcModalEvents.OnNandButtonClick += NandButtonClick;
+        PrgCalcModalEvents.OnNorButtonClick += NorButtonClick;
+        PrgCalcModalEvents.OnXorButtonClick += XorButtonClick;
+        PrgCalcModalEvents.OnXnorButtonClick += XnorButtonClick;
     }
 
 
@@ -278,12 +283,6 @@ public class PrgCalcManager
     }
 
 
-    private void LogicalFunctionButtonClick(string placeholder)
-    {
-            
-    }
-
-
     private void NumberTypeButtonClick(string placeholder)
     {
         ClearExample();
@@ -303,6 +302,42 @@ public class PrgCalcManager
     }
 
 
+    private void AndButtonClick()
+    {
+        AddNextNumber(PrgPrimeOper.And);
+    }
+
+
+    private void OrButtonClick()
+    {
+        AddNextNumber(PrgPrimeOper.Or);
+    }
+
+
+    private void NandButtonClick()
+    {
+        AddNextNumber(PrgPrimeOper.Nand);
+    }
+
+
+    private void NorButtonClick()
+    {
+        AddNextNumber(PrgPrimeOper.Nor);
+    }
+
+
+    private void XorButtonClick()
+    {
+        AddNextNumber(PrgPrimeOper.Xor);
+    }
+
+
+    private void XnorButtonClick()
+    {
+        AddNextNumber(PrgPrimeOper.Xnor);
+    }
+
+
     private void ClearNumber()
     {
         number = "0";
@@ -312,9 +347,9 @@ public class PrgCalcManager
 
     private void ClearExample()
     {
-        numbers = new List<List<List<PrgNumber>>> {
-            new List<List<PrgNumber>> {
-                new List<PrgNumber>()
+        numbers = new() {
+            new() {
+                new()
             }
         };
 

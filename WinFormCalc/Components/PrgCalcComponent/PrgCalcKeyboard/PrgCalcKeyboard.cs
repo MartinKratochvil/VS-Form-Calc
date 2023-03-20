@@ -29,6 +29,7 @@ public sealed class PrgCalcKeyboard : TableLayoutPanel
             foreach (KeyValuePair<string, Action<string>> buttonClickEvent in buttonRowClickEvents) {
                 Button button = new Button {
                     Size = new Size(260, 100),
+                    FlatStyle = FlatStyle.Flat,
                     Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
                     ForeColor = Color.Black,
                     Text = buttonClickEvent.Key
@@ -40,6 +41,7 @@ public sealed class PrgCalcKeyboard : TableLayoutPanel
 
                 buttonRow.Add(button);
             }
+
             keyboard.Add(buttonRow);
         });
 

@@ -29,6 +29,7 @@ public class ConvertorKeyboard : TableLayoutPanel
             foreach (KeyValuePair<string, Action<string>> buttonClickEvent in buttonRowClickEvents) {
                 Button button = new Button {
                     Size = new Size(430, 100),
+                    FlatStyle = FlatStyle.Flat,
                     Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
                     ForeColor = Color.Black,
                     Text = buttonClickEvent.Key

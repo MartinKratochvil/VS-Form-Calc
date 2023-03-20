@@ -70,6 +70,7 @@ public sealed class ConvertorPanel<T> : TableLayoutPanel where T : Enum
             
         inputTypeComboBox = new ComboBox {
             Size = new Size(314, 0),
+            FlatStyle = FlatStyle.Flat,
             Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 238),
             DropDownStyle = ComboBoxStyle.DropDownList,
             BackColor = Color.HotPink
@@ -79,6 +80,7 @@ public sealed class ConvertorPanel<T> : TableLayoutPanel where T : Enum
 
         outputTypeComboBox = new ComboBox {
             Size = new Size(314,0),
+            FlatStyle = FlatStyle.Flat,
             Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 238),
             DropDownStyle = ComboBoxStyle.DropDownList,
             BackColor = Color.HotPink

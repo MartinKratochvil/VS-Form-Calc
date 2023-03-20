@@ -31,8 +31,9 @@ public class AdvanceCalcModalLayer : TableLayoutPanel
             List<Control> buttonColumns = new();
 
             foreach (KeyValuePair<string, Action> buttonEvent in buttonRowClickEvents) {
-                Button button = new Button {
+                Button button = new() {
                     Size = new Size(300, 100),
+                    FlatStyle = FlatStyle.Flat,
                     Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 238),
                     ForeColor = Color.Black,
                     Text = buttonEvent.Key

@@ -55,10 +55,16 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcKeyboard\AdvanceCalcKeyboardEvents.cs" />
-    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcModal\AdvanceCalcModal.cs" />
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcModal\AdvanceCalcModal.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcModal\AdvanceCalcModalEvents.cs" />
-    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcModal\AdvanceCalcModalFunc.cs" />
-    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcModal\AdvanceCalcModalLayer.cs" />
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcModal\AdvanceCalcModalFunc.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcModal\AdvanceCalcModalLayer.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcPanel\AdvanceCalcManager.cs" />
     <Compile Include="Components\AdvanceCalcComponent\AdvanceCalcPanel\AdvanceCalcPanel.cs">
       <SubType>Component</SubType>
@@ -93,7 +99,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Components\PrgCalcComponent\PrgCalcKeyboard\PrgCalcKeyboardEvents.cs" />
-    <Compile Include="Components\PrgCalcComponent\PrgCalcModal\PrgCalcModal.cs" />
+    <Compile Include="Components\PrgCalcComponent\PrgCalcModal\PrgCalcModal.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Components\PrgCalcComponent\PrgCalcModal\PrgCalcModalEvents.cs" />
     <Compile Include="Components\PrgCalcComponent\PrgCalcPanel\PrgCalcManager.cs" />
     <Compile Include="Components\PrgCalcComponent\PrgCalcPanel\PrgCalcPanel.cs">
@@ -187,6 +195,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -200,6 +209,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\MenuIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

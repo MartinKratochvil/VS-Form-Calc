@@ -25,16 +25,18 @@ public class AdvanceCalcModalFunc : TableLayoutPanel
 
     private void InitializeComponent()
     {
-        arcButton = new Button {
+        arcButton = new() {
             Size = new Size(300, 100),
+            FlatStyle = FlatStyle.Flat,
             Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 238),
             ForeColor = Color.Black,
             Text = "2nd"
         };
         arcButton.Click += (_, _) => OnArcButtonClick?.Invoke();
 
-        hypButton = new Button {
+        hypButton = new() {
             Size = new Size(300, 100),
+            FlatStyle = FlatStyle.Flat,
             Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 238),
             ForeColor = Color.Black,
             Text = "Hyp"

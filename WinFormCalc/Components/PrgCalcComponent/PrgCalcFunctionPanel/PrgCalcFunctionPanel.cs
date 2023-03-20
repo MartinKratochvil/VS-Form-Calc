@@ -24,6 +24,7 @@ public class PrgCalcFunctionPanel : TableLayoutPanel
 
         logicalFunctionButton = new Button {
             Size = new Size(640, 110),
+            FlatStyle = FlatStyle.Flat,
             Font = new Font("Segoe UI Semibold",  14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
             ForeColor = Color.Black,
             BackColor = Color.HotPink,
@@ -33,6 +34,7 @@ public class PrgCalcFunctionPanel : TableLayoutPanel
 
         numberTypeButton = new Button {
             Size = new Size(640, 110),
+            FlatStyle = FlatStyle.Flat,
             Font = new Font("Segoe UI Semibold",  14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
             ForeColor = Color.Black,
             BackColor = Color.HotPink,

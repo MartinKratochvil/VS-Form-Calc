@@ -59,18 +59,26 @@ public partial class MainForm : Form
             
         speedConvertorButton.Visible = false;
 
-        basicCalcPanel = new BasicCalcPanel();
-        basicCalcPanel.Size = contentPanel.Size;
+        basicCalcPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
         advanceCalcPanel = new() {
             MinimumSize = new Size(320, 445),
             MaximumSize = new Size(1280, 890),
-            BackColor= Color.Pink
+            BackColor= Color.Pink,
+            Size = contentPanel.Size
         };
-        advanceCalcPanel.Size = contentPanel.Size;
 
-        prgCalcPanel = new PrgCalcPanel();
-        prgCalcPanel.Size = contentPanel.Size;
+        prgCalcPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor= Color.Pink,
+            Size = contentPanel.Size
+        };
 
         paperModeComponent = new PaperModeComponent();
         paperModeComponent.Size = contentPanel.Size;

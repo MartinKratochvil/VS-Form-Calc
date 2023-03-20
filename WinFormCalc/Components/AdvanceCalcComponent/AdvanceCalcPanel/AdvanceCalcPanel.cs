@@ -30,13 +30,11 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
             manager = new AdvanceCalcManager();
             manager.OnExampleLabelUpdate += ExampleLabelUpdate;
             manager.OnNumberLabelUpdate += NumberLabelUpdate;
-            MessageBox.Show(keyboard.Location.X + " " + keyboard.Location.Y);
         }
 
 
         private void InitializeComponent()
         {
-            
             Resize += PanelResize;
 
             trigonometryModal = new() {
@@ -73,6 +71,7 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
 
             trigonometryButton = new() {
                 Size = new Size(1280, 90),
+                FlatStyle = FlatStyle.Flat,
                 Font = new Font("Segoe UI Semibold",  14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
                 ForeColor = Color.Black,
                 BackColor = Color.HotPink,
@@ -93,16 +92,10 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
         private void PanelResize(object sender, EventArgs args)
         {
             contentPanel.Size = Size;
-            ModalResize();
+            trigonometryModal.Location = keyboard.Location with { X = 0 };
 
             manager.UpdateExampleLabel();
             manager.UpdateNumberLabel();
-        }
-
-
-        private void ModalResize()
-        {
-            trigonometryModal.Location = keyboard.Location with { X = 0 };
         }
 
 

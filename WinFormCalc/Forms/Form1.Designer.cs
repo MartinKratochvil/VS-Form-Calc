@@ -61,6 +61,7 @@ namespace WinFormCalc.Forms
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -346,10 +347,12 @@ namespace WinFormCalc.Forms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label3.Location = new System.Drawing.Point(689, 0);
+            this.label3.BackColor = System.Drawing.Color.Fuchsia;
+            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label3.Location = new System.Drawing.Point(314, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(255, 13);
+            this.label3.Size = new System.Drawing.Size(457, 25);
             this.label3.TabIndex = 1;
             this.label3.Text = "sin(4) + 32 / √8^2 - sssssssssssssssssss(4^2 - 3^2) =";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -368,11 +371,24 @@ namespace WinFormCalc.Forms
             this.comboBox1.Size = new System.Drawing.Size(121, 81);
             this.comboBox1.TabIndex = 4;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Fuchsia;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(314, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(457, 25);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "sin(4) + 32 / √8^2 - sssssssssssssssssss(4^2 - 3^2) =";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(944, 951);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.button1);
@@ -382,7 +398,6 @@ namespace WinFormCalc.Forms
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "y";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -421,5 +436,6 @@ namespace WinFormCalc.Forms
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ComboBox comboBox1;
+        private Label label1;
     }
 }
