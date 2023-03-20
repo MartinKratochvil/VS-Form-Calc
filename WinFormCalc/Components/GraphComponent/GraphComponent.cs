@@ -13,7 +13,7 @@ public class GraphComponent : Panel
     {
         Size = size;
 
-        gridControl = new GridControl(size);
+        gridControl = new(size);
         gridControl.Render();
 
         Controls.Add(gridControl);

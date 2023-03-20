@@ -10,7 +10,7 @@ public class AdvanceCalcModalLayer : TableLayoutPanel
 
     private List<List<Control>> layer;
 
-    private List<Dictionary<string, Action>> clickEvents;
+    private readonly List<Dictionary<string, Action>> clickEvents;
 
 
     public AdvanceCalcModalLayer(List<Dictionary<string, Action>> clickEvents)
@@ -32,10 +32,11 @@ public class AdvanceCalcModalLayer : TableLayoutPanel
 
             foreach (KeyValuePair<string, Action> buttonEvent in buttonRowClickEvents) {
                 Button button = new() {
-                    Size = new Size(300, 100),
+                    Size = new Size(320, 100),
                     FlatStyle = FlatStyle.Flat,
                     Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 238),
-                    ForeColor = Color.Black,
+                    ForeColor = Color.FromArgb(10, 187, 255),
+                    BackColor = Color.FromArgb(45, 45, 48),
                     Text = buttonEvent.Key
                 };
 

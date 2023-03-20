@@ -61,6 +61,16 @@ namespace WinFormCalc.Properties {
         }
         
         /// <summary>
+        ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Icon podobný (Ikona).
+        /// </summary>
+        internal static System.Drawing.Icon AppIcon {
+            get {
+                object obj = ResourceManager.GetObject("AppIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Vyhledává lokalizovaný prostředek typu System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap MenuIcon {

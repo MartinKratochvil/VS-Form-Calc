@@ -37,58 +37,59 @@ public sealed class ConvertorPanel<T> : TableLayoutPanel where T : Enum
 
     private void InitializeComponent()
     {
-        MinimumSize = new Size(320, 445);
-        MaximumSize = new Size(1280, 890);
-        BackColor= Color.Pink;
         Resize += PanelResize;
 
-        inputLabel = new Label {
+        inputLabel = new() {
             Size = new Size(1280, 115),
             Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 238),
-            ForeColor = Color.Black,
             TextAlign = ContentAlignment.MiddleLeft,
-            BackColor = Color.DeepPink,
+            ForeColor = Color.FromArgb(37, 37, 38),
+            BackColor = Color.FromArgb(2, 132, 234),
             Text = "0"
         };
 
-        outputLabel = new Label{
+        outputLabel = new() {
             Size = new Size(1280, 115),
             Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 238),
-            ForeColor = Color.Black,
             TextAlign = ContentAlignment.MiddleLeft,
-            BackColor = Color.DeepPink,
+            ForeColor = Color.FromArgb(45, 45, 48),
+            BackColor = Color.FromArgb(10, 157, 255),
             Text = "0"
         };
 
-        inputTypePanel = new Panel {
+        inputTypePanel = new() {
             Size = new Size(1280, 115)
         };
             
-        outputTypePanel = new Panel {
+        outputTypePanel = new() {
             Size = new Size(1280, 115)
         };
             
-        inputTypeComboBox = new ComboBox {
+        inputTypeComboBox = new() {
             Size = new Size(314, 0),
             FlatStyle = FlatStyle.Flat,
-            Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 238),
             DropDownStyle = ComboBoxStyle.DropDownList,
-            BackColor = Color.HotPink
+            Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 238),
+            ForeColor = Color.FromArgb(10, 187, 255),
+            BackColor = Color.FromArgb(45, 45, 48)
         };
         inputTypeComboBox.SelectedValueChanged += InputTypeChanged;
         inputTypePanel.Controls.Add(inputTypeComboBox);
 
-        outputTypeComboBox = new ComboBox {
+        outputTypeComboBox = new() {
             Size = new Size(314,0),
             FlatStyle = FlatStyle.Flat,
-            Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 238),
             DropDownStyle = ComboBoxStyle.DropDownList,
-            BackColor = Color.HotPink
+            Font = new Font("Segoe UI Semibold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 238),
+            ForeColor = Color.FromArgb(10, 187, 255),
+            BackColor = Color.FromArgb(45, 45, 48)
         };
         outputTypeComboBox.SelectedValueChanged += OutputTypeChanged;
         outputTypePanel.Controls.Add(outputTypeComboBox);
 
-        keyboard = new ConvertorKeyboard.ConvertorKeyboard();
+        keyboard = new() {
+            Size = new Size(1280, 400)
+        };
             
         List<Control> rows = new() { inputLabel, inputTypePanel, outputLabel, outputTypePanel, keyboard };
         TableDataManager.SetAsymmetricalRows(this, rows);

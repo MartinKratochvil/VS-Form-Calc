@@ -29,7 +29,6 @@ public sealed class BasicCalcPanel : TableLayoutPanel
 
     private void InitializeComponent()
     {
-        
         Resize += PanelResize;
 
         exampleLabel = new() {
@@ -51,8 +50,7 @@ public sealed class BasicCalcPanel : TableLayoutPanel
         };
 
         keyboard = new() {
-            Size = new Size(1280, 700),
-            BackColor = Color.FromArgb(37, 37, 38)
+            Size = new Size(1280, 700)
         };
 
         List<Control> rows = new() { exampleLabel, numberLabel, keyboard };

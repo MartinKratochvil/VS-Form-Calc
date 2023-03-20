@@ -44,14 +44,12 @@ public sealed class PrgCalcPanel : Panel
         functionModal = new() {
             MinimumSize = new Size(225, 100),
             MaximumSize = new Size(900, 200),
-            BackColor = Color.HotPink,
             Visible = false
         };
         Controls.Add(functionModal);
         
         contentPanel = new() {
-            Size = new Size(320, 445),
-            BackColor= Color.Pink
+            Size = new Size(320, 445)
         };
         Controls.Add(contentPanel);
 
@@ -59,21 +57,26 @@ public sealed class PrgCalcPanel : Panel
             Size = new Size(1280, 60),
             Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
             TextAlign = ContentAlignment.MiddleRight,
-            ForeColor = Color.Gray,
-            BackColor = Color.HotPink,
+            ForeColor = Color.FromArgb(37, 37, 38),
+            BackColor = Color.FromArgb(2, 132, 234)
         };
 
         numberLabel = new Label {
             Size = new Size(1280, 130),
             Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, 238),
             TextAlign = ContentAlignment.MiddleRight,
-            ForeColor = Color.Black,
-            BackColor = Color.DeepPink,
+            ForeColor = Color.FromArgb(45, 45, 48),
+            BackColor = Color.FromArgb(10, 157, 255),
             Text = "0"
         };
 
-        functionPanel = new PrgCalcFunctionPanel.PrgCalcFunctionPanel();            
-        keyboard = new PrgCalcKeyboard.PrgCalcKeyboard();
+        functionPanel = new() {
+            Size = new Size(1280, 110)
+        };
+
+        keyboard = new() {
+            Size = new Size(1280, 590)
+        };
 
         List<Control> rows = new() { exampleLabel, numberLabel, functionPanel, keyboard };
         TableDataManager.SetAsymmetricalRows(contentPanel, rows);

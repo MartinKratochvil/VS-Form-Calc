@@ -23,14 +23,15 @@ public sealed class AdvanceCalcKeyboard : TableLayoutPanel
         keyboard = new();
 
         AdvanceCalcKeyboardEvents.KeyboardClickEvents.ForEach(buttonRowClickEvents => {
-            List<Control> buttonRow = new List<Control>();
+            List<Control> buttonRow = new();
 
             foreach (KeyValuePair<string, Action<string>> buttonClickEvent in buttonRowClickEvents) {
                 Button button = new() {
                     Size = new Size(260, 90),
                     FlatStyle = FlatStyle.Flat,
                     Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
-                    ForeColor = Color.Black,
+                    ForeColor = Color.FromArgb(10, 187, 255),
+                    BackColor = Color.FromArgb(45, 45, 48),
                     Text = buttonClickEvent.Key
                 };
 

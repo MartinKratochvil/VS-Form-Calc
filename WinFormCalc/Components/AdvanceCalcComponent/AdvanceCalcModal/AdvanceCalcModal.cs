@@ -31,8 +31,8 @@ public class AdvanceCalcModal : TableLayoutPanel
         isArc = false;
         isArc = false;
 
-        funcPanel.OnArcButtonClick += ArcButtonClick;
-        funcPanel.OnHypButtonClick += HypButtonClick;
+        funcPanel.ArcButtonClick += ArcButtonClick;
+        funcPanel.HypButtonClick += HypButtonClick;
 
         ChangeLayer();
     }
@@ -41,34 +41,28 @@ public class AdvanceCalcModal : TableLayoutPanel
     private void InitializeComponent()
     {
         funcPanel = new() {
-            Size = new Size(300, 200),
-            BackColor = Color.HotPink
+            Size = new Size(300, 200)
         };
 
         layerPanel = new() {
-            Size = new Size(900, 200),
-            BackColor = Color.HotPink
+            Size = new Size(960, 200)
         };
         layerPanel.Resize += PanelResize;
 
         trigonLayer = new(AdvanceCalcModalEvents.ModalClickEvents) {
-            Size = new Size(900, 200),
-            BackColor = Color.HotPink
+            Size = new Size(960, 200)
         };
 
         arcTrigonLayer = new(AdvanceCalcModalEvents.ModalArcClickEvents) {
-            Size = new Size(900, 200),
-            BackColor = Color.HotPink
+            Size = new Size(960, 200)
         };
 
         hypTrigonLayer = new(AdvanceCalcModalEvents.ModalHypClickEvents) {
-            Size = new Size(900, 200),
-            BackColor = Color.HotPink
+            Size = new Size(960, 200)
         };
 
         hypArcTrigonLayer = new(AdvanceCalcModalEvents.ModalHypArcClickEvents) {
-            Size = new Size(900, 200),
-            BackColor = Color.HotPink
+            Size = new Size(960, 200)
         };
 
         TableDataManager.SetAsymmetricalColumns(this, new() {funcPanel, layerPanel});

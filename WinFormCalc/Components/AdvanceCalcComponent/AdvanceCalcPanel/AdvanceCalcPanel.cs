@@ -38,34 +38,33 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
             Resize += PanelResize;
 
             trigonometryModal = new() {
-                MinimumSize = new Size(300, 100),
-                MaximumSize = new Size(1200, 200),
-                BackColor = Color.HotPink,
+                MinimumSize = new Size(315, 100),
+                MaximumSize = new Size(1260, 200),
+                BackColor = Color.FromArgb(62, 62, 66),
                 Visible = false
             };
             Controls.Add(trigonometryModal);
 
             contentPanel = new() {
-                Size = new Size(320, 445),
-                BackColor= Color.Pink
+                Size = new Size(320, 445)
             };
             Controls.Add(contentPanel);
 
             exampleLabel = new() {
-                Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
-                ForeColor = Color.Gray,
                 MaximumSize = new Size(1280,60),
                 Size = new Size(1280, 60),
+                Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 238),
                 TextAlign = ContentAlignment.MiddleRight,
-                BackColor = Color.HotPink,
+                ForeColor = Color.FromArgb(37, 37, 38),
+                BackColor = Color.FromArgb(2, 132, 234)
             };
 
             numberLabel = new() {
                 Size = new Size(1280, 130),
                 Font = new Font("Segoe UI Semibold", 36F, FontStyle.Bold, GraphicsUnit.Point, 238),
-                ForeColor = Color.Black,
                 TextAlign = ContentAlignment.MiddleRight,
-                BackColor = Color.DeepPink,
+                ForeColor = Color.FromArgb(45, 45, 48),
+                BackColor = Color.FromArgb(10, 157, 255),
                 Text = "0"
             };
 
@@ -73,15 +72,14 @@ namespace WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel
                 Size = new Size(1280, 90),
                 FlatStyle = FlatStyle.Flat,
                 Font = new Font("Segoe UI Semibold",  14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
-                ForeColor = Color.Black,
-                BackColor = Color.HotPink,
+                ForeColor = Color.FromArgb(10, 187, 255),
+                BackColor = Color.FromArgb(45, 45, 48),
                 Text = "Trigonometrie"
             };
             trigonometryButton.Click += (_, _) => trigonometryModal.Visible = !trigonometryModal.Visible;
 
             keyboard = new() {
-                Size = new Size(1280, 600),
-                BackColor = Color.DeepPink
+                Size = new Size(1280, 600)
             };
 
             List<Control> rows = new() { exampleLabel, numberLabel, trigonometryButton, keyboard };

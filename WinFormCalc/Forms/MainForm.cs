@@ -69,48 +69,79 @@ public partial class MainForm : Form
         advanceCalcPanel = new() {
             MinimumSize = new Size(320, 445),
             MaximumSize = new Size(1280, 890),
-            BackColor= Color.Pink,
+            BackColor = Color.FromArgb(37, 37, 38),
             Size = contentPanel.Size
         };
 
         prgCalcPanel = new() {
             MinimumSize = new Size(320, 445),
             MaximumSize = new Size(1280, 890),
-            BackColor= Color.Pink,
+            BackColor = Color.FromArgb(37, 37, 38),
             Size = contentPanel.Size
         };
 
-        paperModeComponent = new PaperModeComponent();
-        paperModeComponent.Size = contentPanel.Size;
-            
-        graphComponent = new GraphComponent(new Size(500, 500));
+        paperModeComponent = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            Size = contentPanel.Size
+        };
+
+        graphComponent = new(new Size(500, 500));
         graphComponent.Render(3, 2, 5);
 
-        areaConvertorPanel = new ConvertorPanel<AreaEnum>();
-        areaConvertorPanel.Size = contentPanel.Size;
+        areaConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-        dataConvertorPanel = new ConvertorPanel<DataEnum>();
-        dataConvertorPanel.Size = contentPanel.Size;
+        dataConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-        lengthConvertorPanel = new ConvertorPanel<LengthEnum>();
-        lengthConvertorPanel.Size = contentPanel.Size;
+        lengthConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-        speedConvertorPanel = new ConvertorPanel<SpeedEnum>();
-        speedConvertorPanel.Size = contentPanel.Size;
+        speedConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-        temperatureConvertorPanel = new ConvertorPanel<TemperatureEnum>();
-        temperatureConvertorPanel.Size = contentPanel.Size;
+        temperatureConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-        timeConvertorPanel = new ConvertorPanel<TimeEnum>();
-        timeConvertorPanel.Size = contentPanel.Size;
+        timeConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-        volumeConvertorPanel = new ConvertorPanel<VolumeEnum>();
-        volumeConvertorPanel.Size = contentPanel.Size;
-
-        ChangeComponent(basicCalcPanel, placeholderLabel.Text);
+        volumeConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
         formSize = Size;
-        isMenuShow= false;
+        isMenuShow = true;
+
+        ChangeComponent(basicCalcPanel, placeholderLabel.Text);
     }
 
 

@@ -20,14 +20,12 @@ public class PrgCalcFunctionPanel : TableLayoutPanel
 
     private void InitializeComponent()
     {
-        Size = new Size(1280, 110);
-
         logicalFunctionButton = new Button {
             Size = new Size(640, 110),
             FlatStyle = FlatStyle.Flat,
             Font = new Font("Segoe UI Semibold",  14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
-            ForeColor = Color.Black,
-            BackColor = Color.HotPink,
+            ForeColor = Color.FromArgb(10, 187, 255),
+            BackColor = Color.FromArgb(45, 45, 48),
             Text = @"Logické funkce"
         };
         logicalFunctionButton.Click += PrgCalcFunctionPanelEvents.LogicalFunctionButtonClick;
@@ -36,8 +34,8 @@ public class PrgCalcFunctionPanel : TableLayoutPanel
             Size = new Size(640, 110),
             FlatStyle = FlatStyle.Flat,
             Font = new Font("Segoe UI Semibold",  14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
-            ForeColor = Color.Black,
-            BackColor = Color.HotPink,
+            ForeColor = Color.FromArgb(10, 187, 255),
+            BackColor = Color.FromArgb(45, 45, 48),
             Text = @"Dec"
         };
         numberTypeButton.Click += PrgCalcFunctionPanelEvents.NumberTypeButtonClick;

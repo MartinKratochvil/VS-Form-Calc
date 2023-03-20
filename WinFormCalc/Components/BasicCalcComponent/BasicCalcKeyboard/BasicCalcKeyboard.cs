@@ -18,15 +18,13 @@ public sealed class BasicCalcKeyboard : TableLayoutPanel
 
     private void InitializeComponent()
     {
-        
-
-        keyboard = new List<List<Control>>();
+        keyboard = new();
 
         BasicCalcKeyboardEvents.KeyboardClickEvents.ForEach(buttonRowClickEvents => {
-            List<Control> buttonRow = new List<Control>();
+            List<Control> buttonRow = new();
 
             foreach (KeyValuePair<string, Action<string>> buttonClickEvent in buttonRowClickEvents) {
-                Button button = new Button {
+                Button button = new() {
                     Size = new Size(320, 120),
                     FlatStyle = FlatStyle.Flat,
                     Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 238),

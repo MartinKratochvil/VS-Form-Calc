@@ -12,9 +12,9 @@ public class AdvanceCalcModalFunc : TableLayoutPanel
 
     private Button hypButton;
 
-    public AdvanceCalcModalEvents.ButtonClick OnArcButtonClick;
+    public AdvanceCalcModalEvents.ButtonClick ArcButtonClick;
 
-    public AdvanceCalcModalEvents.ButtonClick OnHypButtonClick;
+    public AdvanceCalcModalEvents.ButtonClick HypButtonClick;
 
 
     public AdvanceCalcModalFunc()
@@ -29,19 +29,21 @@ public class AdvanceCalcModalFunc : TableLayoutPanel
             Size = new Size(300, 100),
             FlatStyle = FlatStyle.Flat,
             Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 238),
-            ForeColor = Color.Black,
+            ForeColor = Color.FromArgb(10, 187, 255),
+            BackColor = Color.FromArgb(45, 45, 48),
             Text = "2nd"
         };
-        arcButton.Click += (_, _) => OnArcButtonClick?.Invoke();
+        arcButton.Click += (_, _) => ArcButtonClick?.Invoke();
 
         hypButton = new() {
             Size = new Size(300, 100),
             FlatStyle = FlatStyle.Flat,
             Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 238),
-            ForeColor = Color.Black,
+            ForeColor = Color.FromArgb(10, 187, 255),
+            BackColor = Color.FromArgb(45, 45, 48),
             Text = "Hyp"
         };
-        hypButton.Click += (_, _) => OnHypButtonClick?.Invoke();
+        hypButton.Click += (_, _) => HypButtonClick?.Invoke();
 
         TableDataManager.SetAsymmetricalRows(this, new() {arcButton, hypButton});
     }

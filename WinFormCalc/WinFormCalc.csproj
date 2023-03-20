@@ -124,12 +124,6 @@
     <Compile Include="Calculators\PrgCalculator\PrgNumber.cs" />
     <Compile Include="Components\GraphComponent\GraphControl.cs" />
     <Compile Include="Components\GraphComponent\GraphRender.cs" />
-    <Compile Include="Forms\Grid.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Grid.Designer.cs">
-      <DependentUpon>Grid.cs</DependentUpon>
-    </Compile>
     <Compile Include="Components\GraphComponent\GraphComponent.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -138,12 +132,6 @@
     </Compile>
     <Compile Include="Components\GraphComponent\GridRender.cs" />
     <Compile Include="Components\GraphComponent\LabelsRender.cs" />
-    <Compile Include="Forms\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Calculators\BasicCalculator\BasicCalculator.cs" />
     <Compile Include="Calculators\AdvanceCalculator\AdvanceNumber.cs" />
     <Compile Include="Calculators\BasicCalculator\BasicNumber.cs" />
@@ -152,12 +140,6 @@
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\PaperMode.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\PaperMode.Designer.cs">
-      <DependentUpon>PaperMode.cs</DependentUpon>
     </Compile>
     <Compile Include="Operations\Functions\MathFunction\MathFunction.cs" />
     <Compile Include="Operations\Functions\MathFunction\MathFunctionHandler.cs" />
@@ -175,32 +157,23 @@
     <Compile Include="Convertors\Data\Data.cs" />
     <Compile Include="Convertors\Data\DataEnum.cs" />
     <Compile Include="Convertors\Date\Date.cs" />
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Grid.resx">
-      <DependentUpon>Grid.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\PaperMode.resx">
-      <DependentUpon>PaperMode.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -211,6 +184,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\AppIcon.ico" />
     <Content Include="Images\MenuIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -29,7 +29,8 @@ public class PrgCalcModal : TableLayoutPanel
                     Size = new Size(300, 100),
                     FlatStyle = FlatStyle.Flat,
                     Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 238),
-                    ForeColor = Color.Black,
+                    ForeColor = Color.FromArgb(10, 187, 255),
+                    BackColor = Color.FromArgb(45, 45, 48),
                     Text = buttonEvent.Key
                 };
 

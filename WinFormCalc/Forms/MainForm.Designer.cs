@@ -29,9 +29,9 @@ namespace WinFormCalc.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.contentPanel = new System.Windows.Forms.Panel();
             this.placeholderLabel = new System.Windows.Forms.Label();
-            this.menuIcon = new System.Windows.Forms.PictureBox();
             this.menuContentPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.basicCalcButton = new System.Windows.Forms.Button();
             this.advanceCalcButton = new System.Windows.Forms.Button();
@@ -47,9 +47,10 @@ namespace WinFormCalc.Forms
             this.volumeConvertorButton = new System.Windows.Forms.Button();
             this.menuPanel = new System.Windows.Forms.Panel();
             this.timerMenuPanel = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.menuIcon)).BeginInit();
+            this.menuIcon = new System.Windows.Forms.PictureBox();
             this.menuContentPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.menuIcon)).BeginInit();
             this.SuspendLayout();
             // 
             // contentPanel
@@ -71,18 +72,6 @@ namespace WinFormCalc.Forms
             this.placeholderLabel.TabIndex = 0;
             this.placeholderLabel.Text = "Základní";
             this.placeholderLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // menuIcon
-            // 
-            this.menuIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(187)))), ((int)(((byte)(255)))));
-            this.menuIcon.Image = global::WinFormCalc.Properties.Resources.MenuIcon;
-            this.menuIcon.Location = new System.Drawing.Point(3, 3);
-            this.menuIcon.Name = "menuIcon";
-            this.menuIcon.Size = new System.Drawing.Size(44, 44);
-            this.menuIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.menuIcon.TabIndex = 0;
-            this.menuIcon.TabStop = false;
-            this.menuIcon.Click += new System.EventHandler(this.MenuIconClick);
             // 
             // menuContentPanel
             // 
@@ -292,13 +281,25 @@ namespace WinFormCalc.Forms
             this.menuPanel.Location = new System.Drawing.Point(0, 0);
             this.menuPanel.MaximumSize = new System.Drawing.Size(217, 0);
             this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(217, 495);
+            this.menuPanel.Size = new System.Drawing.Size(0, 495);
             this.menuPanel.TabIndex = 3;
             // 
             // timerMenuPanel
             // 
             this.timerMenuPanel.Interval = 5;
             this.timerMenuPanel.Tick += new System.EventHandler(this.MenuPanelTimerTick);
+            // 
+            // menuIcon
+            // 
+            this.menuIcon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(157)))), ((int)(((byte)(255)))));
+            this.menuIcon.Image = ((System.Drawing.Image)(resources.GetObject("menuIcon.Image")));
+            this.menuIcon.Location = new System.Drawing.Point(3, 3);
+            this.menuIcon.Name = "menuIcon";
+            this.menuIcon.Size = new System.Drawing.Size(44, 44);
+            this.menuIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.menuIcon.TabIndex = 0;
+            this.menuIcon.TabStop = false;
+            this.menuIcon.Click += new System.EventHandler(this.MenuIconClick);
             // 
             // MainForm
             // 
@@ -310,16 +311,18 @@ namespace WinFormCalc.Forms
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.placeholderLabel);
             this.Controls.Add(this.contentPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MaximumSize = new System.Drawing.Size(1296, 979);
             this.MinimumSize = new System.Drawing.Size(336, 534);
             this.Name = "MainForm";
-            this.Text = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Calculator";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainFormKeyPress);
             this.Resize += new System.EventHandler(this.MainFormResize);
-            ((System.ComponentModel.ISupportInitialize)(this.menuIcon)).EndInit();
             this.menuContentPanel.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.menuIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

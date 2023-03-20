@@ -18,9 +18,6 @@ public sealed class PrgCalcKeyboard : TableLayoutPanel
 
     private void InitializeComponent()
     {
-        Size = new Size(1280, 590);
-        BackColor = Color.DeepPink;
-
         keyboard = new();
 
         PrgCalcKeyboardEvents.KeyboardClickEvents.ForEach(buttonRowClickEvents => {
@@ -31,7 +28,8 @@ public sealed class PrgCalcKeyboard : TableLayoutPanel
                     Size = new Size(260, 100),
                     FlatStyle = FlatStyle.Flat,
                     Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 238),
-                    ForeColor = Color.Black,
+                    ForeColor = Color.FromArgb(10, 187, 255),
+                    BackColor = Color.FromArgb(45, 45, 48),
                     Text = buttonClickEvent.Key
                 };
 
