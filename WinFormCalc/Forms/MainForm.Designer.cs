@@ -1,3 +1,5 @@
+using System.Drawing;
+
 namespace WinFormCalc.Forms
 {
     partial class MainForm
@@ -31,6 +33,13 @@ namespace WinFormCalc.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.contentPanel = new System.Windows.Forms.Panel();
+            this.graphInputPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.graphALabel = new System.Windows.Forms.Label();
+            this.graphAUpDown = new System.Windows.Forms.NumericUpDown();
+            this.graphBLabel = new System.Windows.Forms.Label();
+            this.graphBUpDown = new System.Windows.Forms.NumericUpDown();
+            this.graphCLabel = new System.Windows.Forms.Label();
+            this.graphCUpDown = new System.Windows.Forms.NumericUpDown();
             this.placeholderLabel = new System.Windows.Forms.Label();
             this.menuContentPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.basicCalcButton = new System.Windows.Forms.Button();
@@ -48,6 +57,10 @@ namespace WinFormCalc.Forms
             this.menuPanel = new System.Windows.Forms.Panel();
             this.timerMenuPanel = new System.Windows.Forms.Timer(this.components);
             this.menuIcon = new System.Windows.Forms.PictureBox();
+            this.graphInputPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.graphAUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphBUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCUpDown)).BeginInit();
             this.menuContentPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.menuIcon)).BeginInit();
@@ -60,6 +73,96 @@ namespace WinFormCalc.Forms
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(320, 445);
             this.contentPanel.TabIndex = 2;
+            // 
+            // graphInputPanel
+            // 
+            this.graphInputPanel.Controls.Add(this.graphALabel);
+            this.graphInputPanel.Controls.Add(this.graphAUpDown);
+            this.graphInputPanel.Controls.Add(this.graphBLabel);
+            this.graphInputPanel.Controls.Add(this.graphBUpDown);
+            this.graphInputPanel.Controls.Add(this.graphCLabel);
+            this.graphInputPanel.Controls.Add(this.graphCUpDown);
+            this.graphInputPanel.Location = new System.Drawing.Point(89, 487);
+            this.graphInputPanel.Name = "graphInputPanel";
+            this.graphInputPanel.Size = new System.Drawing.Size(321, 39);
+            this.graphInputPanel.TabIndex = 0;
+            this.graphInputPanel.Visible = false;
+            // 
+            // graphALabel
+            // 
+            this.graphALabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.graphALabel.ForeColor = System.Drawing.Color.White;
+            this.graphALabel.Location = new System.Drawing.Point(3, 0);
+            this.graphALabel.Name = "graphALabel";
+            this.graphALabel.Size = new System.Drawing.Size(35, 33);
+            this.graphALabel.TabIndex = 1;
+            this.graphALabel.Text = "A:";
+            this.graphALabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // graphAUpDown
+            // 
+            this.graphAUpDown.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.graphAUpDown.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.graphAUpDown.Location = new System.Drawing.Point(44, 3);
+            this.graphAUpDown.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.graphAUpDown.Name = "graphAUpDown";
+            this.graphAUpDown.Size = new System.Drawing.Size(60, 33);
+            this.graphAUpDown.TabIndex = 0;
+            this.graphAUpDown.ValueChanged += new System.EventHandler(this.GraphUpDownValueChanged);
+            // 
+            // graphBLabel
+            // 
+            this.graphBLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.graphBLabel.ForeColor = System.Drawing.Color.White;
+            this.graphBLabel.Location = new System.Drawing.Point(110, 0);
+            this.graphBLabel.Name = "graphBLabel";
+            this.graphBLabel.Size = new System.Drawing.Size(35, 33);
+            this.graphBLabel.TabIndex = 2;
+            this.graphBLabel.Text = "B:";
+            this.graphBLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // graphBUpDown
+            // 
+            this.graphBUpDown.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.graphBUpDown.Location = new System.Drawing.Point(151, 3);
+            this.graphBUpDown.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.graphBUpDown.Name = "graphBUpDown";
+            this.graphBUpDown.Size = new System.Drawing.Size(60, 33);
+            this.graphBUpDown.TabIndex = 3;
+            this.graphBUpDown.ValueChanged += new System.EventHandler(this.GraphUpDownValueChanged);
+            // 
+            // graphCLabel
+            // 
+            this.graphCLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.graphCLabel.ForeColor = System.Drawing.Color.White;
+            this.graphCLabel.Location = new System.Drawing.Point(217, 0);
+            this.graphCLabel.Name = "graphCLabel";
+            this.graphCLabel.Size = new System.Drawing.Size(35, 33);
+            this.graphCLabel.TabIndex = 4;
+            this.graphCLabel.Text = "C:";
+            this.graphCLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // graphCUpDown
+            // 
+            this.graphCUpDown.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.graphCUpDown.Location = new System.Drawing.Point(258, 3);
+            this.graphCUpDown.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.graphCUpDown.Name = "graphCUpDown";
+            this.graphCUpDown.Size = new System.Drawing.Size(60, 33);
+            this.graphCUpDown.TabIndex = 5;
+            this.graphCUpDown.ValueChanged += new System.EventHandler(this.GraphUpDownValueChanged);
             // 
             // placeholderLabel
             // 
@@ -310,6 +413,7 @@ namespace WinFormCalc.Forms
             this.Controls.Add(this.menuIcon);
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.placeholderLabel);
+            this.Controls.Add(this.graphInputPanel);
             this.Controls.Add(this.contentPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
@@ -320,6 +424,10 @@ namespace WinFormCalc.Forms
             this.Text = "Calculator";
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainFormKeyPress);
             this.Resize += new System.EventHandler(this.MainFormResize);
+            this.graphInputPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.graphAUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphBUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.graphCUpDown)).EndInit();
             this.menuContentPanel.ResumeLayout(false);
             this.menuPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.menuIcon)).EndInit();
@@ -332,6 +440,13 @@ namespace WinFormCalc.Forms
 
         private System.Windows.Forms.Label placeholderLabel;
         private System.Windows.Forms.Panel contentPanel;
+        private System.Windows.Forms.FlowLayoutPanel graphInputPanel;
+        private System.Windows.Forms.NumericUpDown graphAUpDown;
+        private System.Windows.Forms.Label graphALabel;
+        private System.Windows.Forms.Label graphBLabel;
+        private System.Windows.Forms.NumericUpDown graphBUpDown;
+        private System.Windows.Forms.Label graphCLabel;
+        private System.Windows.Forms.NumericUpDown graphCUpDown;
         private System.Windows.Forms.FlowLayoutPanel menuContentPanel;
         private System.Windows.Forms.PictureBox menuIcon;
         private System.Windows.Forms.Button advanceCalcButton;

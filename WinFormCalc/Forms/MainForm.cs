@@ -31,7 +31,7 @@ public partial class MainForm : Form
 
     private readonly PaperModeComponent paperModeComponent;
 
-    private readonly GraphComponent graphComponent;
+    private readonly GraphPanel graphPanel;
 
     private readonly ConvertorPanel<AreaEnum> areaConvertorPanel;
 
@@ -86,8 +86,7 @@ public partial class MainForm : Form
             Size = contentPanel.Size
         };
 
-        graphComponent = new(new Size(500, 500));
-        graphComponent.Render(3, 2, 5);
+        graphPanel = new();
 
         areaConvertorPanel = new() {
             MinimumSize = new Size(320, 445),
@@ -207,12 +206,14 @@ public partial class MainForm : Form
             
         timerMenuPanel.Start();
             
-        if (component.GetType() != typeof(GraphComponent)) {
+        if ( ! (component is GraphPanel)) {
+            graphInputPanel.Visible = false;
             FormBorderStyle = FormBorderStyle.Sizable;
             return;
         }
-            
-        Size = new Size(500, 550);
+
+        graphInputPanel.Visible = true;
+        Size = new Size(513, 587);
         FormBorderStyle = FormBorderStyle.FixedDialog;
     }
 
@@ -234,7 +235,7 @@ public partial class MainForm : Form
         ChangeComponent(prgCalcPanel, ((Button)sender).Text);
     }
 
-        
+
     private void PaperModeButtonClick(object sender, EventArgs e)
     {
         ChangeComponent(paperModeComponent, ((Button)sender).Text);
@@ -243,7 +244,7 @@ public partial class MainForm : Form
 
     private void GraphButtonClick(object sender, EventArgs e)
     {
-        ChangeComponent(graphComponent, ((Button)sender).Text);
+        ChangeComponent(graphPanel, ((Button)sender).Text);
     }
 
 
@@ -298,7 +299,7 @@ public partial class MainForm : Form
 
     private void MainFormKeyPress(object sender, KeyPressEventArgs e)
     {
-        if (activeComponent is PaperModeComponent || activeComponent is GraphComponent) {
+        if (activeComponent is PaperModeComponent or GraphPanel) {
             return;
         }
 
@@ -320,5 +321,11 @@ public partial class MainForm : Form
         }
 
         ComponentKeyPressHandler.HandleConvertor(keyChar);
+    }
+
+
+    private void GraphUpDownValueChanged(object sender, EventArgs e)
+    {
+        graphPanel.Render((int)graphAUpDown.Value, (int)graphBUpDown.Value, (int)graphCUpDown.Value);
     }
 }

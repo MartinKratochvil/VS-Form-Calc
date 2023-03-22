@@ -33,11 +33,11 @@ public class GridRender
         subLinePen = new Pen(penColor, 1);
         axisPen = new Pen(Color.Black, 2);
 
-        Render();
+        Setup();
     }
 
 
-    private void Render()
+    private void Setup()
     {
         graphics.CompositingQuality = CompositingQuality.HighQuality;
         graphics.SmoothingMode = SmoothingMode.HighQuality;

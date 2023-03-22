@@ -124,7 +124,7 @@
     <Compile Include="Calculators\PrgCalculator\PrgNumber.cs" />
     <Compile Include="Components\GraphComponent\GraphControl.cs" />
     <Compile Include="Components\GraphComponent\GraphRender.cs" />
-    <Compile Include="Components\GraphComponent\GraphComponent.cs">
+    <Compile Include="Components\GraphComponent\GraphPanel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Components\GraphComponent\GridControl.cs">

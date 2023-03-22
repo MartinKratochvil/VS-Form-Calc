@@ -17,7 +17,7 @@ public class LabelsRender
     }
 
 
-    public void Render(PictureBox pictureBox)
+    public void Setup(PictureBox pictureBox)
     {
         this.pictureBox = pictureBox;
 

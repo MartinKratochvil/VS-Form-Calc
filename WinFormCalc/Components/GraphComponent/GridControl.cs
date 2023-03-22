@@ -35,7 +35,7 @@ public class GridControl : PictureBox
     }
 
 
-    public void Render()
+    public void Setup()
     {
         Size = new Size(_size, _size);
         Location = new Point(
@@ -44,11 +44,11 @@ public class GridControl : PictureBox
         );
         Image = gridRender.Bitmap;
 
-        GraphControl.Render();
+        GraphControl.Setup();
 
         Controls.Add(GraphControl.PictureBox);
             
-        labelsRender.Render(GraphControl.PictureBox);
+        labelsRender.Setup(GraphControl.PictureBox);
 
         GraphControl.PictureBox.MouseDown += MouseDown;
         GraphControl.PictureBox.MouseUp += MouseUp;

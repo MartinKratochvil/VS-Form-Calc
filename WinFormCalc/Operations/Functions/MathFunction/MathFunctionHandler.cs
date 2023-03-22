@@ -14,19 +14,29 @@ public class MathFunctionHandler
 
     public static void Setup()
     {
-        for (int i = 0; i < Enum.GetNames(typeof(MathFunction)).Length; i++) {
-            MethodInfo method = typeof(MathFunctionHandler).GetMethod(Enum.GetName(typeof(MathFunction), i) ?? string.Empty);
+        int enumCount = Enum.GetNames(typeof(MathFunction)).Length;
 
-            if (method != null) {
-                Operations.Add((MathFunction)i, (FuncDel)Delegate.CreateDelegate(typeof(FuncDel), method));
+        for (int i = 0; i < enumCount; i++) {
+            MethodInfo method = typeof(MathFunctionHandler).GetMethod(
+                Enum.GetName(typeof(MathFunction), i) ?? 
+                string.Empty
+            );
+
+            if (method == null) {
+                continue;
             }
+
+            Operations.Add(
+                (MathFunction)i,
+                (FuncDel)Delegate.CreateDelegate(typeof(FuncDel), method)
+            );
         }
     }
 
 
     public static double Handle(double x, MathFunction gonFunc)
     {
-        return (double)Operations[gonFunc].DynamicInvoke(x);
+        return (double)Operations[gonFunc].Invoke(x);
     }
 
 

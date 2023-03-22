@@ -6,7 +6,7 @@ using System.Drawing.Imaging;
 
 namespace WinFormCalc.Components.GraphComponent;
 
-public class GraphRender
+public class  GraphRender
 {
 
     private Graphics graphics;
@@ -27,11 +27,14 @@ public class GraphRender
         graphics.SmoothingMode = SmoothingMode.HighQuality;
 
         graphPen = new Pen(Color.Red, 3);
+        Render(0, 0, 0);
     }
 
 
     public void Render(int a, int b, int c)
     {
+        graphics.Clear(Color.Transparent);
+
         int space = GridRender.Space / 5;
         int pointsNum = GridControl._size / space / 2;
 

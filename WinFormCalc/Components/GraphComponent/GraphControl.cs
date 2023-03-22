@@ -21,11 +21,17 @@ public class GraphControl
         GraphRender = new GraphRender();
     }
 
-    public void Render ()
+    public void Setup ()
     {
         PictureBox.Size = new Size(GridControl._size, GridControl._size);
         PictureBox.Location = new Point(0, 0);
         PictureBox.BackColor = Color.Transparent;
+        PictureBox.Image = GraphRender.Bitmap;
+    }
+
+    public void Render(int a, int b, int c)
+    {
+        GraphRender.Render(a, b, c);
         PictureBox.Image = GraphRender.Bitmap;
     }
 }
