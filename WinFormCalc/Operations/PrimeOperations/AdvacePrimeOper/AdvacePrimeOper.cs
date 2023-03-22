@@ -1,14 +1,13 @@
 
-namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper
+namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
+
+public enum AdvancePrimeOper
 {
-    public enum AdvancePrimeOper
-    {
-        Plus,
-        Minus,
-        Multiply,
-        Divide,
-        Modulo,
-        Pow,
-        YRoot
-    }
+    Plus,
+    Minus,
+    Multiply,
+    Divide,
+    Modulo,
+    Pow,
+    YRoot
 }

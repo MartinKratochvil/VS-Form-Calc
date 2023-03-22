@@ -3,83 +3,82 @@ using System.Collections.Generic;
 using System.Reflection;
 using WinFormCalc.Calculators.AdvanceCalculator;
 
-namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper
+namespace WinFormCalc.Operations.PrimeOperations.AdvacePrimeOper;
+
+public class AdvancePrimeOperHandler
 {
-    public class AdvancePrimeOperHandler
+
+    private delegate double PrimeOperDel(double origin, double operand);
+
+    private static readonly Dictionary<AdvancePrimeOper, PrimeOperDel> Operations = new();
+
+
+    public static void Setup()
     {
+        for (int i = 0; i < Enum.GetNames(typeof(AdvancePrimeOper)).Length; i++) {
+            MethodInfo method = typeof(AdvancePrimeOperHandler).GetMethod(Enum.GetName(typeof(AdvancePrimeOper), i) ?? string.Empty);
 
-        private delegate double PrimeOperDel(double origin, double operand);
-
-        private static readonly Dictionary<AdvancePrimeOper, PrimeOperDel> Operations = new();
-
-
-        public static void Setup()
-        {
-            for (int i = 0; i < Enum.GetNames(typeof(AdvancePrimeOper)).Length; i++) {
-                MethodInfo method = typeof(AdvancePrimeOperHandler).GetMethod(Enum.GetName(typeof(AdvancePrimeOper), i) ?? string.Empty);
-
-                if (method != null) {
-                    Operations.Add((AdvancePrimeOper)i, (PrimeOperDel)Delegate.CreateDelegate(typeof(PrimeOperDel), method));
-                }
+            if (method != null) {
+                Operations.Add((AdvancePrimeOper)i, (PrimeOperDel)Delegate.CreateDelegate(typeof(PrimeOperDel), method));
             }
         }
+    }
 
 
-        public static bool Handle(List<AdvanceNumber> values, AdvanceNumber operand)
-        {
-            if (operand.PrimeOper == AdvancePrimeOper.Plus || operand.PrimeOper == AdvancePrimeOper.Minus) {
-                return false;
-            }
-
-            double value = Operations[operand.PrimeOper].Invoke(
-                SetNumberSign(values).Value,
-                operand.Value
-            );
-
-            values[values.Count - 1] = new AdvanceNumber(value);
-
-            return true;
+    public static bool Handle(List<AdvanceNumber> values, AdvanceNumber operand)
+    {
+        if (operand.PrimeOper == AdvancePrimeOper.Plus || operand.PrimeOper == AdvancePrimeOper.Minus) {
+            return false;
         }
 
+        double value = Operations[operand.PrimeOper].Invoke(
+            SetNumberSign(values).Value,
+            operand.Value
+        );
 
-        private static AdvanceNumber SetNumberSign(List<AdvanceNumber> values) {
-            AdvanceNumber origin = values[values.Count - 1];
+        values[values.Count - 1] = new AdvanceNumber(value);
 
-            if (origin.PrimeOper == AdvancePrimeOper.Minus) {
-                origin.Value *= -1;
-            }
+        return true;
+    }
 
-            return origin;
+
+    private static AdvanceNumber SetNumberSign(List<AdvanceNumber> values) {
+        AdvanceNumber origin = values[values.Count - 1];
+
+        if (origin.PrimeOper == AdvancePrimeOper.Minus) {
+            origin.Value *= -1;
         }
 
-
-        public static double Multiply(double origin, double operand)
-        {
-            return origin * operand;
-        }
+        return origin;
+    }
 
 
-        public static double Divide(double origin, double operand)
-        {
-            return origin / operand;
-        }
+    public static double Multiply(double origin, double operand)
+    {
+        return origin * operand;
+    }
 
 
-        public static double Modulo(double origin, double operand)
-        {
-            return origin % operand;
-        }
+    public static double Divide(double origin, double operand)
+    {
+        return origin / operand;
+    }
 
 
-        public static double Pow(double origin, double operand)
-        {
-            return Math.Pow(origin, operand);
-        }
+    public static double Modulo(double origin, double operand)
+    {
+        return origin % operand;
+    }
 
 
-        public static double YRoot(double origin, double operand)
-        {
-            return Math.Pow(origin, 1f / operand);
-        }
+    public static double Pow(double origin, double operand)
+    {
+        return Math.Pow(origin, operand);
+    }
+
+
+    public static double YRoot(double origin, double operand)
+    {
+        return Math.Pow(origin, 1f / operand);
     }
 }

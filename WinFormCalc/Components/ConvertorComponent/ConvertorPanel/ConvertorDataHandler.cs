@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel
+namespace WinFormCalc.Components.ConvertorComponent.ConvertorPanel;
+
+public static class ConvertorDataHandler
 {
-    public static class ConvertorDataHandler
+
+    public static List<Enum> Handle<T>() where T : Enum
     {
+        List<T> TEnums = new List<T>((T[])Enum.GetValues(typeof(T)));
+        List<Enum> data = new();
 
-        public static List<Enum> Handle<T>() where T : Enum
-        {
-            List<T> TEnums = new List<T>((T[])Enum.GetValues(typeof(T)));
-            List<Enum> data = new List<Enum>();
+        TEnums.ForEach(item => { data.Add(item); });
 
-            TEnums.ForEach(item => { data.Add(item); });
-
-            return data;
-        }
+        return data;
     }
 }

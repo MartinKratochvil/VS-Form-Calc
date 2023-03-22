@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using WinFormCalc.Components;
 using WinFormCalc.Components.AdvanceCalcComponent.AdvanceCalcPanel;
 using WinFormCalc.Components.BasicCalcComponent.BasicCalcPanel;
 using WinFormCalc.Components.ConvertorComponent.ConvertorPanel;
@@ -15,279 +16,316 @@ using WinFormCalc.Convertors.Temperature;
 using WinFormCalc.Convertors.Time;
 using WinFormCalc.Convertors.Volume;
 
-namespace WinFormCalc.Forms
+namespace WinFormCalc.Forms;
+
+public partial class MainForm : Form
 {
-    public partial class MainForm : Form
+
+    private Control activeComponent;
+
+    private readonly BasicCalcPanel basicCalcPanel;
+
+    private readonly AdvanceCalcPanel advanceCalcPanel;
+
+    private readonly PrgCalcPanel prgCalcPanel;
+
+    private readonly PaperModeComponent paperModeComponent;
+
+    private readonly GraphPanel graphPanel;
+
+    private readonly ConvertorPanel<AreaEnum> areaConvertorPanel;
+
+    private readonly ConvertorPanel<DataEnum> dataConvertorPanel;
+
+    private readonly ConvertorPanel<LengthEnum> lengthConvertorPanel;
+
+    private readonly ConvertorPanel<SpeedEnum> speedConvertorPanel;
+
+    private readonly ConvertorPanel<TemperatureEnum> temperatureConvertorPanel;
+
+    private readonly ConvertorPanel<TimeEnum> timeConvertorPanel;
+
+    private readonly ConvertorPanel<VolumeEnum> volumeConvertorPanel;
+
+
+    private Size formSize;
+
+    private bool isMenuShow;
+
+
+    public MainForm()
     {
-
-        private readonly BasicCalcPanel basicCalcPanel;
-
-        private readonly AdvanceCalcPanel advanceCalcPanel;
-
-        private readonly PrgCalcPanel prgCalcPanel;
-
-        private readonly PaperModeComponent paperModeComponent;
-
-        private readonly GraphComponent graphComponent;
-
-        private readonly ConvertorPanel<AreaEnum> areaConvertorPanel;
-
-        private readonly ConvertorPanel<DataEnum> dataConvertorPanel;
-
-        private readonly ConvertorPanel<LengthEnum> lengthConvertorPanel;
-
-        private readonly ConvertorPanel<SpeedEnum> speedConvertorPanel;
-
-        private readonly ConvertorPanel<TemperatureEnum> temperatureConvertorPanel;
-
-        private readonly ConvertorPanel<TimeEnum> timeConvertorPanel;
-
-        private readonly ConvertorPanel<VolumeEnum> volumeConvertorPanel;
-
-
-        private Size formSize;
-
-        private bool isMenuShow;
-
-
-        public MainForm()
-        {
-            InitializeComponent();
+        InitializeComponent();
             
-            speedConvertorButton.Visible = false;
+        speedConvertorButton.Visible = false;
 
-            basicCalcPanel = new BasicCalcPanel();
-            basicCalcPanel.Size = contentPanel.Size;
+        basicCalcPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-            advanceCalcPanel = new AdvanceCalcPanel();
-            advanceCalcPanel.Size = contentPanel.Size;
+        advanceCalcPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-            prgCalcPanel = new PrgCalcPanel();
-            prgCalcPanel.Size = contentPanel.Size;
+        prgCalcPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-            paperModeComponent = new PaperModeComponent();
-            paperModeComponent.Size = contentPanel.Size;
-            
-            graphComponent = new GraphComponent(new Size(500, 500));
-            graphComponent.Render(3, 2, 5);
+        paperModeComponent = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            Size = contentPanel.Size
+        };
 
-            areaConvertorPanel = new ConvertorPanel<AreaEnum>();
-            areaConvertorPanel.Size = contentPanel.Size;
+        graphPanel = new();
 
-            dataConvertorPanel = new ConvertorPanel<DataEnum>();
-            dataConvertorPanel.Size = contentPanel.Size;
+        areaConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-            lengthConvertorPanel = new ConvertorPanel<LengthEnum>();
-            lengthConvertorPanel.Size = contentPanel.Size;
+        dataConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-            speedConvertorPanel = new ConvertorPanel<SpeedEnum>();
-            speedConvertorPanel.Size = contentPanel.Size;
+        lengthConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-            temperatureConvertorPanel = new ConvertorPanel<TemperatureEnum>();
-            temperatureConvertorPanel.Size = contentPanel.Size;
+        speedConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-            timeConvertorPanel = new ConvertorPanel<TimeEnum>();
-            timeConvertorPanel.Size = contentPanel.Size;
+        temperatureConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-            volumeConvertorPanel = new ConvertorPanel<VolumeEnum>();
-            volumeConvertorPanel.Size = contentPanel.Size;
+        timeConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-            contentPanel.Controls.Add(areaConvertorPanel);
+        volumeConvertorPanel = new() {
+            MinimumSize = new Size(320, 445),
+            MaximumSize = new Size(1280, 890),
+            BackColor = Color.FromArgb(37, 37, 38),
+            Size = contentPanel.Size
+        };
 
-            formSize = Size;
-            isMenuShow= false;
-        }
+        formSize = Size;
+        isMenuShow = true;
 
-
-        private void MainForm_Resize(object sender, EventArgs e)
-        {
-            contentPanel.Width += Width - formSize.Width;
-            contentPanel.Height += Height - formSize.Height;
-
-            basicCalcPanel.Size = contentPanel.Size;
-            advanceCalcPanel.Size = contentPanel.Size;
-            prgCalcPanel.Size = contentPanel.Size;
-            paperModeComponent.Size = contentPanel.Size;
-            areaConvertorPanel.Size = contentPanel.Size;
-            dataConvertorPanel.Size = contentPanel.Size;
-            lengthConvertorPanel.Size = contentPanel.Size;
-            speedConvertorPanel.Size = contentPanel.Size;
-            temperatureConvertorPanel.Size = contentPanel.Size;
-            timeConvertorPanel.Size = contentPanel.Size;
-            volumeConvertorPanel.Size = contentPanel.Size;
-
-            menuContentPanel.Height = Height - 47;
-
-            formSize = Size;
-        }
-
-
-        private void MenuIconClick(object sender, EventArgs e)
-        {
-            timerMenuPanel.Start();
-        }
+        ChangeComponent(basicCalcPanel, placeholderLabel.Text);
+    }
 
 
-        private void MenuPanelTimerTick(object sender, EventArgs e)
-        {
-            if (isMenuShow) {
-                menuPanel.Width -= 30;
+    private void MainFormResize(object sender, EventArgs e)
+    {
+        contentPanel.Width += Width - formSize.Width;
+        contentPanel.Height += Height - formSize.Height;
 
-                if (menuPanel.Width == 0) {
-                    timerMenuPanel.Stop();
-                    isMenuShow = false;
-                }
+        basicCalcPanel.Size = contentPanel.Size;
+        advanceCalcPanel.Size = contentPanel.Size;
+        prgCalcPanel.Size = contentPanel.Size;
+        paperModeComponent.Size = contentPanel.Size;
+        areaConvertorPanel.Size = contentPanel.Size;
+        dataConvertorPanel.Size = contentPanel.Size;
+        lengthConvertorPanel.Size = contentPanel.Size;
+        speedConvertorPanel.Size = contentPanel.Size;
+        temperatureConvertorPanel.Size = contentPanel.Size;
+        timeConvertorPanel.Size = contentPanel.Size;
+        volumeConvertorPanel.Size = contentPanel.Size;
 
-                return;
-            }
+        menuContentPanel.Height = Height - 47;
 
-            menuPanel.Width += 30;
+        formSize = Size;
+    }
 
-            if (menuPanel.Width == menuPanel.MaximumSize.Width) {
+
+    private void MenuIconClick(object sender, EventArgs e)
+    {
+        timerMenuPanel.Start();
+    }
+
+
+    private void MenuPanelTimerTick(object sender, EventArgs e)
+    {
+        if (isMenuShow) {
+            menuPanel.Width -= 30;
+
+            if (menuPanel.Width == 0) {
                 timerMenuPanel.Stop();
-                isMenuShow = true;
+                isMenuShow = false;
             }
+
+            return;
         }
 
+        menuPanel.Width += 30;
 
-        private void BasicCalcButtonClick(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            contentPanel.Controls.Add(basicCalcPanel);
-            placeholerLabel.Text = ((Button)sender).Text;
-            FormBorderStyle = FormBorderStyle.Sizable;
-
-            timerMenuPanel.Start();
+        if (menuPanel.Width == menuPanel.MaximumSize.Width) {
+            timerMenuPanel.Stop();
+            isMenuShow = true;
         }
+    }
 
 
-        private void AdvanceCalcButtonClick(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            contentPanel.Controls.Add(advanceCalcPanel);
-            placeholerLabel.Text = ((Button)sender).Text;
-            FormBorderStyle = FormBorderStyle.Sizable;
+    private void ChangeComponent(Control component, string placeholder)
+    {
+        activeComponent = component;
 
-            timerMenuPanel.Start();
-        }
+        contentPanel.Controls.Clear();
+        contentPanel.Controls.Add(component);
 
-
-        private void PrgCalcButtonClick(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            contentPanel.Controls.Add(prgCalcPanel);
-            placeholerLabel.Text = ((Button)sender).Text;
-            FormBorderStyle = FormBorderStyle.Sizable;
-
-            timerMenuPanel.Start();
-        }
-
-        
-
-        private void PaperModeButtonClick(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            contentPanel.Controls.Add(paperModeComponent);
-            placeholerLabel.Text = ((Button)sender).Text;
-            FormBorderStyle = FormBorderStyle.Sizable;
+        placeholderLabel.Text = placeholder;
             
-            timerMenuPanel.Start();
-        }
-
-        private void GridButtonClick(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            contentPanel.Controls.Add(graphComponent);
-            placeholerLabel.Text = ((Button)sender).Text;
-
-            Size = new Size(500, 550);
-            FormBorderStyle = FormBorderStyle.FixedDialog;
-
-            timerMenuPanel.Start();
-        }
-
-
-        private void AreaConvertorButtonClick(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            areaConvertorPanel.Clear();
-            contentPanel.Controls.Add(areaConvertorPanel);
-            placeholerLabel.Text = ((Button)sender).Text;
-            FormBorderStyle = FormBorderStyle.Sizable;
+        timerMenuPanel.Start();
             
-            timerMenuPanel.Start();
-        }
-
-
-        private void DataConvertorButtonClick(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            dataConvertorPanel.Clear();
-            contentPanel.Controls.Add(dataConvertorPanel);
-            placeholerLabel.Text = ((Button)sender).Text;
+        if ( ! (component is GraphPanel)) {
+            graphInputPanel.Visible = false;
             FormBorderStyle = FormBorderStyle.Sizable;
-            
-            timerMenuPanel.Start();
+            return;
         }
 
+        graphInputPanel.Visible = true;
+        Size = new Size(513, 587);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+    }
 
-        private void LengthConvertorButtonClick(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            lengthConvertorPanel.Clear();
-            contentPanel.Controls.Add(lengthConvertorPanel);
-            placeholerLabel.Text = ((Button)sender).Text;
-            FormBorderStyle = FormBorderStyle.Sizable;
-            
-            timerMenuPanel.Start();
+
+    private void BasicCalcButtonClick(object sender, EventArgs e)
+    {
+        ChangeComponent(basicCalcPanel, ((Button)sender).Text);
+    }
+
+
+    private void AdvanceCalcButtonClick(object sender, EventArgs e)
+    {
+        ChangeComponent(advanceCalcPanel, ((Button)sender).Text);
+    }
+
+
+    private void PrgCalcButtonClick(object sender, EventArgs e)
+    {
+        ChangeComponent(prgCalcPanel, ((Button)sender).Text);
+    }
+
+
+    private void PaperModeButtonClick(object sender, EventArgs e)
+    {
+        ChangeComponent(paperModeComponent, ((Button)sender).Text);
+    }
+
+
+    private void GraphButtonClick(object sender, EventArgs e)
+    {
+        ChangeComponent(graphPanel, ((Button)sender).Text);
+    }
+
+
+    private void AreaConvertorButtonClick(object sender, EventArgs e)
+    {
+        areaConvertorPanel.Clear();
+        ChangeComponent(areaConvertorPanel, ((Button)sender).Text);
+    }
+
+
+    private void DataConvertorButtonClick(object sender, EventArgs e)
+    {
+        dataConvertorPanel.Clear();
+        ChangeComponent(dataConvertorPanel, ((Button)sender).Text);
+    }
+
+
+    private void LengthConvertorButtonClick(object sender, EventArgs e)
+    {
+        lengthConvertorPanel.Clear();
+        ChangeComponent(lengthConvertorPanel, ((Button)sender).Text);
+    }
+
+
+    private void SpeedConvertorButtonClick(object sender, EventArgs e)
+    {
+        speedConvertorPanel.Clear();
+        ChangeComponent(speedConvertorPanel, ((Button)sender).Text);
+    }
+
+
+    private void TemperatureConvertorButtonClick(object sender, EventArgs e)
+    {
+        temperatureConvertorPanel.Clear();
+        ChangeComponent(temperatureConvertorPanel, ((Button)sender).Text);
+    }
+
+
+    private void TimeConvertorButtonClick(object sender, EventArgs e)
+    {
+        timeConvertorPanel.Clear();
+        ChangeComponent(timeConvertorPanel, ((Button)sender).Text);
+    }
+
+
+    private void VolumeConvertorButtonClick(object sender, EventArgs e)
+    {
+        volumeConvertorPanel.Clear();
+        ChangeComponent(volumeConvertorPanel, ((Button)sender).Text);
+    }
+
+
+    private void MainFormKeyPress(object sender, KeyPressEventArgs e)
+    {
+        if (activeComponent is PaperModeComponent or GraphPanel) {
+            return;
         }
 
+        char keyChar = char.ToLower(e.KeyChar);
 
-        private void SpeedConvertorButtonClick(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            speedConvertorPanel.Clear();
-            contentPanel.Controls.Add(speedConvertorPanel);
-            placeholerLabel.Text = ((Button)sender).Text;
-            FormBorderStyle = FormBorderStyle.Sizable;
-            
-            timerMenuPanel.Start();
+        if (activeComponent is BasicCalcPanel) {
+            ComponentKeyPressHandler.HandleBasicCalc(keyChar);
+            return;
         }
 
-
-        private void TemperatureConvertorButtonClick(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            temperatureConvertorPanel.Clear();
-            contentPanel.Controls.Add(temperatureConvertorPanel);
-            placeholerLabel.Text = ((Button)sender).Text;
-            FormBorderStyle = FormBorderStyle.Sizable;
-            
-            timerMenuPanel.Start();
+        if (activeComponent is AdvanceCalcPanel) {
+            ComponentKeyPressHandler.HandleAdvanceCalc(keyChar);
+            return;
         }
 
-
-        private void TimeConvertorButtonClick(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            timerMenuPanel.Start();
-            contentPanel.Controls.Add(timeConvertorPanel);
-            placeholerLabel.Text = ((Button)sender).Text;
-            FormBorderStyle = FormBorderStyle.Sizable;
-            
-            timerMenuPanel.Start();
+        if (activeComponent is PrgCalcPanel) {
+            ComponentKeyPressHandler.HandlePrgCalc(keyChar);
+            return;
         }
 
+        ComponentKeyPressHandler.HandleConvertor(keyChar);
+    }
 
-        private void VolumeConvertorButtonClick(object sender, EventArgs e)
-        {
-            contentPanel.Controls.Clear();
-            volumeConvertorPanel.Clear();
-            contentPanel.Controls.Add(volumeConvertorPanel);
-            placeholerLabel.Text = ((Button)sender).Text;
-            FormBorderStyle = FormBorderStyle.Sizable;
-            
-            timerMenuPanel.Start();
-        }
+
+    private void GraphUpDownValueChanged(object sender, EventArgs e)
+    {
+        graphPanel.Render((int)graphAUpDown.Value, (int)graphBUpDown.Value, (int)graphCUpDown.Value);
     }
 }
