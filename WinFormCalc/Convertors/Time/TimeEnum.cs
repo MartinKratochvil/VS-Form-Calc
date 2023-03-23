@@ -3,11 +3,12 @@ namespace WinFormCalc.Convertors.Time;
 
 public enum TimeEnum
 {
-    Millisecond = -1,
-    Second = 0,
-    Minute = 1,
-    Hour = 2,
-    Day = 1000000,
-    Month = 30436875,
-    Year = 365242500
+    Microsecond = -1_000_000,
+    Millisecond = -1_000,
+    Second = 1,
+    Minute = 60,
+    Hour = 3_600,
+    Day = 86_400,
+    Month = 30_436_875,
+    Year = 365_242_500
 }

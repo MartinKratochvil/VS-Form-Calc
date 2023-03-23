@@ -7,51 +7,36 @@ public class Time
 
     public static double Convert(double value, TimeEnum from, TimeEnum to)
     {
-        TimeSpan time = ConvertToTimeSpan(value, (int)from);
-            
-        return ConvertFromTimeSpan(time, (int)to);
+        value = ConvertToSec(value, (int)from);
+
+        return ConvertFromSec(value, (int)to);
     }
 
 
-    private static TimeSpan ConvertToTimeSpan(double value, int type)
+    private static double ConvertToSec(double value, int size)
     {
-        switch (type) {
-            case -1: {
-                return TimeSpan.FromMilliseconds(value);
-            }
-            case 0: {
-                return TimeSpan.FromSeconds(value);
-            }
-            case 1: {
-                return TimeSpan.FromMinutes(value);
-            }
-            case 2: {
-                return TimeSpan.FromHours(value);
-            }
-            default: {
-                return TimeSpan.FromDays(value * (type / 1000000f));
-            }
+        if (size < 0) {
+            return value / Math.Abs(size);
         }
+
+        if (size > 1_000_000) {
+            value *= size / 1_000_000f;
+        }
+
+        return value * (size > 1_000_000 ? (int)TimeEnum.Day : size);
     }
 
-    private static Double ConvertFromTimeSpan(TimeSpan time, int type)
+
+    private static double ConvertFromSec(double value, int size)
     {
-        switch (type) {
-            case -1: {
-                return time.Milliseconds;
-            }
-            case 0: {
-                return time.Seconds;
-            }
-            case 1: {
-                return time.Minutes;
-            }
-            case 2: {
-                return time.Hours;
-            }
-            default: {
-                return time.Days / (type / 1000000f);
-            }
+        if (size < 0) {
+            return value * Math.Abs(size);
         }
+
+        if (size > 1_000_000) {
+            value /= size / 1_000_000f;
+        }
+
+        return value / (size > 1_000_000 ? (int)TimeEnum.Day : size);
     }
 }
